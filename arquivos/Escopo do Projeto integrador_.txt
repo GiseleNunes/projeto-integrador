@@ -1,0 +1,384 @@
+Escopo do "Projeto integrador'
+
+
+
+## 🧠 Nome do Projeto (título provocador)
+
+**“I.A. QUE PARLA – O Robô Fofoqueiro da Acessibilidade”**  
+*Ou: Como ensinar um computador a ser intérprete de surdos, mas com meme, sensor de barulho e personalidade explosiva*
+
+
+## 🎯 Objetivo central (alinhado à questão motriz)
+
+> Utilizar IA generativa + visão computacional + sensores de áudio para criar um **assistente robótico excêntrico**, que traduz sons ambientes em **alertas visuais, textuais e emocionais** (com personalidade), promovendo acessibilidade para pessoas com deficiência auditiva e mobilidade reduzida.
+
+
+
+## 🔧 Componentes técnicos (programação + física + robótica)
+
+### 1. **Linguagem e ferramentas**
+- Python + Google Colab (para rodar em Chromebooks da rede pública)
+- Bibliotecas: `SpeechRecognition`, `gTTS`, `OpenCV`, `Pandas`, `Flask` (básico), `pydub`
+- Simulação de hardware: Arduino Uno + sensor de som KY-038 + LEDs RGB + display LCD 16x2
+
+### 2. **O que o projeto faz (de forma irreverente)**
+- O robô “escuta” a sala de aula.
+- Se o barulho ultrapassar 75 dB → ele acende um **LED vermelho piscando** e escreve no display:
+  > “TÁ ALTO, HEIN? QUER SILÊNCIO OU VOU CHAMAR A DIRETORA ROBÔ”
+- Se alguém falar uma frase curta perto do microfone, ele:
+  - reconhece a fala (Speech-to-Text)
+  - usa um modelo de IA (ex: GPT-2 pequeno ou Gemini API free) para **reescrever a frase com meme, regionalismo ou ironia**
+  - exibe no LCD a versão traduzida para **Libras textual** (ex: “BOM DIA” → “🤟 BOM DIA 🤟”)
+- Se a pessoa **balançar a mão na frente da câmera** (visão computacional simples), ele:
+  - lê um QR code com instruções acessíveis
+  - abre um link com **mapa de acessibilidade da escola** (produzido pelos alunos)
+
+
+
+## 📁 Artefatos produzidos (substituindo os tradicionais)
+
+| Artefato original (PDF)   | Versão irreverente e funcional                                                                      	|
+|---------------------------|-----------------------------------------------------------------------------------------------------------|
+| Mapa de ruído da escola   | **“Mapa do Inferno Acústico”** – termômetro sonoro por horário, com emoticons (😈 = muito barulho)  	|
+| Diário de pesquisa        | **Diário de bordo do Robô Fofoqueiro** – cada erro da IA vira um “causo” escrito pelos alunos        	|
+| Protótipo em protoboard   | **“Frankstein do Som”** – sensores colados em papelão com olhos arregalados desenhados			|
+| Fluxogramas de lógica     | **Fluxograma em formato de meme** (ex: se som > alto → “não guento mais” → pisca LED) 			|
+
+
+## 🃏 Minilições fora da curva (mas com conteúdo)
+
+1. **Ondulatória cômica** – medir decibéis usando um app + gritaria organizada pela turma.
+2. **Ética da fofoca de IA** – será que o robô pode repetir o que ouviu? Debate sobre privacidade em Libras.
+3. **UX meme-driven** – como criar interfaces para PCDs que não sejam chatas? Testar com colegas.
+4. **Python para zueira** – ensinar `if` e `else` com frases do tipo:  
+   `if decibeis > 80: print("CALA A BOCA AÍ, BRIGADO")`
+
+
+
+## 🎭 Produto final (fugindo do “site acessível comum”)
+
+> **“Show de Talentos Robóticos – O Robô Fofoqueiro no Auditório”**
+
+Cada grupo apresenta:
+
+- Um **protótipo funcional do robô** (pode ser simulado no Tinkercad ou real com Arduino)
+- Um **vídeo de 2 minutos** (estilo TikTok explicativo) mostrando o robô falando/falhando/acertando
+- Um **manifesto técnico-meme** (ex: “A acessibilidade não precisa ser sem graça”)
+- Um **código comentado com gírias paranaenses** (ex: “# esse elif é pra quando o bagulho fica louco”)
+
+
+
+## 🔁 Integração interdisciplinar (para o Projeto Integrador)
+
+| Disciplina               | Papel no projeto                                            |
+|--------------------------|-------------------------------------------------------------|
+| **Física**               | Medição de dB, análise de frequência, isolamento acústico   |
+| **Programação**          | Lógica, Python, API de IA, condicionais                     | 
+| **Robótica**             | Montagem de sensores, LEDs, buzzer                          |
+| **Ética / Sociologia**   | Debate sobre privacidade, IA e inclusão real                |
+| **Língua Portuguesa**    | Produção dos textos do robô, roteiro do vídeo               |
+| **Arte**                 | Design do robô (olhos, expressões, identidade visual)       |
+
+
+
+## 📍 Adaptação para escolas públicas do Paraná
+
+- Usar **Google Colab + celular como microfone** → dispensa computador potente
+- Simular Arduino no **Tinkercad** ou usar kits emprestados pelo **Programa Inovação Educação**
+- Substituir API paga por **modelos offline**: Vosk (STT) e GPT-2 pequeno
+- Criar versão **sem internet** com respostas pré-programadas engraçadas
+
+
+## ⚠️ Alerta final (importante)
+
+> O projeto não zomba da acessibilidade – **zomba do formato chato e engessado de ensinar tecnologia**.  
+> O robô “fofoqueiro” é uma estratégia para engajar adolescentes, enquanto eles **aprendem ética, física, programação e inclusão de verdade**.
+
+======================================================================================================================================================
+======================================================================================================================================================
+======================================================================================================================================================
+
+🗺️ Mapa da Jornada (sequência recomendada)
+Ordem	Prompt	                     | Foco	                                             | Tempo estimado
+1	Setup do ambiente	     | Criar o ambiente de desenvolvimento no Google Colab   | 1 aula
+2	Sensor de som irreverente    | Medir dB e tomar decisões com memes	             | 2 aulas
+3	Reconhecimento de fala	     | Converter voz em texto com personalidade	             | 2 aulas
+4	Visão computacional simples  | Detectar mão e QR code com a câmera	             | 2 aulas
+5	Robô com personalidade	     | Integrar IA generativa com regionalismo	             | 2 aulas
+6	Display e LEDs	             | Simular hardware ou usar física	                     | 2 aulas
+7	Mapa do Inferno Acústico     | Visualização de dados com emojis	                     | 1 aula
+8	Protótipo completo	     | Integrar tudo em um sistema único	             | 3 aulas
+9	Manifesto e vídeo	     | Roteiro para produto final	                     | 2 aulas
+10	Versão offline	             | Adaptar para escolas sem internet	             | 2 aulas
+
+======================================================================================================================================================
+
+PROMPT #1 – Setup do ambiente no Google Colab
+
+Você é um professor de programação muito didático e divertido. Crie um notebook completo para Google Colab (Python) que configure todo o ambiente para o projeto "Robô Fofoqueiro da Acessibilidade". O notebook deve:
+
+1. Verificar se o ambiente é o Colab (se não for, dar instruções)
+2. Instalar e importar todas as bibliotecas necessárias: speech_recognition, gtts, opencv-python, pandas, numpy, pydub, requests, json, IPython.display
+3. Criar pastas virtuais para organização (sons/, imagens/, logs/, codigos/)
+4. Exibir um "boas-vindas" com arte ASCII de um robô fofoqueiro
+5. Testar se cada biblioteca foi instalada corretamente com pequenos prints de sucesso (ex: "✅ microfone pronto pra fofocar!")
+6. Salvar um arquivo de configuração básico com variáveis globais (limiar de dB, modo_meme = True, etc.)
+7. Incluir comentários explicativos em português com GÍRIAS DO PARANÁ (tipo "ó o trem", "vixi", "bagulho doido")
+8. No final, exibir um "checklist de instalação" com tudo verde ✅ ou vermelho ❌
+
+O notebook deve funcionar em Chromebooks da rede pública e não exigir senha ou login pago.
+
+======================================================================================================================================================
+
+PROMPT #2 – Sensor de som irreverente com decisões emoji
+
+Crie um código Python para o Google Colab que simule um sensor de som (KY-038) usando o microfone do computador. O código deve:
+
+1. Gravar 3 segundos de áudio do microfone
+2. Calcular a intensidade sonora média (simular decibéis de 0 a 120)
+3. Exibir no display (print formatado):
+   - Nível atual: "🔇 🤫 🗣️ 📢 🔈" (emoji conforme volume)
+   - Decibéis simulados (ex: 67 dB)
+   - Mensagem de alerta MEME conforme tabela:
+     * < 40 dB: "🤫 silêncio absoluto... até assusta"
+     * 40-60 dB: "🗣️ papinho normal, nada de mais"
+     * 60-80 dB: "📢 TÁ FICANDO BOM! logo logo viro fofoqueiro"
+     * 80-100 dB: "🔊 CALA A BOCA! vou piscar o LED vermelho"
+     * > 100 dB: "💀 INFERNO ACÚSTICO! vou chamar a diretora robô"
+4. Retornar True se ultrapassou 75 dB (alerta), False caso contrário
+5. Criar uma função chamada `medidor_fofoqueiro()` que faz tudo e retorna (dB, alerta, mensagem_meme)
+6. Incluir um loop que repete a cada 5 segundos, com opção de apertar 'q' para sair
+7. Salvar um log das medições em um arquivo CSV (timestamp, dB, mensagem)
+8. Ter comentários em português com humor e referências paranaenses (ex: "# bora medir o barulho da galera")
+
+Ao final, mostrar um gráfico simples com os últimos 10 registros usando matplotlib.
+
+======================================================================================================================================================
+
+PROMPT #3 – Reconhecimento de fala com personalidade regional
+
+Desenvolva um módulo de reconhecimento de fala para o Robô Fofoqueiro. O código deve:
+
+1. Usar a biblioteca speech_recognition para capturar áudio do microfone
+2. Usar o Google Speech Recognition (gratuito) ou fallback para Vosk (offline)
+3. Após reconhecer o texto, o robô deve:
+   - Exibir: "👂 OUVI ALGO: [texto original]"
+   - Adicionar uma "resposta irreverente" aleatória de uma lista:
+     * "Ah pronto, agora tão falando {texto}... vou contar pra todo mundo"
+     * "Isso foi profundo... ou não, sei lá, sou só um robô fofoqueiro"
+     * "Anotado! {texto} - disse o aluno misterioso"
+     * "Huuum, interessante... vou salvar no meu banco de fofocas"
+4. Se não entender o áudio, responder com: "🗣️ FALA MAIS ALTO, TÔ QUASE SURDO (mas não tô, é zoeira)"
+5. Salvar cada fala reconhecida em um arquivo "fofocas.txt" com timestamp
+6. Criar uma função `escuta_fofoqueiro()` que retorna o texto reconhecido ou None
+7. Adicionar um modo "tradução para Libras textual" que converte palavras simples em sinais emoji (ex: "bom dia" → "🤟 BOM DIA 🤟", "ajuda" → "🆘 AJUDA 🆘")
+8. Testar com exemplos simulados (caso não tenha microfone, usar arquivo de áudio de exemplo)
+9. Incluir comentários dizendo "aqui o robô finge que é gente boa mas tá guardando tudo"
+
+O código deve ser executável no Colab sem hardware extra.
+
+======================================================================================================================================================
+
+PROMPT #4 – Visão computacional simples com detecção de mão e QR code
+
+Crie um sistema de visão computacional para o Robô Fofoqueiro usando OpenCV que rode no Google Colab (usando imagem enviada ou webcam virtual). O código deve:
+
+1. Capturar uma imagem da webcam (ou permitir upload de foto)
+2. Detectar MÃOS usando MediaPipe ou Haar Cascade (simples)
+3. Se detectar uma mão aberta, exibir: "✋ OPA! MÃO DETECTADA! vou ler o QR code agora"
+4. Tentar ler QUALQUER QR code presente na imagem
+5. Se encontrar QR code:
+   - Extrair a URL ou texto
+   - Exibir: "📱 LI O QR CODE: [conteúdo]"
+   - Abrir um link pré-definido (ex: "https://exemplo.com/mapa_acessibilidade") ou exibir instruções
+6. Se não encontrar QR code, gerar um QR code de exemplo com a mensagem: "Robô Fofoqueiro - Acessibilidade é sério mesmo com meme"
+7. Criar uma função `detecta_mao_qrcode(imagem)` que retorna (mao_detectada, conteudo_qrcode)
+8. Adicionar um modo "simulação" para quem não tem webcam (usar imagens de exemplo baixadas da internet)
+9. Exibir a imagem processada com anotações (retângulos, texto) usando matplotlib
+10. Incluir comentários do tipo: "# visão computacional é tipo dar óculos pro robô, mas ele ainda é fofoqueiro"
+
+O sistema deve ser tolerante a falhas e não travar se não encontrar nada.
+
+======================================================================================================================================================
+
+PROMPT #5 – Robô com personalidade e IA generativa regional
+
+Crie um módulo que dê PERSONALIDADE AO ROBÔ usando IA generativa. O código deve:
+
+1. Usar uma API gratuita de IA (ex: Gemini API free, ou GPT-2 offline, ou respostas pré-programadas com Markov)
+2. Criar uma função `fala_que nem_paranaense(frase_usuario)` que:
+   - Recebe um texto qualquer
+   - Reescreve com GÍRIAS DO PARANÁ: "vixi", "ó o trem", "bagulho", "tá ligado", "piá", "guria", "bah"
+   - Exemplo: "estou com fome" → "ó o trem, o bagulho é que tô com fome, vixi"
+3. Criar função `responde_com_meme(categoria)` onde categoria pode ser: "barulho", "silêncio", "ajuda", "libras"
+4. Integrar com o módulo de fala: após reconhecer o que o usuário disse, o robô responde com uma frase gerada
+5. Adicionar um "modo fofoqueiro extremo" onde o robô inventa um final engraçado:
+   - "Fulano disse X... isso me lembra que a professora de física falou Y semana passada"
+6. Salvar um histórico de interações em JSON (quem falou? o quê? quando? robô respondeu o quê?)
+7. Se não tiver API disponível, usar um dicionário de respostas pré-programadas + randomização
+8. Criar uma demonstração interativa com input() do usuário
+9. Incluir comentários: "# aqui o robô ganha alma - uma alma fofoqueira e paranaense"
+
+Importante: o código não deve depender de chaves pagas - oferecer fallback offline.
+
+======================================================================================================================================================
+
+PROMPT #6 – Display LCD e LEDs simulados com física real
+
+Crie um módulo que simule (ou controle real) um display LCD 16x2 e LEDs RGB para o Robô Fofoqueiro. O código deve:
+
+1. Oferecer DUAS versões:
+   - VERSÃO REAL: usar biblioteca `RPLCD` ou `lcddriver` com GPIO (Raspberry Pi/Pico)
+   - VERSÃO SIMULADA: criar uma interface visual no próprio Colab com emojis e ASCII art
+
+2. Para a versão simulada, criar uma função `mostra_no_display(linha1, linha2)` que exibe:
+
+======================================================================================================================================================
+
+PROMPT #7 – Mapa do Inferno Acústico (visualização de dados)
+
+Crie um sistema de visualização de dados chamado "Mapa do Inferno Acústico" para o Robô Fofoqueiro. O código deve:
+
+1. Carregar o arquivo CSV com medições de decibéis (timestamp, dB, mensagem)
+2. Criar um gráfico de linha com matplotlib mostrando a evolução do barulho ao longo do dia
+3. Adicionar ZONAS COLORIDAS:
+   - Verde: inferno leve (40-60 dB) 😇
+   - Amarelo: inferno médio (60-80 dB) 😈
+   - Vermelho: inferno grave (80-100 dB) 👹
+   - Roxo: inferno extremo (>100 dB) 💀
+4. Adicionar emojis nos pontos máximos de cada horário
+5. Criar um "mapa da escola" simulado (grade 3x3) onde cada sala tem um nível de barulho diferente
+6. Função `gera_mapa_termico()` que mostra heatmap das salas
+7. Exportar o mapa como imagem PNG
+8. Adicionar legenda com piadas: "Quanto mais vermelho, mais fofoca o robô tem pra contar"
+9. Se houver dados de horário, mostrar qual período é mais barulhento (ex: "SEGUNDA-FEIRA 13:30 - HORA DO INFERNO ACÚSTICO")
+10. Incluir comentários explicativos sobre tratamento de dados com pandas
+
+O código deve rodar com qualquer arquivo CSV gerado pelo prompt #2.
+
+======================================================================================================================================================
+
+PROMPT #8 – Protótipo completo integrado
+
+Agora integre TODOS os módulos anteriores em um único programa principal para o Robô Fofoqueiro. O programa deve:
+
+1. Mostrar um menu principal:
+   [1] Medidor de som fofoqueiro
+   [2] Reconhecimento de fala com personalidade
+   [3] Visão computacional (mão + QR code)
+   [4] Mapa do Inferno Acústico
+   [5] Modo automático (roda tudo junto)
+   [6] Sair
+
+2. No MODO AUTOMÁTICO (opção 5), o robô:
+   - Mede o som a cada 10 segundos
+   - Se barulho > 75 dB, aciona LED vermelho e display com mensagem de alerta
+   - Se detectar fala, reconhece e responde com meme
+   - A cada 1 minuto, salva um log
+   - Se detectar silêncio por 30 segundos, entra em modo "economia de fofoca"
+
+3. Criar uma função `main()` que gerencia tudo com tratamento de erros
+
+4. Adicionar um "modo debug" que mostra todas as variáveis internas
+
+5. Criar um arquivo "README_DO_ROBO.txt" explicando como usar cada função
+
+6. Incluir uma demonstração automática (demo mode) que simula entradas sem precisar do usuário
+
+7. Todos os comentários devem estar em português com bom humor
+
+8. No final da execução, perguntar: "Quer gerar o Mapa do Inferno Acústico com os dados de hoje? (s/n)"
+
+O código deve ser executável do início ao fim sem erros no Google Colab.
+
+
+======================================================================================================================================================
+
+PROMPT #9 – Roteiro para manifesto e vídeo de divulgação científica
+
+Crie um roteiro COMPLETO para o produto final do projeto: um vídeo de divulgação científica de 2-3 minutos sobre o Robô Fofoqueiro. O roteiro deve incluir:
+
+1. **ESTRUTURA DO VÍDEO**:
+   - Abertura impactante (máximo 15 segundos)
+   - Apresentação do problema (inclusão digital e acessibilidade)
+   - Demonstração do Robô Fofoqueiro funcionando (mostrar alertas, fala, LEDs)
+   - Entrevista fictícia com "o robô" (voz robótica engraçada)
+   - Momento sério: como a tecnologia pode incluir PCDs
+   - Manifesto final (6 frases curtas e impactantes)
+   - Créditos com os alunos
+
+2. **DIÁLOGOS SUGERIDOS** para cada cena (estilo TikTok/Reels)
+
+3. **DESCRIÇÃO DAS IMAGENS** que devem aparecer (ex: "aluno gritando e robô piscando vermelho")
+
+4. **TEXTO DO MANIFESTO** em formato de lista, com frases como:
+   - "Acessibilidade não é favor, é direito"
+   - "Robô fofoqueiro sim, exclusão digital não"
+   - (incluir mais 4 frases no estilo)
+
+5. **SUGESTÕES DE MÚSICA** (royalty free) e efeitos sonoros
+
+6. **HASHTAGS ESTRATÉGICAS** para YouTube/TikTok (ex: #RobôFofoqueiro #InclusãoParaná)
+
+7. **RUBRICA DE AVALIAÇÃO** para o professor corrigir o vídeo (critérios: criatividade, conteúdo técnico, mensagem ética, edição)
+
+8. **EXEMPLO DE LEGENDA ACESSÍVEL** (para incluir no vídeo para surdos)
+
+O roteiro deve ser pronto para os alunos gravarem com celular, sem equipamento profissional.
+
+======================================================================================================================================================
+
+PROMPT #10 – Versão offline completa para escolas sem internet
+
+Adapte o projeto Robô Fofoqueiro para funcionar TOTALMENTE OFFLINE em escolas do Paraná sem acesso à internet. O código deve:
+
+1. Substituir Google Speech Recognition por **Vosk** (offline) - baixar modelo pequeno em português
+2. Substituir API generativa por um **gerador de frases Markov** (usando um corpus de texto paranaense fornecido)
+3. Manter visão computacional (OpenCV roda offline)
+4. Salvar todos os logs localmente (sem depender de cloud)
+5. Criar um instalador único que:
+   - Baixa todos os modelos necessários (Vosk, Haar Cascade)
+   - Configura ambiente virtual Python
+   - Instala dependências via pip (com mirror brasileiro)
+
+6. Incluir um **modo texto puro** (sem áudio) para Chromebooks sem microfone - usa input() do usuário
+
+7. Criar um executável simples (usando PyInstaller) que alunos podem rodar sem abrir o Colab
+
+8. Adicionar um **tutorial em PDF de 5 páginas** com imagens, explicando passo a passo
+
+9. Fazer tudo funcionar no **Linux (Ubuntu)** e **Windows 10/11** - testar em máquinas da rede pública
+
+10. Incluir um script `testa_tudo.py` que verifica se todos os componentes offline funcionam antes de começar
+
+O código não pode fazer NENHUMA requisição externa (exceto opcional, com aviso). Fornecer fallbacks para tudo.
+
+======================================================================================================================================================
+
+Bônus – Prompt extra para correção automática
+
+Crie um script de correção automática para o professor avaliar os códigos dos alunos. O script deve:
+1. Receber um arquivo .py enviado pelo aluno
+2. Verificar se contém funções obrigatórias (medidor_fofoqueiro, escuta_fofoqueiro, etc.)
+3. Executar testes unitários simulados (sem microfone real)
+4. Gerar um relatório com nota de 0 a 10 e comentários engraçados
+5. Detectar plágio comparando com 3 versões anteriores
+
+======================================================================================================================================================
+
+======================================================================================================================================================
+
+
+======================================================================================================================================================
+
+======================================================================================================================================================
+
+
+======================================================================================================================================================
+
+
+======================================================================================================================================================
+
+======================================================================================================================================================
+
+
