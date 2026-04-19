@@ -1,1811 +1,1640 @@
 /* ===================================================================
-   TITULO DA PÁGINA: Style CSS - Robô Fofoqueiro (Interface Educacional)
+   STYLE.CSS - Robô Fofoqueiro (Arquivo Principal)
    ===================================================================
-   Objetivo: Fornecer estilos visuais para a plataforma "Robô Fofoqueiro",
-             um ambiente educacional interativo com tema de grafite,
-             menus laterais, simulações e acessibilidade.
-   Alunos: Equipe de Desenvolvimento
-   Orientadora: Gisele Nunes
-   Data: 2026
+   Este arquivo importa todos os módulos CSS do projeto.
    ===================================================================
 */
 
-/* ==================== RESET E CONFIGURAÇÕES GLOBAIS ==================== */
+/* Importa todos os módulos CSS */
+@import url("base.css");
+@import url("components.css");
+@import url("pages.css");
+@import url("simulators.css");
 
-/* 
-   SELETOR UNIVERSAL (*) - Remove todas as margens, preenchimentos padrão
-   e altera o modelo de caixa para border-box (largura inclui bordas e padding)
+/* ===================================================================
+   NOTA: Para desenvolvimento local, certifique-se que todos os 
+   arquivos CSS estão na mesma pasta:
+   
+   assets/css/
+   ├── style.css      (este arquivo - principal)
+   ├── base.css       (variáveis, reset, tipografia)
+   ├── components.css (menus, cards, botões, tabs)
+   ├── pages.css      (estilos específicos por página)
+   └── simulators.css (simuladores interativos)
+   ===================================================================
 */
-* {
-  margin: 0;
-  /* Remove margem externa de todos elementos */
-  padding: 0;
-  /* Remove espaçamento interno de todos elementos */
-  box-sizing: border-box;
-  /* Largura total = largura definida + borda + padding? NÃO! Com border-box, padding e borda são incluídos na largura total */
+
+/* ===================================================================
+   MENU SUPERIOR - EXIBIÇÃO EM TRÊS LINHAS HARMONIOSA
+   ===================================================================
+*/
+
+.menu-projeto-principal {
+  background: var(--grad-grafite);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 3px solid #f39c12;
 }
 
-/*
-   ESTILO BASE DO CORPO DA PÁGINA (body)
-   Define a fonte principal, fundo com gradiente suave e layout flexível
-*/
-body {
-  font-family: 'Inter', sans-serif;
-  /* Fonte moderna sem serifa */
-  background: linear-gradient(145deg, #f0f2f5 0%, #e9ecef 100%);
-  /* Gradiente diagonal suave (cinza claro) */
-  color: #1e2a3e;
-  /* Cor do texto: azul escuro suave */
-  min-height: 100vh;
-  /* Altura mínima igual à tela toda */
+.menu-projeto-principal .container-fluid {
   display: flex;
-  /* Ativa Flexbox no body */
   flex-direction: column;
-  /* Organiza filhos em coluna (um abaixo do outro) */
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* ==================== VARIÁVEIS CSS (PALETA DE CORES GRAFITE) ==================== */
-
-/*
-   DEFINIÇÃO DE VARIÁVEIS GLOBAIS
-   Facilita manutenção de cores e evita repetição
-*/
-:root {
-  /* Tons de grafite (do claro ao escuro) */
-  --grafite-claro: #4a5568;
-  /* Cinza azulado médio */
-  --grafite-medio: #2d3748;
-  /* Cinza azulado mais escuro */
-  --grafite-escuro: #1a202c;
-  /* Quase preto azulado */
-
-  /* Gradientes principais (efeito degradê) */
-  --grafite-grad-principal: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
-  /* Gradiente diagonal 135° */
-  --grafite-grad-hover: linear-gradient(135deg, #5a6578 0%, #3d475c 100%);
-  /* Versão mais clara para hover */
-
-  /* Cores de destaque - Verde (sucesso/confirmação) */
-  --verde-escuro: #0f5c3f;
-  /* Verde floresta */
-  --verde-grad: linear-gradient(135deg, #136b49, #0a3d2a);
-  /* Gradiente verde */
-
-  /* Cores de alerta - Laranja (atenção) */
-  --laranja-alerta: #e67e22;
-  /* Laranja médio */
-  --laranja-grad: linear-gradient(135deg, #f39c12, #d35400);
-  /* Gradiente laranja vibrante */
-
-  /* Tons neutros e overlays */
-  --cinza-claro: #eef2f5;
-  /* Fundo claro */
-  --grafite-bg: #2d3748;
-  /* Fundo grafite */
-  --vermelho-alerta: #e74c3c;
-  /* Vermelho para erros críticos */
-  --fume-overlay: rgba(0, 0, 0, 0.04);
-  /* Camada semi-transparente preta (4% opacidade) */
-  --fume-overlay-escuro: rgba(0, 0, 0, 0.06);
-  /* Camada mais escura (6% opacidade) */
-
-  /* Azul para funcionalidade de fala/simulação */
-  --azul-fala: #2980b9;
-  /* Azul médio */
-  --azul-grad: linear-gradient(135deg, #3498db, #2980b9);
-  /* Gradiente azul */
-}
-
-/* ==================== CORREÇÕES DE VISIBILIDADE DO TEXTO DO MENU ==================== */
-
-/*
-   GARANTE QUE O TEXTO DA MARCA (BRAND) NO MENU FIQUE SEMPRE BRANCO
-   Força contraste máximo mesmo em fundos escuros
-*/
 .menu-projeto-principal .navbar-brand {
-  color: white !important;
-  /* Força cor branca (sobrescreve qualquer outra regra) */
+  color: var(--branco) !important;
   font-weight: 800;
-  /* Peso da fonte: extra-negrito */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* Sombra preta para destacar do fundo */
   letter-spacing: -0.3px;
-  /* Reduz espaçamento entre letras levemente */
+  margin-bottom: 0.25rem;
 }
 
-/*
-   ESTILO DO TEXTO PRINCIPAL DA MARCA
-   Aplica gradiente branco e mantém legibilidade
-*/
-.brand-text-principal {
-  font-size: 1.3rem;
-  /* Tamanho relativo à raiz (20.8px aproximadamente) */
-  line-height: 1.2;
-  /* Altura da linha: 1.2x o tamanho da fonte */
-  display: inline-block;
-  /* Comporta-se como bloco mas em linha */
-  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-  /* Gradiente branco suave */
-  background-clip: text;
-  /* Recorta o fundo no formato do texto (padrão moderno) */
-  -webkit-background-clip: text;
-  /* Mesmo efeito para navegadores WebKit (Chrome, Safari) */
-  color: white !important;
-  /* Fallback: cor branca sólida */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  /* Sombra para contraste */
-  font-weight: 800;
-  /* Negrito máximo */
+.menu-projeto-principal .navbar-collapse {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
-   FALLBACK MÁXIMO: GARANTE QUE SPAN DENTRO DO TEXTO SEJA BRANCO SÓLIDO
-   Caso o gradiente não funcione, este estilo assegura legibilidade
-*/
-.brand-text-principal span {
-  color: #ffffff !important;
-  /* Branco puro e forçado */
-  background: none !important;
-  /* Remove qualquer fundo */
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-  /* Sombra mais forte */
+.menu-projeto-principal .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-/*
-   SUBTÍTULO DA MARCA (geralmente menor, abaixo do principal)
-*/
-.sub-brand-principal {
-  font-size: 0.7rem;
-  /* Tamanho pequeno (11.2px) */
-  opacity: 0.95;
-  /* Quase totalmente opaco (ligeira transparência) */
-  font-weight: 500;
-  /* Peso médio */
+.menu-projeto-principal .menu-linha-superior {
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 0.3rem;
+}
+
+.menu-projeto-principal .menu-linha-inferior {
+  margin-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.3rem;
+}
+
+.menu-projeto-principal .menu-linha-sobre {
+  padding-top: 0.2rem;
+}
+
+.menu-projeto-principal .nav-item {
+  margin: 0;
+}
+
+.menu-projeto-principal .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  transition: all var(--transition-base);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.menu-projeto-principal .nav-link i {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+.menu-projeto-principal .nav-link:hover,
+.menu-projeto-principal .nav-link.active-projeto {
+  background: rgba(243, 156, 18, 0.2);
   color: #ffdd99 !important;
-  /* Amarelo claro suave */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  /* Sombra preta leve */
+  transform: translateY(-2px);
 }
 
-/* ==================== RESPONSIVIDADE DO MENU (TELAS PEQUENAS) ==================== */
+/* Responsividade para o menu em três linhas */
+@media (max-width: 1200px) {
+  .menu-projeto-principal .nav-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
 
-/*
-   TABLETS (largura máxima 768px)
-   Reduz tamanhos de fonte para caber em telas médias
-*/
-@media (max-width: 768px) {
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-projeto-principal .navbar-nav {
+    gap: 0.2rem;
+  }
+
+  .menu-projeto-principal .nav-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.8rem;
+  }
+
   .brand-text-principal {
     font-size: 1rem;
-    /* 16px - tamanho padrão */
-    white-space: normal;
-    /* Permite quebra de linha */
-    word-break: keep-all;
-    /* Evita quebras agressivas de palavras */
   }
 
   .sub-brand-principal {
     font-size: 0.6rem;
-    /* 9.6px */
   }
 
+  .robo-icon-principal {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
   .menu-projeto-principal .navbar-brand {
-    max-width: 80%;
-    /* Limita largura a 80% do container */
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-projeto-principal .navbar-nav {
+    gap: 0.15rem;
+  }
+
+  .menu-projeto-principal .nav-link {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.75rem;
+    margin-right: 3px;
   }
 }
 
-/*
-   CELULARES (largura máxima 576px)
-   Redução ainda maior para dispositivos muito pequenos
-*/
 @media (max-width: 576px) {
+  .menu-projeto-principal .nav-link {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.7rem;
+  }
+
   .brand-text-principal {
-    font-size: 0.85rem;
-    /* 13.6px */
+    font-size: 0.9rem;
   }
 
-  .sub-brand-principal {
-    font-size: 0.55rem;
-    /* 8.8px */
+  .robo-icon-principal {
+    font-size: 1.4rem;
   }
 }
 
-/*
-   ESTILO DO MENU PRINCIPAL
-   Fundo escuro gradiente com borda inferior laranja de destaque
+/* ===================================================================
+   MARCA/LOGO
+   ===================================================================
 */
-.menu-projeto-principal {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-  /* Gradiente grafite escuro */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  /* Sombra pronunciada para profundidade */
-  padding: 0.5rem 0;
-  /* Espaçamento vertical interno */
-  border-bottom: 3px solid #f39c12;
-  /* Linha inferior laranja (destaque) */
+
+.brand-text-principal {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: var(--branco) !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 800;
 }
 
-/*
-   REMOVE PSEUDO-ELEMENTOS QUE POSSAM ESCURECER O TEXTO
-   Garante que não haja before/after interferindo na cor
-*/
-.menu-projeto-principal .navbar-brand::before,
-.menu-projeto-principal .navbar-brand::after {
-  display: none;
-  /* Esconde qualquer pseudo-elemento */
+.brand-text-principal span {
+  color: #ffffff !important;
+  background: none !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-/*
-   ÍCONE DO ROBÔ NO MENU
-*/
+.sub-brand-principal {
+  font-size: 0.7rem;
+  opacity: 0.95;
+  font-weight: 500;
+  color: #ffdd99 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
 .robo-icon-principal {
   font-size: 2.2rem;
-  /* Tamanho grande (35.2px) */
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-  /* Sombra tipo "drop" (respeita transparência) */
   color: #f39c12;
-  /* Cor laranja dourada */
 }
 
-/*
-   CONTAINER DA MARCA (navbar-brand) - ORGANIZAÇÃO FLEXÍVEL
-*/
 .navbar-brand {
   display: flex;
-  /* Layout flexível */
   align-items: center;
-  /* Alinha verticalmente ao centro */
-  gap: 12px;
-  /* Espaçamento entre elementos filhos: 12px */
+  gap: var(--spacing-md);
   flex-wrap: wrap;
-  /* Permite quebra de linha se necessário */
 }
 
-/*
-   DIV DENTRO DA MARCA - ORGANIZA TEXTO EM COLUNA
-*/
 .navbar-brand>div {
   display: flex;
-  /* Flexível */
   flex-direction: column;
-  /* Empilha os textos verticalmente */
 }
 
-/* ==================== EFEITO FUMÊ (OVERLAY SUTIL EM CARDS) ==================== */
-
-/*
-   FUNDO COM PADRÃO DE PONTOS E OVERLAY TRANSPARENTE
-   Cria textura visual interessante sem atrapalhar conteúdo
+/* ===================================================================
+   AULA 6 - DISPLAY LCD E LEDs (Estilos Específicos)
+   ===================================================================
 */
-.card-body {
-  background-image: radial-gradient(circle at 25% 40%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  /* Pontos minúsculos */
-  background-size: 16px 16px;
-  /* Tamanho do padrão de repetição */
-  position: relative;
-  /* Necessário para posicionar o pseudo-elemento ::before */
-}
 
-/*
-   PSEUDO-ELEMENTO ::before - CRIA OVERLAY TRANSPARENTE SOBRE O FUNDO
-   Adiciona camada "fumê" que escurece levemente
-*/
-.card-body::before {
-  content: '';
-  /* Conteúdo vazio obrigatório */
-  position: absolute;
-  /* Posicionado absolutamente em relação ao .card-body */
-  top: 0;
-  /* Gruda no topo */
-  left: 0;
-  /* Gruda na esquerda */
-  right: 0;
-  /* Estica até a direita */
-  bottom: 0;
-  /* Estica até a base */
-  background: var(--fume-overlay);
-  /* Overlay preto com 4% opacidade */
-  pointer-events: none;
-  /* Permite clicar através do overlay (não bloqueia interação) */
-  z-index: 0;
-  /* Coloca atrás do conteúdo (índice inferior) */
-}
-
-/*
-   GARANTE QUE O CONTEÚDO DO CARD FIQUE ACIMA DO OVERLAY
-*/
-.card-body>* {
-  position: relative;
-  /* Cria novo contexto de empilhamento */
-  z-index: 1;
-  /* Fica acima do ::before (z-index:0) */
-}
-
-/*
-   VARIAÇÃO DO EFEITO FUMÊ PARA ÁREA LATERAL (ABAS)
-   Padrão de pontos menor (14px) para textura diferente
-*/
-.lateral-aba-conteudo .card-body {
-  background-image: radial-gradient(circle at 25% 40%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 14px 14px;
-  /* Pontos mais próximos */
-}
-
-/*
-   EFEITO FUMÊ ESPECÍFICO PARA CONTEÚDO DE CÓDIGO
-   Usa linhas diagonais em vez de pontos para simular "código antigo"
-*/
-#conteudoCodigo .card-body,
-.lateral-aba-conteudo#conteudoCodigo,
-#conteudoCodigo {
-  background-image: repeating-linear-gradient(45deg,
-      /* Linhas diagonais a 45° */
-      rgba(0, 0, 0, 0.02) 0px,
-      rgba(0, 0, 0, 0.02) 2px,
-      transparent 2px,
-      transparent 8px);
-  /* Ciclo de 8px: 2px de linha + 6px transparente */
-  position: relative;
-}
-
-/*
-   OVERLAY MAIS ESCURO PARA ÁREA DE CÓDIGO
-*/
-#conteudoCodigo .card-body::before,
-.lateral-aba-conteudo#conteudoCodigo::before,
-#conteudoCodigo::before {
-  background: var(--fume-overlay-escuro);
-  /* Overlay com 6% opacidade (mais escuro) */
-}
-
-/*
-   VARIAÇÃO PARA CARD COM FUNDO PRETO (código)
-   Padrão de linhas claras (branco translúcido) em vez de escuras
-*/
-.card-body.bg-preto-code,
-#conteudoCodigo .card-body.p-0 {
-  background-image: repeating-linear-gradient(45deg,
-      rgba(255, 255, 255, 0.02) 0px,
-      /* Linhas brancas muito sutis */
-      rgba(255, 255, 255, 0.02) 2px,
-      transparent 2px,
-      transparent 8px);
-}
-
-/*
-   OVERLAY MAIS FORTE PARA CÓDIGO EM FUNDO PRETO
-*/
-.card-body.bg-preto-code::before {
-  background: rgba(0, 0, 0, 0.15);
-  /* 15% de preto - bem escuro para contraste */
-}
-
-/* ==================== LAYOUT PRINCIPAL E CONTEÚDO ==================== */
-
-/*
-   CONTAINER PRINCIPAL DO LAYOUT
-   Altura mínima = altura da tela menos 160px (considerando header e footer)
-*/
-.main-layout {
-  min-height: calc(100vh - 160px);
-  /* Calcula: 100% da viewport - 160px */
-  padding: 0;
-  /* Remove padding padrão */
-  flex: 1;
-  /* Ocupa espaço restante em layout flexível */
-}
-
-/*
-   ÁREA DO CONTEÚDO PRINCIPAL
-   Fundo claro e padding espaçoso
-*/
-.conteudo-principal {
-  background: #f8fafc;
-  /* Fundo branco levemente azulado */
-  min-height: calc(100vh - 70px);
-  /* Altura mínima: viewport menos 70px */
-  padding: 1.5rem 2rem 2rem 2rem !important;
-  /* Padding: topo 1.5rem, laterais 2rem, base 2rem */
-}
-
-/*
-   RESPONSIVIDADE DO CONTEÚDO PRINCIPAL - TABLETS
-   Reduz padding para economizar espaço
-*/
-@media (max-width: 768px) {
-  .conteudo-principal {
-    padding: 1rem 1rem 1.5rem 1rem !important;
-    /* Padding uniforme de 1rem nas laterais/topo, 1.5rem base */
-  }
-}
-
-/*
-   RESPONSIVIDADE DO CONTEÚDO PRINCIPAL - CELULARES
-   Padding mínimo para máximo aproveitamento da tela
-*/
-@media (max-width: 576px) {
-  .conteudo-principal {
-    padding: 0.75rem 0.75rem 1rem 0.75rem !important;
-    /* Padding compacto */
-  }
-}
-
-/* ==================== RODAPÉ (FOOTER) CORRIGIDO ==================== */
-
-/*
-   ESTILO PERSONALIZADO DO RODAPÉ
-   Fundo escuro gradiente, borda superior laranja
-*/
-.footer-custom {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-  /* Gradiente grafite escuro */
-  color: #e2e8f0;
-  /* Texto cinza claro */
-  font-size: 0.85rem;
-  /* Tamanho pequeno (13.6px) */
-  padding: 1.5rem 1rem;
-  /* Espaçamento interno generoso */
-  text-align: center;
-  /* Centraliza texto */
-  width: 100%;
-  /* Largura total */
-  margin-top: auto;
-  /* Empurra rodapé para o final em layout flex */
-  border-top: 3px solid #f39c12;
-  /* Borda superior laranja (destaque) */
-  position: relative;
-  /* Contexto de posicionamento */
-  bottom: 0;
-  /* Alinhado à base (caso necessário) */
-  left: 0;
-  right: 0;
-}
-
-/*
-   CONTAINER INTERNO DO RODAPÉ - GARANTE LARGURA CORRETA
-*/
-.footer-custom .container-fluid {
-  width: 100%;
-  /* Largura total */
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  /* Usa variável Bootstrap ou fallback 0.75rem */
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  /* Centraliza horizontalmente */
-  margin-left: auto;
-}
-
-/*
-   PARÁGRAFOS DENTRO DO RODAPÉ
-*/
-.footer-custom p {
-  margin-bottom: 0.5rem;
-  /* Espaço inferior pequeno */
-  color: #f0f2f5;
-  /* Branco acinzentado */
-}
-
-/*
-   TEXTO PEQUENO (COPYRIGHT, ETC) DENTRO DO RODAPÉ
-*/
-.footer-custom small {
-  opacity: 0.8;
-  /* Leve transparência */
-  font-size: 0.75rem;
-  /* 12px */
-  color: #cbd5e0;
-  /* Cinza claro */
-}
-
-/*
-   GARANTE QUE O RODAPÉ NÃO TENHA MARGEM EXTRA QUANDO SEGUIDO DE LAYOUT
-*/
-.container-fluid.main-layout+.footer-custom,
-.row+.footer-custom {
-  margin-top: 0;
-  /* Remove margem superior */
-}
-
-/* ==================== MENU SUPERIOR DETALHADO ==================== */
-
-/*
-   (Regras repetidas ou complementares - mantemos consistência)
-   Fundo gradiente de grafite claro para escuro
-*/
-.menu-projeto-principal {
-  background: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
-  /* Gradiente de três estágios */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  padding: 0.5rem 0;
-  border-bottom: 3px solid #f39c12;
-}
-
-/*
-   LINKS DE NAVEGAÇÃO NO MENU PRINCIPAL
-*/
-.menu-projeto-principal .nav-link {
-  color: rgba(255, 255, 255, 0.85) !important;
-  /* Branco com 85% opacidade */
-  font-weight: 600;
-  /* Semi-negrito */
-  border-radius: 40px;
-  /* Bordas muito arredondadas (pílula) */
-  transition: all 0.2s;
-  /* Transição suave para todas propriedades (0.2 segundos) */
-  padding: 0.5rem 1.2rem;
-  /* Espaçamento interno vertical/horizontal */
-}
-
-/*
-   EFEITO HOVER E ESTADO ATIVO PARA LINKS DO MENU
-*/
-.menu-projeto-principal .nav-link:hover,
-.menu-projeto-principal .nav-link.active-projeto {
-  background: rgba(243, 156, 18, 0.2);
-  /* Fundo laranja com 20% opacidade */
-  color: #ffdd99 !important;
-  /* Amarelo claro */
-  transform: translateY(-2px);
-  /* Move levemente para cima (efeito flutuante) */
-}
-
-/* ==================== MENU LATERAL (SIDEBAR) ==================== */
-
-/*
-   BARRA LATERAL ESQUERDA - FUNDO GRADIENTE VERTICAL
-*/
-.sidebar-lateral {
-  background: linear-gradient(180deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
-  /* Gradiente vertical (180°) */
-  min-height: calc(100vh - 70px);
-  /* Altura mínima: viewport menos 70px (altura do header) */
-  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
-  /* Sombra para direita, dando profundidade */
-}
-
-/*
-   CONTEÚDO STICKY DA SIDEBAR (GRUDA AO ROLAR)
-*/
-.sidebar-sticky {
-  position: sticky;
-  /* Fica fixo durante rolagem, dentro do container pai */
-  top: 80px;
-  /* Distância do topo onde "gruda" */
-  padding: 1.5rem 0;
-  /* Espaçamento vertical */
-  display: flex;
-  /* Flexível */
-  flex-direction: column;
-  /* Coluna */
-  height: calc(100vh - 80px);
-  /* Altura = viewport - 80px (para não ultrapassar) */
-}
-
-/*
-   CABEÇALHO DA SIDEBAR (título da seção)
-*/
-.sidebar-header {
-  color: #f39c12;
-  /* Laranja destaque */
-  font-weight: 700;
-  /* Negrito */
-  font-size: 0.85rem;
-  /* 13.6px */
-  text-transform: uppercase;
-  /* Todas letras maiúsculas */
-  letter-spacing: 2px;
-  /* Espaçamento entre letras: 2px */
-  padding: 0 1.2rem 1rem 1.2rem;
-  /* Padding: topo 0, laterais 1.2rem, base 1rem */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  /* Linha inferior branca translúcida */
-  margin-bottom: 1.5rem;
-  /* Margem inferior */
-}
-
-/*
-   ÍCONE DENTRO DO CABEÇALHO DA SIDEBAR
-*/
-.sidebar-header i {
-  margin-right: 8px;
-  /* Espaço à direita */
-  font-size: 1rem;
-  /* Tamanho padrão (16px) */
-}
-
-/*
-   NAV (LISTA DE LINKS) DENTRO DA SIDEBAR - OCUPA ESPAÇO FLEXÍVEL
-*/
-.sidebar-lateral .nav {
-  flex: 1;
-  /* Ocupa todo espaço disponível */
-}
-
-/*
-   LINKS INDIVIDUAIS DA SIDEBAR
-*/
-.sidebar-lateral .nav-link {
-  color: #e2e8f0;
-  /* Cinza claro */
-  padding: 0.8rem 1.2rem;
-  /* Espaçamento interno confortável */
-  margin: 0.2rem 0.8rem;
-  /* Margem externa pequena */
-  border-radius: 12px;
-  /* Bordas arredondadas */
-  font-weight: 500;
-  /* Peso médio */
-  transition: all 0.2s;
-  /* Transição suave */
-  display: flex;
-  /* Flexível */
-  align-items: center;
-  /* Centraliza verticalmente */
-  gap: 10px;
-  /* Espaço entre ícone e texto: 10px */
-}
-
-/*
-   ÍCONES DENTRO DOS LINKS DA SIDEBAR
-*/
-.sidebar-lateral .nav-link i {
+/* Display LCD Simulado */
+#displayLcdSimulado {
+  font-family: "Courier New", monospace;
   font-size: 1.2rem;
-  /* 19.2px */
-  width: 28px;
-  /* Largura fixa para alinhamento */
+  background-color: #0d1117 !important;
+  color: #00ff9d !important;
+  border: 2px solid #2d3748 !important;
+  box-shadow: inset 0 0 10px rgba(0, 255, 157, 0.2);
+  letter-spacing: 1px;
 }
 
-/*
-   EFEITO HOVER NOS LINKS DA SIDEBAR
-*/
-.sidebar-lateral .nav-link:hover {
-  background: rgba(255, 255, 255, 0.12);
-  /* Fundo branco 12% opaco */
-  color: white;
-  /* Texto branco puro */
-  transform: translateX(4px);
-  /* Move 4px para direita (efeito de deslize) */
-}
-
-/*
-   LINK ATIVO NA SIDEBAR (PÁGINA ATUAL)
-*/
-.sidebar-lateral .nav-link.active-lateral {
-  background: linear-gradient(135deg, #5a6578 0%, #2d3748 100%);
-  /* Gradiente mais claro */
-  color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  /* Sombra para destacar */
-  border-left: 3px solid #f39c12;
-  /* Borda lateral esquerda laranja */
-}
-
-/*
-   RODAPÉ DA SIDEBAR (geralmente com botão de download)
-*/
-.sidebar-footer {
-  padding: 1rem 0.8rem;
-  /* Espaçamento interno */
-  margin-top: auto;
-  /* Empurra para o final do container flexível */
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  /* Linha superior sutil */
-}
-
-/*
-   BOTÃO DE DOWNLOAD NA SIDEBAR
-*/
-.btn-download-lateral {
-  background: var(--verde-grad);
-  /* Gradiente verde das variáveis */
-  border: none;
-  /* Remove borda padrão */
-  color: white;
-  font-weight: 600;
-  /* Semi-negrito */
-  border-radius: 40px;
-  /* Formato pílula */
-  padding: 10px;
-  /* Espaçamento interno uniforme */
-  transition: all 0.2s;
-  font-size: 0.9rem;
-  /* 14.4px */
-}
-
-/*
-   HOVER DO BOTÃO DE DOWNLOAD - ESCUREÇE E AMPLIA LEVEMENTE
-*/
-.btn-download-lateral:hover {
-  transform: scale(1.02);
-  /* Aumenta 2% */
-  background: linear-gradient(135deg, #1a8758, #0e5a3b);
-  /* Verde mais escuro */
-  color: #fff8e7;
-  /* Branco com leve tom amarelado */
-}
-
-/* ==================== ÁREA DE CONTEÚDO COM ABAS ==================== */
-
-/*
-   CADA ABA DE CONTEÚDO COMEÇA OCULTA
-*/
-.lateral-aba-conteudo {
+#displayLcdSimulado br {
   display: none;
-  /* Escondido por padrão */
-  animation: fadeIn 0.3s ease;
-  /* Animação de surgimento (quando ativado) */
 }
 
-/*
-   ABA ATIVA - VISÍVEL
-*/
-.active-lateral-aba {
-  display: block;
-  /* Mostra o conteúdo */
+/* LED RGB Simulado */
+#ledRgbSimulado {
+  background: linear-gradient(135deg, #1a1a2e, #0f0f1a) !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/*
-   ANIMAÇÃO FADEIN - SURGE COM OPACIDADE E MOVIMENTO
+#ledLuz {
+  transition: all 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#ledLuz.led-vermelho {
+  background: #ff0000 !important;
+  box-shadow:
+    0 0 20px #ff0000,
+    0 0 40px rgba(255, 0, 0, 0.5);
+}
+
+#ledLuz.led-verde {
+  background: #00ff00 !important;
+  box-shadow:
+    0 0 20px #00ff00,
+    0 0 40px rgba(0, 255, 0, 0.5);
+}
+
+#ledLuz.led-azul {
+  background: #0000ff !important;
+  box-shadow:
+    0 0 20px #0000ff,
+    0 0 40px rgba(0, 0, 255, 0.5);
+}
+
+#ledLuz.led-amarelo {
+  background: #ffff00 !important;
+  box-shadow:
+    0 0 20px #ffff00,
+    0 0 40px rgba(255, 255, 0, 0.5);
+}
+
+#ledLuz.led-roxo {
+  background: #ff00ff !important;
+  box-shadow:
+    0 0 20px #ff00ff,
+    0 0 40px rgba(255, 0, 255, 0.5);
+}
+
+#ledLuz.led-ciano {
+  background: #00ffff !important;
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px rgba(0, 255, 255, 0.5);
+}
+
+#ledLuz.led-desligado {
+  background: #333333 !important;
+  box-shadow: none;
+}
+
+/* Status do LED */
+#ledStatus {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Botões do simulador de som */
+#btnSomSilencio:hover,
+#btnSomNormal:hover,
+#btnSomAlto:hover,
+#btnSomMuitoAlto:hover {
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+#btnSomSilencio:active,
+#btnSomNormal:active,
+#btnSomAlto:active,
+#btnSomMuitoAlto:active {
+  transform: scale(0.96);
+}
+
+/* Botão de teste aleatório */
+#btnTesteAleatorio {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  transition: all 0.2s ease;
+  padding: 10px 24px;
+  font-weight: 600;
+}
+
+#btnTesteAleatorio:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+#btnTesteAleatorio:active {
+  transform: scale(0.98);
+}
+
+/* Animação de pisca do LED */
+@keyframes ledPisca {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+}
+
+.led-piscando {
+  animation: ledPisca 0.3s ease-in-out 3;
+}
+
+/* Card do simulador */
+#conteudoSimulador .card {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+#conteudoSimulador .card-header {
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  border-bottom: 2px solid #f39c12;
+}
+
+/* Área do simulador */
+.simulador-fala {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.simulador-fala:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Robô ASCII animado */
+.robo-ascii-animado {
+  font-size: 2rem;
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+  padding: 10px;
+  display: inline-block;
+  animation: floatRobo 3s infinite;
+}
+
+@keyframes floatRobo {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Alertas customizados */
+.alert-warning {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: none;
+  border-left: 4px solid #d97706;
+  border-radius: 12px;
+}
+
+/* Responsividade para Aula 6 */
+@media (max-width: 768px) {
+  #displayLcdSimulado {
+    font-size: 0.8rem !important;
+    padding: 12px !important;
+  }
+
+  #ledLuz {
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  .robo-ascii-animado {
+    font-size: 1.2rem;
+  }
+
+  #btnSomSilencio,
+  #btnSomNormal,
+  #btnSomAlto,
+  #btnSomMuitoAlto {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #displayLcdSimulado {
+    font-size: 0.65rem !important;
+    padding: 8px !important;
+  }
+
+  #ledLuz {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .simulador-fala {
+    padding: 16px !important;
+  }
+
+  #btnTesteAleatorio {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+}
+
+/* ===================================================================
+   AULA 4 - VISÃO COMPUTACIONAL (Estilos Adicionais)
+   ===================================================================
 */
-@keyframes fadeIn {
+
+/* Simulador de QR Code */
+#qrCodeDisplay {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-slow);
+}
+
+#qrCodeDisplay img {
+  max-width: 200px;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  animation: fadeInScale 0.3s ease;
+}
+
+@keyframes fadeInScale {
   from {
     opacity: 0;
-    /* Começa invisível */
-    transform: translateY(12px);
-    /* Começa 12px abaixo */
+    transform: scale(0.9);
   }
 
   to {
     opacity: 1;
-    /* Termina visível */
-    transform: translateY(0);
-    /* Termina na posição original */
+    transform: scale(1);
   }
 }
 
-/* ==================== CARDS E COMPONENTES PRINCIPAIS ==================== */
-
-/*
-   CABEÇALHO COM DEGRADÊ (ESTILO GRAFITE)
-*/
-.bg-degrade-header {
-  background: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
-  color: white;
-  border-radius: 32px;
-  /* Bordas muito arredondadas */
-}
-
-/*
-   TEXTO DENTRO DO CABEÇALHO DEGRADÊ - FORÇA BRANCO
-*/
-.bg-degrade-header .lead,
-.bg-degrade-header h1 {
-  color: white;
-}
-
-/*
-   BADGE (ETIQUETA) COM FUNDO LARANJA (AVISO)
-*/
-.badge.bg-warning {
-  background: var(--laranja-grad) !important;
-  /* Gradiente laranja */
-  color: #2c1a00 !important;
-  /* Texto marrom escuro */
-}
-
-/*
-   CARD DE ETAPA (JORNADA)
-*/
-.etapa-card {
-  border-radius: 28px;
-  /* Bordas arredondadas */
-  transition: all 0.25s;
-  /* Transição suave de 0.25s */
-  background: white;
-  /* Fundo branco */
-  border-bottom: 4px solid #4a5568;
-  /* Borda inferior grafite (simula "sombra" sólida) */
-}
-
-/*
-   HOVER DO CARD DE ETAPA - SOBE E GANHA SOMBRA
-*/
-.etapa-card:hover {
-  transform: translateY(-5px);
-  /* Move 5px para cima */
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
-  /* Sombra difusa */
-}
-
-/*
-   ÍCONE DAS ETAPAS
-*/
-.etapa-icon {
-  font-size: 2.8rem;
-  /* 44.8px */
-  margin-bottom: 12px;
-  /* Espaço abaixo */
-}
-
-/*
-   FUNDO PARA SEÇÃO DE INCLUSÃO (DESTAQUE COM BORDA LARANJA)
-*/
-.bg-inclusao {
-  background: #fef5e7;
-  /* Fundo amarelo muito claro */
-  border-left: 6px solid #e67e22;
-  /* Borda esquerda laranja grossa */
-}
-
-/*
-   FUNDO PRETO PARA BLOCO DE CÓDIGO
-*/
-.bg-preto-code {
-  background: #0d1117;
-  /* Quase preto (estilo GitHub Dark) */
-}
-
-/*
-   BLOCO DE CÓDIGO GENÉRICO
-*/
-.code-block {
-  background: #0d1117;
-  /* Fundo escuro */
-  color: #e6edf3;
-  /* Texto claro */
-  font-family: 'Courier New', monospace;
-  /* Fonte monoespaçada */
-  padding: 1.5rem;
-  /* Espaçamento interno grande */
-  overflow-x: auto;
-  /* Barra de rolagem horizontal se necessário */
-  font-size: 0.85rem;
-  /* 13.6px */
-  line-height: 1.4;
-  /* Altura da linha proporcional */
-}
-
-/*
-   BLOCO DE CÓDIGO QUE OCUPA LARGURA TOTAL
-*/
-.code-block-full {
-  background: #0a0c10;
-  /* Fundo ainda mais escuro */
-  color: #f0f6fc;
-  padding: 1.8rem;
-  overflow-x: auto;
-  font-size: 0.8rem;
-  /* 12.8px */
-  white-space: pre-wrap;
-  /* Mantém espaços e quebras, mas permite quebra de linha */
-  word-break: break-word;
-  /* Quebra palavras longas se necessário */
-}
-
-/*
-   CABEÇALHO DE CARD COM FUNDO GRAFITE
-*/
-.card-header.bg-grafite {
-  background: linear-gradient(135deg, #4a5568, #2d3748);
-  /* Gradiente horizontal */
-  color: white;
-}
-
-/*
-   TABELA DE ETAPAS - ESTILO LIMPO
-*/
-.tabela-etapas {
-  width: 100%;
-  /* Largura total */
-  border-collapse: collapse;
-  /* Bordas colapsadas (sem espaços entre células) */
-  margin: 1rem 0;
-  /* Margem vertical */
-}
-
-/*
-   CÉLULAS DE CABEÇALHO E DADOS DA TABELA
-*/
-.tabela-etapas th,
-.tabela-etapas td {
-  border: 1px solid #dee2e6;
-  /* Borda cinza clara */
-  padding: 12px;
-  /* Espaçamento interno */
-  text-align: left;
-  /* Alinhamento esquerdo */
-  vertical-align: top;
-  /* Alinhamento vertical pelo topo */
-}
-
-/* SELETOR: .tabela-etapas th - Alvo: células de cabeçalho da tabela */
-.tabela-etapas th {
-  background: var(--grafite-grad-principal);
-  /* Aplica gradiente grafite (escuro) como fundo */
-  color: white;
-  /* Define texto na cor branca para contraste máximo */
-  font-weight: 600;
-  /* Aplica peso semi-negrito (600) para destacar o texto */
-}
-
-/* SELETOR: .tabela-etapas tr:nth-child(even) - Alvo: linhas pares da tabela (2ª, 4ª, 6ª...) */
-.tabela-etapas tr:nth-child(even) {
-  background-color: #f8f9fa;
-  /* Aplica fundo cinza muito claro nas linhas pares (efeito zebra) */
-}
-
-/* SELETOR: .tabela-etapas tr:hover - Alvo: qualquer linha da tabela com mouse sobre ela */
-.tabela-etapas tr:hover {
-  background-color: #e9ecef;
-  /* Aplica fundo cinza levemente mais escuro para efeito de destaque ao passar mouse */
-}
-
-/* SELETOR: .badge-bncc - Alvo: etiquetas de habilidades da BNCC */
-.badge-bncc {
-  background: #2c3e50;
-  /* Define fundo azul escuro sólido */
-  color: #ecf0f1;
-  /* Define texto em cinza claro para contraste suave */
-  padding: 4px 10px;
-  /* Define espaçamento interno: 4px vertical, 10px horizontal */
-  border-radius: 20px;
-  /* Arredonda bordas (20px) criando formato de pílula */
-  font-size: 0.75rem;
-  /* Define tamanho da fonte como 12px (0.75rem) - compacto para badges */
-  font-weight: 500;
-  /* Aplica peso médio (500) ao texto */
-  display: inline-block;
-  /* Permite largura/altura ajustável mas mantém comportamento inline */
-  margin: 2px;
-  /* Adiciona margem de 2px para espaçar badges múltiplos */
-}
-
-/* ==================== SIMULADOR DE DECIBÉIS (VOLUME) ==================== */
-
-/* SELETOR: .simulador-db - Alvo: container principal do simulador de decibéis */
-.simulador-db {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  /* Aplica gradiente diagonal (135°) de azul escuro profundo */
-  border-radius: 20px;
-  /* Arredonda bordas com 20px para visual suave */
-  padding: 20px;
-  /* Adiciona espaçamento interno de 20px em todos os lados */
-  text-align: center;
-  /* Centraliza horizontalmente todo conteúdo interno */
-  color: white;
-  /* Define cor do texto como branco */
-}
-
-/* SELETOR: .db-medidor - Alvo: barra de fundo do medidor de volume */
-.db-medidor {
-  width: 100%;
-  /* Ocupa 100% da largura do elemento pai */
-  height: 30px;
-  /* Define altura fixa de 30 pixels */
-  background: #2c3e50;
-  /* Define fundo azul escuro para a parte não preenchida do medidor */
-  border-radius: 15px;
-  /* Arredonda bordas em 15px (metade da altura para formato pílula) */
-  overflow: hidden;
-  /* Esconde qualquer conteúdo que ultrapasse os limites arredondados */
-  margin: 15px 0;
-  /* Adiciona margem: 15px vertical, 0px horizontal */
-}
-
-/* SELETOR: .db-bar - Alvo: barra progressiva que mostra o nível atual de volume */
-.db-bar {
-  width: 0%;
-  /* Largura inicial 0% (controlada dinamicamente por JavaScript) */
-  height: 100%;
-  /* Altura igual à altura total do elemento pai (.db-medidor) */
-  background: linear-gradient(90deg, #27ae60, #f39c12, #e74c3c);
-  /* Gradiente horizontal: verde (baixo) -> laranja (médio) -> vermelho (alto) */
-  transition: width 0.3s ease;
-  /* Adiciona transição suave de 0.3 segundos quando a largura mudar */
-  border-radius: 15px;
-  /* Arredonda bordas em 15px para combinar com o medidor pai */
-}
-
-/* ==================== SIMULADOR DE FALA (RECONHECIMENTO DE VOZ) ==================== */
-
-/* SELETOR: .simulador-fala - Alvo: container principal do simulador de reconhecimento de voz */
-.simulador-fala {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  /* Aplica gradiente diagonal de cinza claro (suave e profissional) */
-  border-radius: 16px;
-  /* Arredonda bordas com 16px para cantos suaves */
-  border-left: 4px solid var(--azul-fala);
-  /* Adiciona borda lateral esquerda de 4px na cor azul (destaque) */
-}
-
-/* SELETOR: .simulador-fala .btn-primary - Alvo: botão primário (microfone) dentro do simulador de fala */
-.simulador-fala .btn-primary {
-  background: var(--azul-grad);
-  /* Aplica gradiente azul definido em variável CSS */
+/* Botão Gerar QR Code */
+#btnGerarQRCode {
+  background: var(--grad-verde);
   border: none;
-  /* Remove borda padrão do botão */
-  transition: all 0.2s;
-  /* Aplica transição de 0.2 segundos para todas as propriedades que mudarem */
+  transition: all var(--transition-base);
+  font-weight: 500;
 }
 
-/* SELETOR: .simulador-fala .btn-primary:hover - Alvo: botão microfone quando mouse está sobre ele */
-.simulador-fala .btn-primary:hover {
+#btnGerarQRCode:hover:not(:disabled) {
   transform: scale(1.02);
-  /* Aumenta o botão em 2% no hover (efeito sutil de crescimento) */
-  background: linear-gradient(135deg, #2c81ba, #2471a3);
-  /* Escurece o gradiente azul no hover */
+  background: var(--grad-verde-hover);
+  box-shadow: var(--shadow-md);
 }
 
-/* SELETOR: .simulador-fala .btn-outline-secondary - Alvo: botão secundário (borda outline) no simulador */
-.simulador-fala .btn-outline-secondary {
-  border-color: #cbd5e0;
-  /* Define cor da borda como cinza azulado claro */
-  color: #4a5568;
-  /* Define cor do texto como cinza escuro */
-  transition: all 0.2s;
-  /* Transição suave de 0.2 segundos para animações */
+#btnGerarQRCode:active {
+  transform: scale(0.98);
 }
 
-/* SELETOR: .simulador-fala .btn-outline-secondary:hover - Alvo: botão secundário com mouse sobre ele */
-.simulador-fala .btn-outline-secondary:hover {
-  background: var(--azul-grad);
-  /* Aplica gradiente azul ao fundo no hover */
-  border-color: var(--azul-fala);
-  /* Muda borda para cor azul definida em variável */
-  color: white;
-  /* Muda texto para branco para contraste com fundo azul */
+/* Botão Baixar QR Code */
+#btnBaixarQRCode {
+  transition: all var(--transition-base);
+  font-weight: 500;
 }
 
-/* @keyframes pulseMic - Define animação de pulsação para ícone do microfone */
-@keyframes pulseMic {
+#btnBaixarQRCode:not(:disabled):hover {
+  transform: translateY(-2px);
+  background: var(--grad-grafite);
+  border-color: var(--grafite-medio);
+  color: var(--branco);
+  box-shadow: var(--shadow-md);
+}
+
+#btnBaixarQRCode:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botões de exemplo QR Code - Estilos harmonizados com a paleta do projeto */
+.btn-qr-pronto {
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  color: var(--branco);
+  border: none;
+  transition: all var(--transition-base);
+  font-size: 0.8rem;
+  border-radius: var(--border-radius-pill);
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+}
+
+.btn-qr-pronto:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: var(--branco);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-qr-pronto:active {
+  transform: scale(0.96);
+}
+
+/* Simulador de Detecção de Mãos */
+#simularMao {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  transition: all var(--transition-base);
+  font-weight: 500;
+  border-radius: var(--border-radius-pill);
+}
+
+#simularMao:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: var(--shadow-md);
+}
+
+#simularMao:active {
+  transform: scale(0.98);
+}
+
+#resultadoMao {
+  transition: all var(--transition-slow);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Animação de mão detectada */
+@keyframes maoDetectadaAnim {
   0% {
-    /* Estado inicial da animação */
     transform: scale(1);
-    /* Tamanho normal (sem escala) */
     opacity: 1;
-    /* Opacidade total (100% visível) */
   }
 
   50% {
-    /* Estado intermediário (metade da animação) */
-    transform: scale(1.1);
-    /* Aumenta 10% do tamanho original */
-    opacity: 0.7;
-    /* Reduz opacidade para 70% (efeito de fade) */
+    transform: scale(1.08);
+    opacity: 0.8;
   }
 
   100% {
-    /* Estado final da animação (volta ao inicial) */
     transform: scale(1);
-    /* Retorna ao tamanho normal */
     opacity: 1;
-    /* Retorna opacidade total */
   }
 }
 
-/* SELETOR: .btn-primary i.bi-mic-fill - Alvo: ícone de microfone dentro do botão primário */
-.btn-primary i.bi-mic-fill {
-  animation: pulseMic 1.5s infinite;
-  /* Aplica animação pulseMic com duração 1.5s, repetindo infinitamente */
+.mao-detetada {
+  animation: maoDetectadaAnim 0.4s ease;
 }
 
-/* SELETOR: #respostaRobo - Alvo: elemento com ID "respostaRobo" (área de texto da resposta do robô) */
-#respostaRobo {
-  background: linear-gradient(135deg, #d4edda, #c3e6cb);
-  /* Gradiente diagonal de verde claro (sucesso/saudável) */
-  border-left: 4px solid #28a745;
-  /* Borda lateral esquerda verde de 4px para destaque */
-  font-size: 1rem;
-  /* Define tamanho da fonte como 16px (tamanho base padrão) */
+/* Texto do QR Code input */
+#textoQRCode {
+  border-radius: var(--border-radius-md);
+  border: 1px solid #cbd5e0;
+  transition: all var(--transition-base);
 }
 
-/* SELETOR: #librasTextual - Alvo: elemento com ID "librasTextual" (área de tradução para Libras textual) */
-#librasTextual {
-  background: linear-gradient(135deg, #d1ecf1, #bee5eb);
-  /* Gradiente diagonal de azul claro (calma/informativo) */
-  border-left: 4px solid #17a2b8;
-  /* Borda lateral esquerda azul de 4px para destaque */
-  font-size: 1.2rem;
-  /* Define fonte maior (19.2px) para facilitar leitura da tradução */
-  font-family: monospace;
-  /* Aplica fonte monoespaçada (todas letras mesma largura - estilo código) */
+#textoQRCode:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.25);
+  outline: none;
 }
 
-/* @keyframes alertaPisca - Define animação de piscar para alertas */
-@keyframes alertaPisca {
+/* Tabela de dedos para a aula 4 */
+.tabela-dedos {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.tabela-dedos th,
+.tabela-dedos td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela-dedos th {
+  background: var(--grad-grafite);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.tabela-dedos tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Landmarks da mão */
+.hand-landmark {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.hand-connection {
+  display: inline-block;
+  width: 15px;
+  height: 2px;
+  background-color: #f39c12;
+  margin: 0 1px;
+}
+
+/* Webcam pulse indicator */
+@keyframes webcamPulse {
 
   0%,
   100% {
-    /* Estados inicial E final (mesmos estilos) */
-    opacity: 1;
-    /* Opacidade total */
-    transform: scale(1);
-    /* Tamanho normal */
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
   }
 
   50% {
-    /* Estado intermediário da animação */
-    opacity: 0.5;
-    /* Reduz opacidade para 50% (meio transparente) */
-    transform: scale(1.05);
-    /* Aumenta 5% do tamanho (efeito de "pulo") */
+    box-shadow: 0 0 0 8px rgba(46, 204, 113, 0);
   }
 }
 
-/* SELETOR: .alerta-sonoro - Alvo: elementos de alerta sonoro (classe aplicada dinamicamente) */
-.alerta-sonoro {
-  animation: alertaPisca 0.5s infinite;
-  /* Aplica animação de piscada rápida (0.5s por ciclo) */
-  background: #e74c3c !important;
-  /* Força fundo vermelho (!important sobrescreve outros estilos) */
+.webcam-ativa {
+  animation: webcamPulse 1.5s infinite;
+  border-radius: 50%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #2ecc71;
 }
 
-/* ==================== CHECKLIST PERSONALIZADO ==================== */
+/* Log de fofocas QR */
+#logFofocasQR {
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: var(--font-size-sm);
+  background: var(--branco);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+}
 
-/* SELETOR: .checklist-personalizado li - Alvo: cada item de lista (<li>) dentro do checklist */
-.checklist-personalizado li {
-  padding: 12px 0;
-  /* Adiciona espaçamento interno: 12px vertical, 0px horizontal */
-  border-bottom: 1px dashed #ccc;
-  /* Adiciona borda inferior pontilhada cinza de 1px para separar itens */
-  font-size: 1.05rem;
-  /* Define fonte levemente maior que o padrão (16.8px) */
+/* Responsividade para Aula 4 */
+@media (max-width: 768px) {
+  .btn-qr-pronto {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  #qrCodeDisplay img {
+    max-width: 150px;
+  }
+
+  .tabela-dedos {
+    font-size: 0.8rem;
+  }
+
+  .tabela-dedos th,
+  .tabela-dedos td {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-qr-pronto {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  #qrCodeDisplay img {
+    max-width: 120px;
+  }
+
+  #resultadoMao .display-1 {
+    font-size: 2rem;
+  }
+
+  .tabela-dedos {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Estilo para o card de QR Code */
+#qrCodeContainer {
+  transition: all var(--transition-slow);
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  border-radius: var(--border-radius-lg) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+#qrCodeContainer:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Estilo para o container do simulador de visão */
+.simulador-visao {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  color: var(--branco);
+}
+
+.webcam-placeholder {
+  background: #0d1117;
+  border-radius: var(--border-radius-md);
+  min-height: 300px;
   display: flex;
-  /* Define layout flexível para alinhamento interno */
   align-items: center;
-  /* Centraliza itens verticalmente dentro do container flex */
-  gap: 12px;
-  /* Define espaçamento de 12px entre os elementos filhos (ícone + texto) */
-  cursor: pointer;
-  /* Muda cursor para "mãozinha" indicando que o item é clicável */
+  justify-content: center;
+  border: 2px dashed var(--grafite-claro);
 }
 
-/* SELETOR: .checklist-personalizado li i.bi-check-square-fill - Alvo: ícone de checkbox MARCADO (verde) */
-.checklist-personalizado li i.bi-check-square-fill {
-  color: #0f5c3f;
-  /* Define cor verde escuro para o ícone (indicando tarefa concluída) */
-  font-size: 1.5rem;
-  /* Define tamanho do ícone como 24px (1.5rem) */
+/* Cards de conceitos da aula 4 */
+#conteudoConceitos .alert-secondary {
+  background: #e9ecef;
+  border: none;
+  transition: all var(--transition-base);
+  border-radius: var(--border-radius-md);
 }
 
-/* SELETOR: .checklist-personalizado li i.bi-square - Alvo: ícone de checkbox NÃO MARCADO (cinza) */
-.checklist-personalizado li i.bi-square {
-  font-size: 1.5rem;
-  /* Define tamanho do ícone como 24px */
-  color: #adb5bd;
-  /* Define cor cinza médio para o ícone (indicando tarefa pendente) */
+#conteudoConceitos .alert-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background: #dee2e6;
 }
 
-/* SELETOR: .progress-checklist - Alvo: barra de progresso específica do checklist */
-.progress-checklist {
-  height: 10px;
-  /* Define altura fina de 10px para a barra de progresso */
-  border-radius: 20px;
-  /* Arredonda bordas em 20px (formato bem arredondado) */
-  background-color: #dee2e6;
-  /* Define fundo cinza claro para a parte não preenchida */
+/* Badge de QR Code */
+.badge-qr {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 4px 10px;
+  border-radius: var(--border-radius-pill);
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
-/* SELETOR: .bg-laranja-alerta - Alvo: elementos com fundo laranja para alertas */
-.bg-laranja-alerta {
-  background: var(--laranja-grad);
-  /* Aplica gradiente laranja definido em variável CSS */
-  color: #fff2e0;
-  /* Define texto em tom branco-amarelado (suave para contraste) */
-  border-radius: 24px;
-  /* Arredonda bordas com 24px (cantos bem suaves) */
+/* Indicador de detecção ativa */
+.deteccao-ativa {
+  position: relative;
 }
 
-/* SELETOR: .bg-laranja-alerta .card-body, .bg-laranja-alerta h5 - Alvo: elementos internos do card laranja */
-.bg-laranja-alerta .card-body,
-.bg-laranja-alerta h5 {
-  color: #2d1b00;
-  /* Define texto em marrom escuro (contraste com fundo laranja claro) */
+.deteccao-ativa::after {
+  content: "🔴";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 12px;
+  animation: blinkRed 1s infinite;
 }
 
-/* SELETOR: .hr-alerta, .hr-professor - Alvo: linhas horizontais de separação */
-.hr-alerta,
-.hr-professor {
-  margin: 1rem 0;
-  /* Adiciona margem vertical de 1rem (16px) e 0 horizontal */
-  border: 0;
-  /* Remove borda padrão da tag <hr> */
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  /* Adiciona borda superior fina com preto 10% opaco (efeito sutil) */
-}
+@keyframes blinkRed {
 
-/* SELETOR: .bg-grafite-claro - Alvo: elementos com fundo grafite claro */
-.bg-grafite-claro {
-  background: linear-gradient(135deg, #eef2f8, #e0e6ed);
-  /* Gradiente diagonal de cinza suave (clean) */
-  border-radius: 20px;
-  /* Arredonda bordas com 20px */
-}
-
-/* SELETOR: .bg-degrade-verde - Alvo: elementos com gradiente verde */
-.bg-degrade-verde {
-  background: var(--verde-grad);
-  /* Aplica gradiente verde definido em variável CSS */
-}
-
-/* SELETOR: .robo-ascii-animado - Alvo: robô ASCII animado */
-.robo-ascii-animado {
-  font-size: 2.2rem;
-  /* Define fonte grande (35.2px) para o desenho ASCII */
-  font-family: monospace;
-  /* Usa fonte monoespaçada para alinhamento perfeito do desenho ASCII */
-  background: rgba(255, 255, 255, 0.15);
-  /* Fundo branco com 15% opacidade (translúcido) */
-  border-radius: 30px;
-  /* Arredonda bordas em 30px */
-  padding: 10px;
-  /* Adiciona espaçamento interno de 10px */
-  animation: float 3s infinite;
-  /* Aplica animação flutuante com duração 3s, repetindo infinitamente */
-}
-
-/* @keyframes float - Define animação flutuante (sobe e desce suavemente) */
-@keyframes float {
-  0% {
-    /* Estado inicial */
-    transform: translateY(0px);
-    /* Posição original (sem deslocamento) */
+  0%,
+  100% {
+    opacity: 1;
   }
 
   50% {
-    /* Estado intermediário (pico da animação) */
-    transform: translateY(-6px);
-    /* Move elemento 6px para CIMA (efeito flutuante) */
+    opacity: 0.3;
+  }
+}
+
+/* Animações extras */
+@keyframes escalaPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
   }
 
   100% {
-    /* Estado final (volta ao inicial) */
-    transform: translateY(0px);
-    /* Retorna à posição original */
+    transform: scale(1);
   }
 }
 
-/* SELETOR: .icone-prof - Alvo: ícone do professor */
-.icone-prof {
-  font-size: 4rem;
-  /* Define tamanho extra-grande: 64px (4rem) para destaque */
+.escala-pulse {
+  animation: escalaPulse 0.3s ease;
 }
 
-/* SELETOR: .progress - Alvo: barra de progresso genérica (reutilizável) */
-.progress {
-  border-radius: 20px;
-  /* Arredonda bordas em 20px (cantos suaves) */
-  background-color: #dee2e6;
-  /* Define fundo cinza claro para área não preenchida */
-}
-
-/* SELETOR: .btn-outline-primary - Alvo: botões com estilo outline primário (borda grafite) */
-.btn-outline-primary {
-  border-color: #4a5568;
-  /* Define cor da borda como cinza grafite */
-  color: #4a5568;
-  /* Define cor do texto como cinza grafite */
-}
-
-/* SELETOR: .btn-outline-primary:hover - Alvo: botão outline primário com mouse sobre ele */
-.btn-outline-primary:hover {
-  background: linear-gradient(135deg, #4a5568, #2d3748);
-  /* Aplica gradiente grafite ao fundo */
-  border-color: #2d3748;
-  /* Escurece a borda */
-  color: white;
-  /* Muda texto para branco para contraste */
-}
-
-/* ==================== RESPONSIVIDADE COMPLETA ==================== */
-
-/*
-   MEDIA QUERY: max-width: 768px
-   DESTINO: Tablets e dispositivos médios
-   PROPÓSITO: Ajustar layout para telas menores que 768px
-*/
-@media (max-width: 768px) {
-
-  /* SELETOR: .sidebar-lateral - Alvo: barra lateral */
-  .sidebar-lateral {
-    min-height: auto;
-    /* Remove altura mínima fixa, permitindo altura automática */
-    position: relative;
-    /* Muda posicionamento de fixo para relativo */
-  }
-
-  /* SELETOR: .sidebar-sticky - Alvo: conteúdo fixo da sidebar */
-  .sidebar-sticky {
-    position: relative;
-    /* Muda para relativo em vez de fixo */
-    top: 0;
-    /* Remove deslocamento do topo */
-    height: auto;
-    /* Altura automática (conteúdo define tamanho) */
-    padding: 1rem 0;
-    /* Adiciona padding: 16px vertical, 0 horizontal */
-  }
-
-  /* SELETOR: .sidebar-lateral .nav-link - Alvo: links de navegação na sidebar */
-  .sidebar-lateral .nav-link {
-    padding: 0.5rem 1rem;
-    /* Reduz padding: 8px vertical, 16px horizontal (mais compacto) */
-    margin: 0.1rem 0.5rem;
-    /* Margem reduzida: 1.6px vertical, 8px horizontal */
-  }
-
-  /* SELETOR: .brand-text-principal - Alvo: texto da marca/logo principal */
-  .brand-text-principal {
-    font-size: 1rem;
-    /* Reduz fonte para 16px (tamanho padrão) */
-  }
-
-  /* SELETOR: .etapa-card - Alvo: cards das etapas */
-  .etapa-card {
-    margin-bottom: 1rem;
-    /* Adiciona margem inferior de 16px para espaçamento vertical */
-  }
-
-  /* SELETOR: .code-block, .code-block-full - Alvo: blocos de código */
-  .code-block,
-  .code-block-full {
-    font-size: 0.7rem;
-    /* Reduz fonte para 11.2px (mais compacta) */
-    padding: 1rem;
-    /* Reduz padding para 16px (economiza espaço) */
-  }
-
-  /* SELETOR: .sidebar-header - Alvo: cabeçalho da barra lateral */
-  .sidebar-header {
-    padding: 0 1rem 0.5rem 1rem;
-    /* Padding: 0 topo, 16px direita, 8px baixo, 16px esquerda */
-  }
-
-  /* SELETOR: .tabela-etapas - Alvo: tabela de etapas */
-  .tabela-etapas {
-    font-size: 0.8rem;
-    /* Reduz fonte para 12.8px (economiza espaço horizontal) */
-  }
-
-  /* SELETOR: .tabela-etapas th, .tabela-etapas td - Alvo: células da tabela */
-  .tabela-etapas th,
-  .tabela-etapas td {
-    padding: 8px;
-    /* Reduz padding para 8px (mais compacto) */
-  }
-
-  /* SELETOR: .simulador-fala .btn-frase-pronta - Alvo: botões de frase pronta no simulador */
-  .simulador-fala .btn-frase-pronta {
-    font-size: 0.7rem;
-    /* Reduz fonte dos botões para 11.2px */
-  }
-}
-
-/*
-   MEDIA QUERY: max-width: 576px
-   DESTINO: Smartphones e dispositivos pequenos
-   PROPÓSITO: Otimização máxima para telas muito pequenas
-*/
-@media (max-width: 576px) {
-
-  /* SELETOR: .sidebar-lateral .nav-link span - Alvo: texto dos links na sidebar */
-  .sidebar-lateral .nav-link span {
-    font-size: 0.85rem;
-    /* Reduz fonte para 13.6px (legível mas compacto) */
-  }
-
-  /* SELETOR: .sidebar-lateral .nav-link i - Alvo: ícones dos links na sidebar */
-  .sidebar-lateral .nav-link i {
-    font-size: 1rem;
-    /* Ícones com 16px (tamanho padrão) */
-    width: 24px;
-    /* Largura fixa de 24px para alinhamento */
-  }
-
-  /* SELETOR: .btn-download-lateral - Alvo: botão de download na lateral */
-  .btn-download-lateral {
-    font-size: 0.75rem;
-    /* Fonte de 12px (compacta) */
-    padding: 8px;
-    /* Padding reduzido de 8px */
-  }
-
-  /* SELETOR: .tabela-etapas - Alvo: tabela de etapas */
-  .tabela-etapas {
-    display: block;
-    /* Muda para block para permitir rolagem */
-    overflow-x: auto;
-    /* Adiciona rolagem HORIZONTAL para não quebrar layout */
-  }
-
-  /* SELETOR: #respostaRobo, #librasTextual - Alvo: áreas de resposta */
-  #respostaRobo,
-  #librasTextual {
-    font-size: 0.85rem;
-    /* Reduz fonte para 13.6px */
-  }
-}
-
-/* ==================== UTILITÁRIOS E CORES ADICIONAIS ==================== */
-
-/* SELETOR: .bg-verde-claro - Alvo: fundo verde claro */
-.bg-verde-claro {
-  background: #136b49;
-  /* Verde escuro sólido */
-  color: white;
-  /* Texto branco para contraste */
-}
-
-/* SELETOR: .text-success - Alvo: texto de sucesso (verde) */
-.text-success {
-  color: #136b49 !important;
-  /* Força cor verde escuro (!important sobrescreve outros estilos) */
-}
-
-/* SELETOR: .btn-outline-success - Alvo: botão outline de sucesso */
-.btn-outline-success {
-  border-color: #136b49;
-  /* Borda verde escuro */
-  color: #136b49;
-  /* Texto verde escuro */
-}
-
-/* SELETOR: .btn-outline-success:hover - Alvo: botão success com mouse sobre */
-.btn-outline-success:hover {
-  background: #136b49;
-  /* Fundo verde escuro */
-  border-color: #136b49;
-  /* Borda verde escuro (consistência) */
-}
-
-/* SELETOR: .btn:active - Alvo: qualquer botão no momento do clique */
-.btn:active {
-  transform: scale(0.97);
-  /* Reduz botão em 3% simulando efeito de "pressionamento" físico */
-}
-
-/* SELETOR: ::-webkit-scrollbar - Alvo: barra de rolagem (Webkit: Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 8px;
-  /* Largura fina de 8px para barra vertical */
-}
-
-/* SELETOR: ::-webkit-scrollbar-track - Alvo: trilha (fundo) da barra de rolagem */
-::-webkit-scrollbar-track {
-  background: #e9ecef;
-  /* Fundo cinza claro */
-}
-
-/* SELETOR: ::-webkit-scrollbar-thumb - Alvo: "polegar" (parte arrastável) da barra de rolagem */
-::-webkit-scrollbar-thumb {
-  background: #4a5568;
-  /* Cinza grafite */
-  border-radius: 10px;
-  /* Bordas arredondadas em 10px */
-}
-
-/* SELETOR: ::-webkit-scrollbar-thumb:hover - Alvo: polegar com mouse sobre */
-::-webkit-scrollbar-thumb:hover {
-  background: #2d3748;
-  /* Escurece o cinza no hover para feedback visual */
-}
-
-/* SELETOR: .badge.bg-dark - Alvo: badge com fundo escuro */
-.badge.bg-dark {
-  background: #1a202c !important;
-  /* Força fundo azul muito escuro */
-}
-
-/* SELETOR: a:not(.nav-link):not(.btn) - Alvo: links que NÃO são de navegação nem botões */
-a:not(.nav-link):not(.btn) {
-  color: #4a5568;
-  /* Cinza grafite */
-  text-decoration: none;
-  /* Remove sublinhado padrão dos links */
-  font-weight: 500;
-  /* Peso médio (500) */
-}
-
-/* SELETOR: a:not(.nav-link):not(.btn):hover - Alvo: links comuns com mouse sobre */
-a:not(.nav-link):not(.btn):hover {
-  color: #f39c12;
-  /* Muda para laranja (cor de destaque) */
-  text-decoration: underline;
-  /* Adiciona sublinhado no hover para indicar link clicável */
-}
-
-/* SELETOR: .card - Alvo: todos os cards genéricos */
-.card {
-  border-radius: 20px;
-  /* Bordas arredondadas em 20px */
-  overflow: hidden;
-  /* Esconde conteúdo que ultrapassa, garantindo bordas arredondadas */
-}
-
-/* SELETOR: .shadow-lg - Alvo: sombra grande (utilitário) */
-.shadow-lg {
-  box-shadow: 0 1rem 2rem rgba(26, 32, 44, 0.15) !important;
-  /* Sombra pronunciada: deslocamento Y 16px, blur 32px, preto 15% opaco */
-}
-
-/* SELETOR: code - Alvo: elementos de código inline (<code>) */
-code {
-  background: #1e1e1e;
-  /* Fundo quase preto (tipo editor de código) */
-  color: #d4d4d4;
-  /* Texto cinza claro */
-  padding: 2px 6px;
-  /* Padding pequeno: 2px vertical, 6px horizontal */
-  border-radius: 6px;
-  /* Bordas levemente arredondadas */
-  font-family: monospace;
-  /* Fonte monoespaçada para código */
-}
-
-/* SELETOR: .bg-vermelho-alerta - Alvo: fundo vermelho para alertas críticos */
-.bg-vermelho-alerta {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-  /* Gradiente vermelho (mais claro -> mais escuro) */
-  color: white;
-  /* Texto branco para contraste */
-}
-
-/* SELETOR: .simulador-volume - Alvo: container do simulador de volume (versão alternativa) */
-.simulador-volume {
-  background: #1a1a2e;
-  /* Azul muito escuro sólido */
-  border-radius: 16px;
-  /* Bordas arredondadas 16px */
-  padding: 20px;
-  /* Espaçamento interno 20px */
-  margin: 15px 0;
-  /* Margem: 15px vertical, 0 horizontal */
-}
-
-/* SELETOR: .simulador-volume .btn-vol - Alvo: botões de volume dentro do simulador */
-.simulador-volume .btn-vol {
-  transition: all 0.1s ease;
-  /* Transição rápida de 0.1 segundos */
-}
-
-/* SELETOR: .simulador-volume .btn-vol:active - Alvo: botão de volume durante clique */
-.simulador-volume .btn-vol:active {
-  transform: scale(0.95);
-  /* Redução rápida de 5% ao clicar (feedback tátil) */
-}
-
-/* SELETOR: .alert-robot-floating - Alvo: alerta flutuante do robô (posicionamento absoluto) */
-.alert-robot-floating {
-  z-index: 9999;
-  /* Índice altíssimo (sobrepõe qualquer outro elemento) */
-  min-width: 300px;
-  /* Largura mínima de 300px */
-}
-
-/* SELETOR: .alert-robot-floating-bottom - Alvo: alerta flutuante na parte inferior */
-.alert-robot-floating-bottom {
-  z-index: 9999;
-  /* Índice altíssimo para ficar sobre tudo */
-  max-width: 350px;
-  /* Largura máxima de 350px */
-}
-
-/* SELETOR: .toast-sucesso-checklist - Alvo: toast de sucesso do checklist */
+/* Toast de sucesso */
 .toast-sucesso-checklist {
   position: relative;
-  /* Posicionamento relativo para contexto */
   z-index: 100;
-  /* Índice 100 (acima da maioria, abaixo de flutuantes) */
+  border-radius: 12px;
+  border-left: 4px solid #28a745;
 }
 
-/* @keyframes blink - Define animação de cursor piscando (simula digitação) */
-@keyframes blink {
+/* ===================================================================
+   AULA 7 - MAPA DO INFERNO ACÚSTICO (Estilos Adicionais)
+   ===================================================================
+*/
 
-  0%,
-  100% {
-    /* Início e fim */
-    opacity: 1;
-    /* Totalmente visível */
-  }
-
-  50% {
-    /* Metade da animação */
-    opacity: 0;
-    /* Invisível (efeito pisca-pisca) */
-  }
+/* Estilos para os canvases */
+#canvasLinha,
+#canvasHeatmap {
+  background: #1a1a2e;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-/* SELETOR: .code-block .blink-cursor - Alvo: cursor piscante dentro de bloco de código */
-.code-block .blink-cursor {
-  animation: blink 1s infinite;
-  /* Aplica animação blink com ciclo de 1 segundo */
+#canvasLinha:hover,
+#canvasHeatmap:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(243, 156, 18, 0.2);
+}
+
+/* Container dos gráficos */
+#graficoLinhaSimulado,
+#heatmapSimulado {
+  background: #0d1117 !important;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Cores para os níveis de dB na tabela */
+.db-alto {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+  font-weight: bold;
+}
+
+.db-medio {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.db-baixo {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+/* Tabela de dados simulados */
+#tabelaDadosSimulados {
+  font-size: 0.85rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+#tabelaDadosSimulados thead th {
+  background: linear-gradient(135deg, #2d3748, #1a202c);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 8px;
+}
+
+#tabelaDadosSimulados tbody td {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+/* Botão atualizar dados */
+#atualizarDados {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  border: none;
+  color: #fff;
+  transition: all 0.2s ease;
+  border-radius: 40px;
+  padding: 6px 16px;
+}
+
+#atualizarDados:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5a6578, #3d475c);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#atualizarDados:active {
+  transform: scale(0.96);
+}
+
+/* Estatísticas da simulação */
+#estatisticasSimulacao {
+  font-weight: 600;
+  color: #2c3e50;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 40px;
   display: inline-block;
-  /* Permite largura/altura mas mantém em linha */
-  width: 2px;
-  /* Largura fina de 2 pixels (aparência de cursor) */
-  height: 1.2em;
-  /* Altura proporcional ao tamanho da fonte atual */
-  background-color: #fff;
-  /* Cor branca para cursor */
-  margin-left: 2px;
-  /* Margem esquerda de 2px para espaçamento */
 }
 
-/* SELETOR: .card:not(.bg-preto-code) .card-body - Alvo: corpo do card que NÃO tem classe bg-preto-code */
-.card:not(.bg-preto-code) .card-body {
-  background: linear-gradient(var(--fume-overlay), var(--fume-overlay));
-  /* Aplica overlay fume via gradiente com mesma cor */
-}
-
-/* SELETOR: #conteudoCodigo, .lateral-aba-conteudo#conteudoCodigo - Alvo: área de conteúdo do código */
-#conteudoCodigo,
-.lateral-aba-conteudo#conteudoCodigo {
-  background: linear-gradient(var(--fume-overlay-escuro), var(--fume-overlay-escuro));
-  /* Overlay mais escuro para contraste */
-}
-
-/* SELETOR: .card-body button, .card-body a, .card-body .btn, .simulador-volume * - Alvo: elementos interativos dentro de cards e simulador */
-.card-body button,
-.card-body a,
-.card-body .btn,
-.simulador-volume * {
-  position: relative;
-  /* Posicionamento relativo para contexto de z-index */
-  z-index: 2;
-  /* Garante que fiquem ACIMA do overlay (z-index 2 > z-index 1 do overlay) */
-}
-
-/* SELETOR: .bg-preto-code - Alvo: blocos de código com fundo preto */
-.bg-preto-code {
-  background: #0d1117;
-  /* Fundo preto-azulado (típico de editores de código) */
-  position: relative;
-  /* Posicionamento relativo para pseudo-elemento ::before */
-}
-
-/* SELETOR: .bg-preto-code::before - Alvo: pseudo-elemento antes do conteúdo (overlay escuro) */
-.bg-preto-code::before {
-  content: '';
-  /* Necessário para pseudo-elemento existir (vazio) */
-  position: absolute;
-  /* Posicionamento absoluto em relação ao .bg-preto-code */
-  top: 0;
-  /* Alinha ao topo */
-  left: 0;
-  /* Alinha à esquerda */
-  right: 0;
-  /* Estende até direita */
-  bottom: 0;
-  /* Estende até embaixo */
-  background: rgba(0, 0, 0, 0.2);
-  /* Preto com 20% opacidade (efeito de escurecimento) */
-  pointer-events: none;
-  /* Permite clicar através do overlay (não bloqueia interação) */
-}
-
-/* SELETOR: .bg-preto-code pre, .bg-preto-code code - Alvo: elementos de código dentro do bg-preto-code */
-.bg-preto-code pre,
-.bg-preto-code code {
-  position: relative;
-  /* Posicionamento relativo para ficar ACIMA do pseudo-elemento */
-  z-index: 1;
-  /* Índice 1 (acima do overlay que está no nível padrão) */
-}
-
-/* ==================== ESTILOS ADICIONAIS PARA PÁGINA INDEX.HTML ==================== */
-
-/* SELETOR: #conteudoJornada .card .etapa-icon - Alvo: ícones de etapa dentro dos cards da jornada */
-#conteudoJornada .card .etapa-icon {
-  font-size: 2rem;
-  /* Tamanho de 32px (2rem) para ícones */
-  margin-bottom: 8px;
-  /* Margem inferior de 8px para espaçamento */
-}
-
-/* SELETOR: .tabela-etapas td:first-child, .tabela-etapas th:first-child - Alvo: PRIMEIRA coluna da tabela (cabeçalho e células) */
-.tabela-etapas td:first-child,
-.tabela-etapas th:first-child {
-  width: 60px;
-  /* Largura fixa de 60px (para números das etapas) */
-  text-align: center;
-  /* Centraliza horizontal
-  text-align: center; /* Centraliza horizontalmente o conteúdo (números das etapas) */
-}
-
-/* SELETOR: .tabela-etapas td:last-child - Alvo: ÚLTIMA coluna da tabela (células de dados) */
-.tabela-etapas td:last-child {
-  white-space: nowrap;
-  /* Impede quebra de linha - mantém conteúdo em UMA única linha horizontal */
-}
-
-/* MEDIA QUERY: max-width: 768px - PARA TABLETS */
+/* Responsividade para Aula 7 */
 @media (max-width: 768px) {
 
-  /* SELETOR: .tabela-etapas td:last-child - Alvo: última coluna da tabela em tablets */
-  .tabela-etapas td:last-child {
-    white-space: normal;
-    /* Permite quebra de linha normal (já que espaço é limitado) */
+  #canvasLinha,
+  #canvasHeatmap {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  #tabelaDadosSimulados {
+    font-size: 0.7rem;
+  }
+
+  #tabelaDadosSimulados th,
+  #tabelaDadosSimulados td {
+    padding: 6px 4px;
+  }
+
+  #estatisticasSimulacao {
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
   }
 }
 
-/* SELETOR: .badge-bncc - Alvo: etiquetas BNCC (reescrita com melhorias visuais) */
-.badge-bncc {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  /* Gradiente diagonal de azuis escuros (efeito mais moderno) */
-  color: #ecf0f1;
-  /* Texto cinza claro para contraste suave */
-  padding: 6px 12px;
-  /* Espaçamento interno: 6px vertical, 12px horizontal (mais confortável) */
-  border-radius: 24px;
-  /* Bordas bem arredondadas (24px) */
-  font-size: 0.7rem;
-  /* Fonte de 11.2px (compacta mas legível) */
+@media (max-width: 576px) {
+  #tabelaDadosSimulados {
+    font-size: 0.65rem;
+  }
+
+  .simulador-fala {
+    padding: 16px !important;
+  }
+}
+
+/* ===================================================================
+   AULA 8 - PROTÓTIPO COMPLETO INTEGRADO (Estilos Específicos)
+   ===================================================================
+*/
+
+/* Botões do menu integrado */
+.btn-modulo {
+  transition: all 0.2s ease;
+  font-weight: 500;
+  padding: 10px 8px;
+}
+
+.btn-modulo:hover {
+  transform: translateY(-2px);
+  background: var(--grad-grafite);
+  color: var(--branco);
+  border-color: var(--grafite-medio);
+}
+
+.btn-modulo:active {
+  transform: scale(0.96);
+}
+
+/* Botão Modo Automático */
+#btnModoAutomatico {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  border: none;
+  transition: all 0.2s ease;
   font-weight: 600;
-  /* Peso semi-negrito (600) para destaque */
-  display: inline-block;
-  /* Comporta-se como bloco mas mantém fluxo inline */
-  margin: 3px;
-  /* Margem de 3px entre badges múltiplos */
-  letter-spacing: 0.3px;
-  /* Pequeno espaçamento entre letras (melhora legibilidade) */
+  letter-spacing: 1px;
 }
 
-/* SELETOR: #conteudoEquipe .etapa-icon - Alvo: ícones de etapa na seção Equipe */
-#conteudoEquipe .etapa-icon {
-  font-size: 2.5rem;
-  /* Tamanho extra-grande: 40px (2.5rem) para ícones da equipe */
+#btnModoAutomatico:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  box-shadow: 0 4px 20px rgba(46, 204, 113, 0.4);
 }
 
-/* SELETOR: .robo-ascii-animado:hover - Alvo: robô ASCII quando mouse passa por cima */
-.robo-ascii-animado:hover {
-  transform: scale(1.05) rotate(2deg);
-  /* Aumenta 5% E rotaciona 2 graus (efeito divertido e interativo) */
+#btnModoAutomatico:active {
+  transform: scale(0.98);
 }
 
-/* MEDIA QUERY: max-width: 576px - PARA CELULARES */
+/* Área de saída do robô */
+#saidaRobo {
+  background: #0d1117 !important;
+  color: #e6edf3;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  border-radius: 12px;
+}
+
+#saidaRobo .text-success {
+  color: #2ecc71 !important;
+}
+
+#saidaRobo .text-warning {
+  color: #f39c12 !important;
+}
+
+#saidaRobo .text-danger {
+  color: #e74c3c !important;
+}
+
+#saidaRobo .text-info {
+  color: #3498db !important;
+}
+
+/* Inputs do simulador integrado */
+#perguntaIaSimulador,
+#fraseFalaSimulador {
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  transition: all 0.2s ease;
+}
+
+#perguntaIaSimulador:focus,
+#fraseFalaSimulador:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.25);
+  outline: none;
+}
+
+#btnEnviarPerguntaSimulador,
+#btnEnviarFalaSimulador {
+  background: var(--grad-verde);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+#btnEnviarPerguntaSimulador:hover,
+#btnEnviarFalaSimulador:hover {
+  transform: scale(1.02);
+  background: var(--grad-verde-hover);
+}
+
+/* Frases prontas IA */
+.btn-frase-ia-sim {
+  transition: all 0.2s ease;
+  border-radius: 40px;
+}
+
+.btn-frase-ia-sim:hover {
+  transform: translateY(-2px);
+  background: var(--grad-azul);
+  border-color: #2980b9;
+  color: var(--branco);
+}
+
+.btn-frase-ia-sim:active {
+  transform: scale(0.95);
+}
+
+/* Animações para o simulador integrado */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.simulador-integrado-mensagem {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Scrollbar personalizada para área de saída */
+#saidaRobo::-webkit-scrollbar {
+  width: 6px;
+}
+
+#saidaRobo::-webkit-scrollbar-track {
+  background: #1a1a2e;
+  border-radius: 10px;
+}
+
+#saidaRobo::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 10px;
+}
+
+#saidaRobo::-webkit-scrollbar-thumb:hover {
+  background: #f39c12;
+}
+
+/* Responsividade Aula 8 */
+@media (max-width: 768px) {
+  .btn-modulo {
+    font-size: 0.7rem;
+    padding: 8px 4px;
+  }
+
+  .btn-modulo i {
+    font-size: 0.9rem;
+  }
+
+  #btnModoAutomatico {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  #saidaRobo {
+    font-size: 0.75rem;
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-modulo {
+    font-size: 0.6rem;
+    padding: 6px 2px;
+  }
+
+  .btn-modulo i {
+    font-size: 0.8rem;
+  }
+
+  #btnModoAutomatico {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+/* ===================================================================
+   AULA 9 - ROTEIRO PARA MANIFESTO E VÍDEO (Estilos Específicos)
+   ===================================================================
+*/
+
+/* Manifesto Cards */
+.manifesto-card {
+  transition: all var(--transition-base);
+  cursor: pointer;
+  background: var(--branco);
+}
+
+.manifesto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, #fff9e6, #fff4d6);
+}
+
+.manifesto-container {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 24px;
+}
+
+/* Botões de download da Aula 9 */
+#btnDownloadRoteiro,
+#btnDownloadManifesto {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  border: none;
+  color: var(--branco);
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  padding: 10px;
+  transition: all var(--transition-base);
+  font-size: var(--font-size-sm);
+}
+
+#btnDownloadRoteiro:hover,
+#btnDownloadManifesto:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: #fff8e7;
+}
+
+#btnDownloadRoteiro i,
+#btnDownloadManifesto i {
+  margin-right: 8px;
+}
+
+/* Tabela de autoavaliação */
+.autoavalia-nota {
+  width: 80px;
+  text-align: center;
+}
+
+#resultadoAutoavaliacao {
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 12px;
+  background: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  display: none;
+}
+
+#resultadoAutoavaliacao.show {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Gerador de roteiro personalizado */
+#roteiroGeradoContainer {
+  animation: fadeInUp 0.4s ease;
+}
+
+#roteiroGerado {
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+#btnCopiarRoteiro {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: var(--branco);
+  transition: all var(--transition-base);
+}
+
+#btnCopiarRoteiro:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Responsividade Aula 9 */
+@media (max-width: 768px) {
+  .manifesto-card {
+    margin-bottom: 16px;
+  }
+
+  .manifesto-card .lead {
+    font-size: 1rem;
+  }
+
+  .manifesto-card .display-1 {
+    font-size: 2rem;
+  }
+
+  #btnDownloadRoteiro,
+  #btnDownloadManifesto {
+    font-size: 0.7rem;
+    padding: 8px;
+  }
+
+  .autoavalia-nota {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .manifesto-container {
+    padding: 16px !important;
+  }
+
+  .manifesto-card .lead {
+    font-size: 0.85rem;
+  }
+
+  #roteiroGerado {
+    font-size: 0.7rem;
+    padding: 12px;
+  }
+}
+
+/* Cores para tabela de etapas da Aula 9 */
+.tabela-etapas td:first-child {
+  font-weight: 600;
+  background-color: #f8f9fa;
+}
+
+/* Badge para links do Colab */
+.badge-colab {
+  background: linear-gradient(135deg, #f9ab00, #f29900);
+  color: #1a202c;
+  font-weight: 600;
+}
+
+/* ===================================================================
+   AULA 10 - VERSÃO OFFLINE COMPLETA (Estilos Específicos)
+   ===================================================================
+*/
+
+/* Status Offline */
+#statusOffline {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  border: none;
+  border-left: 4px solid #28a745;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+#statusOffline i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+/* Simulador Markov */
+#perguntaMarkov {
+  border-radius: 12px;
+  border: 1px solid #cbd5e0;
+  transition: all 0.2s ease;
+}
+
+#perguntaMarkov:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.25);
+  outline: none;
+}
+
+#btnGerarMarkov {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+}
+
+#btnGerarMarkov:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #5a6578, #3d475c);
+}
+
+#respostaMarkov {
+  background: linear-gradient(135deg, #e8f4f8, #d1ecf1);
+  border: none;
+  border-left: 4px solid #17a2b8;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Simulador Vosk */
+#btnSimularVoz {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+#btnSimularVoz:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+}
+
+#resultadoVosk {
+  background: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Simulador PyInstaller */
+#btnSimularPyInstaller {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+#btnSimularPyInstaller:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+}
+
+#resultadoPyInstaller {
+  background: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Script de Teste */
+#btnTestarTudo {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+#btnTestarTudo:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #c0392b, #a93226);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+#resultadoTeste {
+  background: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Tutorial PDF */
+#btnGerarTutorialSim {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  border: none;
+  transition: all 0.2s ease;
+  border-radius: 12px;
+  padding: 10px 24px;
+}
+
+#btnGerarTutorialSim:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #2c81ba, #2471a3);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Resultados com animação */
+#resultadoVosk .text-success,
+#resultadoPyInstaller .text-success,
+#resultadoTeste .text-success {
+  font-weight: 600;
+}
+
+#resultadoVosk .text-warning,
+#resultadoPyInstaller .text-warning,
+#resultadoTeste .text-warning {
+  font-weight: 600;
+}
+
+/* Animação de pulso para os resultados */
+@keyframes resultadoPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultado-atualizado {
+  animation: resultadoPulse 0.3s ease;
+}
+
+/* Responsividade Aula 10 */
+@media (max-width: 768px) {
+
+  #btnGerarMarkov,
+  #btnSimularVoz,
+  #btnSimularPyInstaller,
+  #btnTestarTudo,
+  #btnGerarTutorialSim {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  #perguntaMarkov {
+    font-size: 0.8rem;
+  }
+
+  #respostaMarkov,
+  #resultadoVosk,
+  #resultadoPyInstaller,
+  #resultadoTeste {
+    font-size: 0.8rem;
+  }
+}
+
 @media (max-width: 576px) {
 
-  /* SELETOR: .badge-bncc - Alvo: etiquetas BNCC em celulares */
-  .badge-bncc {
-    font-size: 0.6rem;
-    /* Fonte ainda menor: 9.6px (economiza espaço em telas pequenas) */
-    padding: 4px 8px;
-    /* Padding reduzido: 4px vertical, 8px horizontal */
+  #btnGerarMarkov,
+  #btnSimularVoz,
+  #btnSimularPyInstaller,
+  #btnTestarTudo,
+  #btnGerarTutorialSim {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  #respostaMarkov,
+  #resultadoVosk,
+  #resultadoPyInstaller,
+  #resultadoTeste {
+    font-size: 0.7rem;
+    padding: 10px !important;
   }
 }
 
-/* SELETOR: .sidebar-lateral .nav-link.active-lateral - Alvo: link ATIVO na barra lateral */
-.sidebar-lateral .nav-link.active-lateral {
-  background: linear-gradient(135deg, #5a6578 0%, #2d3748 100%);
-  /* Gradiente diagonal de cinzas (mais claro -> mais escuro) */
+/* ===================================================================
+   MATERIAL COMPLEMENTAR (AULA 11) - Estilos Adicionais
+   ===================================================================
+*/
+
+/* Cards de download na área de downloads */
+#conteudoDownloads .etapa-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#conteudoDownloads .etapa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#conteudoDownloads .btn-outline-primary {
+  border-radius: 40px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+#conteudoDownloads .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  border-color: transparent;
+  transform: scale(1.02);
+}
+
+/* Área do professor - melhorias visuais */
+#conteudoProfessor .bg-grafite-claro {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
   color: white;
-  /* Texto branco para contraste máximo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  /* Sombra pronunciada: deslocamento Y 4px, blur 12px, preto 30% opaco */
-  border-left: 3px solid #f39c12;
-  /* Borda lateral esquerda laranja de 3px (destaque de posição) */
+  border-radius: 0 12px 12px 0;
 }
 
-/* SELETOR: #conteudoJornada .card - Alvo: cards da seção Jornada */
-#conteudoJornada .card {
-  transition: all 0.25s ease;
-  /* Transição suave de 0.25 segundos para todas as propriedades */
+#conteudoProfessor .icone-prof {
+  font-size: 4rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* SELETOR: #conteudoJornada .card:hover - Alvo: cards da Jornada com mouse sobre eles */
-#conteudoJornada .card:hover {
-  transform: translateY(-4px);
-  /* Move o card 4px para CIMA (efeito de elevação) */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-  /* Sombra maior e mais suave: deslocamento Y 12px, blur 24px, preto 12% opaco */
-}
-
-/* SELETOR: .tabela-etapas th - Alvo: cabeçalho da tabela (reescrita com gradiente mais definido) */
-.tabela-etapas th {
-  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
-  /* Gradiente diagonal grafite (cinza escuro -> mais escuro) */
+#btnExportarDicas {
+  background: linear-gradient(135deg, #e67e22, #d35400);
+  border: none;
   color: white;
-  /* Texto branco */
+  border-radius: 40px;
+  padding: 8px 20px;
+  transition: all 0.2s ease;
+}
+
+#btnExportarDicas:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.4);
+}
+
+/* Estatísticas e badges */
+.badge-bncc {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  padding: 6px 12px;
+  border-radius: 40px;
+  font-size: 0.75rem;
   font-weight: 600;
-  /* Peso semi-negrito */
+  display: inline-block;
+  margin: 3px;
+}
+
+/* Cards de avaliação */
+#conteudoAvaliacao .bg-inclusao {
+  background: linear-gradient(135deg, #fef9e7, #fef5e7);
+  border-left: 6px solid #f39c12;
+}
+
+/* Responsividade Material Complementar */
+@media (max-width: 768px) {
+  #conteudoDownloads .etapa-card {
+    margin-bottom: 16px;
+  }
+
+  #conteudoDownloads .etapa-icon {
+    font-size: 2rem;
+  }
+
+  #conteudoProfessor .bg-grafite-claro {
+    border-radius: 0 0 12px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  #conteudoDownloads .etapa-card h5 {
+    font-size: 1rem;
+  }
+
+  #conteudoDownloads .etapa-card .small {
+    font-size: 0.7rem;
+  }
+
+  #conteudoDownloads .btn-outline-primary {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
 }

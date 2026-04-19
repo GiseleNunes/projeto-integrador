@@ -1,0 +1,428 @@
+/* ===================================================================
+   PAGES.CSS - Robô Fofoqueiro
+   Estilos específicos para páginas: Index, Aula 01, Aula 02, Aula 03
+   ===================================================================
+*/
+
+/* ==================== PÁGINA INDEX - SEÇÃO JORNADA ==================== */
+#conteudoJornada .card .etapa-icon {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--spacing-sm);
+}
+
+#conteudoJornada .card {
+  transition: all 0.25s ease;
+}
+
+#conteudoJornada .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================== PÁGINA INDEX - SEÇÃO EQUIPE ==================== */
+#conteudoEquipe .etapa-icon {
+  font-size: 2.5rem;
+}
+
+/* ==================== PÁGINA INDEX - SEÇÃO APRESENTAÇÃO ==================== */
+#conteudoApresentacao .card.bg-inclusao {
+  background: var(--alerta-fundo);
+  border-left: 6px solid var(--alerta-borda);
+}
+
+/* ==================== AULA 01 - SETUP ==================== */
+/* Estilos específicos para setup do Google Colab */
+#conteudoSetup .card.bg-degrade-header {
+  background: var(--grad-grafite);
+}
+
+/* ==================== AULA 02 - SENSOR DE SOM ==================== */
+/* Simulador de Decibéis */
+.simulador-volume {
+  background: #1a1a2e;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-lg);
+  margin: 15px 0;
+}
+
+.simulador-volume .btn-vol {
+  transition: all var(--transition-fast);
+}
+
+.simulador-volume .btn-vol:active {
+  transform: scale(0.95);
+}
+
+/* Simulador dB */
+.simulador-db {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--branco);
+}
+
+.db-medidor {
+  width: 100%;
+  height: 30px;
+  background: #2c3e50;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.db-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #27ae60, #f39c12, #e74c3c);
+  transition: width var(--transition-slow);
+  border-radius: 15px;
+}
+
+/* Alerta Sonoro */
+@keyframes alertaPisca {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+.alerta-sonoro {
+  animation: alertaPisca 0.5s infinite;
+  background: #e74c3c !important;
+}
+
+/* Tabela de Resultados da Coleta */
+#tabelaResultados .table {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+#tabelaResultados .table-danger {
+  background-color: #f8d7da !important;
+}
+
+/* ==================== AULA 03 - RECONHECIMENTO DE FALA ==================== */
+/* Simulador de Fala */
+.simulador-fala {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: var(--border-radius-md);
+  border-left: 4px solid #2980b9;
+}
+
+.simulador-fala .btn-primary {
+  background: var(--grad-azul);
+  border: none;
+  transition: all var(--transition-base);
+}
+
+.simulador-fala .btn-primary:hover {
+  transform: scale(1.02);
+  background: linear-gradient(135deg, #2c81ba, #2471a3);
+}
+
+.simulador-fala .btn-outline-secondary {
+  border-color: var(--cinza-medio);
+  color: var(--grafite-claro);
+  transition: all var(--transition-base);
+}
+
+.simulador-fala .btn-outline-secondary:hover {
+  background: var(--grad-azul);
+  border-color: #2980b9;
+  color: var(--branco);
+}
+
+.simulador-fala .btn-frase-pronta {
+  transition: all var(--transition-base);
+}
+
+.simulador-fala .btn-frase-pronta:active {
+  transform: scale(0.95);
+}
+
+/* Botão Microfone com Animação */
+@keyframes pulseMic {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.btn-primary i.bi-mic-fill {
+  animation: pulseMic 1.5s infinite;
+}
+
+/* Área de Resposta do Robô */
+#respostaRobo {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  border-left: 4px solid #28a745;
+  font-size: var(--font-size-base);
+  transition: transform var(--transition-base);
+}
+
+/* Área de Libras Textual */
+#librasTextual {
+  background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+  border-left: 4px solid #17a2b8;
+  font-size: 1.2rem;
+  font-family: var(--font-family-mono);
+}
+
+/* Dicionário de Gírias */
+#conteudoConceitos .alert-secondary {
+  background: #e9ecef;
+  border: none;
+  transition: all var(--transition-base);
+}
+
+#conteudoConceitos .alert-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ==================== AULA 04 - VISÃO COMPUTACIONAL ==================== */
+/* Simulador de QR Code */
+#qrCodeContainer {
+  transition: all var(--transition-slow);
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+  border-radius: var(--border-radius-lg) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+#qrCodeContainer img {
+  max-width: 250px;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-qr-pronto {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: var(--branco);
+  border: none;
+  transition: all var(--transition-base);
+  font-size: 0.8rem;
+}
+
+.btn-qr-pronto:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  color: var(--branco);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+#btnGerarQRCode {
+  background: var(--grad-verde);
+  border: none;
+  transition: all var(--transition-base);
+}
+
+#btnGerarQRCode:hover {
+  transform: scale(1.02);
+  background: var(--grad-verde-hover);
+}
+
+#btnBaixarQRCode {
+  transition: all var(--transition-base);
+}
+
+#btnBaixarQRCode:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+#btnBaixarQRCode:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Simulador de Visão Computacional */
+.simulador-visao {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  color: var(--branco);
+}
+
+.webcam-placeholder {
+  background: #0d1117;
+  border-radius: var(--border-radius-md);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--grafite-claro);
+}
+
+/* Animação de Detecção de Mão */
+@keyframes maoDetectada {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.mao-detetada {
+  animation: maoDetectada 0.5s ease;
+}
+
+/* Tabela de Dedos */
+.tabela-dedos {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+.tabela-dedos th,
+.tabela-dedos td {
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela-dedos th {
+  background: var(--grad-grafite);
+  color: var(--branco);
+}
+
+/* Webcam Pulse */
+@keyframes webcamPulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+  }
+}
+
+.webcam-ativa {
+  animation: webcamPulse 1.5s infinite;
+  border-radius: 50%;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #2ecc71;
+}
+
+/* Hand Landmarks */
+.hand-landmark {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  margin: 0 2px;
+}
+
+.hand-connection {
+  display: inline-block;
+  width: 15px;
+  height: 2px;
+  background-color: #f39c12;
+  margin: 0 1px;
+}
+
+/* Log de Fofocas QR */
+#logFofocasQR {
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: var(--font-size-sm);
+}
+
+/* ==================== AULA 05 - IA GENERATIVA ==================== */
+/* Chat IA Container */
+#chatIaContainer {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+  background: #f8f9fa;
+  border-radius: var(--border-radius-md);
+}
+
+#chatIaContainer .bg-primary {
+  background: var(--grad-azul) !important;
+}
+
+#chatIaContainer .bg-secondary {
+  background: var(--grad-grafite) !important;
+}
+
+.btn-frase-ia {
+  transition: all var(--transition-base);
+}
+
+.btn-frase-ia:active {
+  transform: scale(0.95);
+}
+
+/* ==================== RESPONSIVIDADE PÁGINAS ==================== */
+@media (max-width: 768px) {
+  .simulador-fala .btn-frase-pronta {
+    font-size: 0.7rem;
+  }
+
+  #qrCodeContainer img {
+    max-width: 180px;
+  }
+
+  .btn-qr-pronto {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #qrCodeContainer img {
+    max-width: 150px;
+  }
+
+  .simulador-fala .btn {
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .input-group .btn {
+    width: 100%;
+  }
+
+  #respostaRobo,
+  #librasTextual {
+    font-size: var(--font-size-sm);
+  }
+}

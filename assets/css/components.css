@@ -1,0 +1,651 @@
+/* ===================================================================
+   COMPONENTS.CSS - Robô Fofoqueiro
+   Componentes reutilizáveis: Cards, Botões, Menus, Checkbox, Alertas
+   ===================================================================
+*/
+
+/* ==================== MENU SUPERIOR (PROJETO PRINCIPAL) ==================== */
+.menu-projeto-principal {
+  background: var(--grad-grafite);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 3px solid #f39c12;
+}
+
+.menu-projeto-principal .navbar-brand {
+  color: var(--branco) !important;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.3px;
+}
+
+.menu-projeto-principal .navbar-brand::before,
+.menu-projeto-principal .navbar-brand::after {
+  display: none;
+}
+
+.menu-projeto-principal .container-fluid {
+  flex-wrap: wrap;
+}
+
+.menu-projeto-principal .navbar-collapse {
+  flex-grow: 1;
+}
+
+.menu-projeto-principal .navbar-nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.menu-projeto-principal .nav-item {
+  margin: 0;
+}
+
+.menu-projeto-principal .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  transition: all var(--transition-base);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.menu-projeto-principal .nav-link i {
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+
+.menu-projeto-principal .nav-link:hover,
+.menu-projeto-principal .nav-link.active-projeto {
+  background: rgba(243, 156, 18, 0.2);
+  color: #ffdd99 !important;
+  transform: translateY(-2px);
+}
+
+/* Responsividade para o menu em duas linhas */
+@media (max-width: 1200px) {
+  .menu-projeto-principal .nav-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-projeto-principal .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 0.5rem;
+    gap: 0.2rem;
+  }
+
+  .menu-projeto-principal .navbar-collapse {
+    width: 100%;
+  }
+
+  .menu-projeto-principal .nav-link {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.8rem;
+  }
+
+  .brand-text-principal {
+    font-size: 1rem;
+  }
+
+  .sub-brand-principal {
+    font-size: 0.6rem;
+  }
+
+  .robo-icon-principal {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-projeto-principal .container-fluid {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .menu-projeto-principal .navbar-brand {
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-projeto-principal .navbar-nav {
+    gap: 0.15rem;
+  }
+
+  .menu-projeto-principal .nav-link {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.75rem;
+    margin-right: 3px;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-projeto-principal .nav-link {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.7rem;
+  }
+
+  .brand-text-principal {
+    font-size: 0.9rem;
+  }
+
+  .robo-icon-principal {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==================== MARCA/LOGO ==================== */
+.brand-text-principal {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  display: inline-block;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: var(--branco) !important;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 800;
+}
+
+.brand-text-principal span {
+  color: #ffffff !important;
+  background: none !important;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.sub-brand-principal {
+  font-size: 0.7rem;
+  opacity: 0.95;
+  font-weight: 500;
+  color: #ffdd99 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.robo-icon-principal {
+  font-size: 2.2rem;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  color: #f39c12;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.navbar-brand>div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== MENU LATERAL (SIDEBAR) ==================== */
+.sidebar-lateral {
+  background: linear-gradient(180deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
+  min-height: calc(100vh - 70px);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-sticky {
+  position: sticky;
+  top: 80px;
+  padding: var(--spacing-lg) 0;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+}
+
+.sidebar-header {
+  color: #f39c12;
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0 var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-header i {
+  margin-right: var(--spacing-sm);
+  font-size: var(--font-size-base);
+}
+
+.sidebar-lateral .nav {
+  flex: 1;
+}
+
+.sidebar-lateral .nav-link {
+  color: #e2e8f0;
+  padding: 0.8rem var(--spacing-lg);
+  margin: 0.2rem 0.8rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-lateral .nav-link i {
+  font-size: 1.2rem;
+  width: 28px;
+}
+
+.sidebar-lateral .nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--branco);
+  transform: translateX(4px);
+}
+
+.sidebar-lateral .nav-link.active-lateral {
+  background: var(--grad-grafite-hover);
+  color: var(--branco);
+  box-shadow: var(--shadow-md);
+  border-left: 3px solid #f39c12;
+}
+
+.sidebar-footer {
+  padding: var(--spacing-md) 0.8rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==================== BOTÃO DOWNLOAD LATERAL ==================== */
+.btn-download-lateral {
+  background: var(--grad-verde);
+  border: none;
+  color: var(--branco);
+  font-weight: 600;
+  border-radius: var(--border-radius-pill);
+  padding: 10px;
+  transition: all var(--transition-base);
+  font-size: var(--font-size-sm);
+}
+
+.btn-download-lateral:hover {
+  transform: scale(1.02);
+  background: var(--grad-verde-hover);
+  color: #fff8e7;
+}
+
+/* ==================== ÁREA DE CONTEÚDO COM ABAS ==================== */
+.lateral-aba-conteudo {
+  display: none;
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+.active-lateral-aba {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== CARDS DE ETAPA ==================== */
+.etapa-card {
+  border-radius: 28px;
+  transition: all 0.25s;
+  background: var(--branco);
+  border-bottom: 4px solid var(--grafite-claro);
+}
+
+.etapa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.etapa-icon {
+  font-size: 2.8rem;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ==================== CARD BODY COM EFEITO FUMÊ ==================== */
+.card-body {
+  background-image: radial-gradient(circle at 25% 40%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 16px 16px;
+  position: relative;
+}
+
+.card-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--fume-overlay);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-body>* {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.lateral-aba-conteudo .card-body {
+  background-image: radial-gradient(circle at 25% 40%, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* ==================== BLOCO DE CÓDIGO ==================== */
+#conteudoCodigo .card-body,
+.lateral-aba-conteudo#conteudoCodigo,
+#conteudoCodigo {
+  background-image: repeating-linear-gradient(45deg,
+      rgba(0, 0, 0, 0.02) 0px,
+      rgba(0, 0, 0, 0.02) 2px,
+      transparent 2px,
+      transparent 8px);
+  position: relative;
+}
+
+#conteudoCodigo .card-body::before,
+.lateral-aba-conteudo#conteudoCodigo::before,
+#conteudoCodigo::before {
+  background: var(--fume-overlay-escuro);
+}
+
+.card-body.bg-preto-code,
+#conteudoCodigo .card-body.p-0 {
+  background-image: repeating-linear-gradient(45deg,
+      rgba(255, 255, 255, 0.02) 0px,
+      rgba(255, 255, 255, 0.02) 2px,
+      transparent 2px,
+      transparent 8px);
+}
+
+.card-body.bg-preto-code::before {
+  background: var(--fume-overlay-forte);
+}
+
+.code-block {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: var(--font-family-mono);
+  padding: var(--spacing-lg);
+  overflow-x: auto;
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.code-block-full {
+  background: #0a0c10;
+  color: #f0f6fc;
+  padding: 1.8rem;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.card-header.bg-grafite {
+  background: var(--grad-grafite);
+  color: var(--branco);
+}
+
+/* ==================== TABELAS ==================== */
+.tabela-etapas {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+.tabela-etapas th,
+.tabela-etapas td {
+  border: 1px solid #dee2e6;
+  padding: var(--spacing-md);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela-etapas th {
+  background: var(--grad-grafite);
+  color: var(--branco);
+  font-weight: 600;
+}
+
+.tabela-etapas tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.tabela-etapas tr:hover {
+  background-color: #e9ecef;
+}
+
+.tabela-etapas td:first-child,
+.tabela-etapas th:first-child {
+  width: 60px;
+  text-align: center;
+}
+
+/* ==================== CHECKLIST PERSONALIZADO ==================== */
+.checklist-personalizado li {
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px dashed #ccc;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+}
+
+.checklist-personalizado li i.bi-check-square-fill {
+  color: #0f5c3f;
+  font-size: 1.5rem;
+}
+
+.checklist-personalizado li i.bi-square {
+  font-size: 1.5rem;
+  color: #adb5bd;
+}
+
+.progress-checklist {
+  height: 10px;
+  border-radius: var(--border-radius-lg);
+  background-color: #dee2e6;
+}
+
+/* ==================== ALERTAS FLUTUANTES ==================== */
+.alert-robot-floating {
+  z-index: var(--z-alert);
+  min-width: 300px;
+}
+
+.alert-robot-floating-bottom {
+  z-index: var(--z-alert);
+  max-width: 350px;
+}
+
+.toast-sucesso-checklist {
+  position: relative;
+  z-index: 100;
+}
+
+/* ==================== CURSOR PISCANTE ==================== */
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.code-block .blink-cursor {
+  animation: blink 1s infinite;
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: #fff;
+  margin-left: 2px;
+}
+
+/* ==================== ANIMAÇÃO ROBÔ ASCII ==================== */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.robo-ascii-animado {
+  font-size: 2.2rem;
+  font-family: var(--font-family-mono);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 10px;
+  animation: float 3s infinite;
+  transition: transform var(--transition-base);
+}
+
+.robo-ascii-animado:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ==================== TOOLTIPS ==================== */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--grafite-escuro);
+  color: var(--branco);
+  padding: 4px 8px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  z-index: var(--z-tooltip);
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+  visibility: visible;
+  bottom: 120%;
+}
+
+/* ==================== RESPONSIVIDADE COMPONENTES ==================== */
+@media (max-width: 768px) {
+  .sidebar-lateral {
+    min-height: auto;
+    position: relative;
+  }
+
+  .sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: var(--spacing-md) 0;
+  }
+
+  .sidebar-lateral .nav-link {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: 0.1rem var(--spacing-sm);
+  }
+
+  .brand-text-principal {
+    font-size: var(--font-size-base);
+  }
+
+  .sub-brand-principal {
+    font-size: 0.6rem;
+  }
+
+  .etapa-card {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .code-block,
+  .code-block-full {
+    font-size: 0.7rem;
+    padding: var(--spacing-md);
+  }
+
+  .sidebar-header {
+    padding: 0 var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+  }
+
+  .tabela-etapas {
+    font-size: 0.8rem;
+  }
+
+  .tabela-etapas th,
+  .tabela-etapas td {
+    padding: var(--spacing-sm);
+  }
+
+  .tabela-etapas td:last-child {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-lateral .nav-link span {
+    font-size: var(--font-size-sm);
+  }
+
+  .sidebar-lateral .nav-link i {
+    font-size: var(--font-size-base);
+    width: 24px;
+  }
+
+  .btn-download-lateral {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-sm);
+  }
+
+  .tabela-etapas {
+    display: block;
+    overflow-x: auto;
+  }
+}

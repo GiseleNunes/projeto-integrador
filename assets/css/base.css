@@ -1,0 +1,461 @@
+/* ===================================================================
+   BASE.CSS - Robô Fofoqueiro
+   Variáveis CSS, Reset, Tipografia e Utilitários Base
+   ===================================================================
+*/
+
+/* ==================== VARIÁVEIS CSS GLOBAIS ==================== */
+:root {
+  /* Cores Primárias - Grafite */
+  --grafite-claro: #4a5568;
+  --grafite-medio: #2d3748;
+  --grafite-escuro: #1a202c;
+  --grafite-texto: #1e2a3e;
+
+  /* Gradientes */
+  --grad-grafite: linear-gradient(135deg, #4a5568 0%, #2d3748 50%, #1a202c 100%);
+  --grad-grafite-hover: linear-gradient(135deg, #5a6578 0%, #3d475c 100%);
+  --grad-verde: linear-gradient(135deg, #136b49, #0a3d2a);
+  --grad-verde-hover: linear-gradient(135deg, #1a8758, #0e5a3b);
+  --grad-laranja: linear-gradient(135deg, #f39c12, #d35400);
+  --grad-azul: linear-gradient(135deg, #3498db, #2980b9);
+  --grad-vermelho: linear-gradient(135deg, #e74c3c, #c0392b);
+
+  /* Cores de Alerta - Ajustadas para melhor contraste */
+  --alerta-fundo: #fef5e7;
+  --alerta-borda: #e67e22;
+  --alerta-texto: #5a3a0e;
+  --sucesso-fundo: #d4edda;
+  --sucesso-borda: #28a745;
+  --info-fundo: #d1ecf1;
+  --info-borda: #17a2b8;
+  --erro-fundo: #f8d7da;
+  --erro-borda: #dc3545;
+
+  /* Tons Neutros */
+  --cinza-claro: #eef2f5;
+  --cinza-medio: #cbd5e0;
+  --cinza-escuro: #4a5568;
+  --branco: #ffffff;
+  --preto: #1a202c;
+
+  /* Overlays */
+  --fume-overlay: rgba(0, 0, 0, 0.04);
+  --fume-overlay-escuro: rgba(0, 0, 0, 0.06);
+  --fume-overlay-forte: rgba(0, 0, 0, 0.15);
+
+  /* Espaçamentos */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Tipografia */
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-mono: 'Courier New', monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Bordas */
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+  --border-radius-xl: 24px;
+  --border-radius-2xl: 32px;
+  --border-radius-pill: 40px;
+
+  /* Sombras - Sistema de Elevação */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 28px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+  /* Transições */
+  --transition-fast: 0.1s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Z-index layers */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 1000;
+  --z-popover: 1100;
+  --z-tooltip: 1200;
+  --z-toast: 1300;
+  --z-alert: 9999;
+}
+
+/* ==================== RESET E CONFIGURAÇÕES GLOBAIS ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-base);
+  background: linear-gradient(145deg, #f0f2f5 0%, #e9ecef 100%);
+  color: var(--grafite-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== TIPOGRAFIA ==================== */
+h1,
+.h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 800;
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+}
+
+/* ==================== LINKS ==================== */
+a:not(.nav-link):not(.btn) {
+  color: var(--grafite-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+a:not(.nav-link):not(.btn):hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+/* ==================== CÓDIGO ==================== */
+code {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-family-mono);
+}
+
+/* ==================== BADGES ==================== */
+.badge-bncc {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  padding: 6px 12px;
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  display: inline-block;
+  margin: 3px;
+  letter-spacing: 0.3px;
+}
+
+.badge.bg-dark {
+  background: var(--grafite-escuro) !important;
+}
+
+.badge.bg-warning {
+  background: var(--grad-laranja) !important;
+  color: var(--branco) !important;
+}
+
+/* ==================== BOTÕES ==================== */
+.btn {
+  transition: all var(--transition-base);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-outline-primary {
+  border-color: var(--grafite-claro);
+  color: var(--grafite-claro);
+}
+
+.btn-outline-primary:hover {
+  background: var(--grad-grafite);
+  border-color: var(--grafite-medio);
+  color: var(--branco);
+}
+
+.btn-outline-success {
+  border-color: #136b49;
+  color: #136b49;
+}
+
+.btn-outline-success:hover {
+  background: #136b49;
+  border-color: #136b49;
+  color: var(--branco);
+}
+
+/* ==================== PROGRESS BARS ==================== */
+.progress {
+  border-radius: var(--border-radius-lg);
+  background-color: #dee2e6;
+}
+
+/* ==================== CARDS ==================== */
+.card {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ==================== SOMBRAS UTILITÁRIAS ==================== */
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl) !important;
+}
+
+/* ==================== SCROLLBAR PERSONALIZADA ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e9ecef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grafite-claro);
+  border-radius: 10px;
+  transition: background var(--transition-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--grafite-medio);
+}
+
+/* ==================== PREFERS-REDUCED-MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .btn:active {
+    transform: none !important;
+  }
+
+  .card:hover {
+    transform: none !important;
+  }
+}
+
+/* ==================== FOCUS VISIBLE (Acessibilidade Teclado) ==================== */
+:focus-visible {
+  outline: 3px solid #f39c12;
+  outline-offset: 2px;
+  border-radius: var(--border-radius-sm);
+}
+
+button:focus-visible,
+a:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid #f39c12;
+  outline-offset: 2px;
+}
+
+/* ==================== UTILITÁRIOS DE COR ==================== */
+.text-success {
+  color: #136b49 !important;
+}
+
+.bg-verde-claro {
+  background: #136b49;
+  color: var(--branco);
+}
+
+.bg-vermelho-alerta {
+  background: var(--grad-vermelho);
+  color: var(--branco);
+}
+
+.bg-grafite-claro {
+  background: linear-gradient(135deg, #eef2f8, #e0e6ed);
+  border-radius: var(--border-radius-lg);
+}
+
+.bg-degrade-verde {
+  background: var(--grad-verde);
+}
+
+.bg-degrade-header {
+  background: var(--grad-grafite);
+  color: var(--branco);
+  border-radius: var(--border-radius-2xl);
+}
+
+.bg-degrade-header .lead,
+.bg-degrade-header h1,
+.bg-degrade-header h2 {
+  color: var(--branco);
+}
+
+.bg-inclusao {
+  background: var(--alerta-fundo);
+  border-left: 6px solid var(--alerta-borda);
+}
+
+.bg-laranja-alerta {
+  background: var(--grad-laranja);
+  color: #fff2e0;
+  border-radius: var(--border-radius-xl);
+}
+
+.bg-laranja-alerta .card-body,
+.bg-laranja-alerta h5 {
+  color: #5a3a0e;
+}
+
+.bg-preto-code {
+  background: #0d1117;
+  position: relative;
+}
+
+.bg-preto-code::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--fume-overlay-forte);
+  pointer-events: none;
+}
+
+.bg-preto-code pre,
+.bg-preto-code code {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* ==================== LAYOUT PRINCIPAL ==================== */
+.main-layout {
+  min-height: calc(100vh - 160px);
+  padding: 0;
+  flex: 1;
+}
+
+.conteudo-principal {
+  background: #f8fafc;
+  min-height: calc(100vh - 70px);
+  padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl) !important;
+}
+
+/* ==================== RODAPÉ ==================== */
+.footer-custom {
+  background: var(--grad-grafite);
+  color: #e2e8f0;
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+  width: 100%;
+  margin-top: auto;
+  border-top: 3px solid #f39c12;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.footer-custom .container-fluid {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-custom p {
+  margin-bottom: var(--spacing-sm);
+  color: #f0f2f5;
+}
+
+.footer-custom small {
+  opacity: 0.8;
+  font-size: var(--font-size-xs);
+  color: var(--cinza-medio);
+}
+
+/* ==================== UTILITÁRIOS ADICIONAIS ==================== */
+.hr-alerta,
+.hr-professor {
+  margin: var(--spacing-md) 0;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.icone-prof {
+  font-size: 4rem;
+}
+
+/* ==================== RESPONSIVIDADE BASE ==================== */
+@media (max-width: 768px) {
+  .conteudo-principal {
+    padding: var(--spacing-md) var(--spacing-md) var(--spacing-lg) var(--spacing-md) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .conteudo-principal {
+    padding: 0.75rem 0.75rem var(--spacing-md) 0.75rem !important;
+  }
+
+  .badge-bncc {
+    font-size: 0.6rem;
+    padding: 4px 8px;
+  }
+}
