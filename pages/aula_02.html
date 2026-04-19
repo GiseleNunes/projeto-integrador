@@ -1,504 +1,505 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
-    <title>Robô Fofoqueiro | Aula 2 - Sensor de Som Irreverente</title>
-    <!-- Bootstrap 5 + Icons + Google Fonts -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- CSS Custom -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
-  </head>
 
-  <body>
-    <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
-    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
-      <div class="container-fluid px-4">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <span class="robo-icon-principal">🤖💬</span>
-          <span class="brand-text-principal"
-            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
-              >Projeto de Acessibilidade</small
-            ></span
-          >
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#menuProjetoPrincipal"
-          aria-controls="menuProjetoPrincipal"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | Aula 2 - Sensor de Som Irreverente</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i>
+              Aula 2 - Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
+              Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
+              Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
+              Protótipo Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
+              Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
             <li class="nav-item">
-              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
-                ><i class="bi bi-house-door-fill"></i> Início</a
-              >
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-ear"></i> Conceitos & Etapas
+              </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                data-projeto-aba="aula1"
-                href="aula_01.html"
-                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
-              >
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link active-projeto"
-                data-projeto-aba="aula2"
-                href="aula_02.html"
-                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
-              >
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"
-                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-projeto-aba="aula4" href="#"
-                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-projeto-aba="sobre" href="#"
-                ><i class="bi bi-info-circle"></i> Sobre</a
-              >
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
             </li>
           </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+      </aside>
 
-    <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
-    <div class="container-fluid main-layout">
-      <div class="row">
-        <!-- MENU LATERAL (abas internas da aula atual) -->
-        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
-          <div class="sidebar-sticky">
-            <div class="sidebar-header">
-              <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
-            </div>
-            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
-              <li class="nav-item">
-                <a
-                  href="#"
-                  class="nav-link lateral-link active-lateral"
-                  data-lateral-aba="conceitos"
-                >
-                  <i class="bi bi-ear"></i> Conceitos & Etapas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  href="#"
-                  class="nav-link lateral-link"
-                  data-lateral-aba="codigo"
-                >
-                  <i class="bi bi-code-square"></i> Código Python
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  href="#"
-                  class="nav-link lateral-link"
-                  data-lateral-aba="checklist"
-                >
-                  <i class="bi bi-clipboard-check"></i> Checklist
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  href="#"
-                  class="nav-link lateral-link"
-                  data-lateral-aba="professor"
-                >
-                  <i class="bi bi-mortarboard"></i> Área do Profe
-                </a>
-              </li>
-            </ul>
-            <div class="sidebar-footer">
-              <button
-                id="btnDownloadPyLateral"
-                class="btn btn-download-lateral w-100"
-              >
-                <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
-              </button>
-            </div>
-          </div>
-        </aside>
-
-        <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
-          <!-- Aba 1: Conceitos e Etapas da Aula -->
-          <div
-            id="conteudoConceitos"
-            class="lateral-aba-conteudo active-lateral-aba"
-          >
-            <!-- Cabeçalho irreverente -->
-            <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
-              <div class="card-body p-4 p-md-5">
-                <div class="row align-items-center">
-                  <div class="col-md-9">
-                    <span class="badge bg-warning text-dark mb-2"
-                      ><i class="bi bi-mic-fill"></i> VIXI, BORA MEDIR O
-                      BARULHO!</span
-                    >
-                    <h1 class="display-5 fw-bold">
-                      🎤 Medindo o barulho da galera
-                    </h1>
-                    <p class="lead mt-3">
-                      "O primeiro olho do robô" — Desenvolva um programa que
-                      captura áudio do microfone, calcula intensidade sonora
-                      simulada e gera alertas personalizados com memes
-                      paranaenses.
-                    </p>
-                    <div class="mt-3 d-flex flex-wrap gap-3">
-                      <div>
-                        <i class="bi bi-clock-history"></i> Duração: 100 min (2
-                        aulas)
-                      </div>
-                      <div>
-                        <i class="bi bi-mic"></i> Google Colab + Chromebook +
-                        Microfone
-                      </div>
-                      <div>
-                        <i class="bi bi-emoji-laughing"></i> Memes & Alertas
-                        irreverentes
-                      </div>
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos e Etapas da Aula -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <!-- Cabeçalho irreverente -->
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-mic-fill"></i> VIXI, BORA MEDIR O
+                    BARULHO!</span>
+                  <h1 class="display-5 fw-bold">
+                    🎤 Medindo o barulho da galera
+                  </h1>
+                  <p class="lead mt-3">
+                    "O primeiro olho do robô" — Desenvolva um programa que
+                    captura áudio do microfone, calcula intensidade sonora
+                    simulada e gera alertas personalizados com memes
+                    paranaenses.
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                      aulas)
                     </div>
-                  </div>
-                  <div class="col-md-3 text-center">
-                    <div class="robo-ascii-animado">
-                      ╭( ･ㅂ･)و ̑̑ 🔊<br />🎤📊🤣
+                    <div>
+                      <i class="bi bi-mic"></i> Google Colab + Chromebook +
+                      Microfone
+                    </div>
+                    <div>
+                      <i class="bi bi-emoji-laughing"></i> Memes & Alertas
+                      irreverentes
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- BNCC e Competências -->
-            <div class="row g-4 mb-4">
-              <div class="col-md-6">
-                <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                    <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
-                    <hr />
-                    <span class="badge-bncc">EM13CNT104</span> - Avaliar limites
-                    e potencialidades das tecnologias de captura de áudio<br />
-                    <span class="badge-bncc mt-2">EM13MAT503</span> -
-                    Interpretar e representar dados sonoros em gráficos
-                    simples<br />
-                    <span class="badge-bncc mt-2">EM13LGG702</span> - Utilizar
-                    diferentes linguagens para produção de sentido (memes como
-                    linguagem)
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                    <h5><i class="bi bi-star"></i> Competências Gerais</h5>
-                    <hr />
-                    <span class="badge-bncc">Competência 2</span> - Exercitar
-                    curiosidade intelectual<br />
-                    <span class="badge-bncc mt-2">Competência 7</span> -
-                    Argumentar com base em dados
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- ETAPAS DA AULA (tabela) -->
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-header bg-grafite text-white">
-                <h5 class="mb-0">
-                  <i class="bi bi-calendar-event"></i> Etapas da Aula (100
-                  minutos)
-                </h5>
-              </div>
-              <div class="card-body p-0">
-                <table class="tabela-etapas">
-                  <thead>
-                    <tr>
-                      <th>Etapa</th>
-                      <th>Tempo</th>
-                      <th>Atividade</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>Abertura</strong></td>
-                      <td>10 min</td>
-                      <td>
-                        Desafio: "Quanto barulho tem na nossa sala?" estimativa
-                        coletiva.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Conceituação</strong></td>
-                      <td>15 min</td>
-                      <td>
-                        Explicar decibéis (dB) e como o computador "escuta"
-                        (PCM, amostragem).
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Codificação</strong></td>
-                      <td>40 min</td>
-                      <td>
-                        Implementar o código de captura de áudio e decisões com
-                        memes (em duplas).
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Teste prático</strong></td>
-                      <td>20 min</td>
-                      <td>
-                        Criar diferentes níveis de barulho (sussurro, conversa,
-                        grito, palmas). Registrar no CSV.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><strong>Fechamento</strong></td>
-                      <td>15 min</td>
-                      <td>
-                        Gerar gráfico dos últimos 10 registros. Debater: "O robô
-                        reagiu certo?"
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            <!-- Simulador interativo de decibéis -->
-            <div class="card border-0 shadow-lg mb-4">
-              <div
-                class="card-header bg-grafite text-white d-flex justify-content-between align-items-center"
-              >
-                <span
-                  ><i class="bi bi-activity"></i> Simulador do Robô
-                  Fofoqueiro</span
-                >
-                <span class="badge bg-warning text-dark"
-                  >🤣 Clique e teste os memes!</span
-                >
-              </div>
-              <div class="card-body simulador-volume">
-                <div class="row align-items-center">
-                  <div class="col-md-6">
-                    <div class="simulador-db">
-                      <h4 class="mb-3">🎤 Nível de som simulado</h4>
-                      <div class="db-medidor">
-                        <div id="barraDb" class="db-bar"></div>
-                      </div>
-                      <h2 class="mt-3"><span id="dbValor">0.0</span> dB</h2>
-                      <div id="alertaBox" class="alert alert-danger mt-3">
-                        <i class="bi bi-exclamation-triangle-fill"></i> 🚨
-                        ALERTA! PASSOU DOS 75 dB! TÁ MUITO ALTO!
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="ps-3">
-                      <p><strong>📢 Mensagem do Robô:</strong></p>
-                      <div id="mensagemMeme" class="alert alert-info">
-                        🤫 Clique nos botões para testar...
-                      </div>
-                      <div class="d-flex flex-wrap gap-2">
-                        <button
-                          id="btnSussurro"
-                          class="btn btn-outline-primary btn-vol"
-                        >
-                          🤫 Sussurro (25 dB)
-                        </button>
-                        <button
-                          id="btnConversa"
-                          class="btn btn-outline-primary btn-vol"
-                        >
-                          🗣️ Conversa (55 dB)
-                        </button>
-                        <button
-                          id="btnPalmas"
-                          class="btn btn-outline-primary btn-vol"
-                        >
-                          👏 Palmas (85 dB)
-                        </button>
-                        <button
-                          id="btnGrito"
-                          class="btn btn-outline-primary btn-vol"
-                        >
-                          📢 Grito (95 dB)
-                        </button>
-                        <button
-                          id="simularSom"
-                          class="btn btn-warning btn-vol mt-2 w-100"
-                        >
-                          🎲 Simular som aleatório
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Materiais e Adaptações -->
-            <div class="row g-4">
-              <div class="col-md-6">
-                <div class="card border-0 shadow-sm h-100">
-                  <div class="card-body">
-                    <h5><i class="bi bi-box"></i> Materiais</h5>
-                    <hr />
-                    <ul>
-                      <li>Notebook Colab da aula anterior</li>
-                      <li>Microfones (embutidos no Chromebook ou headsets)</li>
-                      <li>Caixa de som (para gerar barulho controlado)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card border-0 shadow-sm h-100 bg-inclusao">
-                  <div class="card-body">
-                    <h5>
-                      <i class="bi bi-universal-access"></i> Adaptações para
-                      inclusão
-                    </h5>
-                    <hr />
-                    <ul>
-                      <li>
-                        Alunos com deficiência auditiva podem usar o recurso de
-                        "vibração do Chromebook" ou focar na parte visual do
-                        gráfico
-                      </li>
-                      <li>
-                        Para alunos com TDAH: sessões curtas de codificação com
-                        pausas
-                      </li>
-                    </ul>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    ╭( ･ㅂ･)و ̑̑ 🔊<br />🎤📊🤣
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Aba 2: Código Python completo da Aula 2 -->
-          <div id="conteudoCodigo" class="lateral-aba-conteudo">
-            <div class="card border-0 shadow-lg">
-              <div
-                class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap"
-              >
-                <span
-                  ><i class="bi bi-filetype-py"></i>
-                  robo_fofoqueiro_sensor_som.py — Código completo da aula
-                  2</span
-                >
-                <span class="badge bg-verde-claro">download disponível</span>
+          <!-- BNCC e Competências -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                  <hr />
+                  <span class="badge-bncc">EM13CNT104</span> - Avaliar limites
+                  e potencialidades das tecnologias de captura de áudio<br />
+                  <span class="badge-bncc mt-2">EM13MAT503</span> -
+                  Interpretar e representar dados sonoros em gráficos
+                  simples<br />
+                  <span class="badge-bncc mt-2">EM13LGG702</span> - Utilizar
+                  diferentes linguagens para produção de sentido (memes como
+                  linguagem)
+                </div>
               </div>
-              <div class="card-body p-0">
-                <pre
-                  class="code-block-full m-0"
-                ><code id="codigoPythonCompleto"># -*- coding: utf-8 -*-
-# ============================================================
-# ROBÔ FOFOQUEIRO - AULA 2: SENSOR DE SOM IRREVERENTE
-# "Medindo o barulho da galera: o primeiro olho do robô"
-# ============================================================
-# Alunos: [Seu nome aqui]
-# Tutora: Gisele Nunes
-# Data: 2026
-# ============================================================
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                  <hr />
+                  <span class="badge-bncc">Competência 2</span> - Exercitar
+                  curiosidade intelectual<br />
+                  <span class="badge-bncc mt-2">Competência 7</span> -
+                  Argumentar com base em dados
+                </div>
+              </div>
+            </div>
+          </div>
 
-# ===== BIBLIOTECAS NECESSÁRIAS =====
+          <!-- ETAPAS DA AULA (tabela) -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-calendar-event"></i> Etapas da Aula (100
+                minutos)
+              </h5>
+            </div>
+            <div class="card-body p-0">
+              <table class="tabela-etapas">
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>Tempo</th>
+                    <th>Atividade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Abertura</strong></td>
+                    <td>10 min</td>
+                    <td>
+                      Desafio: "Quanto barulho tem na nossa sala?" estimativa
+                      coletiva.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Conceituação</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Explicar decibéis (dB) e como o computador "escuta"
+                      (PCM, amostragem).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Codificação</strong></td>
+                    <td>40 min</td>
+                    <td>
+                      Implementar o código de captura de áudio e decisões com
+                      memes (em duplas).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Teste prático</strong></td>
+                    <td>20 min</td>
+                    <td>
+                      Criar diferentes níveis de barulho (sussurro, conversa,
+                      grito, palmas). Registrar no CSV.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fechamento</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Gerar gráfico dos últimos 10 registros. Debater: "O robô
+                      reagiu certo?"
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Simulador interativo de decibéis -->
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between align-items-center">
+              <span><i class="bi bi-activity"></i> Simulador do Robô
+                Fofoqueiro</span>
+              <span class="badge bg-warning text-dark">🤣 Clique e teste os memes!</span>
+            </div>
+            <div class="card-body simulador-volume">
+              <div class="row align-items-center">
+                <div class="col-md-6">
+                  <div class="simulador-db">
+                    <h4 class="mb-3">🎤 Nível de som simulado</h4>
+                    <div class="db-medidor">
+                      <div id="barraDb" class="db-bar"></div>
+                    </div>
+                    <h2 class="mt-3"><span id="dbValor">0.0</span> dB</h2>
+                    <div id="alertaBox" class="alert alert-danger mt-3">
+                      <i class="bi bi-exclamation-triangle-fill"></i> 🚨
+                      ALERTA! PASSOU DOS 75 dB! TÁ MUITO ALTO!
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="ps-3">
+                    <p><strong>📢 Mensagem do Robô:</strong></p>
+                    <div id="mensagemMeme" class="alert alert-info">
+                      🤫 Clique nos botões para testar...
+                    </div>
+                    <div class="d-flex flex-wrap gap-2">
+                      <button id="btnSussurro" class="btn btn-outline-primary btn-vol">
+                        🤫 Sussurro (25 dB)
+                      </button>
+                      <button id="btnConversa" class="btn btn-outline-primary btn-vol">
+                        🗣️ Conversa (55 dB)
+                      </button>
+                      <button id="btnPalmas" class="btn btn-outline-primary btn-vol">
+                        👏 Palmas (85 dB)
+                      </button>
+                      <button id="btnGrito" class="btn btn-outline-primary btn-vol">
+                        📢 Grito (95 dB)
+                      </button>
+                      <button id="simularSom" class="btn btn-warning btn-vol mt-2 w-100">
+                        🎲 Simular som aleatório
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Materiais e Adaptações -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-box"></i> Materiais</h5>
+                  <hr />
+                  <ul>
+                    <li>Notebook Colab da aula anterior</li>
+                    <li>Microfones (embutidos no Chromebook ou headsets)</li>
+                    <li>Caixa de som (para gerar barulho controlado)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-universal-access"></i> Adaptações para
+                    inclusão
+                  </h5>
+                  <hr />
+                  <ul>
+                    <li>
+                      Alunos com deficiência auditiva podem usar o recurso de
+                      "vibração do Chromebook" ou focar na parte visual do
+                      gráfico
+                    </li>
+                    <li>
+                      Para alunos com TDAH: sessões curtas de codificação com
+                      pausas
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo da Aula 2 -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i>
+                robo_fofoqueiro_sensor_som.py — Código completo da aula
+                2</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#            Robô Fofoqueiro - Sensor de Som Irreverente
+# ===================================================================
+# Objetivo: Simular um sensor de som (KY-038) usando o microfone real,
+#           medindo níveis de intensidade sonora em decibéis simulados,
+#           emitindo alertas quando o volume ultrapassa 75 dB e
+#           salvando logs em CSV para análise gráfica.
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# Importa a biblioteca pyaudio para capturar áudio do microfone em tempo real.
 import pyaudio
+
+# Importa numpy para operações matemáticas com arrays (cálculo de RMS, etc.).
 import numpy as np
+
+# Importa time para possíveis delays ou marcações de tempo.
 import time
+
+# Importa threading para executar tarefas em paralelo (não usado diretamente aqui,
+# mas mantido para expansões futuras como captura contínua).
 import threading
+
+# Importa csv para salvar os dados das medições em formato de planilha.
 import csv
+
+# Importa datetime para gerar timestamps precisos de cada medição.
 from datetime import datetime
+
+# Importa matplotlib para gerar gráficos de barras com o histórico de medições.
 import matplotlib.pyplot as plt
+
+# Importa clear_output do IPython para limpar a saída do notebook Colab.
 from IPython.display import clear_output
 
 # ===== CONFIGURAÇÃO INICIAL =====
-# No Colab: !pip install pyaudio keyboard matplotlib numpy
+# No Colab, é necessário instalar as bibliotecas com:
+# !pip install pyaudio keyboard matplotlib numpy
+# !apt-get install portaudio19dev
 
 # ===== FUNÇÃO PRINCIPAL =====
 def medidor_fofoqueiro():
     """
     Função que simula o sensor KY-038 usando o microfone real.
+    Captura 3 segundos de áudio, calcula a intensidade sonora (RMS),
+    converte para uma escala simulada de 0 a 120 dB e retorna o nível,
+    um status de alerta e uma mensagem de meme conforme o volume.
+    
     Retorna:
     tuple: (decibeis_simulados, alerta, mensagem_meme)
     """
-    # PARÂMETROS DE ÁUDIO
+    
+    # Define a duração da captura de áudio em segundos.
     DURACAO = 3
+    
+    # Define a taxa de amostragem (44.1 kHz é qualidade de CD).
     TAXA_AMOSTRAGEM = 44100
+    
+    # Define o tamanho do buffer (quantos samples por leitura).
     TAMANHO_BUFFER = 1024
     
+    # Cria uma instância do objeto PyAudio para gerenciar o microfone.
     audio = pyaudio.PyAudio()
+    
+    # Abre um stream de áudio para captura (input=True significa microfone).
     stream = audio.open(
-        format=pyaudio.paInt16,
-        channels=1,
-        rate=TAXA_AMOSTRAGEM,
-        input=True,
-        frames_per_buffer=TAMANHO_BUFFER
+        format=pyaudio.paInt16,          # Formato 16 bits por sample.
+        channels=1,                      # Mono (um canal).
+        rate=TAXA_AMOSTRAGEM,            # Taxa de amostragem definida.
+        input=True,                      # Modo captura.
+        frames_per_buffer=TAMANHO_BUFFER # Tamanho de cada bloco de leitura.
     )
     
+    # Mensagem informativa para o usuário.
     print("🎤 Gravando 3 segundos de áudio...")
     
+    # Lista para armazenar os frames (blocos) de áudio capturados.
     frames = []
+    
+    # Calcula quantos blocos serão necessários para preencher DURACAO segundos.
+    # Ex: 44100 samples/s / 1024 samples/bloco * 3 s = ~129 blocos.
     for _ in range(0, int(TAXA_AMOSTRAGEM / TAMANHO_BUFFER * DURACAO)):
+        # Lê um bloco de dados do microfone.
         data = stream.read(TAMANHO_BUFFER)
+        # Converte os bytes lidos em um array numpy de inteiros de 16 bits.
         dados_audio = np.frombuffer(data, dtype=np.int16)
+        # Adiciona o bloco convertido à lista de frames.
         frames.append(dados_audio)
     
+    # Para o stream de áudio para liberar o microfone.
     stream.stop_stream()
+    # Fecha o stream.
     stream.close()
+    # Termina a instância do PyAudio.
     audio.terminate()
     
+    # Concatena todos os frames em um único array numpy de áudio.
     audio_data = np.concatenate(frames)
     
-    # CÁLCULO DA INTENSIDADE SONORA
+    # CÁLCULO DA INTENSIDADE SONORA (RMS - Root Mean Square)
+    # RMS é uma média quadrática que representa a potência do sinal.
+    # Quanto maior o RMS, mais alto o volume.
     rms = np.sqrt(np.mean(audio_data**2))
+    
+    # Valor máximo possível para um sinal int16 (2^15 = 32768).
     max_rms = 32768
+    
+    # Converte o RMS para uma escala simulada de decibéis (0 a 120 dB).
+    # Um RMS de 0 resulta em 0 dB, um RMS de 32768 resulta em 120 dB.
     decibeis = (rms / max_rms) * 120
+    
+    # Garante que o valor não ultrapasse os limites de 0 a 120 dB.
     decibeis = min(120, max(0, decibeis))
     
-    # EMOJI CONFORME VOLUME
+    # EMOJI CONFORME VOLUME (faixas de intensidade)
+    # Quanto maior o dB, mais "barulhento" é o emoji escolhido.
     if decibeis < 20:
-        emoji = "🔇🤫"
+        emoji = "🔇🤫"      # Silêncio absoluto.
     elif decibeis < 40:
-        emoji = "🤫"
+        emoji = "🤫"        # Sussurro.
     elif decibeis < 60:
-        emoji = "🗣️"
+        emoji = "🗣️"        # Conversa normal.
     elif decibeis < 80:
-        emoji = "📢"
+        emoji = "📢"        # Gritaria moderada.
     elif decibeis < 100:
-        emoji = "🔊"
+        emoji = "🔊"        # Muito alto.
     else:
-        emoji = "💀📢"
+        emoji = "💀📢"      # Extremamente alto (alerta máximo).
     
-    # MENSAGEM MEME POR NÍVEL
+    # MENSAGEM MEME POR NÍVEL (texto humorístico para cada faixa)
+    # Define também a variável alerta (True se ultrapassar 75 dB).
     if decibeis < 40:
         mensagem = "🤫 silêncio absoluto... até assusta"
         alerta = False
@@ -515,71 +516,151 @@ def medidor_fofoqueiro():
         mensagem = "💀 INFERNO ACÚSTICO! vou chamar a diretora robô"
         alerta = True
     
+    # Alerta também é ativado separadamente se dB > 75 (redundante, mas seguro).
     alerta = decibeis > 75
     
+    # Exibe um resumo formatado com emoji, valor em dB e mensagem.
     print("\n" + "="*50)
     print(f"Nível atual: {emoji}")
     print(f"Decibéis simulados: {decibeis:.1f} dB")
     print(f"📢 {mensagem}")
     print("="*50)
     
+    # Retorna uma tupla com os três valores de interesse.
     return (decibeis, alerta, mensagem)
 
 # ===== FUNÇÃO PARA SALVAR LOG EM CSV =====
 def salvar_log(decibeis, mensagem, arquivo="log_fofoqueiro.csv"):
+    """
+    Salva uma medição em um arquivo CSV.
+    Cria o cabeçalho se o arquivo estiver vazio.
+    
+    Parâmetros:
+    decibeis: float - valor medido em dB.
+    mensagem: str - mensagem de meme associada.
+    arquivo: str - nome do arquivo CSV (padrão: log_fofoqueiro.csv).
+    """
+    
+    # Gera um timestamp com data e hora atuais no formato ANO-MÊS-DIA HORA:MINUTO:SEGUNDO.
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Abre o arquivo em modo de adição ('a' = append).
+    # newline='' evita linhas em branco extras no Windows.
+    # encoding='utf-8' garante caracteres especiais (emoji, acentos).
     with open(arquivo, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
+        
+        # Move o ponteiro para o final do arquivo para verificar se está vazio.
         file.seek(0, 2)
+        # Se o arquivo estiver vazio (tell() retorna 0), escreve o cabeçalho.
         if file.tell() == 0:
             writer.writerow(["Timestamp", "Decibeis (dB)", "Mensagem"])
+        
+        # Escreve a linha com os dados da medição atual.
         writer.writerow([timestamp, f"{decibeis:.1f}", mensagem])
+    
+    # Confirma o salvamento com uma mensagem.
     print(f"💾 Log salvo: {timestamp} - {decibeis:.1f} dB")
 
 # ===== FUNÇÃO PARA MOSTRAR GRÁFICO =====
 def mostrar_grafico(arquivo="log_fofoqueiro.csv"):
+    """
+    Lê o arquivo CSV de log e gera um gráfico de barras com as últimas 10 medições.
+    Barras verdes para dB <= 75 (seguro) e vermelhas para dB > 75 (alerta).
+    
+    Parâmetros:
+    arquivo: str - nome do arquivo CSV (padrão: log_fofoqueiro.csv).
+    """
+    
     try:
+        # Tenta abrir o arquivo CSV para leitura.
         with open(arquivo, 'r', encoding='utf-8') as file:
             leitor = csv.reader(file)
+            
+            # Pula o cabeçalho (primeira linha).
             cabecalho = next(leitor)
+            
+            # Listas para armazenar os dados.
             timestamps = []
             decibeis = []
             contador = 0
+            
+            # Percorre todas as linhas do CSV.
             for linha in leitor:
-                timestamps.append(linha[0])
-                decibeis.append(float(linha[1]))
+                timestamps.append(linha[0])          # Primeira coluna: timestamp.
+                decibeis.append(float(linha[1]))     # Segunda coluna: dB (converte para float).
                 contador += 1
             
+            # Pega apenas os últimos 10 registros (ou menos se houver menos de 10).
             ultimos = min(10, contador)
             timestamps = timestamps[-ultimos:]
             decibeis = decibeis[-ultimos:]
             
+            # Cria uma figura com tamanho de 12 polegadas de largura por 6 de altura.
             plt.figure(figsize=(12, 6))
+            
+            # Define as cores das barras: verde se dB <= 75, vermelho se > 75.
             cores = ['green' if db <= 75 else 'red' for db in decibeis]
+            
+            # Cria o gráfico de barras com as cores definidas e transparência 0.7.
             barras = plt.bar(range(len(decibeis)), decibeis, color=cores, alpha=0.7)
+            
+            # Adiciona uma linha horizontal pontilhada no limite de 75 dB (alerta).
             plt.axhline(y=75, color='orange', linestyle='--', linewidth=2, label='Limite de Alerta (75 dB)')
+            
+            # Rótulo do eixo X.
             plt.xlabel('Medições (mais recente na direita)', fontsize=12)
+            
+            # Rótulo do eixo Y.
             plt.ylabel('Decibéis Simulados (dB)', fontsize=12)
+            
+            # Título do gráfico em negrito.
             plt.title('📊 Histórico do Robô Fofoqueiro - Últimas Medições', fontsize=14, fontweight='bold')
+            
+            # Define os rótulos do eixo X como os timestamps, rotacionados 45 graus.
             plt.xticks(range(len(timestamps)), timestamps, rotation=45, ha='right')
+            
+            # Define os limites do eixo Y de 0 a 120 dB.
             plt.ylim(0, 120)
+            
+            # Adiciona uma grade leve (alpha=0.3 = 30% opaco).
             plt.grid(True, alpha=0.3)
+            
+            # Adiciona a legenda da linha de alerta.
             plt.legend()
             
+            # Adiciona os valores numéricos acima de cada barra.
             for i, (barra, db) in enumerate(zip(barras, decibeis)):
                 altura = barra.get_height()
+                # Posiciona o texto 2 unidades acima da barra, centralizado.
                 plt.text(barra.get_x() + barra.get_width()/2., altura + 2, f'{db:.0f}dB', ha='center', va='bottom', fontsize=9)
             
+            # Ajusta o layout automaticamente para evitar cortes.
             plt.tight_layout()
+            
+            # Exibe o gráfico.
             plt.show()
+            
             print(f"📈 Gráfico mostrado com os últimos {ultimos} registros!")
+    
     except FileNotFoundError:
+        # Se o arquivo não existir, exibe uma mensagem amigável.
         print("⚠️ Ainda não há dados para mostrar. Faça algumas medições primeiro!")
+    
     except Exception as e:
+        # Captura qualquer outro erro e exibe uma mensagem genérica.
         print(f"❌ Erro ao gerar gráfico: {e}")
 
 # ===== LOOP PRINCIPAL =====
 def main():
+    """
+    Função principal que controla o fluxo do programa:
+    - Exibe o cabeçalho com arte ASCII.
+    - Executa medições em loop até o usuário pressionar 'q'.
+    - Salva logs e exibe gráfico ao final.
+    """
+    
+    # Exibe um cabeçalho estilizado com arte ASCII e instruções.
     print("""
 ╔══════════════════════════════════════════════════════════╗
 ║                                                          ║
@@ -593,267 +674,277 @@ def main():
 ╚══════════════════════════════════════════════════════════╝
     """)
     
+    # Contador de quantas medições foram realizadas.
     contador_medicoes = 0
+    
+    # Lista para armazenar todos os valores de dB para cálculo de estatísticas.
     historico_dB = []
     
     try:
+        # Loop infinito controlado pelo usuário.
         while True:
+            # Incrementa o contador de medições.
             contador_medicoes += 1
+            
+            # Exibe o número da medição atual.
             print(f"\n🔁 Medição #{contador_medicoes}")
             
+            # Chama a função que captura o áudio e retorna os valores.
             dB, alerta, mensagem = medidor_fofoqueiro()
+            
+            # Salva a medição no arquivo CSV.
             salvar_log(dB, mensagem)
+            
+            # Adiciona o valor de dB à lista de histórico.
             historico_dB.append(dB)
             
+            # Se o alerta estiver ativado (dB > 75), exibe mensagem de destaque.
             if alerta:
                 print("🚨 ALERTA! 🚨")
                 print("🔴🔴🔴 PASSOU DOS 75 dB! TÁ MUITO ALTO! 🔴🔴🔴")
             
+            # Pergunta ao usuário se deseja continuar ou sair.
             comando = input("\nPressione ENTER para nova medição ou 'q' para sair: ")
+            
+            # Se o usuário digitar 'q' (maiúsculo ou minúsculo), interrompe o loop.
             if comando.lower() == 'q':
                 break
+    
     except KeyboardInterrupt:
+        # Captura o Ctrl+C no terminal e exibe mensagem amigável.
         print("\n\n🛑 Programa interrompido pelo usuário!")
     
+    # Exibe um resumo estatístico ao final do programa.
     print("\n" + "="*50)
     print("📊 RESUMO DO ROBÔ FOFOQUEIRO")
     print("="*50)
     print(f"Total de medições realizadas: {contador_medicoes}")
+    
+    # Só exibe estatísticas se houver pelo menos uma medição.
     if historico_dB:
         print(f"Maior nível registrado: {max(historico_dB):.1f} dB")
         print(f"Menor nível registrado: {min(historico_dB):.1f} dB")
         print(f"Média dos níveis: {sum(historico_dB)/len(historico_dB):.1f} dB")
     
+    # Gera o gráfico final com todas as medições.
     print("\n📊 Gerando gráfico final com todo o histórico...")
     mostrar_grafico()
+    
+    # Mensagem de encerramento.
     print("\n✅ Programa encerrado com sucesso!")
     print("🙏 Valeu por usar o Robô Fofoqueiro - Tchê!")
 
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
 if __name__ == "__main__":
+    # Exibe instruções de instalação antes de iniciar o programa.
     print("⚠️ IMPORTANTE: Execute no terminal do Colab:")
     print("!pip install pyaudio keyboard matplotlib numpy")
-    print("!apt-get install portaudio19-dev")
+    print("!apt-get install portaudio19dev")
+    
+    # Aguarda o usuário pressionar ENTER após instalar as bibliotecas.
     input("\nPressione ENTER após instalar as bibliotecas...")
+    
+    # Chama a função principal para iniciar o programa.
     main()</code></pre>
-              </div>
-              <div class="card-footer bg-light">
-                <small
-                  ><i class="bi bi-info-circle"></i> Código completo do sensor
-                  de som para rodar no Google Colab.</small
-                >
-              </div>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo do sensor
+                de som para rodar no Google Colab.</small>
             </div>
           </div>
+        </div>
 
-          <!-- Aba 3: Checklist / Avaliação -->
-          <div id="conteudoChecklist" class="lateral-aba-conteudo">
-            <div class="row">
-              <div class="col-lg-7">
-                <div class="card shadow border-0 mb-4">
-                  <div class="card-header bg-degrade-verde text-white">
-                    <h4 class="mb-0">
-                      <i class="bi bi-check2-square"></i> Checklist de avaliação
-                      - Aluno
-                    </h4>
-                  </div>
-                  <div class="card-body">
-                    <ul class="checklist-personalizado list-unstyled">
-                      <li>
-                        <i class="bi bi-square"></i> Código funcional que
-                        captura som e exibe dB?
-                      </li>
-                      <li>
-                        <i class="bi bi-square"></i> Log CSV gerado com sucesso?
-                      </li>
-                      <li>
-                        <i class="bi bi-square"></i> Gráfico plotado ao final
-                        com as últimas 10 medições?
-                      </li>
-                      <li>
-                        <i class="bi bi-square"></i> Participação na discussão
-                        sobre "O robô reagiu certo?"
-                      </li>
-                      <li>
-                        <i class="bi bi-square"></i> Testou diferentes níveis de
-                        barulho (sussurro, conversa, grito, palmas)?
-                      </li>
-                      <li>
-                        <i class="bi bi-square"></i> Os memes e alertas
-                        personalizados aparecem corretamente?
-                      </li>
-                    </ul>
-                    <div class="progress mt-3 progress-checklist">
-                      <div
-                        id="progressChecklist"
-                        class="progress-bar bg-success"
-                      ></div>
-                    </div>
-                    <button
-                      id="simularProgresso"
-                      class="btn btn-outline-success btn-sm mt-3"
-                    >
-                      <i class="bi bi-arrow-repeat"></i> Simular progresso
-                      (marca todos ✅)
-                    </button>
-                  </div>
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
                 </div>
-
-                <!-- Simulação de coleta de dados -->
-                <div class="card shadow border-0 mb-4">
-                  <div class="card-header bg-grafite text-white">
-                    <h5 class="mb-0">
-                      <i class="bi bi-graph-up"></i> Simulação de Coleta de
-                      Dados
-                    </h5>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> Código funcional que
+                      captura som e exibe dB?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Log CSV gerado com sucesso?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Gráfico plotado ao final
+                      com as últimas 10 medições?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Participação na discussão
+                      sobre "O robô reagiu certo?"
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Testou diferentes níveis de
+                      barulho (sussurro, conversa, grito, palmas)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Os memes e alertas
+                      personalizados aparecem corretamente?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
                   </div>
-                  <div class="card-body">
-                    <p>
-                      Clique no botão abaixo para simular uma coleta de dados
-                      com diferentes níveis de som:
-                    </p>
-                    <button id="simularColeta" class="btn btn-primary mb-3">
-                      <i class="bi bi-graph-up"></i> Simular coleta de dados
-                    </button>
-                    <div id="tabelaResultados"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5">
-                <div class="card border-0 shadow bg-laranja-alerta text-dark">
-                  <div class="card-body">
-                    <h5>
-                      <i class="bi bi-exclamation-triangle-fill"></i> Critérios
-                      de Avaliação
-                    </h5>
-                    <hr class="hr-alerta" />
-                    <ul>
-                      <li>Código funcional que captura som e exibe dB</li>
-                      <li>Log CSV gerado com sucesso</li>
-                      <li>Gráfico plotado ao final</li>
-                      <li>Participação na discussão</li>
-                    </ul>
-                    <hr class="hr-alerta" />
-                    <div class="d-flex align-items-center gap-2">
-                      <i class="bi bi-robot fs-1"></i>
-                      <span
-                        >Dica: "Se o código não rodar, verifica se instalou o
-                        pyaudio e o portaudio!"</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Aba 4: Área do Professor -->
-          <div id="conteudoProfessor" class="lateral-aba-conteudo">
-            <div class="card shadow border-0 mb-4 overflow-hidden">
-              <div class="row g-0">
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <div class="d-flex gap-2 align-items-center mb-2">
-                      <i class="bi bi-chalkboard fs-1"></i>
-                      <h2 class="card-title">Plano de Aula - Docente</h2>
-                    </div>
-                    <p>
-                      <strong>Título:</strong> "Medindo o barulho da galera: o
-                      primeiro olho do robô"
-                    </p>
-                    <p>
-                      <strong>Códigos BNCC:</strong> EM13CNT104, EM13MAT503,
-                      EM13LGG702 | <strong>RCP - Paraná:</strong> Física -
-                      Ondulatória, Matemática - Tratamento da Informação
-                    </p>
-                    <p><strong>Duração:</strong> 2 aulas (100 minutos)</p>
-                    <p>
-                      <strong>Materiais:</strong> Notebook Colab, microfones,
-                      caixa de som
-                    </p>
-                    <hr class="hr-professor" />
-                    <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
-                    <ul>
-                      <li>
-                        <strong>Abertura (10min):</strong> Desafio "Quanto
-                        barulho tem na nossa sala?" - estimativa coletiva
-                      </li>
-                      <li>
-                        <strong>Conceituação (15min):</strong> Explique decibéis
-                        (dB) e como o computador "escuta" (PCM, amostragem)
-                      </li>
-                      <li>
-                        <strong>Codificação (40min):</strong> Implemente o
-                        código em duplas, incentive comentários irreverentes
-                      </li>
-                      <li>
-                        <strong>Teste prático (20min):</strong> Organize
-                        estações: sussurro, conversa, grito, palmas
-                      </li>
-                      <li>
-                        <strong>Fechamento (15min):</strong> Gere o gráfico e
-                        debata "O robô reagiu certo?"
-                      </li>
-                    </ul>
-                    <button
-                      id="btnExportarDicas"
-                      class="btn btn-outline-primary mt-2"
-                    >
-                      <i class="bi bi-download"></i> Exportar dicas
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center"
-                >
-                  <div class="icone-prof">👩‍🏫🧑‍🏫</div>
-                  <p class="mt-2 fw-bold">Kit do Professor</p>
-                  <button
-                    id="simularChamada"
-                    class="btn btn-warning w-100 mt-2"
-                  >
-                    <i class="bi bi-mic"></i> Chamada interativa
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
                   </button>
                 </div>
               </div>
-            </div>
 
-            <!-- Códigos RCP -->
-            <div class="card shadow border-0">
-              <div class="card-body">
-                <h5>
-                  <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
-                </h5>
-                <hr />
-                <span class="badge-bncc">Física - Ondulatória</span> -
-                Relacionar frequência e intensidade sonora com aplicações
-                práticas<br />
-                <span class="badge-bncc mt-2"
-                  >Matemática - Tratamento da Informação</span
-                >
-                - Construir e interpretar gráficos de dados coletados
+              <!-- Simulação de coleta de dados -->
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-grafite text-white">
+                  <h5 class="mb-0">
+                    <i class="bi bi-graph-up"></i> Simulação de Coleta de
+                    Dados
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <p>
+                    Clique no botão abaixo para simular uma coleta de dados
+                    com diferentes níveis de som:
+                  </p>
+                  <button id="simularColeta" class="btn btn-primary mb-3">
+                    <i class="bi bi-graph-up"></i> Simular coleta de dados
+                  </button>
+                  <div id="tabelaResultados"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Critérios
+                    de Avaliação
+                  </h5>
+                  <hr class="hr-alerta" />
+                  <ul>
+                    <li>Código funcional que captura som e exibe dB</li>
+                    <li>Log CSV gerado com sucesso</li>
+                    <li>Gráfico plotado ao final</li>
+                    <li>Participação na discussão</li>
+                  </ul>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "Se o código não rodar, verifica se instalou o
+                      pyaudio e o portaudio!"</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </main>
-      </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Título:</strong> "Medindo o barulho da galera: o
+                    primeiro olho do robô"
+                  </p>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13CNT104, EM13MAT503,
+                    EM13LGG702 | <strong>RCP - Paraná:</strong> Física -
+                    Ondulatória, Matemática - Tratamento da Informação
+                  </p>
+                  <p><strong>Duração:</strong> 2 aulas (100 minutos)</p>
+                  <p>
+                    <strong>Materiais:</strong> Notebook Colab, microfones,
+                    caixa de som
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      <strong>Abertura (10min):</strong> Desafio "Quanto
+                      barulho tem na nossa sala?" - estimativa coletiva
+                    </li>
+                    <li>
+                      <strong>Conceituação (15min):</strong> Explique decibéis
+                      (dB) e como o computador "escuta" (PCM, amostragem)
+                    </li>
+                    <li>
+                      <strong>Codificação (40min):</strong> Implemente o
+                      código em duplas, incentive comentários irreverentes
+                    </li>
+                    <li>
+                      <strong>Teste prático (20min):</strong> Organize
+                      estações: sussurro, conversa, grito, palmas
+                    </li>
+                    <li>
+                      <strong>Fechamento (15min):</strong> Gere o gráfico e
+                      debata "O robô reagiu certo?"
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Códigos RCP -->
+          <div class="card shadow border-0">
+            <div class="card-body">
+              <h5>
+                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+              </h5>
+              <hr />
+              <span class="badge-bncc">Física - Ondulatória</span> -
+              Relacionar frequência e intensidade sonora com aplicações
+              práticas<br />
+              <span class="badge-bncc mt-2">Matemática - Tratamento da Informação</span>
+              - Construir e interpretar gráficos de dados coletados
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
+  </div>
 
-    <footer class="footer-custom">
-      <div class="container-fluid">
-        <p class="mb-0">
-          🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
-          programação & inclusão
-        </p>
-        <small
-          ><i class="bi bi-chat-right-quote"></i> "Bora medir o barulho da
-          galera! Égua, que gritaria danada!"</small
-        >
-      </div>
-    </footer>
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação & inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "Bora medir o barulho da
+        galera! Égua, que gritaria danada!"</small>
+    </div>
+  </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script custom -->
-    <script src="../assets/js/script.js"></script>
-  </body>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
 </html>

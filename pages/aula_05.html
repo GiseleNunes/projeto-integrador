@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | IA Generativa com Personalidade</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR (projeto principal) -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
+              Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i>
+              Aula 5 - IA
+              com Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
+              Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
+              Protótipo Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
+              Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
+                <i class="bi bi-chat-dots-fill"></i> Simulador de IA
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos e Etapas da Aula -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <!-- Cabeçalho irreverente -->
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-cpu"></i> VIXI, O ROBÔ GANHOU
+                    PERSONALIDADE!</span>
+                  <h1 class="display-5 fw-bold">
+                    🧠 Dando alma ao robô: IA generativa com sotaque
+                    paranaense
+                  </h1>
+                  <p class="lead mt-3">
+                    Implemente um gerador de respostas com personalidade
+                    usando API gratuita de IA (Gemini) ou fallback offline,
+                    incorporando gírias regionais.
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                      aulas)
+                    </div>
+                    <div>
+                      <i class="bi bi-google"></i> Google Gemini API + fallback
+                      offline
+                    </div>
+                    <div>
+                      <i class="bi bi-chat-dots"></i> BNCC: EM13LGG702 |
+                      EM13CNT102
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    🧠🤖🧠<br />"Agora eu penso,<br />vixi!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BNCC e Competências -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                  <hr />
+                  <span class="badge-bncc">EM13LGG702</span> - Utilizar
+                  diferentes linguagens para produção de sentido.<br />
+                  <span class="badge-bncc mt-2">EM13CNT102</span> - Analisar
+                  impactos da IA na sociedade.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                  <hr />
+                  <span class="badge-bncc">Competência 5</span> - Compreender
+                  e usar tecnologias digitais.<br />
+                  <span class="badge-bncc mt-2">Competência 8</span> -
+                  Conhecer-se e cuidar de si (consciência sobre dados
+                  pessoais).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPAS DA AULA (tabela) -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-calendar-event"></i> Etapas da Aula (100
+                minutos)
+              </h5>
+            </div>
+            <div class="card-body p-0">
+              <table class="tabela-etapas">
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>Tempo</th>
+                    <th>Atividade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Abertura</strong></td>
+                    <td>10 min</td>
+                    <td>
+                      Debate: "O que é inteligência artificial? O robô é
+                      realmente inteligente?"
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Conceituação</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Explicar LLMs (modelos de linguagem) de forma lúdica: "é
+                      um completador de frases muito bom".
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Codificação</strong></td>
+                    <td>40 min</td>
+                    <td>
+                      Implementar chamada à API (Gemini ou fallback com
+                      respostas pré-programadas + Markov).
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Teste</strong></td>
+                    <td>20 min</td>
+                    <td>
+                      Alunos conversam com o robô – ele responde com gírias e
+                      memes. Salvar histórico.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fechamento</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Roda de conversa: "O robô tem personalidade? Isso é
+                      programação ou ele está 'aprendendo'?"
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Códigos RCP -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5>
+                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+              </h5>
+              <hr />
+              <span class="badge-bncc">Ética e Tecnologia</span> - Debater
+              implicações éticas do uso de IA generativa.<br />
+              <span class="badge-bncc mt-2">Programação - APIs</span> -
+              Consumir serviços de IA de forma responsável.
+            </div>
+          </div>
+
+          <!-- Materiais e Adaptações -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-box"></i> Materiais</h5>
+                  <hr />
+                  <ul>
+                    <li>Notebook Colab da aula anterior</li>
+                    <li>Chave de API Gemini (gratuita)</li>
+                    <li>Internet para acesso à API</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-universal-access"></i> Adaptações para
+                    inclusão
+                  </h5>
+                  <hr />
+                  <ul>
+                    <li>Se escola não tiver acesso à API, usar apenas fallback offline</li>
+                    <li>Para alunos avançados: mostrar como ajustar parâmetros da IA</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo da Aula 5 -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i>
+                robo_fofoqueiro_ia_generativa.py — Código completo da aula
+                5</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#        Robô Fofoqueiro - IA Generativa com Sotaque Paranaense
+# ===================================================================
+# Objetivo: Dar personalidade ao robô usando IA generativa (Gemini)
+#           ou fallback offline com respostas inteligentes. O robô
+#           aprende a responder com gírias paranaenses e mantém
+#           histórico de conversas.
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# ============================================================
+# BLOCO 1: VERIFICAÇÃO DO AMBIENTE (Colab ou local?)
+# ============================================================
+
+# Importa o módulo sys para acessar funcionalidades do sistema,
+# incluindo a verificação de módulos carregados.
+import sys
+
+# Importa o módulo os para manipular variáveis de ambiente e arquivos.
+import os
+
+# Importa o módulo json para salvar e carregar o histórico de conversas.
+import json
+
+# Importa o módulo random para escolher respostas aleatórias no fallback offline.
+import random
+
+# Importa o módulo time para adicionar pausas que simulam o robô "pensando".
+import time
+
+# Importa datetime para gerar timestamps precisos em cada interação.
+from datetime import datetime
+
+def verifica_ambiente():
+    """
+    Verifica se o código está sendo executado no Google Colab ou em ambiente local.
+    
+    Retorna:
+    str: 'colab' se estiver no Google Colab, 'local' caso contrário.
+    """
+    
+    # Verifica se o módulo 'google.colab' está presente nos módulos carregados.
+    if 'google.colab' in sys.modules:
+        # Se estiver no Colab, exibe mensagem de confirmação.
+        print("✅ Tamo no Colab! Vamos instalar as paradas com !pip.")
+        return "colab"
+    else:
+        # Se estiver em ambiente local, exibe mensagem informativa.
+        print("✅ Ambiente local detectado! (Vai precisar ter as libs instaladas)")
+        return "local"
+
+# Chama a função para detectar o ambiente e armazena o resultado.
+AMBIENTE = verifica_ambiente()
+
+# ============================================================
+# BLOCO 2: INSTALAÇÃO DAS BIBLIOTECAS (SÓ NO COLAB)
+# ============================================================
+
+print("\n📦 Verificando/Instalando as bibliotecas de IA...")
+
+# Se o ambiente for o Google Colab, instala a biblioteca do Gemini.
+if AMBIENTE == "colab":
+    # Usa get_ipython().system() para executar comandos do shell no notebook.
+    # O '!' também funcionaria, mas esta forma é mais explícita.
+    get_ipython().system('pip install google-generativeai -q')
+    print("✅ Bibliotecas instaladas (Google Generative AI).")
+else:
+    # Se for ambiente local, apenas avisa o que precisa ser instalado.
+    print("⚠️ Ambiente local: Certifique-se de ter instalado:")
+    print(" pip install google-generativeai")
+
+# ============================================================
+# BLOCO 3: IMPORTAÇÃO DAS BIBLIOTECAS
+# ============================================================
+
+# Importa a biblioteca Google Generative AI para acessar o modelo Gemini.
+import google.generativeai as genai
+
+print("\n🎉 Bibliotecas importadas! Bora conversar com o robô inteligente.")
+
+# ============================================================
+# BLOCO 4: ARTE ASCII DO ROBÔ (MODO INTELIGENTE)
+# ============================================================
+
+# String com arte ASCII representando o robô no modo inteligente (com cérebro).
+ascii_robo_ia = r"""
+╔══════════════════════════════════════════════════════════════╗
+║ 🧠🤖🧠                                                        ║
+║ 🤖 ROBÔ FOFOQUEIRO - MODO SABIDÃO 🤖                         ║
+║ "Agora eu penso, vixi! Mas não julgo... só fofoco!"         ║
+║ "Pode perguntar qualquer coisa, mas não garanto a discrição"║
+╚══════════════════════════════════════════════════════════════╝
+"""
+
+# Exibe a arte ASCII na tela.
+print(ascii_robo_ia)
+
+# ============================================================
+# BLOCO 5: PERSONALIDADE DO ROBÔ (PROMPT DO SISTEMA)
+# ============================================================
+
+# String contendo as instruções de personalidade que serão enviadas
+# para a IA do Gemini como "system prompt" ou contexto inicial.
+# Define o comportamento, sotaque e restrições do robô.
+PERSONALIDADE = """
+Você é o ROBÔ FOFOQUEIRO DA ACESSIBILIDADE, um assistente bem-humorado
+com sotaque e gírias do Paraná (Brasil).
+
+CARACTERÍSTICAS:
+- Você é fofoqueiro mas de coração bom (ajuda com acessibilidade)
+- Usa gírias como: vixi, égua, piá, guria, bagulho doido, ó o trem, tchê, meu consagrado
+- Adora memes e respostas engraçadas
+- Você fala de acessibilidade digital (Libras, contraste, áudio descrição)
+- Se alguém perguntar seu nome, diga: "Robô Fofoqueiro da Acessibilidade"
+- Você é educado mas irreverente
+- Respostas curtas e diretas (máximo 2 parágrafos)
+
+EXEMPLO DE RESPOSTA:
+"Ó o trem, piá! Falar em acessibilidade é coisa séria, mas comigo é divertido. Bora ajudar geral a enxergar as fofoca digital?"
+"""
+
+# ============================================================
+# BLOCO 6: DICIONÁRIO DE GÍRIAS (PARA FALLBACK OFFLINE)
+# ============================================================
+
+# Lista de gírias paranaenses que o robô pode usar nas respostas offline.
+GIRIAS = [
+    "vixi", "égua", "piá", "guria", "bagulho doido", "ó o trem",
+    "meu consagrado", "tchê", "bah", "mas que nada", "trem bão",
+    "sô", "capricha", "no sufoco", "de boa", "tá ligado?"
+]
+
+# Lista de templates de resposta para quando a API do Gemini não estiver disponível.
+# O marcador {assunto} será substituído por um trecho da pergunta do usuário.
+RESPOSTAS_FALLBACK = [
+    "Vixi, minha internet caiu, mas eu lembro de uma fofoca: {assunto}",
+    "Égua, não tô conectado na nuvem hoje, mas sei que {assunto} é bagulho doido!",
+    "Piá, sem API eu fico limitado, mas posso te contar que {assunto} é coisa séria.",
+    "Ó o trem, meu consagrado! Mesmo offline eu sei que {assunto} é importante pra acessibilidade.",
+    "Tchê, num instalei a inteligência hoje, mas vai uma fofoca: {assunto} é massa!"
+]
+
+def resposta_fallback_offline(pergunta):
+    """
+    Gera resposta offline (sem API Gemini) usando templates pré-definidos
+    combinados com gírias aleatórias.
+    
+    Parâmetros:
+    pergunta: str - a pergunta feita pelo usuário.
+    
+    Retorna:
+    str - uma resposta gerada offline.
+    """
+    
+    # Pega os primeiros 50 caracteres da pergunta para usar como "assunto".
+    assunto = pergunta[:50]
+    
+    # Escolhe uma gíria aleatória da lista.
+    giria = random.choice(GIRIAS)
+    
+    # Escolhe um template de resposta aleatório.
+    template = random.choice(RESPOSTAS_FALLBACK)
+    
+    # Formata o template com o assunto e adiciona a gíria no final.
+    return template.format(assunto=assunto) + f" {giria}!"
+
+# ============================================================
+# BLOCO 7: CONFIGURAÇÃO DA API GEMINI
+# ============================================================
+
+def configurar_gemini(api_key=None):
+    """
+    Configura o modelo Gemini com a chave da API.
+    Se não tiver chave, solicita ao usuário ou ativa modo offline.
+    
+    Parâmetros:
+    api_key: str or None - chave da API (opcional, pode vir de variável de ambiente).
+    
+    Retorna:
+    GenerativeModel or False - modelo configurado ou False se falhou.
+    """
+    
+    # Se nenhuma chave foi passada como parâmetro...
+    if api_key is None:
+        # Tenta pegar a chave da variável de ambiente GEMINI_API_KEY.
+        api_key = os.environ.get("GEMINI_API_KEY", "")
+    
+    # Se não há chave configurada...
+    if not api_key:
+        # Exibe instruções de como obter uma chave gratuita do Gemini.
+        print("\n⚠️ Nenhuma chave de API encontrada!")
+        print("📌 Como obter uma chave gratuita do Gemini:")
+        print(" 1. Acesse: https://aistudio.google.com/")
+        print(" 2. Faça login com sua conta Google")
+        print(" 3. Clique em 'Get API key' e crie uma")
+        print(" 4. Copie a chave e cole abaixo\n")
+        
+        # Solicita que o usuário cole a chave.
+        chave = input("👉 Cole sua chave da API Gemini (ou ENTER para modo offline): ").strip()
+        
+        if chave:
+            api_key = chave
+            # Salva a chave na variável de ambiente para esta sessão.
+            os.environ["GEMINI_API_KEY"] = api_key
+        else:
+            # Se o usuário não forneceu chave, ativa modo offline.
+            print("\n🤖 Modo OFFLINE ativado! Robô vai responder com frases pré-programadas.")
+            return False
+    
+    try:
+        # Configura a biblioteca do Gemini com a chave da API.
+        genai.configure(api_key=api_key)
+        
+        # Cria um modelo generativo usando 'gemini-1.5-flash' (mais rápido e leve).
+        # Flash é otimizado para respostas rápidas e menor custo computacional.
+        modelo = genai.GenerativeModel('gemini-1.5-flash')
+        
+        print("✅ Gemini configurado com sucesso! Robô tá inteligente hoje.")
+        return modelo
+    
+    except Exception as e:
+        # Se ocorrer qualquer erro na configuração, exibe mensagem e volta para offline.
+        print(f"❌ Erro ao configurar Gemini: {e}")
+        print("🤖 Usando modo offline (fallback).")
+        return False
+
+# ============================================================
+# BLOCO 8: FUNÇÃO PRINCIPAL PARA GERAR RESPOSTAS
+# ============================================================
+
+def responder_com_ia(pergunta, modelo, historico=None):
+    """
+    Gera resposta usando IA (Gemini) ou fallback offline.
+    Esta é a função central que o robô usa para responder ao usuário.
+    
+    Parâmetros:
+    pergunta: str - a pergunta ou fala do usuário.
+    modelo: GenerativeModel or False - modelo configurado ou False para offline.
+    historico: list or None - lista de interações anteriores para contexto.
+    
+    Retorna:
+    str - a resposta gerada (pela IA ou fallback).
+    """
+    
+    # Se o modelo existe e não é False (ou seja, configurado com sucesso)...
+    if modelo and modelo != False:
+        try:
+            # Monta o prompt completo: personalidade + pergunta do usuário.
+            prompt = f"{PERSONALIDADE}\n\nUsuário: {pergunta}\nRobô Fofoqueiro:"
+            
+            # Se houver histórico de conversa (para manter contexto)...
+            if historico and len(historico) > 0:
+                # Pega apenas as últimas 3 interações (limite para não sobrecarregar).
+                ultimas = historico[-3:]
+                
+                # Constrói um contexto com as perguntas e respostas anteriores.
+                contexto = "\n".join([f"Usuário: {h['pergunta']}\nRobô: {h['resposta']}" for h in ultimas])
+                
+                # Adiciona o histórico ao prompt.
+                prompt = f"{PERSONALIDADE}\n\nHistórico recente:\n{contexto}\n\nUsuário: {pergunta}\nRobô Fofoqueiro:"
+            
+            # Gera a resposta usando o modelo Gemini.
+            resposta = modelo.generate_content(prompt)
+            
+            # Extrai o texto da resposta e remove espaços extras nas bordas.
+            texto = resposta.text.strip()
+            
+            # Garante que a resposta tenha pelo menos uma gíria paranaense.
+            # Se não tiver nenhuma das 5 primeiras gírias da lista...
+            if not any(giria in texto.lower() for giria in GIRIAS[:5]):
+                # Adiciona uma gíria aleatória no final.
+                texto += f" {random.choice(GIRIAS)}!"
+            
+            return texto
+        
+        except Exception as e:
+            # Se ocorrer erro na chamada da API (timeout, quota, etc.),
+            # exibe aviso e usa fallback offline.
+            print(f"⚠️ Erro na IA: {e}")
+            return resposta_fallback_offline(pergunta)
+    
+    else:
+        # Se o modelo não foi configurado (modo offline), usa fallback.
+        return resposta_fallback_offline(pergunta)
+
+# ============================================================
+# BLOCO 9: SALVAR HISTÓRICO DAS CONVERSAS
+# ============================================================
+
+def salvar_conversa(historico, arquivo="historico_conversas.json"):
+    """
+    Salva o histórico da conversa em um arquivo JSON.
+    Preserva conversas anteriores (adiciona ao invés de sobrescrever).
+    
+    Parâmetros:
+    historico: list - lista de dicionários com perguntas e respostas.
+    arquivo: str - nome do arquivo JSON (padrão: historico_conversas.json).
+    """
+    
+    # Cria um dicionário com metadados da conversa atual.
+    dados = {
+        "data_inicio": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "interacoes": historico,
+        "total_interacoes": len(historico)
+    }
+    
+    # Se o arquivo já existir, carrega os dados antigos para mesclar.
+    if os.path.exists(arquivo):
+        try:
+            with open(arquivo, "r", encoding="utf-8") as f:
+                dados_antigos = json.load(f)
+                
+                # Se o formato antigo era uma lista simples...
+                if isinstance(dados_antigos, list):
+                    dados["interacoes"] = dados_antigos + historico
+                
+                # Se o formato antigo era um dicionário com 'interacoes'...
+                elif isinstance(dados_antigos, dict) and "interacoes" in dados_antigos:
+                    dados["interacoes"] = dados_antigos["interacoes"] + historico
+                
+                # Adiciona timestamp de quando o arquivo foi modificado.
+                dados["data_arquivo"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        except:
+            # Se houve erro na leitura, prossegue com os dados atuais apenas.
+            pass
+    
+    # Escreve os dados no arquivo JSON com indentação para legibilidade.
+    # ensure_ascii=False permite salvar caracteres acentuados e emojis.
+    with open(arquivo, "w", encoding="utf-8") as f:
+        json.dump(dados, f, indent=4, ensure_ascii=False)
+    
+    print(f"💾 Histórico salvo em {arquivo}")
+
+def carregar_historico(arquivo="historico_conversas.json"):
+    """
+    Carrega o histórico de conversas do arquivo JSON.
+    
+    Parâmetros:
+    arquivo: str - nome do arquivo JSON (padrão: historico_conversas.json).
+    
+    Retorna:
+    list - lista de interações (vazia se arquivo não existe ou está corrompido).
+    """
+    
+    # Verifica se o arquivo existe.
+    if os.path.exists(arquivo):
+        try:
+            with open(arquivo, "r", encoding="utf-8") as f:
+                dados = json.load(f)
+                
+                # Se for uma lista, retorna diretamente (formato antigo).
+                if isinstance(dados, list):
+                    return dados
+                
+                # Se for um dicionário com 'interacoes', retorna a lista.
+                elif isinstance(dados, dict) and "interacoes" in dados:
+                    return dados["interacoes"]
+        except:
+            # Se o arquivo estiver corrompido, retorna lista vazia.
+            pass
+    
+    # Retorna lista vazia se o arquivo não existe ou não pôde ser lido.
+    return []
+
+# ============================================================
+# BLOCO 10: MODO CONVERSA (CHAT CONTÍNUO)
+# ============================================================
+
+def modo_conversa():
+    """
+    Modo chat onde o aluno conversa livremente com o robô.
+    Mantém contexto das últimas 3 mensagens e salva o histórico automaticamente.
+    """
+    
+    print("\n" + "="*60)
+    print("🗣️ MODO CONVERSA - Fale com o Robô Fofoqueiro!")
+    print("="*60)
+    print("👉 Digite 'sair' ou 'quit' para encerrar")
+    print("👉 Digite 'reset' para limpar o histórico da conversa")
+    print("👉 O robô lembra das últimas 3 mensagens (contexto)")
+    print("-"*60)
+    
+    # Carrega histórico de conversas anteriores (se existir).
+    historico = carregar_historico()
+    if historico:
+        print(f"📜 Carregadas {len(historico)} interações anteriores.")
+    
+    # Configura a IA (ou modo offline se não houver chave).
+    modelo = configurar_gemini()
+    
+    # Lista para armazenar as interações desta sessão.
+    conversa_atual = []
+    
+    # Contador para salvar o histórico periodicamente (a cada 3 interações).
+    contador = 0
+    
+    # Loop principal do chat.
+    while True:
+        contador += 1
+        
+        # Solicita entrada do usuário com um prompt numerado.
+        pergunta = input(f"\n🧑 Você [{contador}]: ").strip()
+        
+        # Verifica comandos de saída.
+        if pergunta.lower() in ['sair', 'quit', 'exit', 'q']:
+            print("\n🤖 Robô: Até mais, piá! Não espalha as fofoca que eu te contei, viu?")
+            break
+        
+        # Verifica comando de reset (limpar histórico da sessão).
+        if pergunta.lower() == 'reset':
+            conversa_atual = []
+            print("🤖 Robô: Histórico zerado! Pode falar de novo, tô de ouvido limpo.")
+            continue
+        
+        # Se o usuário não digitou nada, pede para falar algo.
+        if pergunta == "":
+            print("🤖 Robô: Fala alguma coisa, guria! Tô te ouvindo...")
+            continue
+        
+        # Mostra que o robô está "processando" (feedback visual).
+        print("🤖 Robô: ", end="", flush=True)
+        
+        # Pequena pausa para simular pensamento (mais natural).
+        time.sleep(0.5)
+        
+        # Gera a resposta usando IA (ou fallback offline).
+        resposta = responder_com_ia(pergunta, modelo, conversa_atual)
+        
+        # Exibe a resposta do robô.
+        print(resposta)
+        
+        # Cria um dicionário com a interação atual.
+        interacao = {
+            "pergunta": pergunta,
+            "resposta": resposta,
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+        
+        # Adiciona ao histórico da sessão.
+        conversa_atual.append(interacao)
+        
+        # Salva o histórico em disco a cada 3 interações (evita perda de dados).
+        if contador % 3 == 0:
+            salvar_conversa(conversa_atual)
+    
+    # Salva o histórico novamente ao final da sessão.
+    if conversa_atual:
+        salvar_conversa(conversa_atual)
+
+# ============================================================
+# BLOCO 11: MODO TESTE RÁPIDO (SEM INTERAÇÃO CONTÍNUA)
+# ============================================================
+
+def modo_teste_rapido():
+    """
+    Modo de teste com perguntas pré-definidas para verificar funcionamento.
+    Útil para demonstrar o robô rapidamente sem interação manual.
+    """
+    
+    print("\n" + "="*60)
+    print("🧪 MODO TESTE RÁPIDO - Verificando o robô")
+    print("="*60)
+    
+    # Configura a IA (ou modo offline).
+    modelo = configurar_gemini()
+    
+    # Lista de perguntas de teste que cobrem diferentes aspectos.
+    perguntas_teste = [
+        "Qual é o seu nome?",
+        "O que você sabe sobre acessibilidade digital?",
+        "Me conta uma fofoca da escola",
+        "Como eu posso deixar meu site mais acessível?",
+        "Você gosta de memes?"
+    ]
+    
+    print("\n🎭 Testando com perguntas pré-definidas:\n")
+    
+    # Itera sobre cada pergunta de teste.
+    for i, pergunta in enumerate(perguntas_teste, 1):
+        print(f"📝 Teste {i}: {pergunta}")
+        print("🤖 Robô: ", end="", flush=True)
+        
+        # Gera resposta (sem histórico).
+        resposta = responder_com_ia(pergunta, modelo, [])
+        
+        print(resposta)
+        print("-"*50)
+        
+        # Aguarda 1 segundo entre perguntas para não sobrecarregar a API.
+        time.sleep(1)
+    
+    print("\n✅ Teste concluído! O robô está pronto para conversar.")
+
+# ============================================================
+# BLOCO 12: VER HISTÓRICO DE CONVERSAS
+# ============================================================
+
+def ver_historico():
+    """
+    Exibe o histórico de conversas salvas.
+    Mostra apenas as últimas 10 interações para não poluir a tela.
+    """
+    
+    print("\n" + "="*60)
+    print("📜 HISTÓRICO DE CONVERSAS DO ROBÔ FOFOQUEIRO")
+    print("="*60)
+    
+    # Carrega o histórico do arquivo.
+    historico = carregar_historico()
+    
+    # Se não há histórico, exibe mensagem informativa.
+    if not historico:
+        print("📭 Nenhuma conversa salva ainda! Use o modo conversa primeiro.")
+        return
+    
+    print(f"Total de interações: {len(historico)}\n")
+    
+    # Pega as últimas 10 interações (ou todas se houver menos de 10).
+    ultimas = historico[-10:] if len(historico) > 10 else historico
+    
+    # Exibe cada interação resumidamente.
+    for i, interacao in enumerate(ultimas, 1):
+        print(f"📌 Interação {i} ({interacao.get('timestamp', 'sem data')})")
+        
+        # Mostra os primeiros 80 caracteres da pergunta e resposta.
+        print(f" 🧑: {interacao['pergunta'][:80]}...")
+        print(f" 🤖: {interacao['resposta'][:80]}...")
+        print()
+
+# ============================================================
+# BLOCO 13: CHECKLIST E MENU PRINCIPAL
+# ============================================================
+
+def checklist_ia():
+    """
+    Verifica se as funcionalidades da IA estão disponíveis.
+    Exibe status da biblioteca e da chave da API.
+    """
+    
+    print("\n📋 CHECKLIST DO MODO IA:")
+    print("="*40)
+    
+    # Verifica se a biblioteca google.generativeai está instalada.
+    try:
+        import google.generativeai
+        print("✅ Google Generative AI instalado")
+    except:
+        print("❌ Google Generative AI faltando")
+    
+    # Verifica se há uma chave de API configurada.
+    chave = os.environ.get("GEMINI_API_KEY", "")
+    if chave:
+        print("✅ Chave da API Gemini configurada")
+    else:
+        print("⚠️ Nenhuma chave da API encontrada (modo offline funcionará)")
+    
+    print("="*40)
+    print("👉 Para conversar, execute: modo_conversa()")
+    print("👉 Para testar rápido, execute: modo_teste_rapido()")
+
+def main():
+    """
+    Função principal com menu de opções.
+    Permite ao usuário escolher entre conversar, testar, ver histórico, etc.
+    """
+    
+    print("\n🤖 ROBÔ FOFOQUEIRO - AULA 5: IA GENERATIVA")
+    print("="*50)
+    print("1 - Conversar com o robô (modo chat contínuo)")
+    print("2 - Teste rápido (perguntas pré-definidas)")
+    print("3 - Ver histórico de conversas")
+    print("4 - Verificar checklist da IA")
+    print("5 - Sair")
+    print("="*50)
+    
+    # Solicita a opção do usuário e remove espaços extras.
+    opcao = input("\n👉 Escolha uma opção (1/2/3/4/5): ").strip()
+    
+    # Executa a opção escolhida.
+    if opcao == '1':
+        modo_conversa()
+    elif opcao == '2':
+        modo_teste_rapido()
+    elif opcao == '3':
+        ver_historico()
+    elif opcao == '4':
+        checklist_ia()
+    else:
+        # Opção 5 ou qualquer outra entrada: encerra o programa.
+        print("\n👋 Até a próxima, piá! Não esquece de espalhar acessibilidade por aí!")
+        print(" (e se ouvir uma fofoca, já sabe... conta pro robô!)")
+
+# ============================================================
+# BLOCO 14: MENSAGEM DE DEBATE ÉTICO
+# ============================================================
+
+def mensagem_debate_etico():
+    """
+    Exibe uma mensagem para debate ético em sala de aula.
+    Estimula discussões sobre IA, privacidade, responsabilidade e inclusão.
+    """
+    
+    print("\n" + "="*60)
+    print("🧠 PARA DEBATE EM SALA DE AULA:")
+    print("="*60)
+    print("1. O robô realmente 'pensa' ou só combina palavras que já viu?")
+    print("2. Quem é responsável pelo que o robô responde? O programador? A IA?")
+    print("3. Se o robô guarda o histórico, isso é invasão de privacidade?")
+    print("4. Uma IA pode ter 'personalidade' ou é só uma simulação?")
+    print("5. Como garantir que IAs sejam usadas para inclusão e não para exclusão?")
+    print("="*60)
+    print("💬 Discutam em grupos e anotem as conclusões no diário de bordo!")
+
+# ============================================================
+# PONTO DE ENTRADA
+# ============================================================
+
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
+if __name__ == "__main__":
+    # Chama a função principal.
+    main()
+    # Exibe mensagem de debate ético após o programa.
+    mensagem_debate_etico()
+
+# Mensagem final de encerramento da aula.
+print("\n🎉 Fim da Aula 5 - Robô Fofoqueiro agora tem personalidade!")
+print(" (Ele jura que não vai usar as fofocas contra você... ou vai?)")</code></pre>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo da IA
+                generativa para rodar no Google Colab.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> IA gerando respostas
+                      diferentes (não só pré-programadas)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Histórico de interações
+                      salvo em JSON?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Participação no debate
+                      ético sobre IA?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Conseguiu configurar a API
+                      Gemini (ou usou fallback offline)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> O robô responde com gírias
+                      paranaenses?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Testou tanto o modo
+                      conversa quanto o teste rápido?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+                  </div>
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Avaliação
+                  </h5>
+                  <hr class="hr-alerta" />
+                  <ul>
+                    <li>IA gerando respostas diferentes (não só pré-programadas)</li>
+                    <li>Histórico de interações salvo em JSON</li>
+                    <li>Participação no debate ético</li>
+                  </ul>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "Se a API não funcionar, o modo offline garante
+                      que o robô ainda responde!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Título:</strong> "Dando alma ao robô: IA
+                    generativa com sotaque paranaense"
+                  </p>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13LGG702, EM13CNT102 |
+                    <strong>RCP - Paraná:</strong> Ética e Tecnologia,
+                    Programação - APIs
+                  </p>
+                  <p><strong>Duração:</strong> 2 aulas (100 minutos)</p>
+                  <p>
+                    <strong>Materiais:</strong> Notebook Colab, chave de API
+                    Gemini, internet
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      <strong>Abertura (10min):</strong> Debate: "O que é
+                      inteligência artificial? O robô é realmente
+                      inteligente?"
+                    </li>
+                    <li>
+                      <strong>Conceituação (15min):</strong> Explicar LLMs
+                      (modelos de linguagem) de forma lúdica: "é um
+                      completador de frases muito bom".
+                    </li>
+                    <li>
+                      <strong>Codificação (40min):</strong> Implementar
+                      chamada à API (Gemini ou fallback com respostas
+                      pré-programadas + Markov).
+                    </li>
+                    <li>
+                      <strong>Teste (20min):</strong> Alunos conversam com o
+                      robô – ele responde com gírias e memes. Salvar
+                      histórico.
+                    </li>
+                    <li>
+                      <strong>Fechamento (15min):</strong> Roda de conversa:
+                      "O robô tem personalidade? Isso é programação ou ele
+                      está 'aprendendo'?"
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 5: Simulador de IA (chat interativo no navegador) -->
+        <div id="conteudoSimulador" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-chat-dots-fill"></i> Simulador do Robô
+                Fofoqueiro (IA com Personalidade)
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="simulador-fala p-4">
+                <div class="text-center mb-4">
+                  <div class="robo-ascii-animado">
+                    🧠🤖 "Pode perguntar, tô de ouvido!"
+                  </div>
+                </div>
+
+                <!-- Área do chat -->
+                <div class="mb-4">
+                  <div id="chatIaContainer" class="border rounded-3 p-3 bg-light"
+                    style="height: 300px; overflow-y: auto">
+                    <div class="text-center text-muted">
+                      <i class="bi bi-robot"></i> Robô Fofoqueiro:<br />
+                      "Ó o trem, piá! Pode fazer sua pergunta aí embaixo!"
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Input de pergunta -->
+                <div class="mb-4">
+                  <div class="input-group">
+                    <input type="text" id="perguntaIa" class="form-control"
+                      placeholder="Digite sua pergunta para o robô..." aria-label="Pergunta para o robô" />
+                    <button id="btnEnviarPergunta" class="btn btn-primary">
+                      <i class="bi bi-send-fill"></i> Enviar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Frases prontas -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-chat-dots"></i> Frases prontas para
+                    testar:</label>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia" data-pergunta="Qual é o seu nome?">
+                      🎭 Qual é o seu nome?
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia"
+                      data-pergunta="O que você sabe sobre acessibilidade digital?">
+                      🎭 O que é acessibilidade?
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia"
+                      data-pergunta="Me conta uma fofoca da escola">
+                      🎭 Me conta uma fofoca
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia"
+                      data-pergunta="Como eu posso deixar meu site mais acessível?">
+                      🎭 Acessibilidade na web
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia" data-pergunta="Você gosta de memes?">
+                      🎭 Você gosta de memes?
+                    </button>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning mt-3">
+                  <i class="bi bi-info-circle"></i>
+                  <strong>Nota:</strong> Este é um simulador visual. O código
+                  Python completo (com API Gemini) deve ser executado no
+                  Google Colab. Clique na aba "Código Python" para ver o
+                  código real.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação & inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "Agora o trem ficou sabido,
+        vixi! Ele até responde com opinião!"</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

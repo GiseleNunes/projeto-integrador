@@ -1,0 +1,1415 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | Display LCD e LEDs</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR (projeto principal) -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
+              Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
+              Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula6" href="aula_06.html"><i
+                class="bi bi-lightbulb"></i> Aula 6
+              - Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
+              Protótipo Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
+              Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
+                <i class="bi bi-display"></i> Simulador de Hardware
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos e Etapas da Aula -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <!-- Cabeçalho irreverente -->
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-lightbulb"></i> VIXI, O ROBÔ GANHOU
+                    OLHOS QUE BRILHAM!</span>
+                  <h1 class="display-5 fw-bold">
+                    💡 O robô pisca e fala: integrando hardware ao software
+                  </h1>
+                  <p class="lead mt-3">
+                    "Agora o trem pisca e fala, vixi! Robô ficou chique!" —
+                    Crie simulação (ou controle real) de display LCD e LEDs
+                    RGB, integrando com sensores de som para alertas visuais.
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                      aulas)
+                    </div>
+                    <div>
+                      <i class="bi bi-arduino"></i> Simulação + Hardware real
+                      (opcional)
+                    </div>
+                    <div>
+                      <i class="bi bi-chat-dots"></i> BNCC: EM13CNT101 |
+                      EM13CNT206
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    💡🔊💡<br />"Pisca-pisca<br />do Robô!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BNCC e Competências -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                  <hr />
+                  <span class="badge-bncc">EM13CNT101</span> - Utilizar
+                  modelos físicos para representar sistemas.<br />
+                  <span class="badge-bncc mt-2">EM13CNT206</span> - Discutir
+                  aplicações de sensores no cotidiano.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                  <hr />
+                  <span class="badge-bncc">Competência 2</span> - Exercitar
+                  curiosidade intelectual.<br />
+                  <span class="badge-bncc mt-2">Competência 4</span> -
+                  Utilizar diferentes linguagens.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPAS DA AULA (tabela) -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-calendar-event"></i> Etapas da Aula (100
+                minutos)
+              </h5>
+            </div>
+            <div class="card-body p-0">
+              <table class="tabela-etapas">
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>Tempo</th>
+                    <th>Atividade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Abertura</strong></td>
+                    <td>10 min</td>
+                    <td>Mostrar vídeo de protótipos assistivos (semáforo
+                      sonoro para surdos).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Conceituação</strong></td>
+                    <td>15 min</td>
+                    <td>Explicar display LCD (16x2) e LEDs RGB (PWM para
+                      cores). Esquema elétrico.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Simulação</strong></td>
+                    <td>30 min</td>
+                    <td>Implementar versão simulada (visual) no Colab com
+                      ASCII art e emojis.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Extensão (opcional)</strong></td>
+                    <td>30 min</td>
+                    <td>Se houver Arduino: montar circuito real com sensor de
+                      som + LEDs + display.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fechamento</strong></td>
+                    <td>15 min</td>
+                    <td>Testar integração com sensor de som: barulho alto →
+                      LED vermelho pisca + mensagem no display.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Códigos RCP -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5>
+                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+              </h5>
+              <hr />
+              <span class="badge-bncc">Física - Eletricidade</span> -
+              Compreender circuitos simples com LEDs e resistores.<br />
+              <span class="badge-bncc mt-2">Robótica - Prototipagem</span> -
+              Integrar hardware e software.
+            </div>
+          </div>
+
+          <!-- Materiais e Adaptações -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-box"></i> Materiais</h5>
+                  <hr />
+                  <ul>
+                    <li>Notebook Colab da aula anterior</li>
+                    <li>
+                      Para simulação: apenas o computador (ASCII art e
+                      emojis)
+                    </li>
+                    <li>
+                      Para hardware real: Arduino/ESP32, LEDs RGB, resistores
+                      220Ω, display LCD 16x2 I2C, sensor KY-038
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-universal-access"></i> Adaptações para
+                    inclusão
+                  </h5>
+                  <hr />
+                  <ul>
+                    <li>
+                      Simulação dispensa hardware — todos conseguem
+                      participar
+                    </li>
+                    <li>
+                      Para turmas sem Arduino, usar Tinkercad (simulador
+                      online gratuito)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo da Aula 6 -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i>
+                robo_fofoqueiro_hardware.py — Código completo da aula 6</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#      Robô Fofoqueiro - Display LCD e LEDs (Simulados e Reais)
+# ===================================================================
+# Objetivo: Integrar hardware (ou simulação) ao robô, criando alertas
+#           visuais com LEDs e mensagens em display LCD. O robô reage
+#           a níveis de som com cores e mensagens no display.
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# ============================================================
+# BLOCO 1: VERIFICAÇÃO DO AMBIENTE (Colab ou local?)
+# ============================================================
+
+# Importa o módulo sys para acessar funcionalidades do sistema,
+# incluindo a verificação de módulos carregados.
+import sys
+
+# Importa o módulo os para manipular arquivos e executar comandos
+# do sistema (como limpar a tela do terminal).
+import os
+
+# Importa o módulo time para adicionar pausas e temporizações.
+import time
+
+# Importa o módulo random para gerar valores aleatórios na simulação
+# do sensor de som.
+import random
+
+# Importa o módulo threading para executar tarefas em paralelo
+# (útil para monitoramento contínuo, embora não usado diretamente aqui).
+import threading
+
+# Importa datetime para gerar timestamps precisos.
+from datetime import datetime
+
+def verifica_ambiente():
+    """
+    Verifica se o código está sendo executado no Google Colab ou em ambiente local.
+    No Colab, não é possível acessar hardware real (portas seriais, Arduino),
+    então ativamos apenas o modo simulação.
+    
+    Retorna:
+    str: 'colab' se estiver no Google Colab, 'local' caso contrário.
+    """
+    
+    # Verifica se o módulo 'google.colab' está presente nos módulos carregados.
+    if 'google.colab' in sys.modules:
+        # Se estiver no Colab, exibe mensagem informando que usará simulação.
+        print("✅ Tamo no Colab! Vamos usar o modo SIMULAÇÃO (sem hardware).")
+        return "colab"
+    else:
+        # Se estiver em ambiente local, exibe opções disponíveis.
+        print("✅ Ambiente local detectado!")
+        print(" - Modo SIMULAÇÃO: funciona em qualquer PC")
+        print(" - Modo HARDWARE: precisa de Arduino/ESP32")
+        return "local"
+
+# Chama a função para detectar o ambiente e armazena o resultado.
+AMBIENTE = verifica_ambiente()
+
+# ============================================================
+# BLOCO 2: INSTALAÇÃO DAS BIBLIOTECAS (SÓ NO COLAB/SIMULAÇÃO)
+# ============================================================
+
+print("\n📦 Verificando/Instalando as bibliotecas...")
+
+# Se o ambiente for o Google Colab, instala apenas o numpy (para simulação).
+if AMBIENTE == "colab":
+    # Instala numpy silenciosamente (-q = quiet).
+    !pip install numpy -q
+    print("✅ Bibliotecas de simulação prontas.")
+else:
+    # Se for ambiente local, avisa sobre dependências para hardware real.
+    print("⚠️ Ambiente local: para hardware real, instale:")
+    print(" pip install pyserial")
+    print(" (ou use o modo simulação que já funciona)")
+
+# ============================================================
+# BLOCO 3: IMPORTAÇÃO DAS BIBLIOTECAS
+# ============================================================
+
+# Importa numpy para operações matemáticas (pode ser usado para cálculos
+# de média, etc., embora não seja essencial aqui).
+import numpy as np
+
+# Tenta importar a biblioteca pyserial para comunicação com Arduino/ESP32.
+# Esta biblioteca permite enviar dados pela porta serial USB.
+try:
+    import serial                 # Classe principal para comunicação serial.
+    import serial.tools.list_ports  # Utilitário para listar portas disponíveis.
+    HAS_SERIAL = True             # Flag indicando que pyserial está instalado.
+except ImportError:
+    HAS_SERIAL = False            # Flag indicando que pyserial NÃO está instalado.
+    print("ℹ️ PySerial não instalado. Modo hardware real desabilitado.")
+
+print("\n🎉 Bibliotecas importadas! Bora piscar uns LEDs, meu consagrado.")
+
+# ============================================================
+# BLOCO 4: ARTE ASCII DO ROBÔ (MODO HARDWARE)
+# ============================================================
+
+# String com arte ASCII representando o robô no modo hardware.
+# Inclui símbolos de LED (💡) e alto-falante (🔊).
+ascii_robo_hardware = r"""
+╔═══════════════════════════════════════════════════════════════╗
+║ 💡🔊💡                                                        ║
+║ 🤖 ROBÔ FOFOQUEIRO - MODO PISCA-PISCA 🤖                     ║
+║ "Agora eu tenho olhos que brilham e boca de LED!"            ║
+║ "Barulho alto? Já sei: LED vermelho e mensagem no display!"  ║
+╚═══════════════════════════════════════════════════════════════╝
+"""
+
+# Exibe a arte ASCII na tela.
+print(ascii_robo_hardware)
+
+# ============================================================
+# BLOCO 5: SIMULADOR DE DISPLAY LCD (ASCII ART)
+# ============================================================
+
+class DisplayLCDSimulado:
+    """
+    Simula um display LCD 16x2 usando texto no terminal.
+    O display real (como o modelo 1602) tem 2 linhas e 16 colunas.
+    Esta classe emula:
+    - Escrita de texto com alinhamento (esquerda, centro, direita)
+    - Rolagem para textos longos
+    - LED de fundo piscando (simulado com cores ANSI)
+    - Alertas visuais baseados em intensidade sonora
+    """
+    
+    def __init__(self, linhas=2, colunas=16):
+        """
+        Inicializa o display simulado.
+        
+        Parâmetros:
+        linhas: int - número de linhas do display (padrão: 2).
+        colunas: int - número de colunas por linha (padrão: 16).
+        """
+        self.linhas = linhas                    # Número de linhas do display.
+        self.colunas = colunas                  # Número de colunas.
+        self.linhas_texto = [" " * colunas, " " * colunas]  # Conteúdo atual.
+        self.frame_ativo = 0                    # Para animações futuras.
+        self.cor_led_fundo = "⚫"               # Cor do LED de fundo (apagado).
+
+    def limpar(self):
+        """Limpa o display (apaga todas as mensagens e reseta para espaço em branco)."""
+        # Preenche ambas as linhas com espaços em branco.
+        self.linhas_texto = [" " * self.colunas, " " * self.colunas]
+        self._mostrar()  # Atualiza a exibição.
+
+    def escrever_linha(self, linha, texto, alinhamento="esquerda"):
+        """
+        Escreve um texto em uma linha específica (0 = linha superior, 1 = linha inferior).
+        
+        Parâmetros:
+        linha: int - 0 para linha de cima, 1 para linha de baixo.
+        texto: str - o texto a ser exibido.
+        alinhamento: str - 'esquerda', 'centro' ou 'direita'.
+        """
+        
+        # Verifica se a linha informada é válida (0 ou 1).
+        if linha not in [0, 1]:
+            return  # Ignora linha inválida.
+        
+        # Se o texto for maior que a capacidade do display, trunca.
+        if len(texto) > self.colunas:
+            texto = texto[:self.colunas]
+        
+        # Aplica o alinhamento solicitado.
+        if alinhamento == "centro":
+            # Calcula quantos espaços devem ser adicionados à esquerda.
+            espacos = (self.colunas - len(texto)) // 2
+            texto = " " * espacos + texto
+            # Garante que a string tenha exatamente 'colunas' caracteres.
+            texto = texto.ljust(self.colunas)
+        elif alinhamento == "direita":
+            # Adiciona espaços à esquerda para alinhar à direita.
+            texto = texto.rjust(self.colunas)
+        else:  # alinhamento == "esquerda" (padrão)
+            # Adiciona espaços à direita para alinhar à esquerda.
+            texto = texto.ljust(self.colunas)
+        
+        # Armazena o texto na linha correspondente.
+        self.linhas_texto[linha] = texto
+        
+        # Atualiza a exibição do display.
+        self._mostrar()
+
+    def escrever_mensagem(self, mensagem, duracao=2):
+        """
+        Exibe uma mensagem no display com rolagem se for muito longa.
+        
+        Parâmetros:
+        mensagem: str - a mensagem a ser exibida.
+        duracao: float - tempo em segundos que a mensagem permanece na tela.
+        """
+        
+        # Se a mensagem cabe em uma linha (menos de 16 caracteres)...
+        if len(mensagem) <= self.colunas:
+            # Mostra a mensagem na linha superior, centralizada.
+            self.escrever_linha(0, mensagem, "centro")
+            # Mostra um emoji de robô na linha inferior.
+            self.escrever_linha(1, "🤖", "centro")
+        else:
+            # Mensagem longa - simula rolagem horizontal.
+            # Itera sobre a mensagem, deslocando o ponto de início.
+            for i in range(len(mensagem) - self.colunas + 1):
+                # Exibe um pedaço da mensagem (da posição i até i+colunas).
+                self.escrever_linha(0, mensagem[i:i+self.colunas])
+                # Exibe indicador de rolagem na linha inferior.
+                self.escrever_linha(1, "👉 " + "▶️" * min(5, i) + " ◀️", "centro")
+                time.sleep(0.3)  # Aguarda 0.3 segundos entre cada passo.
+            
+            # No final da rolagem, mostra o último pedaço e o robô.
+            self.escrever_linha(0, mensagem[-self.colunas:])
+            self.escrever_linha(1, "🤖", "centro")
+        
+        # Mantém a mensagem na tela pelo tempo especificado.
+        time.sleep(duracao)
+
+    def piscar_led_fundo(self, cor, repeticoes=3):
+        """
+        Simula LED de fundo piscando (muda a borda do display com cores ANSI).
+        
+        Parâmetros:
+        cor: str - cor do LED (🔴, 🟢, 🔵, 🟡).
+        repeticoes: int - número de piscadas.
+        """
+        
+        self.cor_led_fundo = cor  # Define a cor inicial.
+        for _ in range(repeticoes):
+            self._mostrar()        # Exibe display com a cor.
+            time.sleep(0.3)        # Aguarda 0.3 segundos.
+            self.cor_led_fundo = "⚫"  # Apaga o LED.
+            self._mostrar()        # Exibe display apagado.
+            time.sleep(0.3)        # Aguarda 0.3 segundos.
+        
+        # Garante que o LED termine apagado.
+        self.cor_led_fundo = "⚫"
+        self._mostrar()
+
+    def alerta_sonoro(self, intensidade):
+        """
+        Exibe alerta visual no display baseado na intensidade do som.
+        
+        Parâmetros:
+        intensidade: float - nível de decibéis simulado (0-120).
+        """
+        
+        if intensidade > 75:
+            # Alerta máximo: LED vermelho piscando e mensagem de urgência.
+            self.piscar_led_fundo("🔴", repeticoes=2)
+            self.escrever_mensagem("🚨 SILÊNCIO! TÁ MUITO ALTO! 🚨", duracao=1)
+        elif intensidade > 50:
+            # Alerta médio: LED amarelo piscando e mensagem de atenção.
+            self.piscar_led_fundo("🟡", repeticoes=1)
+            self.escrever_mensagem("⚠️ TÁ FICANDO BARULHENTO ⚠️", duracao=1)
+        else:
+            # Nível normal: mostra apenas o valor em dB na linha inferior.
+            self.escrever_linha(1, f"🔊 {intensidade:.0f} dB", "centro")
+
+    def _mostrar(self):
+        """
+        Desenha o display no terminal com moldura e LED de fundo colorido.
+        Usa códigos ANSI para cores no terminal.
+        """
+        
+        # Limpa a tela do terminal (compatível com Windows e Linux/Mac).
+        # 'cls' para Windows, 'clear' para Unix-like.
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+        # Dicionário mapeando emojis de LED para códigos de cor ANSI.
+        cores_led = {
+            "🔴": "\033[91m",  # Vermelho
+            "🟢": "\033[92m",  # Verde
+            "🔵": "\033[94m",  # Azul
+            "🟡": "\033[93m",  # Amarelo
+            "⚫": "\033[0m"    # Reset (cor padrão)
+        }
+        
+        # Obtém o código ANSI correspondente à cor atual (padrão se não encontrado).
+        cor_ansi = cores_led.get(self.cor_led_fundo, "\033[0m")
+        
+        # Desenha a borda superior do display.
+        print(cor_ansi + "╔" + "═" * (self.colunas + 2) + "╗")
+        
+        # Desenha cada linha do display com as barras laterais.
+        for i, linha in enumerate(self.linhas_texto):
+            print(f"║ {linha} ║")
+        
+        # Desenha a borda inferior e reseta a cor ANSI.
+        print("╚" + "═" * (self.colunas + 2) + "╝" + "\033[0m")
+        
+        # Se o LED de fundo não estiver apagado, mostra um indicador extra.
+        if self.cor_led_fundo != "⚫":
+            print(f"💡 LED de fundo: {self.cor_led_fundo} PISCANDO!")
+
+# ============================================================
+# BLOCO 6: SIMULADOR DE LEDs RGB
+# ============================================================
+
+class LedRGBSimulado:
+    """
+    Simula um LED RGB (Vermelho, Verde, Azul) usando cores no terminal.
+    O LED real usa PWM (Pulse Width Modulation) para controlar a
+    intensidade de cada cor, de 0 a 255.
+    """
+    
+    def __init__(self):
+        """Inicializa o LED RGB com todas as cores desligadas (0,0,0)."""
+        self.r = 0  # Intensidade do vermelho (0-255).
+        self.g = 0  # Intensidade do verde (0-255).
+        self.b = 0  # Intensidade do azul (0-255).
+        self._mostrar()  # Exibe o estado inicial.
+
+    def definir_cor(self, r, g, b):
+        """
+        Define a cor do LED com valores de 0 a 255.
+        
+        Parâmetros:
+        r, g, b: int - intensidades de vermelho, verde e azul (0-255).
+        """
+        
+        # Garante que os valores estejam dentro do intervalo 0-255.
+        # max(0, min(255, valor)) = clamp(valor, 0, 255)
+        self.r = max(0, min(255, r))
+        self.g = max(0, min(255, g))
+        self.b = max(0, min(255, b))
+        
+        self._mostrar()  # Atualiza a exibição.
+
+    def ligar_vermelho(self, intensidade=255):
+        """Liga apenas o LED vermelho com determinada intensidade."""
+        self.definir_cor(intensidade, 0, 0)
+
+    def ligar_verde(self, intensidade=255):
+        """Liga apenas o LED verde com determinada intensidade."""
+        self.definir_cor(0, intensidade, 0)
+
+    def ligar_azul(self, intensidade=255):
+        """Liga apenas o LED azul com determinada intensidade."""
+        self.definir_cor(0, 0, intensidade)
+
+    def ligar_amarelo(self):
+        """Liga LED amarelo (combinação de vermelho + verde)."""
+        self.definir_cor(255, 200, 0)
+
+    def piscar(self, cor_func, repeticoes=3, intervalo=0.3):
+        """
+        Faz o LED piscar chamando uma função de cor repetidamente.
+        
+        Parâmetros:
+        cor_func: function - função que define a cor (ex: self.ligar_vermelho).
+        repeticoes: int - número de piscadas.
+        intervalo: float - tempo entre piscadas (em segundos).
+        """
+        
+        for _ in range(repeticoes):
+            cor_func()          # Liga o LED na cor especificada.
+            time.sleep(intervalo)  # Aguarda.
+            self.desligar()     # Desliga o LED.
+            time.sleep(intervalo)  # Aguarda.
+
+    def desligar(self):
+        """Desliga todos os LEDs (intensidade zero em todas as cores)."""
+        self.definir_cor(0, 0, 0)
+
+    def alerta_som(self, intensidade):
+        """
+        Altera a cor do LED baseado na intensidade do som.
+        Quanto maior o som, mais intensa e "quente" é a cor.
+        
+        Parâmetros:
+        intensidade: float - nível de decibéis simulado (0-120).
+        """
+        
+        if intensidade > 75:
+            # Alerta máximo: LED vermelho piscando rapidamente.
+            self.piscar(self.ligar_vermelho, repeticoes=2, intervalo=0.2)
+        elif intensidade > 50:
+            # Alerta médio: LED amarelo (constante).
+            self.ligar_amarelo()
+        elif intensidade > 30:
+            # Nível médio-baixo: LED verde com intensidade proporcional.
+            # Quanto maior o som, mais forte o verde.
+            self.ligar_verde(intensidade=int(255 * (intensidade/50)))
+        else:
+            # Nível baixo/silêncio: LED azul bem fraquinho.
+            self.ligar_azul(50)
+
+    def _mostrar(self):
+        """
+        Desenha a cor do LED no terminal usando emojis e cores ANSI.
+        Esta é a representação visual da cor atual do LED.
+        """
+        
+        # Mapeamento de combinações RGB para emojis e cores ANSI.
+        # Vermelho predominante.
+        if self.r > 200 and self.g < 50 and self.b < 50:
+            cor = "\033[91m"  # Código ANSI para vermelho.
+            simbolo = "🔴"
+        # Verde predominante.
+        elif self.g > 200 and self.r < 50 and self.b < 50:
+            cor = "\033[92m"  # Código ANSI para verde.
+            simbolo = "🟢"
+        # Azul predominante.
+        elif self.b > 200 and self.r < 50 and self.g < 50:
+            cor = "\033[94m"  # Código ANSI para azul.
+            simbolo = "🔵"
+        # Amarelo (vermelho + verde).
+        elif self.r > 150 and self.g > 150 and self.b < 50:
+            cor = "\033[93m"  # Código ANSI para amarelo.
+            simbolo = "🟡"
+        # Todos desligados.
+        elif self.r == 0 and self.g == 0 and self.b == 0:
+            cor = "\033[0m"   # Reset (sem cor especial).
+            simbolo = "⚫"
+        # Outras combinações (cores misturadas).
+        else:
+            cor = "\033[95m"  # Magenta para representar "misto".
+            simbolo = "🌈"
+        
+        # Exibe o estado do LED no terminal.
+        print(f"{cor}💡 LED RGB: {simbolo} (R:{self.r:3d} G:{self.g:3d} B:{self.b:3d})\033[0m")
+
+# ============================================================
+# BLOCO 7: INTEGRAÇÃO COM O SENSOR DE SOM (SIMULADO)
+# ============================================================
+
+def medidor_som_simulado():
+    """
+    Simula a medição de intensidade sonora (decibéis).
+    Em uma aula real, isso viria do microfone via speech_recognition (Aula 2).
+    Aqui usamos valores aleatórios para demonstrar o comportamento.
+    
+    Retorna:
+    int: valor simulado de intensidade sonora (entre aproximadamente 15 e 115 dB).
+    """
+    
+    # Lista de níveis possíveis (exemplos).
+    niveis = [20, 45, 60, 80, 95, 110]
+    
+    # Escolhe um nível aleatório e adiciona um pequeno ruído (-5 a +5).
+    return random.choice(niveis) + random.randint(-5, 5)
+
+def modo_monitoramento_continuo():
+    """
+    Modo que fica monitorando o som (simulado) continuamente.
+    A cada 2 segundos, "lê" o sensor, atualiza o display e os LEDs.
+    Este é o modo principal de demonstração do robô.
+    """
+    
+    print("\n" + "="*60)
+    print("🎛️ MODO MONITORAMENTO - Robô Fofoqueiro de Olho no Barulho!")
+    print("="*60)
+    print("👉 O robô vai medir o barulho a cada 2 segundos")
+    print("👉 Display mostra mensagens, LEDs mudam de cor")
+    print("👉 Pressione Ctrl+C para parar")
+    print("-"*60)
+    
+    # Cria os componentes simulados.
+    display = DisplayLCDSimulado()  # Display LCD virtual.
+    led = LedRGBSimulado()          # LED RGB virtual.
+    
+    # Mensagem de boas-vindas no display.
+    display.escrever_mensagem("🤖 ROBÔ FOFOQUEIRO ATIVADO 🤖", duracao=2)
+    
+    # Configuração inicial do display.
+    display.escrever_linha(0, "Monitorando som", "centro")
+    display.escrever_linha(1, "🎤 aguardando...", "centro")
+    
+    contador = 0           # Contador de medições.
+    historico_dB = []      # Lista para armazenar os valores medidos.
+    
+    try:
+        # Loop infinito até o usuário interromper (Ctrl+C).
+        while True:
+            contador += 1
+            
+            # "Lê" o sensor de som (simulado).
+            intensidade = medidor_som_simulado()
+            historico_dB.append(intensidade)
+            
+            # Atualiza o display com o valor atual.
+            display.escrever_linha(0, f"🔊 {intensidade:.0f} dB", "centro")
+            
+            # Exibe mensagem personalizada baseada na intensidade.
+            if intensidade > 75:
+                display.escrever_linha(1, "🚨 MUITO ALTO! 🚨", "centro")
+                display.piscar_led_fundo("🔴", repeticoes=1)
+            elif intensidade > 50:
+                display.escrever_linha(1, "⚠️ FICANDO ALTO ⚠️", "centro")
+                display.piscar_led_fundo("🟡", repeticoes=1)
+            elif intensidade > 30:
+                display.escrever_linha(1, "🔊 barulho normal", "centro")
+            else:
+                display.escrever_linha(1, "🤫 silêncio...", "centro")
+            
+            # Atualiza a cor do LED baseado na intensidade.
+            led.alerta_som(intensidade)
+            
+            # A cada 5 medições, exibe um resumo estatístico.
+            if contador % 5 == 0:
+                # Calcula a média das últimas 5 medições.
+                media = sum(historico_dB[-5:]) / 5
+                print(f"\n📊 Últimas 5 medições - Média: {media:.0f} dB")
+            
+            # Aguarda 2 segundos antes da próxima medição.
+            time.sleep(2)
+    
+    except KeyboardInterrupt:
+        # Captura Ctrl+C para encerrar o programa graciosamente.
+        print("\n\n🛑 Monitoramento encerrado!")
+    
+    # Exibe estatísticas finais após o término.
+    if historico_dB:
+        print("\n📊 RESUMO FINAL:")
+        print(f" Total de medições: {len(historico_dB)}")
+        print(f" Máximo: {max(historico_dB):.0f} dB")
+        print(f" Mínimo: {min(historico_dB):.0f} dB")
+        print(f" Média: {sum(historico_dB)/len(historico_dB):.0f} dB")
+    
+    # Mensagem de despedida no display.
+    display.escrever_mensagem("👋 Robô desligado! Até a próxima! 👋", duracao=2)
+    led.desligar()  # Garante que o LED seja desligado.
+    print("\n✅ Robô Fofoqueiro hibernando... Zzzzz")
+
+# ============================================================
+# BLOCO 8: MODO HARDWARE REAL (OPCIONAL - ARDUINO/ESP32)
+# ============================================================
+
+def encontrar_porta_arduino():
+    """
+    Tenta encontrar a porta serial onde o Arduino/ESP32 está conectado.
+    Verifica descrições típicas: 'Arduino', 'CH340' (conversor USB-serial comum),
+    ou 'USB' (genérico).
+    
+    Retorna:
+    str or None: caminho da porta (ex: 'COM3' no Windows, '/dev/ttyUSB0' no Linux)
+                 ou None se não encontrado.
+    """
+    
+    # Se pyserial não está instalado, retorna None.
+    if not HAS_SERIAL:
+        return None
+    
+    # Lista todas as portas seriais disponíveis no sistema.
+    ports = list(serial.tools.list_ports.comports())
+    
+    # Procura por portas com descrições que indicam Arduino/ESP32.
+    for port in ports:
+        # Verifica se a descrição contém palavras-chave comuns.
+        if "Arduino" in port.description or "CH340" in port.description or "USB" in port.description:
+            return port.device  # Retorna o nome da porta (ex: 'COM3').
+    
+    return None  # Nenhuma porta encontrada.
+
+def modo_hardware_real():
+    """
+    Conecta com Arduino/ESP32 para controlar LEDs e display reais.
+    O código do Arduino deve estar rodando (firmware apropriado).
+    Envia comandos simples pela serial: 'R', 'G', 'B', '0'.
+    """
+    
+    print("\n" + "="*60)
+    print("🔌 MODO HARDWARE REAL - Conectando ao Arduino/ESP32")
+    print("="*60)
+    
+    # Verifica se pyserial está instalado.
+    if not HAS_SERIAL:
+        print("❌ PySerial não está instalado!")
+        print(" Execute: pip install pyserial")
+        print(" Depois tente novamente.")
+        return
+    
+    # Tenta encontrar o Arduino automaticamente.
+    porta = encontrar_porta_arduino()
+    if not porta:
+        print("❌ Nenhum dispositivo Arduino/ESP32 encontrado!")
+        print(" Verifique:")
+        print(" 1. O Arduino está conectado via USB?")
+        print(" 2. O código do firmware foi carregado?")
+        print(" 3. A porta serial está correta?")
+        print("\n📌 Para simulação, use o Modo Monitoramento (opção 1)")
+        return
+    
+    print(f"✅ Arduino encontrado na porta {porta}")
+    
+    try:
+        # Abre a porta serial com baud rate de 9600.
+        # timeout=1 significa que operações de leitura esperam no máximo 1 segundo.
+        ser = serial.Serial(porta, 9600, timeout=1)
+        
+        # Aguarda 2 segundos para o Arduino reiniciar após a conexão.
+        time.sleep(2)
+        
+        print("✅ Conectado! Enviando comandos...")
+        print("👉 Digite comandos ou pressione Ctrl+C para sair")
+        print("-"*40)
+        
+        # Loop principal de controle manual.
+        while True:
+            # Solicita comando do usuário.
+            comando = input("🎮 Comando (R=vermelho, G=verde, B=azul, 0=desligar, S=sair): ").upper()
+            
+            if comando == 'S':
+                break  # Sai do loop.
+            elif comando == 'R':
+                ser.write(b'R')  # Envia o caractere 'R' como byte.
+                print("🔴 LED vermelho ligado!")
+            elif comando == 'G':
+                ser.write(b'G')
+                print("🟢 LED verde ligado!")
+            elif comando == 'B':
+                ser.write(b'B')
+                print("🔵 LED azul ligado!")
+            elif comando == '0':
+                ser.write(b'0')
+                print("⚫ LEDs desligados!")
+            else:
+                print("❌ Comando inválido! Use R, G, B, 0 ou S")
+        
+        # Fecha a conexão serial.
+        ser.close()
+        print("\n👋 Conexão encerrada!")
+    
+    except Exception as e:
+        print(f"❌ Erro na comunicação serial: {e}")
+        print(" Verifique se o Arduino está programado corretamente.")
+
+# ============================================================
+# BLOCO 9: CÓDIGO PARA ARDUINO (FIRMWARE - PARA REFERÊNCIA)
+# ============================================================
+
+def mostrar_codigo_arduino():
+    """
+    Exibe o código que deve ser carregado no Arduino/ESP32
+    para controle dos LEDs e display.
+    Este código deve ser copiado e colado na IDE do Arduino.
+    """
+    
+    codigo = """
+// ============================================================
+// CÓDIGO PARA ARDUINO/ESP32 - ROBÔ FOFOQUEIRO HARDWARE
+// ============================================================
+// Conecte:
+// - LED vermelho no pino 9 (PWM)
+// - LED verde no pino 10 (PWM)
+// - LED azul no pino 11 (PWM)
+// - Display LCD I2C no endereço 0x27 (pinos A4/A5)
+
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+
+// Configuração do display LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+// Pinos dos LEDs
+#define LED_R 9
+#define LED_G 10
+#define LED_B 11
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Configura pinos dos LEDs como saída
+  pinMode(LED_R, OUTPUT);
+  pinMode(LED_G, OUTPUT);
+  pinMode(LED_B, OUTPUT);
+  
+  // Inicializa o display
+  lcd.init();
+  lcd.backlight();
+  lcd.setCursor(0, 0);
+  lcd.print("Robô Fofoqueiro");
+  lcd.setCursor(0, 1);
+  lcd.print("Aguardando...");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char comando = Serial.read();
+    switch(comando) {
+      case 'R': // Vermelho
+        analogWrite(LED_R, 255);
+        analogWrite(LED_G, 0);
+        analogWrite(LED_B, 0);
+        lcd.setCursor(0, 0);
+        lcd.print("🔴 VERMELHO! ");
+        lcd.setCursor(0, 1);
+        lcd.print("Barulho alto! ");
+        break;
+      case 'G': // Verde
+        analogWrite(LED_R, 0);
+        analogWrite(LED_G, 255);
+        analogWrite(LED_B, 0);
+        lcd.setCursor(0, 0);
+        lcd.print("🟢 VERDE! ");
+        lcd.setCursor(0, 1);
+        lcd.print("Tudo calmo... ");
+        break;
+      case 'B': // Azul
+        analogWrite(LED_R, 0);
+        analogWrite(LED_G, 0);
+        analogWrite(LED_B, 255);
+        lcd.setCursor(0, 0);
+        lcd.print("🔵 AZUL! ");
+        lcd.setCursor(0, 1);
+        lcd.print("Modo noturno ");
+        break;
+      case '0': // Desligar
+        analogWrite(LED_R, 0);
+        analogWrite(LED_G, 0);
+        analogWrite(LED_B, 0);
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("LEDs off ");
+        break;
+    }
+  }
+}
+"""
+    print("\n" + "="*60)
+    print("📟 CÓDIGO PARA ARDUINO/ESP32")
+    print("="*60)
+    print(codigo)
+    print("\n👉 Copie e cole esse código na IDE do Arduino")
+    print("👉 Conecte os LEDs nos pinos 9, 10 e 11 (com resistores de 220Ω)")
+    print("👉 Conecte o display LCD I2C nos pinos A4 (SDA) e A5 (SCL)")
+
+# ============================================================
+# BLOCO 10: CHECKLIST E MENU PRINCIPAL
+# ============================================================
+
+def checklist_hardware():
+    """Verifica quais modos estão disponíveis (simulação e hardware real)."""
+    
+    print("\n📋 CHECKLIST DO MODO HARDWARE/SIMULAÇÃO:")
+    print("="*40)
+    print("✅ Simulação de Display LCD: disponível")
+    print("✅ Simulação de LEDs RGB: disponível")
+    print("✅ Integração com sensor de som: disponível")
+    
+    # Verifica disponibilidade de hardware real.
+    if HAS_SERIAL:
+        porta = encontrar_porta_arduino()
+        if porta:
+            print(f"✅ Arduino/ESP32 encontrado na porta {porta}")
+        else:
+            print("⚠️ Nenhum Arduino/ESP32 detectado (apenas simulação)")
+    else:
+        print("⚠️ PySerial não instalado (apenas simulação)")
+    
+    print("="*40)
+    print("👉 Para simulação: execute Modo Monitoramento (opção 1)")
+    print("👉 Para hardware real: execute Modo Arduino (opção 2)")
+
+def main():
+    """
+    Função principal com menu de opções.
+    Permite ao usuário escolher entre:
+    1 - Simulação (recomendado)
+    2 - Hardware real (Arduino/ESP32)
+    3 - Ver código do firmware
+    4 - Verificar checklist
+    5 - Sair
+    """
+    
+    print("\n🤖 ROBÔ FOFOQUEIRO - AULA 6: DISPLAY LCD E LEDs")
+    print("="*50)
+    print("1 - Modo Monitoramento (SIMULAÇÃO) - Recomendado")
+    print("2 - Modo Hardware Real (ARDUINO/ESP32) - Precisa de componentes")
+    print("3 - Ver código para Arduino (firmware)")
+    print("4 - Verificar checklist")
+    print("5 - Sair")
+    print("="*50)
+    
+    # Solicita a opção do usuário.
+    opcao = input("\n👉 Escolha uma opção (1/2/3/4/5): ").strip()
+    
+    # Executa a opção escolhida.
+    if opcao == '1':
+        modo_monitoramento_continuo()  # Simulação com display e LED virtuais.
+    elif opcao == '2':
+        modo_hardware_real()           # Conexão com Arduino real.
+    elif opcao == '3':
+        mostrar_codigo_arduino()       # Exibe o código para o Arduino.
+    elif opcao == '4':
+        checklist_hardware()           # Verifica disponibilidade.
+    else:
+        # Opção 5 ou qualquer outra: encerra o programa.
+        print("\n👋 Até a próxima, piá! Não esquece: acessibilidade é coisa séria!")
+        print(" (e se o LED piscar vermelho, faz silêncio, viu?)")
+
+# ============================================================
+# BLOCO 11: MENSAGEM DE DEBATE (PROTOTIPAGEM ASSISTIVA)
+# ============================================================
+
+def mensagem_debate_prototipagem():
+    """
+    Exibe uma mensagem para debate sobre prototipagem e acessibilidade.
+    Estimula discussões sobre hardware assistivo, inclusão e desafios
+    de implementação em contextos reais (escolas, empresas, etc.).
+    """
+    
+    print("\n" + "="*60)
+    print("🧠 PARA DEBATE EM SALA DE AULA:")
+    print("="*60)
+    print("1. Como um display LCD e LEDs podem ajudar pessoas com deficiência auditiva?")
+    print("2. Quais outros sensores poderiam ser acoplados ao Robô Fofoqueiro?")
+    print("3. O que é mais importante: hardware barato ou software acessível?")
+    print("4. Como um protótipo desses poderia ser usado em uma escola inclusiva?")
+    print("5. Quais os desafios de levar um projeto desses para a vida real?")
+    print("="*60)
+    print("💬 Discutam em grupos e anotem ideias para o 'Robô Fofoqueiro 2.0'!")
+
+# ============================================================
+# PONTO DE ENTRADA
+# ============================================================
+
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
+if __name__ == "__main__":
+    main()                      # Chama a função principal.
+    mensagem_debate_prototipagem()  # Exibe mensagem de debate.
+
+# Mensagem final de encerramento da aula.
+print("\n🎉 Fim da Aula 6 - Robô Fofoqueiro agora tem olhos que brilham!")
+print(" (Ele até aprendeu a piscar quando você grita...)")</code></pre>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo de
+                integração com display LCD e LEDs (simulação + hardware real)
+                para rodar no Google Colab.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> Simulação visual funcional
+                      (display e LEDs piscando)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> LEDs "piscando" conforme
+                      nível de alerta?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> (Se real) circuito montado
+                      e funcionando?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Integração com sensor de
+                      som (simulado) está correta?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Participou do debate sobre
+                      prototipagem assistiva?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Testou tanto o modo
+                      simulação quanto entendeu o hardware real?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+                  </div>
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Avaliação
+                  </h5>
+                  <hr class="hr-alerta" />
+                  <ul>
+                    <li>Simulação visual funcional</li>
+                    <li>LEDs "piscando" conforme nível de alerta</li>
+                    <li>(Se real) circuito montado e funcionando</li>
+                  </ul>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "Se não tiver Arduino, o modo simulação já
+                      funciona direto no Colab!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Título:</strong> "O robô pisca e fala: integrando
+                    hardware ao software"
+                  </p>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13CNT101, EM13CNT206 |
+                    <strong>RCP - Paraná:</strong> Física - Eletricidade,
+                    Robótica - Prototipagem
+                  </p>
+                  <p><strong>Duração:</strong> 2 aulas (100 minutos)</p>
+                  <p>
+                    <strong>Materiais:</strong> Notebook Colab, (opcional)
+                    Arduino/ESP32, LEDs RGB, resistores 220Ω, display LCD
+                    16x2 I2C, sensor KY-038
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      <strong>Abertura (10min):</strong> Mostrar vídeo de
+                      protótipos assistivos (semáforo sonoro para surdos)
+                    </li>
+                    <li>
+                      <strong>Conceituação (15min):</strong> Explicar display
+                      LCD (16x2) e LEDs RGB (PWM para cores). Esquema
+                      elétrico.
+                    </li>
+                    <li>
+                      <strong>Simulação (30min):</strong> Implementar versão
+                      simulada (visual) no Colab com ASCII art e emojis
+                    </li>
+                    <li>
+                      <strong>Extensão (30min):</strong> Se houver Arduino:
+                      montar circuito real com sensor de som + LEDs + display
+                    </li>
+                    <li>
+                      <strong>Fechamento (15min):</strong> Testar integração
+                      com sensor de som: barulho alto → LED vermelho pisca +
+                      mensagem no display
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 5: Simulador de Hardware (display e LEDs interativos) -->
+        <div id="conteudoSimulador" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-display"></i> Simulador de Display LCD e LEDs
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="simulador-fala p-4">
+                <div class="text-center mb-4">
+                  <div class="robo-ascii-animado">
+                    💡🔊 "Pisca-pisca do Robô!"
+                  </div>
+                </div>
+
+                <!-- Display LCD Simulado -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-display"></i> Display LCD (simulado):</label>
+                  <div id="displayLcdSimulado"
+                    class="border rounded-3 p-3 bg-dark text-white font-monospace text-center">
+                    ╔════════════════╗<br />
+                    ║ ║<br />
+                    ║ ║<br />
+                    ╚════════════════╝
+                  </div>
+                </div>
+
+                <!-- LED RGB Simulado -->
+                <div class="mb-4 text-center">
+                  <label class="form-label fw-bold"><i class="bi bi-lightbulb"></i> LED RGB (simulado):</label>
+                  <div id="ledRgbSimulado" class="p-3 rounded-3 text-center">
+                    <div id="ledLuz"></div>
+                    <p class="mt-2 text-white" id="ledStatus">
+                      🔘 LED desligado
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Controles do simulador -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-sliders2"></i> Simular nível de
+                    som:</label>
+                  <div class="row g-2">
+                    <div class="col-6 col-md-3">
+                      <button id="btnSomSilencio" class="btn btn-outline-secondary w-100">
+                        🤫 Silêncio (20 dB)
+                      </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <button id="btnSomNormal" class="btn btn-outline-secondary w-100">
+                        🗣️ Normal (55 dB)
+                      </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <button id="btnSomAlto" class="btn btn-outline-secondary w-100">
+                        📢 Alto (80 dB)
+                      </button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <button id="btnSomMuitoAlto" class="btn btn-outline-secondary w-100">
+                        🔊 Muito Alto (95 dB)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Botão de teste aleatório -->
+                <div class="text-center">
+                  <button id="btnTesteAleatorio" class="btn btn-primary">
+                    <i class="bi bi-shuffle"></i> Teste aleatório
+                  </button>
+                </div>
+
+                <div class="alert alert-warning mt-3">
+                  <i class="bi bi-info-circle"></i>
+                  <strong>Nota:</strong> Este é um simulador visual. O código
+                  Python completo (com display e LEDs simulados em ASCII)
+                  deve ser executado no Google Colab. Clique na aba "Código
+                  Python" para ver o código real.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação & inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "Agora o trem pisca e fala,
+        vixi! Robô ficou chique!"</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

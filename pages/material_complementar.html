@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Robô Fofoqueiro | Material Complementar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i
+                class="bi bi-house-door-fill"></i> Início</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i
+                class="bi bi-robot"></i> Aula 1 - Setup</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i
+                class="bi bi-mic"></i> Aula 2 - Escuta</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i
+                class="bi bi-chat-dots"></i> Aula 3 - Fala</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i
+                class="bi bi-eye"></i> Aula 4 - Visão</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i
+                class="bi bi-cpu"></i> Aula 5 - IA com Personalidade</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i
+                class="bi bi-lightbulb"></i> Aula 6 - Display e LEDs</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i
+                class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i
+                class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo Completo</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i
+                class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto</a></li>
+          <li class="nav-item"><a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i
+                class="bi bi-wifi-off"></i> Aula 10 - Offline</a></li>
+          <li class="nav-item"><a class="nav-link active-projeto" data-projeto-aba="aula11" href="#"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a></li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i>
+              Sobre</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header"><i class="bi bi-grid-3x3-gap-fill"></i> Material Complementar</div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item"><a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="bncc_rcp"><i
+                  class="bi bi-book-half"></i> BNCC x RCP</a></li>
+            <li class="nav-item"><a href="#" class="nav-link lateral-link" data-lateral-aba="avaliacao"><i
+                  class="bi bi-star-fill"></i> Avaliação Final</a></li>
+            <li class="nav-item"><a href="#" class="nav-link lateral-link" data-lateral-aba="checklist"><i
+                  class="bi bi-clipboard-check"></i> Checklist</a></li>
+            <li class="nav-item"><a href="#" class="nav-link lateral-link" data-lateral-aba="professor"><i
+                  class="bi bi-mortarboard"></i> Área do Profe</a></li>
+            <li class="nav-item"><a href="#" class="nav-link lateral-link" data-lateral-aba="downloads"><i
+                  class="bi bi-download"></i> Downloads</a></li>
+          </ul>
+          <div class="sidebar-footer"><button id="btnExportarMaterial" class="btn btn-download-lateral w-100"><i
+                class="bi bi-file-earmark-text-fill"></i> Exportar resumo</button></div>
+        </div>
+      </aside>
+
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <div id="conteudoBnccRcp" class="lateral-aba-conteudo active-lateral-aba">
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9"><span class="badge bg-warning text-dark mb-2"><i class="bi bi-book-half"></i>
+                    VIXI, OS TRENS DA BNCC E DO RCP!</span>
+                  <h1 class="display-5 fw-bold">📚 Referência Cruzada: BNCC x RCP</h1>
+                  <p class="lead mt-3">"O que a Base Nacional Comum Curricular e o Referencial Curricular do Paraná
+                    dizem sobre o Robô Fofoqueiro?" — Tabela completa de códigos e competências trabalhadas ao longo do
+                    projeto.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">📖📚📘<br>"Trem<br>da BNCC!"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0"><i class="bi bi-diagram-3-fill"></i> Tabela de Referência Cruzada (BNCC x RCP)</h5>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="tabela-etapas mb-0">
+                  <thead>
+                    <tr>
+                      <th>Componente</th>
+                      <th>BNCC (Ensino Médio)</th>
+                      <th>RCP - Paraná</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Linguagens</strong></td>
+                      <td>EM13LGG101, LGG104, LGG301, LGG701-704, LP16</td>
+                      <td>Língua Portuguesa - Oralidade, Produção de texto</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Matemática</strong></td>
+                      <td>EM13MAT405, MAT503</td>
+                      <td>Pensamento Computacional, Estatística</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ciências da Natureza</strong></td>
+                      <td>EM13CNT101, CNT102, CNT104, CNT206, CNT303</td>
+                      <td>Física (Ondulatória, Eletricidade), Tecnologia e Sociedade</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Competências Gerais</strong></td>
+                      <td>CG1, CG2, CG4, CG5, CG6, CG7, CG8, CG10</td>
+                      <td>Cidadania Digital, Trabalho Colaborativo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4 mb-4">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">🗣️</div>
+                  <h3>Linguagens</h3>
+                  <p><strong>EM13LGG101, LGG104, LGG301, LGG701-704, LP16</strong></p>
+                  <p>Análise e produção de textos multimodais, utilização de diferentes mídias para divulgação
+                    científica, produção de vídeos com legendas acessíveis.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">📐</div>
+                  <h3>Matemática</h3>
+                  <p><strong>EM13MAT405, MAT503</strong></p>
+                  <p>Utilização de conceitos de programação para análise de dados, construção e interpretação de
+                    gráficos, tratamento estatístico de medições sonoras.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">🔬</div>
+                  <h3>Ciências da Natureza</h3>
+                  <p><strong>EM13CNT101, CNT102, CNT104, CNT206, CNT303</strong></p>
+                  <p>Utilização de modelos físicos (sensores), análise de impactos da IA, avaliação de sistemas
+                    integrados, discussão sobre eletricidade e ondas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 shadow-sm">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0"><i class="bi bi-star-fill"></i> Competências Gerais da BNCC</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-4"><span class="badge-bncc">CG1</span> - Conhecimento</div>
+                <div class="col-md-4"><span class="badge-bncc">CG2</span> - Curiosidade</div>
+                <div class="col-md-4"><span class="badge-bncc">CG4</span> - Linguagens</div>
+                <div class="col-md-4 mt-2"><span class="badge-bncc">CG5</span> - Tecnologias digitais</div>
+                <div class="col-md-4 mt-2"><span class="badge-bncc">CG6</span> - Trabalho em equipe</div>
+                <div class="col-md-4 mt-2"><span class="badge-bncc">CG7</span> - Argumentação</div>
+                <div class="col-md-4 mt-2"><span class="badge-bncc">CG8</span> - Autoconhecimento</div>
+                <div class="col-md-4 mt-2"><span class="badge-bncc">CG10</span> - Autonomia</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="conteudoAvaliacao" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9"><span class="badge bg-warning text-dark mb-2"><i class="bi bi-star-fill"></i>
+                    VIXI, HORA DA AVALIAÇÃO!</span>
+                  <h1 class="display-5 fw-bold">🎯 Sugestão de Avaliação Final do Projeto</h1>
+                  <p class="lead mt-3">"Como avaliar o bagulho doido que a gente fez?" — Critérios, pesos e indicadores
+                    para uma avaliação justa e completa do Robô Fofoqueiro.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">📊📈📉<br>"Nota 10,<br>piá!"</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0"><i class="bi bi-check2-square"></i> Matriz de Avaliação</h5>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="tabela-etapas mb-0">
+                  <thead>
+                    <tr>
+                      <th>Critério</th>
+                      <th>Peso</th>
+                      <th>Indicadores</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Funcionamento técnico</strong></td>
+                      <td>30%</td>
+                      <td>Todos os 10 módulos implementados e integrados</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Documentação</strong></td>
+                      <td>20%</td>
+                      <td>README, comentários no código, tutorial de instalação</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Vídeo de divulgação</strong></td>
+                      <td>20%</td>
+                      <td>Roteiro, manifesto, edição, legendas acessíveis</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Participação e colaboração</strong></td>
+                      <td>15%</td>
+                      <td>Diário de bordo, ajuda aos colegas, debates éticos</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Criatividade e irreverência</strong></td>
+                      <td>15%</td>
+                      <td>Memes originais, gírias paranaenses, personalidade única</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-trophy-fill"></i> Funcionamento técnico (30%)</h5>
+                  <hr>
+                  <p>Verifique se cada módulo está funcionando individualmente e se o menu integrado (Aula 8) chama
+                    todos corretamente. Teste o modo automático.</p>
+                  <div class="alert alert-info mt-2"><i class="bi bi-lightbulb"></i> <strong>Dica:</strong> Crie uma
+                    rubrica simples: ✅ (100%), ⚠️ (50%), ❌ (0%).</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-file-earmark-text-fill"></i> Documentação (20%)</h5>
+                  <hr>
+                  <p>README gerado (Aula 8), comentários no código com linguagem coloquial, tutorial de instalação (Aula
+                    10).</p>
+                  <div class="alert alert-success mt-2"><i class="bi bi-check-circle"></i> <strong>Dica:</strong> Peça
+                    que cada grupo gere o README e o tutorial PDF.</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-camera-reels-fill"></i> Vídeo de divulgação (20%)</h5>
+                  <hr>
+                  <p>Roteiro seguido, manifesto do robô (6 frases), edição com legendas acessíveis, duração entre 2 e 3
+                    minutos.</p>
+                  <div class="alert alert-warning mt-2"><i class="bi bi-exclamation-triangle"></i>
+                    <strong>Dica:</strong> Use o gerador de roteiro da Aula 9 para padronizar.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5><i class="bi bi-people-fill"></i> Participação e colaboração (15%)</h5>
+                  <hr>
+                  <p>Diário de bordo individual, registro de ajuda aos colegas, participação nos debates éticos sobre IA
+                    e acessibilidade.</p>
+                  <div class="alert alert-secondary mt-2"><i class="bi bi-journal-bookmark-fill"></i>
+                    <strong>Dica:</strong> Peça autoavaliação e avaliação entre pares.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card border-0 shadow-sm mt-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0"><i class="bi bi-calculator-fill"></i> Tabela de Conversão - Nota Final</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="tabela-etapas">
+                  <thead>
+                    <tr>
+                      <th>Pontuação (%)</th>
+                      <th>Conceito</th>
+                      <th>Descrição</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>90% - 100%</td>
+                      <td><span class="badge bg-success">Excelente (A)</span></td>
+                      <td>Robô completo, documentação impecável, vídeo criativo</td>
+                    </tr>
+                    <tr>
+                      <td>75% - 89%</td>
+                      <td><span class="badge bg-primary">Bom (B)</span></td>
+                      <td>Funciona bem, mas falta algum detalhe</td>
+                    </tr>
+                    <tr>
+                      <td>60% - 74%</td>
+                      <td><span class="badge bg-warning text-dark">Regular (C)</span></td>
+                      <td>Funciona parcialmente, documentação incompleta</td>
+                    </tr>
+                    <tr>
+                      <td>0% - 59%</td>
+                      <td><span class="badge bg-danger">Insuficiente (D)</span></td>
+                      <td>Precisa refazer partes importantes</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0"><i class="bi bi-check2-square"></i> Checklist de Conclusão do Projeto</h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li><i class="bi bi-square"></i> Todos os 10 módulos implementados e funcionando?</li>
+                    <li><i class="bi bi-square"></i> Menu integrado (Aula 8) com opções 0-9?</li>
+                    <li><i class="bi bi-square"></i> Modo automático executando ciclo completo sem erros?</li>
+                    <li><i class="bi bi-square"></i> README do projeto gerado (Aula 8)?</li>
+                    <li><i class="bi bi-square"></i> Código comentado com gírias paranaenses?</li>
+                    <li><i class="bi bi-square"></i> Vídeo de 2-3 minutos com manifesto e legendas?</li>
+                    <li><i class="bi bi-square"></i> Versão offline testada (Vosk + Markov + PyInstaller)?</li>
+                    <li><i class="bi bi-square"></i> Tutorial PDF de instalação entregue?</li>
+                    <li><i class="bi bi-square"></i> Diário de bordo atualizado com reflexões?</li>
+                    <li><i class="bi bi-square"></i> Participou da autoavaliação e debate final?</li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success" style="width: 0%"></div>
+                  </div><button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3"><i
+                      class="bi bi-arrow-repeat"></i> Simular progresso (marca todos ✅)</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5><i class="bi bi-exclamation-triangle-fill"></i> Prazos & alertas</h5>
+                  <p><strong>Entrega final do projeto:</strong> 30/04/2026</p>
+                  <p><strong>Apresentação dos vídeos:</strong> Última semana de abril</p>
+                  <hr class="hr-alerta">
+                  <div class="d-flex align-items-center gap-2"><i class="bi bi-robot fs-1"></i><span>Dica: "Se o
+                      checklist ficar vermelho, chama o parça e revisa os módulos!"</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2"><i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Material Complementar - Docente</h2>
+                  </div>
+                  <p><strong>Códigos BNCC:</strong> EM13LGG101, EM13LGG701, EM13MAT405, EM13CNT101, EM13CNT102,
+                    EM13CNT104, EM13CNT206, EM13CNT303</p>
+                  <p><strong>RCP - Paraná:</strong> Língua Portuguesa (Oralidade), Pensamento Computacional,
+                    Estatística, Física (Ondulatória, Eletricidade), Cidadania Digital, Trabalho Colaborativo</p>
+                  <hr class="hr-professor">
+                  <h5><i class="bi bi-stars"></i> Dicas para avaliação final</h5>
+                  <ul>
+                    <li>Organize uma "feira de robôs" onde cada grupo apresenta seu protótipo funcionando.</li>
+                    <li>Use a matriz de avaliação para dar transparência aos critérios.</li>
+                    <li>Incentive autoavaliação e avaliação entre pares (peer review).</li>
+                    <li>Para grupos com dificuldade, permita refinamentos até a data final.</li>
+                    <li>Compartilhe os vídeos em um canal da escola (YouTube, Teams, WhatsApp).</li>
+                    <li>Registre os melhores memes e gírias criadas pelos alunos.</li>
+                  </ul><button id="btnExportarDicas" class="btn btn-outline-primary mt-2"><i class="bi bi-download"></i>
+                    Exportar dicas</button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p><button id="simularChamada"
+                  class="btn btn-warning w-100 mt-2"><i class="bi bi-mic"></i> Chamada interativa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="conteudoDownloads" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0"><i class="bi bi-download"></i> Material para Download</h4>
+            </div>
+            <div class="card-body">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm etapa-card text-center">
+                    <div class="card-body">
+                      <div class="etapa-icon">📊</div>
+                      <h5>Tabela BNCC x RCP</h5>
+                      <p class="small">Referência cruzada completa</p><button id="btnDownloadBncc"
+                        class="btn btn-outline-primary mt-2"><i class="bi bi-file-earmark-text-fill"></i>
+                        Baixar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm etapa-card text-center">
+                    <div class="card-body">
+                      <div class="etapa-icon">🎯</div>
+                      <h5>Matriz de Avaliação</h5>
+                      <p class="small">Critérios, pesos e indicadores</p><button id="btnDownloadAvaliacao"
+                        class="btn btn-outline-primary mt-2"><i class="bi bi-file-earmark-text-fill"></i>
+                        Baixar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm etapa-card text-center">
+                    <div class="card-body">
+                      <div class="etapa-icon">📋</div>
+                      <h5>Checklist de Conclusão</h5>
+                      <p class="small">Para alunos e grupos</p><button id="btnDownloadChecklist"
+                        class="btn btn-outline-primary mt-2"><i class="bi bi-file-earmark-text-fill"></i>
+                        Baixar</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 shadow-sm etapa-card text-center bg-inclusao">
+                    <div class="card-body">
+                      <div class="etapa-icon">📜</div>
+                      <h5>Resumo do Projeto</h5>
+                      <p class="small">Informações completas do Robô Fofoqueiro</p><button id="btnDownloadResumo"
+                        class="btn btn-outline-primary mt-2"><i class="bi bi-file-earmark-text-fill"></i>
+                        Baixar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de programação & inclusão</p><small><i
+          class="bi bi-chat-right-quote"></i> "Material complementar: BNCC, RCP e Avaliação Final, vixi!"</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

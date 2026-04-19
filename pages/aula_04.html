@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | Visão Computacional com Mãos e QR Code</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
+              Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i>
+              Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
+              Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
+              Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
+              Protótipo Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
+              Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-lightbulb"></i> Conceitos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
+                <i class="bi bi-qr-code"></i> Simulador QR Code
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-eye"></i> VIXI, O ROBÔ GANHOU OLHO,
+                    PIÁ!</span>
+                  <h1 class="display-5 fw-bold">👁️ Visão Computacional</h1>
+                  <p class="lead mt-3">
+                    "O robô de olho: detectando mãos e lendo QR codes" —
+                    implementando MediaPipe Hands e OpenCV para criar um
+                    robô que enxerga.
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                      aulas)
+                    </div>
+                    <div>
+                      <i class="bi bi-camera-fill"></i> MediaPipe + OpenCV +
+                      QR Code
+                    </div>
+                    <div>
+                      <i class="bi bi-chat-dots"></i> BNCC: EM13CNT101 |
+                      EM13CNT303
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    👁️👄👁️<br />⬇️⬇️⬇️<br />"TO DE OLHO EM TU!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPAS DA AULA -->
+          <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">🎬</div>
+                  <h3>Abertura · 10min</h3>
+                  <p>
+                    Mostrar exemplos de visão computacional (filtros do
+                    Instagram, Snapchat, Google Lens).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">🧠</div>
+                  <h3>Conceituação · 15min</h3>
+                  <p>
+                    Explicar detecção de mãos (pontos de referência) e QR
+                    codes (matrizes de dados).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">💻</div>
+                  <h3>Codificação · 40min</h3>
+                  <p>
+                    Implementar captura de imagem + detecção de mão + leitura
+                    de QR code.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">🧪</div>
+                  <h3>Teste · 20min</h3>
+                  <p>
+                    Alunos testam com mãos na webcam e QR codes impressos (ou
+                    no celular).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card">
+                <div class="card-body">
+                  <div class="etapa-icon">⚖️</div>
+                  <h3>Fechamento · 15min</h3>
+                  <p>
+                    Gerar QR code personalizado do robô e discutir aplicações
+                    para acessibilidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+              <div class="card h-100 border-0 shadow-sm etapa-card bg-inclusao">
+                <div class="card-body">
+                  <div class="etapa-icon">♿</div>
+                  <h3>Adaptações inclusivas</h3>
+                  <p>
+                    Alunos sem webcam usam imagens fornecidas. Versão
+                    simulada com upload de fotos disponível.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pontos da mão (landmarks) -->
+          <div class="card border-0 mb-4 overflow-hidden">
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              <span><i class="bi bi-hand-index-thumb"></i> Pontos da Mão
+                (Landmarks) — "Os 21 pontos que o robô aprendeu a vigiar"</span>
+              <span class="badge bg-warning text-dark">🤚 MediaPipe Hands</span>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>📍 0-4: Polegar</strong><br />Base até ponta do
+                    polegar
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>📍 5-8: Indicador</strong><br />Base até ponta do
+                    dedo indicador
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>📍 9-12: Médio</strong><br />Base até ponta do
+                    dedo médio
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>📍 13-16: Anelar</strong><br />Base até ponta do
+                    dedo anelar
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>📍 17-20: Mínimo</strong><br />Base até ponta do
+                    dedo mínimo
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="alert alert-secondary mb-0">
+                    <strong>🤖 Contagem de dedos</strong><br />Compara Y da
+                    ponta com Y da base
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Códigos BNCC -->
+          <div class="alert alert-success d-flex align-items-center" role="alert">
+            <i class="bi bi-check-circle-fill fs-3 me-3"></i>
+            <div>
+              <strong>Códigos BNCC trabalhados:</strong> EM13CNT101, EM13CNT303
+              | <strong>RCP - Paraná:</strong> Matemática - Geometria,
+              Programação - Bibliotecas, Competência 5 (Tecnologias digitais)
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i>
+                robo_fofoqueiro_visao.py — Código completo da aula</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#                Robô Fofoqueiro - Visão Computacional
+# ===================================================================
+# Objetivo: Utilizar visão computacional para detectar mãos, contar
+#           dedos levantados e ler QR codes através da webcam.
+#           Inclui modo simulado para ambientes sem câmera e
+#           gerador de QR codes personalizados.
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# Importa o módulo sys para acessar funcionalidades do sistema e
+# verificar se está rodando no Google Colab.
+import sys
+
+# Importa o módulo os para manipular caminhos e arquivos do sistema.
+import os
+
+# Importa a biblioteca OpenCV (cv2) para processamento de imagens,
+# captura de webcam, detecção de QR codes e exibição de vídeo.
+import cv2
+
+# Importa a biblioteca MediaPipe para detecção de landmarks (pontos)
+# da mão e reconhecimento de gestos.
+import mediapipe as mp
+
+# Importa numpy para operações matemáticas com arrays (imagens, matrizes).
+import numpy as np
+
+# Importa a biblioteca qrcode para gerar QR codes a partir de strings.
+import qrcode
+
+# Importa a biblioteca PIL (Pillow) para manipulação de imagens.
+from PIL import Image
+
+# Importa time para medir intervalos e gerar timestamps.
+import time
+
+# Importa ferramentas do IPython para exibir imagens diretamente no notebook.
+from IPython.display import display, Image as IPImage
+
+# ============================================================
+# VERIFICAÇÃO DO AMBIENTE (Colab ou local)
+# ============================================================
+
+def verifica_ambiente():
+    """
+    Verifica se o código está sendo executado no Google Colab ou em ambiente local.
+    Retorna 'colab' se estiver no Colab, 'local' caso contrário.
+    Isso é importante porque a instalação de bibliotecas difere entre os ambientes.
+    """
+    
+    # Verifica se o módulo 'google.colab' está presente nos módulos carregados.
+    if 'google.colab' in sys.modules:
+        # Se estiver no Colab, exibe mensagem e retorna "colab".
+        print("✅ Tamo no Colab! Vamos instalar as paradas com !pip.")
+        return "colab"
+    else:
+        # Se estiver em ambiente local, exibe mensagem e retorna "local".
+        print("✅ Ambiente local detectado!")
+        return "local"
+
+# Chama a função para detectar o ambiente e armazena o resultado.
+AMBIENTE = verifica_ambiente()
+
+# ============================================================
+# INSTALAÇÃO DAS BIBLIOTECAS (SÓ NO COLAB)
+# ============================================================
+
+print("\n📦 Verificando/Instalando as bibliotecas de visão...")
+
+# Se o ambiente for o Google Colab, instala as bibliotecas necessárias.
+if AMBIENTE == "colab":
+    # Atualiza a lista de pacotes do sistema (apt-get).
+    !apt-get update -qq
+    
+    # Instala a biblioteca libgl1-mesa-glx (necessária para OpenCV no Linux).
+    !apt-get install -y libgl1-mesa-glx -qq
+    
+    # Instala as bibliotecas Python: OpenCV (sem interface gráfica), MediaPipe,
+    # qrcode com suporte a PIL/Pillow.
+    !pip install opencv-python-headless mediapipe qrcode[pil] pillow -q
+    
+    print("✅ Bibliotecas instaladas (OpenCV, MediaPipe, QRCode).")
+else:
+    # Se for ambiente local, apenas avisa que o usuário precisa instalar manualmente.
+    print("⚠️ Ambiente local: pip install opencv-python mediapipe qrcode[pil] pillow")
+
+# ============================================================
+# ARTE ASCII DO ROBÔ (VISÃO)
+# ============================================================
+
+# String com arte ASCII representando o robô no modo de visão computacional.
+# Inclui olhos (👁️👄👁️) para simbolizar o "modo vidente" e gírias paranaenses.
+ascii_robo_visao = r"""
+╔══════════════════════════════════════════════════════╗
+║ 👁️👄👁️                                              ║
+║ 🤖 ROBÔ FOFOQUEIRO - MODO VIDENTE 🤖                ║
+║ "To de olho em tu, piá!"                            ║
+║ "Levantou a mão? Já sei quantos dedo tem!"         ║
+╚══════════════════════════════════════════════════════╝
+"""
+
+# Exibe a arte ASCII na tela.
+print(ascii_robo_visao)
+
+# ============================================================
+# DETECTOR DE MÃOS (MEDIAPIPE)
+# ============================================================
+
+# Cria um atalho para o módulo de soluções de mãos do MediaPipe.
+mp_hands = mp.solutions.hands
+
+# Cria um atalho para o módulo de desenho de landmarks do MediaPipe.
+mp_drawing = mp.solutions.drawing_utils
+
+# Inicializa o detector de mãos com os seguintes parâmetros:
+# - static_image_mode=False: otimizado para vídeo (detecta continuamente).
+# - max_num_hands=2: detecta no máximo 2 mãos simultaneamente.
+# - min_detection_confidence=0.7: confiança mínima para detectar uma mão (70%).
+# - min_tracking_confidence=0.5: confiança mínima para rastrear (50%).
+hands = mp_hands.Hands(
+    static_image_mode=False,
+    max_num_hands=2,
+    min_detection_confidence=0.7,
+    min_tracking_confidence=0.5
+)
+
+def contar_dedos(landmarks, lado):
+    """
+    Conta quantos dedos estão levantados com base nos landmarks (pontos de referência)
+    da mão fornecidos pelo MediaPipe.
+    
+    Parâmetros:
+    landmarks: lista de pontos 3D (x, y, z) de cada articulação da mão.
+    lado: string indicando se é "Right" (mão direita) ou "Left" (mão esquerda).
+    
+    Retorna:
+    int: número total de dedos levantados (0 a 5).
+    """
+    
+    # Lista para armazenar se cada dedo está levantado (1) ou não (0).
+    dedos = []
+    
+    # POLEGAR - Lógica diferente: compara posição X (horizontal)
+    # Para mão direita: polegar levantado se ponta (landmark 4) estiver à direita
+    # da base (landmark 3).
+    if lado == "Right":
+        if landmarks[4].x > landmarks[3].x:
+            dedos.append(1)  # Levantado
+        else:
+            dedos.append(0)  # Abaixado
+    else:
+        # Para mão esquerda: polegar levantado se ponta estiver à esquerda da base.
+        if landmarks[4].x < landmarks[3].x:
+            dedos.append(1)
+        else:
+            dedos.append(0)
+    
+    # OUTROS DEDOS (indicador, médio, anel, mínimo)
+    # Índices dos landmarks das pontas dos dedos.
+    pontas = [8, 12, 16, 20]
+    
+    # Índices dos landmarks das bases dos dedos (articulação proximal).
+    bases = [6, 10, 14, 18]
+    
+    # Percorre os pares (ponta, base) para cada dedo.
+    for ponta, base in zip(pontas, bases):
+        # Um dedo está levantado se a ponta estiver acima (menor Y) da base.
+        # Lembrando: no OpenCV, Y=0 é o topo da imagem, Y aumenta para baixo.
+        if landmarks[ponta].y < landmarks[base].y:
+            dedos.append(1)  # Levantado
+        else:
+            dedos.append(0)  # Abaixado
+    
+    # Retorna a soma total de dedos levantados.
+    return sum(dedos)
+
+def detectar_maos(frame):
+    """
+    Detecta mãos em um frame de vídeo e desenha os landmarks.
+    
+    Parâmetros:
+    frame: imagem BGR (formato do OpenCV).
+    
+    Retorna:
+    tuple: (frame_modificado, total_dedos)
+        - frame_modificado: imagem com landmarks e texto desenhados.
+        - total_dedos: soma de todos os dedos levantados (ambas as mãos).
+    """
+    
+    # Converte o frame de BGR (padrão OpenCV) para RGB (padrão MediaPipe).
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    
+    # Processa o frame para detectar landmarks das mãos.
+    resultado = hands.process(rgb)
+    
+    # Inicializa o contador total de dedos.
+    dedos_total = 0
+    
+    # Se pelo menos uma mão foi detectada...
+    if resultado.multi_hand_landmarks:
+        # Itera sobre cada mão detectada e sua classificação (direita/esquerda).
+        for hand_landmarks, handedness in zip(resultado.multi_hand_landmarks, resultado.multi_handedness):
+            # Desenha os landmarks (pontos) e as conexões (linhas) da mão no frame.
+            mp_drawing.draw_landmarks(frame, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+            
+            # Obtém o lado da mão ("Right" ou "Left").
+            lado = handedness.classification[0].label
+            
+            # Conta quantos dedos estão levantados nesta mão.
+            dedos = contar_dedos(hand_landmarks.landmark, lado)
+            
+            # Acumula no total geral.
+            dedos_total += dedos
+            
+            # Escreve no frame qual lado e quantos dedos foram detectados.
+            cv2.putText(frame, f"{lado}: {dedos} dedos",
+                        (10, 50),                    # Posição (x, y)
+                        cv2.FONT_HERSHEY_SIMPLEX,    # Fonte
+                        1,                           # Escala
+                        (0,255,0),                   # Cor verde (BGR)
+                        2)                           # Espessura da linha
+    
+    # Retorna o frame modificado e o total de dedos.
+    return frame, dedos_total
+
+# ============================================================
+# LEITOR DE QR CODE
+# ============================================================
+
+def ler_qr_code(frame):
+    """
+    Lê QR code em um frame de vídeo e retorna o texto decodificado.
+    
+    Parâmetros:
+    frame: imagem BGR (formato do OpenCV).
+    
+    Retorna:
+    str or None: o texto decodificado do QR code, ou None se não encontrado.
+    """
+    
+    # Cria um detector de QR code do OpenCV.
+    detector = cv2.QRCodeDetector()
+    
+    # Tenta detectar e decodificar o QR code no frame.
+    # Retorna: texto, pontos do quadrado, matriz de correção (ignorada).
+    texto, pontos, _ = detector.detectAndDecode(frame)
+    
+    # Se um texto foi encontrado (QR code válido)...
+    if texto:
+        # Escreve o texto decodificado no frame (posição (10,100), cor amarela).
+        cv2.putText(frame, f"QR: {texto}", (10, 100),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,255), 2)
+        # Retorna o texto.
+        return texto
+    
+    # Se nenhum QR code foi encontrado, retorna None.
+    return None
+
+# ============================================================
+# MODO SIMULADO (PARA QUEM NÃO TEM WEBCAM)
+# ============================================================
+
+def modo_simulado():
+    """
+    Versão simulada do robô para usuários que não possuem webcam.
+    Cria uma imagem artificial com textos simulando a detecção de mãos e QR codes.
+    Útil para testar o código no Google Colab sem hardware.
+    """
+    
+    print("\n🎭 MODO SIMULADO - Robô testando com imagens falsas.\n")
+    
+    # Cria uma imagem preta (todos os pixels zero) de tamanho 480x640 com 3 canais (BGR).
+    img = np.zeros((480, 640, 3), dtype=np.uint8)
+    
+    # Adiciona texto simulando detecção de uma mão com 5 dedos.
+    cv2.putText(img, "SIMULACAO: Mao com 5 dedos", (50, 100),
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+    
+    # Adiciona texto com a contagem simulada de dedos.
+    cv2.putText(img, "Total dedos (simulado): 5", (50, 200),
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+    
+    # Define um QR code falso para simular a leitura.
+    qr_falso = "https://forms.gle/fofoca-do-robô"
+    
+    # Adiciona texto simulando a leitura do QR code.
+    cv2.putText(img, f"QR Simulado: {qr_falso}", (50, 300),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0,255,255), 2)
+    
+    # Converte a imagem para formato JPEG em memória.
+    ret, buffer = cv2.imencode('.jpg', img)
+    
+    # Exibe a imagem no notebook Colab.
+    from IPython.display import display, Image
+    display(Image(data=buffer.tobytes()))
+    
+    # Exibe o QR code simulado que teria sido lido.
+    print(f"📲 QR code simulado lido: {qr_falso}")
+    print("✅ Simulação concluída.")
+
+# ============================================================
+# GERADOR DE QR CODE
+# ============================================================
+
+def gerar_qr_code(dados="https://github.com/robofofoqueiro", nome_arquivo="qr_robofofoqueiro.png"):
+    """
+    Gera um QR code a partir de uma string (URL, texto, etc.) e salva como imagem PNG.
+    
+    Parâmetros:
+    dados: str - o conteúdo a ser codificado no QR code.
+    nome_arquivo: str - nome do arquivo de saída (padrão: qr_robofofoqueiro.png).
+    """
+    
+    print(f"\n📱 Gerando QR code com os dados: {dados}")
+    
+    # Cria um objeto QRCode com as configurações:
+    # - version=1: tamanho básico (21x21 módulos).
+    # - box_size=10: cada módulo terá 10 pixels.
+    # - border=5: borda de 5 módulos.
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    
+    # Adiciona os dados ao QR code.
+    qr.add_data(dados)
+    
+    # Ajusta o tamanho automaticamente para caber os dados.
+    qr.make(fit=True)
+    
+    # Cria a imagem do QR code com cor preta e fundo branco.
+    img_qr = qr.make_image(fill_color="black", back_color="white")
+    
+    # Salva a imagem no arquivo especificado.
+    img_qr.save(nome_arquivo)
+    
+    # Exibe a imagem no notebook Colab.
+    display(IPImage(nome_arquivo))
+    
+    print(f"✅ QR code salvo como {nome_arquivo}")
+
+# ============================================================
+# FUNÇÃO PRINCIPAL (WEBCAM)
+# ============================================================
+
+def modo_visao_robo():
+    """
+    Função principal que ativa a webcam e detecta mãos e QR codes em tempo real.
+    Executa um loop contínuo até o usuário pressionar a tecla 'q'.
+    """
+    
+    print("\n🎥 Iniciando a visão do Robô Fofoqueiro...")
+    print("👉 Mostre a mão pra eu contar os dedos!")
+    print("👉 Mostre um QR code pra eu ler a fofoca!")
+    print("👉 Pressione 'q' para sair do modo visão.")
+    
+    # Tenta abrir a webcam padrão (índice 0).
+    cap = cv2.VideoCapture(0)
+    
+    # Se não conseguiu abrir a webcam...
+    if not cap.isOpened():
+        print("❌ Webcam não encontrada! Usando modo SIMULADO.")
+        modo_simulado()
+        return
+    
+    print("✅ Webcam ligada!")
+    
+    # Loop principal de captura de frames.
+    while True:
+        # Captura um frame da webcam.
+        # ret: booleano indicando sucesso.
+        # frame: imagem capturada.
+        ret, frame = cap.read()
+        
+        # Se falhou ao capturar, interrompe o loop.
+        if not ret:
+            print("❌ Falha ao capturar frame.")
+            break
+        
+        # Espelha o frame horizontalmente (efeito espelho, mais natural para o usuário).
+        frame = cv2.flip(frame, 1)
+        
+        # Detecta mãos e conta dedos.
+        frame, dedos = detectar_maos(frame)
+        
+        # Tenta ler QR code no frame.
+        qr_texto = ler_qr_code(frame)
+        
+        # Se um QR code foi detectado...
+        if qr_texto:
+            print(f"📲 QR Code detectado: {qr_texto}")
+            # Salva o QR code lido em um arquivo de log.
+            with open("fofocas_qr.txt", "a", encoding="utf-8") as f:
+                f.write(f"{time.ctime()} - QR: {qr_texto}\n")
+        
+        # Escreve o total de dedos detectados no canto superior esquerdo.
+        cv2.putText(frame, f"Total dedos: {dedos}", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+        
+        # Exibe a janela com o vídeo processado.
+        cv2.imshow("Robô Fofoqueiro - Visão Computacional", frame)
+        
+        # Aguarda 1 milissegundo pela tecla 'q' (ASCII 113) para sair.
+        # Se 'q' for pressionado, interrompe o loop.
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    
+    # Libera a webcam (encerra a captura).
+    cap.release()
+    
+    # Fecha todas as janelas abertas pelo OpenCV.
+    cv2.destroyAllWindows()
+    
+    print("\n👋 Modo visão desligado.")
+
+# ============================================================
+# CHECKLIST
+# ============================================================
+
+def checklist_visao():
+    """
+    Verifica se as bibliotecas necessárias estão instaladas corretamente.
+    Exibe um relatório de status para cada biblioteca.
+    """
+    
+    print("\n📋 CHECKLIST DO MODO VISÃO:")
+    print("="*40)
+    
+    # Verifica MediaPipe.
+    try:
+        import mediapipe
+        print("✅ MediaPipe instalado")
+    except:
+        print("❌ MediaPipe faltando")
+    
+    # Verifica OpenCV.
+    try:
+        import cv2
+        print("✅ OpenCV funcionando")
+    except:
+        print("❌ OpenCV faltando")
+    
+    # Verifica QRCode.
+    try:
+        import qrcode
+        print("✅ QRCode funcionando")
+    except:
+        print("❌ QRCode faltando")
+    
+    print("="*40)
+
+# ============================================================
+# MENU PRINCIPAL
+# ============================================================
+
+def main():
+    """
+    Função principal que exibe o menu de opções e executa a funcionalidade escolhida.
+    Opções: webcam real, modo simulado, gerar QR code, checklist ou sair.
+    """
+    
+    # Exibe o menu de opções.
+    print("\n🤖 ROBÔ FOFOQUEIRO - AULA 4: VISÃO COMPUTACIONAL")
+    print("1 - Testar detecção de mãos e QR code (webcam real)")
+    print("2 - Modo simulado (sem webcam)")
+    print("3 - Gerar QR code do robô")
+    print("4 - Verificar checklist das bibliotecas")
+    print("5 - Sair")
+    
+    # Solicita a opção do usuário.
+    opcao = input("\n👉 Escolha uma opção (1/2/3/4/5): ")
+    
+    # Executa a opção escolhida.
+    if opcao == '1':
+        # Modo com webcam real.
+        modo_visao_robo()
+    elif opcao == '2':
+        # Modo simulado (sem hardware).
+        modo_simulado()
+    elif opcao == '3':
+        # Gera um QR code personalizado.
+        texto_qr = input("Digite o texto ou URL para gerar o QR code: ")
+        if not texto_qr:
+            texto_qr = "https://github.com/robofofoqueiro"
+        gerar_qr_code(texto_qr)
+    elif opcao == '4':
+        # Exibe checklist de bibliotecas.
+        checklist_visao()
+    else:
+        # Sai do programa (opção 5 ou qualquer outra).
+        print("👋 Até a próxima fofoca visual!")
+
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
+if __name__ == "__main__":
+    # Chama a função principal.
+    main()
+
+# Mensagem final de encerramento da aula.
+print("\n🎉 Fim da Aula 4 - Robô Fofoqueiro agora é vidente!")
+print("(Mas não guarda rancor, só fofoca mesmo)")</code></pre>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo da visão
+                computacional para rodar no Google Colab.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> Conseguiu implementar a
+                      detecção de mãos funcional?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> O robô conta os dedos
+                      corretamente?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Leitura de QR code está
+                      funcionando?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Conseguiu gerar um QR code
+                      personalizado?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Testou com webcam real ou
+                      modo simulado?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Participou da discussão
+                      sobre acessibilidade com visão computacional?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+                  </div>
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Prazos &amp;
+                    alertas
+                  </h5>
+                  <p><strong>Entrega do projeto:</strong> 30/04/2026</p>
+                  <p>
+                    <strong>Validar visão computacional</strong> antes do
+                    próximo encontro.
+                  </p>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "Se a webcam não funcionar no Colab, use o modo
+                      simulado!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13CNT101, EM13CNT303 |
+                    <strong>RCP - Paraná:</strong> Matemática - Geometria,
+                    Programação - Bibliotecas
+                  </p>
+                  <p>
+                    <strong>Materiais:</strong> Chromebooks com webcam, QR
+                    codes impressos, celulares para teste.
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      Comece mostrando exemplos de visão computacional do dia
+                      a dia (filtros do Instagram, Snapchat, Google Lens).
+                    </li>
+                    <li>
+                      Explique os pontos de referência da mão (landmarks)
+                      como "os 21 pontos que o robô aprendeu a vigiar".
+                    </li>
+                    <li>
+                      Use QR codes impressos para teste - alunos adoram
+                      escanear com o celular.
+                    </li>
+                    <li>
+                      Para alunos sem webcam, use o modo simulado com imagens
+                      estáticas.
+                    </li>
+                    <li>
+                      Debata aplicações reais: leitura de QR code em
+                      cardápios, catracas de metrô, etc.
+                    </li>
+                    <li>
+                      Organize um "Caça ao QR Code" pela escola usando o
+                      robô.
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 5: Simulador de QR Code (interativo) -->
+        <div id="conteudoSimulador" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-qr-code"></i> Simulador de QR Code - Robô
+                Fofoqueiro
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="simulador-fala p-4">
+                <div class="text-center mb-4">
+                  <div class="robo-ascii-animado">
+                    📱🤖 "GERA UM QR CODE AÍ, PIÁ!"
+                  </div>
+                </div>
+
+                <!-- Input do texto para QR Code -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-pencil-fill"></i> Texto ou URL para o QR
+                    Code:</label>
+                  <div class="input-group">
+                    <input type="text" id="textoQRCode" class="form-control"
+                      placeholder="Ex: https://github.com/robofofoqueiro" aria-label="Texto do QR Code" />
+                    <button id="btnGerarQRCode" class="btn btn-success" type="button">
+                      <i class="bi bi-qr-code"></i> Gerar QR Code
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Frases prontas -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-chat-dots"></i> Exemplos prontos:</label>
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-sm btn-qr-pronto" data-texto="https://projetosgn.com.br">
+                      📂 Projetos GN
+                    </button>
+                    <button class="btn btn-sm btn-qr-pronto" data-texto="https://caras.com.br/ultimas-noticias">
+                      📝 Fofocas da atualidade
+                    </button>
+                    <button class="btn btn-sm btn-qr-pronto" data-texto="Vixi, o Robô Fofoqueiro é bagulho doido!">
+                      🎭 Mensagem Secreta
+                    </button>
+                    <button class="btn btn-sm btn-qr-pronto" data-texto="Acessibilidade com humor é possível!">
+                      ♿ Acessibilidade
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Área do QR Code gerado -->
+                <div class="mb-3">
+                  <div class="card" id="qrCodeContainer">
+                    <div class="card-header bg-info text-white">
+                      <i class="bi bi-qr-code"></i> QR Code Gerado
+                    </div>
+                    <div class="card-body text-center" id="qrCodeDisplay">
+                      <p class="text-muted">
+                        <i class="bi bi-info-circle"></i> Clique em "Gerar QR
+                        Code" para criar seu código!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Botão de download -->
+                <div class="text-center">
+                  <button id="btnBaixarQRCode" class="btn btn-primary" disabled>
+                    <i class="bi bi-download"></i> Baixar QR Code
+                  </button>
+                </div>
+
+                <!-- Simulador de detecção de mãos -->
+                <div class="mt-5">
+                  <hr />
+                  <h5 class="text-center mb-3">
+                    <i class="bi bi-hand-index-thumb"></i> Simulador de
+                    Detecção de Mãos
+                  </h5>
+                  <div class="text-center mb-3">
+                    <button id="simularMao" class="btn btn-danger btn-lg">
+                      <i class="bi bi-hand-index-thumb"></i> Simular detecção
+                      de mão
+                    </button>
+                  </div>
+                  <div id="resultadoMao" class="text-center p-3 bg-dark text-white rounded">
+                    <p class="mb-0">
+                      🤖 Clique no botão para simular a detecção de uma mão!
+                    </p>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning mt-4">
+                  <i class="bi bi-shield-lock"></i>
+                  <strong>Privacidade:</strong> Os QR codes são gerados
+                  localmente usando a API pública do QR Server. Nenhum dado é
+                  armazenado permanentemente.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação &amp; inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "Vixi, o trem agora é oficial:
+        robô ganhou olho, piá!"</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

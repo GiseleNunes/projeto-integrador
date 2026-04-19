@@ -1,0 +1,1595 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | Protótipo Completo Integrado</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR (projeto principal) -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
+              Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
+              Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
+              Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula8" href="aula_08.html"><i
+                class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo
+              Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
+              Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
+                <i class="bi bi-puzzle-fill"></i> Simulador Integrado
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos e Etapas da Aula -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <!-- Cabeçalho irreverente -->
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-puzzle-fill"></i> VIXI, O ROBÔ GANHOU
+                    VIDA!</span>
+                  <h1 class="display-5 fw-bold">
+                    🧩 Integrando tudo: o protótipo completo
+                  </h1>
+                  <p class="lead mt-3">
+                    "O Robô Fofoqueiro ganha vida: integrando todos os módulos
+                    (som, fala, visão, IA, LEDs, display, mapa) em um único
+                    programa com menu interativo e modo automático."
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 150 min (3
+                      aulas)
+                    </div>
+                    <div>
+                      <i class="bi bi-google"></i> Google Colab + Chromebook
+                    </div>
+                    <div>
+                      <i class="bi bi-chat-dots"></i> BNCC: EM13CNT104 |
+                      EM13MAT503
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    🧩🤖✨<br />"O trem agora<br />é completo, vixi!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BNCC e Competências -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                  <hr />
+                  <span class="badge-bncc">EM13CNT104</span> - Avaliar
+                  potencialidades de sistemas integrados.<br />
+                  <span class="badge-bncc mt-2">EM13MAT503</span> -
+                  Implementar soluções computacionais para problemas reais.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                  <hr />
+                  <span class="badge-bncc">Competência 5</span> - Compreender
+                  e usar tecnologias digitais.<br />
+                  <span class="badge-bncc mt-2">Competência 6</span> -
+                  Trabalhar em equipe.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ETAPAS DA AULA (tabela) -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-calendar-event"></i> Etapas da Aula (150
+                minutos - 3 aulas)
+              </h5>
+            </div>
+            <div class="card-body p-0">
+              <table class="tabela-etapas">
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>Tempo</th>
+                    <th>Atividade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Abertura</strong></td>
+                    <td>10 min</td>
+                    <td>
+                      Revisar todos os módulos já construídos — "montar o
+                      quebra-cabeça".
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Planejamento</strong></td>
+                    <td>20 min</td>
+                    <td>
+                      Em grupos, definir quem fica responsável por qual módulo
+                      na integração.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Codificação</strong></td>
+                    <td>60 min</td>
+                    <td>
+                      Construir o programa principal com menu (opções 1-9) e
+                      modo automático.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Teste integrado</strong></td>
+                    <td>40 min</td>
+                    <td>
+                      Executar o modo automático — simular barulho, fala, mão
+                      na câmera.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fechamento</strong></td>
+                    <td>20 min</td>
+                    <td>
+                      Cada grupo demonstra seu programa rodando. Gerar README
+                      do robô.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Códigos RCP -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5>
+                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+              </h5>
+              <hr />
+              <span class="badge-bncc">Programação - Projeto Integrador</span>
+              - Desenvolver sistemas completos com múltiplos componentes.<br />
+              <span class="badge-bncc mt-2">Trabalho Colaborativo</span> -
+              Organizar equipes para entregar produto funcional.
+            </div>
+          </div>
+
+          <!-- Módulos do Sistema -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-diagram-3-fill"></i> Módulos Integrados
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-mic-fill fs-2"></i>
+                    <h6 class="mt-2">Sensor de Som</h6>
+                    <small>Mede barulho da sala e gera alertas</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-chat-dots-fill fs-2"></i>
+                    <h6 class="mt-2">Reconhecimento de Fala</h6>
+                    <small>Converte voz em texto com gírias</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-eye-fill fs-2"></i>
+                    <h6 class="mt-2">Visão Computacional</h6>
+                    <small>Detecta mãos e lê QR codes</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-cpu-fill fs-2"></i>
+                    <h6 class="mt-2">IA Generativa</h6>
+                    <small>Conversa com personalidade paranaense</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-lightbulb-fill fs-2"></i>
+                    <h6 class="mt-2">Display e LEDs</h6>
+                    <small>Alertas visuais simulados</small>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="alert alert-secondary mb-0 text-center">
+                    <i class="bi bi-graph-up fs-2"></i>
+                    <h6 class="mt-2">Mapa do Inferno</h6>
+                    <small>Gráficos e heatmap do barulho</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Materiais e Adaptações -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-box"></i> Materiais</h5>
+                  <hr />
+                  <ul>
+                    <li>Notebook Colab da aula anterior</li>
+                    <li>Todos os códigos dos módulos prontos</li>
+                    <li>Microfone e webcam (para testes reais)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-universal-access"></i> Adaptações para
+                    inclusão
+                  </h5>
+                  <hr />
+                  <ul>
+                    <li>
+                      Grupos podem focar em diferentes partes e depois
+                      integrar
+                    </li>
+                    <li>
+                      Alunos com mais dificuldade podem usar código base
+                      fornecido
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo da Aula 8 -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i> robo_fofoqueiro_completo.py
+                — Código completo da aula 8</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#            Robô Fofoqueiro - Protótipo Completo Integrado
+# ===================================================================
+# Objetivo: Integrar todos os módulos (som, fala, visão, IA, LEDs,
+#           display, mapa) em um único programa com menu interativo
+#           e modo automático. Esta é a versão final do projeto.
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# Importa o módulo sys para acessar funcionalidades do sistema,
+# incluindo a verificação de módulos carregados.
+import sys
+
+# Importa o módulo os para manipular arquivos e pastas.
+import os
+
+# Importa o módulo time para adicionar pausas e temporizações.
+import time
+
+# Importa o módulo random para gerar valores aleatórios na simulação.
+import random
+
+# Importa o módulo json para salvar logs em formato estruturado.
+import json
+
+# Importa datetime para gerar timestamps precisos.
+from datetime import datetime
+
+# ============================================================
+# BLOCO 1: VERIFICAÇÃO DO AMBIENTE
+# ============================================================
+
+def verifica_ambiente():
+    """
+    Verifica se o código está sendo executado no Google Colab ou em ambiente local.
+    
+    Retorna:
+    str: 'colab' se estiver no Google Colab, 'local' caso contrário.
+    """
+    
+    # Verifica se o módulo 'google.colab' está presente nos módulos carregados.
+    if 'google.colab' in sys.modules:
+        print("✅ Tamo no Colab! Vamos instalar as paradas com !pip.")
+        return "colab"
+    else:
+        print("✅ Ambiente local detectado!")
+        return "local"
+
+# Chama a função para detectar o ambiente e armazena o resultado.
+AMBIENTE = verifica_ambiente()
+
+# ============================================================
+# BLOCO 2: INSTALAÇÃO DAS BIBLIOTECAS
+# ============================================================
+
+print("\n📦 Verificando/Instalando as bibliotecas...")
+
+# Se o ambiente for o Google Colab, instala todas as bibliotecas necessárias.
+if AMBIENTE == "colab":
+    # Instala todas as bibliotecas principais do projeto.
+    !pip install speechrecognition gtts opencv-python-headless pandas numpy matplotlib seaborn qrcode[pil] pillow google-generativeai -q
+    
+    # Instala o ffmpeg para manipulação de áudio (necessário para pydub/gTTS).
+    !apt-get install -y ffmpeg -qq
+    
+    print("✅ Bibliotecas instaladas.")
+else:
+    # Se for ambiente local, apenas avisa o que precisa ser instalado.
+    print("⚠️ Ambiente local: certifique-se de ter instalado todas as bibliotecas.")
+
+# ============================================================
+# BLOCO 3: IMPORTAÇÃO DAS BIBLIOTECAS
+# ============================================================
+
+# Importa numpy para operações matemáticas com arrays.
+import numpy as np
+
+# Importa pandas para manipulação de dados estruturados (DataFrames).
+import pandas as pd
+
+# Importa matplotlib.pyplot para criação de gráficos e visualizações.
+import matplotlib.pyplot as plt
+
+# Importa seaborn para visualizações estatísticas avançadas.
+import seaborn as sns
+
+# Tenta importar a biblioteca SpeechRecognition para reconhecimento de fala.
+try:
+    import speech_recognition as sr
+    HAS_SPEECH = True   # Flag indicando que o módulo está disponível.
+except ImportError:
+    HAS_SPEECH = False  # Flag indicando que o módulo NÃO está disponível.
+    print("⚠️ SpeechRecognition não disponível")
+
+# Tenta importar OpenCV e MediaPipe para visão computacional.
+try:
+    import cv2
+    import mediapipe as mp
+    HAS_VISION = True   # Flag indicando que os módulos estão disponíveis.
+except ImportError:
+    HAS_VISION = False  # Flag indicando que os módulos NÃO estão disponíveis.
+    print("⚠️ OpenCV/MediaPipe não disponível")
+
+# Tenta importar a biblioteca Google Generative AI para o Gemini.
+try:
+    import google.generativeai as genai
+    HAS_GEMINI = True   # Flag indicando que o módulo está disponível.
+except ImportError:
+    HAS_GEMINI = False  # Flag indicando que o módulo NÃO está disponível.
+    print("⚠️ Google Generative AI não disponível")
+
+print("\n🎉 Bibliotecas importadas! Bora integrar tudo, meu consagrado!")
+
+# ============================================================
+# BLOCO 4: ARTE ASCII DO ROBÔ (VERSÃO COMPLETA)
+# ============================================================
+
+# String com arte ASCII representando o robô na versão completa integrada.
+# Inclui emojis de quebra-cabeça (🧩), robô (🤖) e brilho (✨).
+ascii_robo_completo = r"""
+╔══════════════════════════════════════════════════════════════════════════╗
+║ 🧩🤖✨                                                                   ║
+║ 🤖 ROBÔ FOFOQUEIRO - VERSÃO COMPLETA INTEGRADA 🤖                        ║
+║ "O trem agora é completo, vixi! Bora fofocar com responsa!"              ║
+║ "Acessibilidade com humor é possível, piá!"                             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+"""
+
+# Exibe a arte ASCII na tela.
+print(ascii_robo_completo)
+
+# ============================================================
+# BLOCO 5: SENSOR DE SOM (SIMULADO E REAL)
+# ============================================================
+
+def medidor_som_simulado():
+    """
+    Simula a medição de intensidade sonora (decibéis).
+    Usa valores aleatórios pré-definidos para demonstrar o comportamento.
+    
+    Retorna:
+    int: valor simulado de intensidade sonora (entre aproximadamente 15 e 115 dB).
+    """
+    
+    # Lista de níveis possíveis (exemplos).
+    niveis = [20, 45, 60, 80, 95, 110]
+    
+    # Escolhe um nível aleatório e adiciona um pequeno ruído (-5 a +5).
+    return random.choice(niveis) + random.randint(-5, 5)
+
+def medidor_som_real():
+    """
+    Tenta medir som real com microfone usando PyAudio.
+    Se falhar (biblioteca não instalada ou erro), usa o modo simulado.
+    
+    Retorna:
+    float: valor medido em decibéis (0-120).
+    """
+    
+    # Se o módulo SpeechRecognition não está disponível, usa simulação.
+    if not HAS_SPEECH:
+        return medidor_som_simulado()
+    
+    try:
+        # Importa as bibliotecas necessárias (importação local para evitar erros).
+        import pyaudio
+        import numpy as np
+        
+        # Parâmetros de captura de áudio.
+        DURACAO = 2                     # Duração da captura em segundos.
+        TAXA_AMOSTRAGEM = 44100         # Taxa de amostragem (44.1 kHz).
+        TAMANHO_BUFFER = 1024           # Tamanho do buffer de leitura.
+        
+        # Cria uma instância do PyAudio.
+        audio = pyaudio.PyAudio()
+        
+        # Abre um stream de áudio para captura.
+        stream = audio.open(
+            format=pyaudio.paInt16,     # Formato 16 bits por sample.
+            channels=1,                 # Mono (um canal).
+            rate=TAXA_AMOSTRAGEM,       # Taxa de amostragem definida.
+            input=True,                 # Modo captura.
+            frames_per_buffer=TAMANHO_BUFFER
+        )
+        
+        # Lista para armazenar os frames capturados.
+        frames = []
+        
+        # Calcula quantos blocos são necessários para DURACAO segundos.
+        for _ in range(0, int(TAXA_AMOSTRAGEM / TAMANHO_BUFFER * DURACAO)):
+            # Lê um bloco de dados do microfone.
+            data = stream.read(TAMANHO_BUFFER)
+            # Converte bytes para array numpy de inteiros de 16 bits.
+            dados_audio = np.frombuffer(data, dtype=np.int16)
+            frames.append(dados_audio)
+        
+        # Para e fecha o stream de áudio.
+        stream.stop_stream()
+        stream.close()
+        audio.terminate()
+        
+        # Concatena todos os frames em um único array.
+        audio_data = np.concatenate(frames)
+        
+        # Calcula o RMS (Root Mean Square) do sinal de áudio.
+        rms = np.sqrt(np.mean(audio_data**2))
+        
+        # Valor máximo possível para um sinal int16.
+        max_rms = 32768
+        
+        # Converte RMS para escala simulada de decibéis (0-120).
+        decibeis = (rms / max_rms) * 120
+        
+        # Garante que o valor esteja dentro dos limites 0-120.
+        return min(120, max(0, decibeis))
+    
+    except Exception:
+        # Se qualquer erro ocorrer, fallback para simulação.
+        return medidor_som_simulado()
+
+# ============================================================
+# BLOCO 6: RECONHECIMENTO DE FALA
+# ============================================================
+
+def reconhecer_fala():
+    """
+    Reconhece fala do microfone usando a API do Google Speech Recognition.
+    Retorna o texto reconhecido ou None em caso de erro.
+    
+    Retorna:
+    str or None: texto reconhecido ou None se falhou.
+    """
+    
+    # Se o módulo SpeechRecognition não está disponível, avisa e retorna None.
+    if not HAS_SPEECH:
+        print("⚠️ Modo simulado: use o menu para testar com digitação")
+        return None
+    
+    try:
+        # Cria uma instância do reconhecedor de fala.
+        recognizer = sr.Recognizer()
+        
+        # Abre o microfone como fonte de áudio.
+        with sr.Microphone() as source:
+            print("🎤 Fale alguma coisa...")
+            
+            # Ajusta o reconhecedor para o ruído ambiente (0.5 segundo).
+            recognizer.adjust_for_ambient_noise(source, duration=0.5)
+            
+            # Escuta o áudio (timeout=5s, phrase_time_limit=5s).
+            audio = recognizer.listen(source, timeout=5, phrase_time_limit=5)
+            
+            # Tenta reconhecer usando a API do Google em português do Brasil.
+            texto = recognizer.recognize_google(audio, language="pt-BR")
+            return texto
+    
+    except sr.UnknownValueError:
+        # O Google não entendeu o áudio.
+        print("❌ Não entendi o que você disse!")
+        return None
+    
+    except sr.RequestError:
+        # Erro de conexão com a API do Google.
+        print("❌ Erro na requisição ao Google!")
+        return None
+    
+    except Exception as e:
+        # Qualquer outro erro.
+        print(f"❌ Erro: {e}")
+        return None
+
+# ============================================================
+# BLOCO 7: VISÃO COMPUTACIONAL (SIMULADO)
+# ============================================================
+
+def modo_visao_simulado():
+    """
+    Versão simulada da visão computacional.
+    Gera aleatoriamente um número de dedos levantados (0-5) e
+    um QR code simulado com mensagens engraçadas.
+    
+    Retorna:
+    dict: dicionário com 'dedos' e 'qr_code'.
+    """
+    
+    print("\n🎭 MODO VISÃO SIMULADO")
+    print("="*40)
+    
+    # Simula detecção de mão com número aleatório de dedos (0-5).
+    dedos = random.randint(0, 5)
+    
+    # Dicionário com mensagens para cada quantidade de dedos.
+    mensagens = {
+        0: "✊ Nenhum dedo! Tá com raiva, piá?",
+        1: "☝️ 1 dedo! Tá apontando pra alguém?",
+        2: "✌️ 2 dedos! Vitória, é ou não é bagulho doido?",
+        3: "🤟 3 dedos! Rock and roll, tchê!",
+        4: "🤙 4 dedos! Hang loose, descolado!",
+        5: "🖐️ 5 dedos! Tchau pra fofoca, guria!"
+    }
+    
+    # Exibe a mensagem correspondente (ou genérica se não encontrada).
+    print(f"🤚 Mão detectada: {mensagens.get(dedos, '🤚 Mão detectada!')}")
+    
+    # Lista de QR codes simulados (mensagens engraçadas).
+    qrs_simulados = [
+        "Curitiba é a capital da Russia brasileira kkk",
+        "https://projetosgn.com.br/acessibilidade",
+        "Vixi, o Robô Fofoqueiro é bagulho doido!",
+        "Acessibilidade com humor é possível!"
+    ]
+    
+    # Escolhe um QR code aleatório.
+    qr_simulado = random.choice(qrs_simulados)
+    print(f"📱 QR Code lido: {qr_simulado}")
+    
+    # Retorna os resultados em um dicionário.
+    return {"dedos": dedos, "qr_code": qr_simulado}
+
+# ============================================================
+# BLOCO 8: IA GENERATIVA (COM FALLBACK)
+# ============================================================
+
+# Lista de gírias paranaenses para usar nas respostas offline.
+GIRIAS = ["vixi", "égua", "piá", "guria", "bagulho doido", "ó o trem", "tchê", "bah"]
+
+def responder_sem_ia(pergunta):
+    """
+    Respostas offline sem API (fallback quando o Gemini não está disponível).
+    Usa templates pré-definidos combinados com gírias aleatórias.
+    
+    Parâmetros:
+    pergunta: str - a pergunta feita pelo usuário.
+    
+    Retorna:
+    str - uma resposta gerada offline.
+    """
+    
+    # Lista de templates de resposta.
+    respostas = [
+        f"Vixi, não tô conectado na nuvem hoje, mas sei que {pergunta[:30]}... é bagulho doido! {random.choice(GIRIAS)}!",
+        f"Piá, sem API eu fico limitado, mas posso te contar que {pergunta[:30]} é coisa séria. {random.choice(GIRIAS)}!",
+        f"Ó o trem, meu consagrado! Mesmo offline eu sei que {pergunta[:30]} é importante pra acessibilidade. {random.choice(GIRIAS)}!",
+        f"Tchê, num instalei a inteligência hoje, mas vai uma fofoca: {pergunta[:30]} é massa! {random.choice(GIRIAS)}!"
+    ]
+    
+    # Escolhe e retorna uma resposta aleatória.
+    return random.choice(respostas)
+
+def responder_com_ia(pergunta, modelo):
+    """
+    Gera resposta usando IA (Gemini) ou fallback offline.
+    
+    Parâmetros:
+    pergunta: str - a pergunta feita pelo usuário.
+    modelo: GenerativeModel or None - modelo configurado ou None para offline.
+    
+    Retorna:
+    str - a resposta gerada.
+    """
+    
+    # Se o modelo existe e é válido, tenta usar IA.
+    if modelo and modelo != False:
+        try:
+            # Constrói o prompt com a personalidade do robô.
+            prompt = f"""
+Você é o ROBÔ FOFOQUEIRO DA ACESSIBILIDADE, um assistente bem-humorado com sotaque do Paraná.
+Características: usa gírias como vixi, égua, piá, guria, bagulho doido, ó o trem, tchê.
+Respostas curtas e engraçadas. Fala sobre acessibilidade digital.
+
+Usuário: {pergunta}
+Robô Fofoqueiro:"""
+            
+            # Gera a resposta usando o modelo Gemini.
+            resposta = modelo.generate_content(prompt)
+            texto = resposta.text.strip()
+            
+            # Garante que a resposta tenha pelo menos uma gíria.
+            if not any(g in texto.lower() for g in GIRIAS[:3]):
+                texto += f" {random.choice(GIRIAS)}!"
+            
+            return texto
+        
+        except Exception as e:
+            # Se ocorrer erro na API, usa fallback offline.
+            print(f"⚠️ Erro na IA: {e}")
+            return responder_sem_ia(pergunta)
+    
+    else:
+        # Se o modelo não está disponível, usa fallback offline.
+        return responder_sem_ia(pergunta)
+
+# ============================================================
+# BLOCO 9: DISPLAY E LEDS SIMULADOS
+# ============================================================
+
+class DisplayLCDSimulado:
+    """
+    Classe que simula um display LCD 16x2 usando texto no terminal.
+    Versão simplificada para o protótipo completo.
+    """
+    
+    def __init__(self):
+        """Inicializa o display com duas linhas vazias (16 espaços cada)."""
+        self.linhas = [" " * 16, " " * 16]
+    
+    def escrever_linha(self, linha, texto):
+        """
+        Escreve um texto em uma linha específica (0 ou 1).
+        
+        Parâmetros:
+        linha: int - 0 para linha superior, 1 para linha inferior.
+        texto: str - o texto a ser exibido (será truncado para 16 caracteres).
+        """
+        
+        # Verifica se a linha é válida (0 ou 1).
+        if linha in [0, 1]:
+            # Trunca o texto para 16 caracteres e alinha à esquerda.
+            self.linhas[linha] = texto[:16].ljust(16)
+        
+        # Atualiza a exibição.
+        self._mostrar()
+    
+    def escrever_mensagem(self, mensagem):
+        """
+        Exibe uma mensagem no display (apenas na primeira linha).
+        
+        Parâmetros:
+        mensagem: str - a mensagem a ser exibida.
+        """
+        
+        print(f"\n📟 DISPLAY: {mensagem[:16]}")
+        self.escrever_linha(0, mensagem[:16])
+        self.escrever_linha(1, "🤖 Robô Ativo")
+    
+    def alerta_sonoro(self, intensidade):
+        """
+        Exibe alerta visual no display baseado na intensidade do som.
+        
+        Parâmetros:
+        intensidade: float - nível de decibéis (0-120).
+        """
+        
+        if intensidade > 75:
+            self.escrever_mensagem("🚨 SILÊNCIO!")
+            print("🔴🔴🔴 LED VERMELHO PISCANDO! 🔴🔴🔴")
+        elif intensidade > 50:
+            self.escrever_mensagem("⚠️ FICANDO ALTO")
+            print("🟡 LED AMARELO ACESO!")
+        else:
+            self.escrever_linha(1, f"🔊 {intensidade:.0f} dB")
+    
+    def _mostrar(self):
+        """Desenha o display no terminal com moldura."""
+        print(f"┌────────────────┐")
+        print(f"│{self.linhas[0]}│")
+        print(f"│{self.linhas[1]}│")
+        print(f"└────────────────┘")
+
+class LedRGBSimulado:
+    """
+    Classe que simula um LED RGB usando emojis no terminal.
+    Versão simplificada para o protótipo completo.
+    """
+    
+    def __init__(self):
+        """Inicializa o LED com a cor desligada (⚫)."""
+        self.cor_atual = "⚫"
+    
+    def alerta_som(self, intensidade):
+        """
+        Altera a cor do LED baseado na intensidade do som.
+        
+        Parâmetros:
+        intensidade: float - nível de decibéis (0-120).
+        """
+        
+        if intensidade > 75:
+            self.cor_atual = "🔴"
+            print(f"💡 LED: {self.cor_atual} VERMELHO PISCANDO!")
+        elif intensidade > 50:
+            self.cor_atual = "🟡"
+            print(f"💡 LED: {self.cor_atual} AMARELO")
+        elif intensidade > 30:
+            self.cor_atual = "🟢"
+            print(f"💡 LED: {self.cor_atual} VERDE")
+        else:
+            self.cor_atual = "🔵"
+            print(f"💡 LED: {self.cor_atual} AZUL")
+    
+    def desligar(self):
+        """Desliga o LED."""
+        self.cor_atual = "⚫"
+        print("💡 LED desligado")
+
+# ============================================================
+# BLOCO 10: MAPA DO INFERNO ACÚSTICO
+# ============================================================
+
+def gerar_mapa_barulho():
+    """
+    Gera gráficos do mapa de barulho (evolução ao longo do dia).
+    Cria um gráfico de linha com zonas coloridas (verde, amarelo, vermelho).
+    """
+    
+    print("\n📊 GERANDO MAPA DO INFERNO ACÚSTICO")
+    
+    # Gera dados simulados de medição para cada hora (8h às 17h).
+    horarios = [f"{h:02d}:00" for h in range(8, 18)]
+    dados = []
+    
+    for i, horario in enumerate(horarios):
+        # Extrai a hora do horário.
+        hora = int(horario[:2])
+        
+        # Define o nível base de acordo com o horário.
+        if hora == 12:  # Horário de intervalo.
+            db = 85 + random.randint(-10, 10)
+        elif 9 <= hora <= 11:  # Meio da manhã.
+            db = 70 + random.randint(-15, 15)
+        else:  # Outros horários.
+            db = 50 + random.randint(-15, 15)
+        
+        # Garante que o valor fique entre 20 e 120 dB.
+        dados.append({"Horario": horario, "dB": max(20, min(120, db))})
+    
+    # Converte a lista de dicionários em um DataFrame do pandas.
+    df = pd.DataFrame(dados)
+    
+    # Cria o gráfico de linha.
+    plt.figure(figsize=(12, 6))
+    
+    # Adiciona zonas coloridas de fundo.
+    plt.axhspan(0, 40, alpha=0.2, color='green', label='Silêncio')
+    plt.axhspan(40, 75, alpha=0.2, color='yellow', label='Atenção')
+    plt.axhspan(75, 120, alpha=0.2, color='red', label='Alerta')
+    
+    # Plota a linha principal.
+    plt.plot(df['Horario'], df['dB'], 'b-o', linewidth=2, markersize=6)
+    
+    # Adiciona linha pontilhada no limite de alerta (75 dB).
+    plt.axhline(y=75, color='red', linestyle='--', label='Limite 75 dB')
+    
+    # Configura os rótulos e título.
+    plt.title('📊 Mapa do Inferno Acústico - Evolução do Barulho')
+    plt.xlabel('Horário')
+    plt.ylabel('Decibéis (dB)')
+    
+    # Rotaciona os rótulos do eixo X para melhor legibilidade.
+    plt.xticks(rotation=45)
+    
+    # Adiciona legenda.
+    plt.legend()
+    
+    # Ajusta o layout e salva o gráfico.
+    plt.tight_layout()
+    plt.savefig('mapa_inferno_acustico.png', dpi=150)
+    plt.show()
+    
+    print("💾 Gráfico salvo como 'mapa_inferno_acustico.png'")
+    
+    # Calcula e exibe estatísticas.
+    media = df['dB'].mean()
+    alertas = len(df[df['dB'] > 75])
+    print(f"\n📈 Estatísticas: Média={media:.0f}dB | Alertas={alertas}")
+    print(f"🔴 Horário mais barulhento: {df.loc[df['dB'].idxmax(), 'Horario']} ({df['dB'].max():.0f}dB)")
+
+# ============================================================
+# BLOCO 11: MODO AUTOMÁTICO
+# ============================================================
+
+def modo_automatico():
+    """
+    Executa o ciclo completo automaticamente, demonstrando
+    todas as funcionalidades do robô em sequência.
+    """
+    
+    print("\n" + "="*60)
+    print("🤖 MODO AUTOMÁTICO - Robô Fofoqueiro em Ação!")
+    print("="*60)
+    
+    # 1. Sensor de som
+    print("\n🔊 1. MEDINDO O BARULHO DA SALA...")
+    intensidade = medidor_som_simulado()
+    print(f"   Nível: {intensidade:.0f} dB")
+    
+    # 2. Display e LEDs
+    print("\n💡 2. ATUALIZANDO DISPLAY E LEDS...")
+    display = DisplayLCDSimulado()
+    led = LedRGBSimulado()
+    display.alerta_sonoro(intensidade)
+    led.alerta_som(intensidade)
+    
+    # 3. Reconhecimento de fala (simulado)
+    print("\n🗣️ 3. RECONHECENDO FALA (simulado)...")
+    falas = ["Vixi, que legal!", "O robô está funcionando!", "Acessibilidade é importante!"]
+    fala_simulada = random.choice(falas)
+    print(f"   🎤 Usuário disse: '{fala_simulada}'")
+    print(f"   🤖 Robô respondeu: '{responder_sem_ia(fala_simulada)}'")
+    
+    # 4. Visão computacional
+    print("\n👁️ 4. VISÃO COMPUTACIONAL...")
+    visao = modo_visao_simulado()
+    
+    # 5. Mapa do barulho
+    print("\n📊 5. GERANDO MAPA DO BARULHO...")
+    gerar_mapa_barulho()
+    
+    # 6. Salvando log da sessão
+    print("\n📝 6. SALVANDO LOG DA SESSÃO...")
+    log = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "nivel_som": intensidade,
+        "fala_usuario": fala_simulada,
+        "visao_dedos": visao.get("dedos", 0),
+        "visao_qr": visao.get("qr_code", "")
+    }
+    
+    # Garante que a pasta logs existe e salva o log em formato JSON.
+    os.makedirs("logs", exist_ok=True)
+    with open("logs/sessao_automatica.json", "a", encoding="utf-8") as f:
+        json.dump(log, f, ensure_ascii=False)
+        f.write("\n")  # Adiciona quebra de linha entre logs.
+    
+    print("\n" + "="*60)
+    print("✅ MODO AUTOMÁTICO CONCLUÍDO COM SUCESSO!")
+    print("="*60)
+    print("\n💾 Logs salvos na pasta 'logs/'")
+    print("📁 Gráfico salvo como 'mapa_inferno_acustico.png'")
+
+# ============================================================
+# BLOCO 12: DIAGNÓSTICO DO ROBÔ
+# ============================================================
+
+def diagnosticar_robo():
+    """
+    Verifica o status de todos os módulos do robô.
+    Exibe disponibilidade de bibliotecas, estrutura de pastas e dados salvos.
+    """
+    
+    print("\n" + "="*60)
+    print("🔧 DIAGNÓSTICO DO ROBÔ FOFOQUEIRO")
+    print("="*60)
+    
+    # Verifica o status de cada módulo.
+    modulos = {
+        "SpeechRecognition": HAS_SPEECH,
+        "OpenCV": HAS_VISION,
+        "MediaPipe": HAS_VISION,
+        "Google Generative AI": HAS_GEMINI
+    }
+    
+    for modulo, status in modulos.items():
+        if status:
+            print(f"✅ {modulo}: disponível")
+        else:
+            print(f"❌ {modulo}: não disponível")
+    
+    # Verifica/ Cria a estrutura de pastas.
+    print("\n📁 Estrutura de pastas:")
+    pastas = ["logs", "sons", "imagens", "codigos"]
+    for pasta in pastas:
+        if os.path.exists(pasta):
+            print(f"✅ {pasta}/ existe")
+        else:
+            os.makedirs(pasta, exist_ok=True)
+            print(f"📁 {pasta}/ criada")
+    
+    # Verifica se existem medições salvas.
+    print("\n📊 Total de medições salvas:")
+    if os.path.exists("log_fofoqueiro.csv"):
+        df = pd.read_csv("log_fofoqueiro.csv")
+        print(f"   {len(df)} medições registradas")
+    else:
+        print("   Nenhuma medição encontrada")
+    
+    print("="*60)
+
+# ============================================================
+# BLOCO 13: GERAR README DO PROJETO
+# ============================================================
+
+def gerar_readme():
+    """
+    Gera o arquivo README.md do projeto com documentação completa.
+    Inclui descrição do projeto, módulos, tecnologias, BNCC e equipe.
+    """
+    
+    # Conteúdo do README em formato Markdown.
+    readme_content = f"""# 🤖 Robô Fofoqueiro da Acessibilidade
+
+## 🎯 Sobre o Projeto
+"O Robô Fofoqueiro da Acessibilidade" é um projeto desenvolvido por estudantes do Ensino Médio que integra programação, inteligência artificial, visão computacional e hardware para criar um assistente robótico com personalidade paranaense.
+
+## 📚 Módulos do Sistema
+
+| Módulo | Funcionalidade | Status |
+|--------|----------------|--------|
+| Sensor de Som | Mede barulho e gera alertas | ✅ |
+| Reconhecimento de Fala | Converte voz em texto com gírias | ✅ |
+| Visão Computacional | Detecta mãos e lê QR codes | ✅ |
+| IA Generativa | Conversa com personalidade | ✅ |
+| Display e LEDs | Alertas visuais simulados | ✅ |
+| Mapa do Inferno | Gráficos e heatmap do barulho | ✅ |
+
+## 🛠️ Tecnologias Utilizadas
+- Python
+- Google Colab
+- SpeechRecognition / gTTS
+- OpenCV / MediaPipe
+- Google Gemini API
+- Pandas / Matplotlib / Seaborn
+
+## 🎯 BNCC Trabalhadas
+- EM13CNT104 - Sistemas integrados
+- EM13MAT503 - Soluções computacionais
+- EM13LGG702 - IA generativa
+- EM13CNT101 - Modelos físicos
+
+## 👥 Equipe
+Desenvolvido por estudantes sob orientação da Tutora Gisele Nunes.
+
+## 📅 Data de Conclusão
+{datetime.now().strftime("%d/%m/%Y")}
+
+---
+*"O trem agora é completo, vixi! Bora fofocar com responsa sobre acessibilidade!" - Robô Fofoqueiro 🤖*
+"""
+    
+    # Salva o README em um arquivo.
+    with open("README_ROBO_FOFOQUEIRO.md", "w", encoding="utf-8") as f:
+        f.write(readme_content)
+    
+    print("\n💾 README gerado como 'README_ROBO_FOFOQUEIRO.md'")
+    print(readme_content[:500] + "...\n")
+
+# ============================================================
+# BLOCO 14: MENU PRINCIPAL INTEGRADO
+# ============================================================
+
+def main():
+    """
+    Função principal com menu interativo integrando TODOS os módulos.
+    Retorna True para continuar no loop, False para sair.
+    """
+    
+    print("\n" + "="*60)
+    print("🤖 ROBÔ FOFOQUEIRO - VERSÃO COMPLETA INTEGRADA")
+    print("="*60)
+    print("1 - Sensor de Som (medir barulho da sala)")
+    print("2 - Reconhecimento de Fala (falar com o robô)")
+    print("3 - Visão Computacional (mãos e QR codes)")
+    print("4 - IA Generativa (conversar com o robô inteligente)")
+    print("5 - Display e LEDs (alertas visuais simulados)")
+    print("6 - Mapa do Inferno Acústico (gráficos e heatmap)")
+    print("7 - MODO AUTOMÁTICO (roda tudo sozinho!)")
+    print("8 - Diagnóstico do robô")
+    print("9 - Gerar README do projeto")
+    print("0 - Sair")
+    print("="*60)
+    
+    # Solicita a opção do usuário.
+    opcao = input("👉 Escolha uma opção (0-9): ").strip()
+    
+    # Sensor de Som
+    if opcao == '1':
+        print("\n🔊 SENSOR DE SOM")
+        intensidade = medidor_som_simulado()
+        print(f"🎤 Nível de barulho: {intensidade:.1f} dB")
+        
+        if intensidade > 75:
+            print("🚨 INFERNO ACÚSTICO! TÁ MUITO ALTO, PIÁ!")
+        elif intensidade > 50:
+            print("⚠️ TÁ FICANDO BARULHENTO, ATENÇÃO!")
+        else:
+            print("🤫 Silêncio absoluto... até assusta!")
+    
+    # Reconhecimento de Fala
+    elif opcao == '2':
+        print("\n🗣️ RECONHECIMENTO DE FALA")
+        
+        if HAS_SPEECH:
+            texto = reconhecer_fala()
+            if texto:
+                print(f"✅ Você disse: {texto}")
+                os.makedirs("logs", exist_ok=True)
+                with open("logs/falas_reconhecidas.txt", "a", encoding="utf-8") as f:
+                    f.write(f"{datetime.now()} - {texto}\n")
+        else:
+            # Modo simulado: permite digitar a frase.
+            print("⚠️ Modo simulado: digite uma frase:")
+            texto = input("🧑 Você: ")
+            print(f"✅ Frase registrada: {texto}")
+    
+    # Visão Computacional
+    elif opcao == '3':
+        modo_visao_simulado()
+    
+    # IA Generativa
+    elif opcao == '4':
+        print("\n🧠 IA GENERATIVA")
+        modelo = None
+        
+        # Tenta configurar o Gemini se disponível.
+        if HAS_GEMINI:
+            try:
+                # Tenta pegar a chave da API da variável de ambiente.
+                chave = os.environ.get("GEMINI_API_KEY", "")
+                if chave:
+                    genai.configure(api_key=chave)
+                    modelo = genai.GenerativeModel('gemini-1.5-flash')
+                    print("✅ IA online!")
+                else:
+                    print("⚠️ Modo offline (sem chave da API)")
+            except Exception:
+                print("⚠️ Modo offline")
+        else:
+            print("⚠️ Modo offline")
+        
+        # Solicita a pergunta e gera resposta.
+        pergunta = input("🧑 Você: ")
+        resposta = responder_com_ia(pergunta, modelo)
+        print(f"🤖 Robô: {resposta}")
+    
+    # Display e LEDs
+    elif opcao == '5':
+        print("\n💡 DISPLAY E LEDS SIMULADOS")
+        display = DisplayLCDSimulado()
+        led = LedRGBSimulado()
+        intensidade = medidor_som_simulado()
+        print(f"🔊 Nível simulado: {intensidade:.0f} dB")
+        display.alerta_sonoro(intensidade)
+        led.alerta_som(intensidade)
+    
+    # Mapa do Inferno Acústico
+    elif opcao == '6':
+        gerar_mapa_barulho()
+    
+    # Modo Automático
+    elif opcao == '7':
+        modo_automatico()
+    
+    # Diagnóstico
+    elif opcao == '8':
+        diagnosticar_robo()
+    
+    # Gerar README
+    elif opcao == '9':
+        gerar_readme()
+    
+    # Sair
+    elif opcao == '0':
+        print("\n👋 Até a próxima, piá! Não esquece: acessibilidade é coisa séria!")
+        print(" (e se ouvir uma fofoca, já sabe... conta pro robô!)")
+        return False  # Retorna False para sair do loop.
+    
+    # Opção inválida
+    else:
+        print("\n❌ Opção inválida! Tente novamente.")
+    
+    return True  # Retorna True para continuar o loop.
+
+# ============================================================
+# BLOCO 15: MENSAGEM DE AVALIAÇÃO FINAL
+# ============================================================
+
+def mensagem_avaliacao_final():
+    """
+    Exibe uma mensagem para autoavaliação dos alunos.
+    Perguntas para reflexão sobre o projeto e aprendizado.
+    """
+    
+    print("\n" + "="*60)
+    print("📝 AUTOAVALIAÇÃO - PROJETO ROBÔ FOFOQUEIRO")
+    print("="*60)
+    print("Responda para você mesmo(a):")
+    print()
+    print("1. Consegui integrar todos os módulos em um único programa?")
+    print("2. O menu funciona e chama cada funcionalidade corretamente?")
+    print("3. O modo automático executa o ciclo completo sem erros?")
+    print("4. Eu entendo como cada módulo (som, fala, visão, IA, dados) funciona?")
+    print("5. Consigo explicar para um colega como o robô foi construído?")
+    print("6. O que eu aprendi de mais legal neste projeto?")
+    print("7. O que eu melhoraria se fosse fazer o Robô Fofoqueiro 2.0?")
+    print("="*60)
+    print("💬 Registre suas respostas no diário de bordo da turma!")
+    print("🎉 Parabéns por concluir o Robô Fofoqueiro da Acessibilidade!")
+
+# ============================================================
+# PONTO DE ENTRADA
+# ============================================================
+
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
+if __name__ == "__main__":
+    # Garante que a pasta logs existe antes de começar.
+    os.makedirs("logs", exist_ok=True)
+    
+    # Executa o menu em loop até o usuário escolher sair (opção 0).
+    continuar = True
+    while continuar:
+        continuar = main()
+        # Se não saiu, aguarda ENTER antes de mostrar o menu novamente.
+        if continuar:
+            input("\n👉 Pressione ENTER para voltar ao menu...")
+    
+    # Exibe a mensagem de autoavaliação ao final.
+    mensagem_avaliacao_final()
+    
+    # Mensagem final de encerramento.
+    print("\n🎉 Fim da Aula 8 - Robô Fofoqueiro VERSÃO COMPLETA!")
+    print(" (Ele agora é oficialmente o robô mais fofoqueiro do Brasil!)")</code></pre>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo do
+                protótipo integrado para rodar no Google Colab.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> Menu funcional com todas as
+                      opções (0-9)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Modo automático executando
+                      ciclo completo?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> README do projeto gerado
+                      com sucesso?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Demonstração para a turma
+                      realizada?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Todos os módulos integrados
+                      funcionam?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Participou da autoavaliação
+                      e debate final?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+                  </div>
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Avaliação
+                  </h5>
+                  <hr class="hr-alerta" />
+                  <ul>
+                    <li>Menu funcional com todas as opções</li>
+                    <li>Modo automático executando ciclo completo</li>
+                    <li>README do projeto gerado</li>
+                    <li>Demonstração para a turma</li>
+                  </ul>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "O trem agora é completo, vixi! Bora fofocar com
+                      responsa sobre acessibilidade!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Título:</strong> "O Robô Fofoqueiro ganha vida:
+                    integrando todos os módulos"
+                  </p>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13CNT104, EM13MAT503 |
+                    <strong>RCP - Paraná:</strong> Programação - Projeto
+                    Integrador, Trabalho Colaborativo
+                  </p>
+                  <p><strong>Duração:</strong> 3 aulas (150 minutos)</p>
+                  <p>
+                    <strong>Materiais:</strong> Notebook Colab, todos os
+                    códigos dos módulos prontos
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      <strong>Abertura (10min):</strong> Revisar todos os
+                      módulos já construídos — "montar o quebra-cabeça"
+                    </li>
+                    <li>
+                      <strong>Planejamento (20min):</strong> Em grupos,
+                      definir quem fica responsável por qual módulo na
+                      integração
+                    </li>
+                    <li>
+                      <strong>Codificação (60min):</strong> Construir o
+                      programa principal com menu (opções 1-9) e modo
+                      automático
+                    </li>
+                    <li>
+                      <strong>Teste integrado (40min):</strong> Executar o
+                      modo automático — simular barulho, fala, mão na câmera
+                    </li>
+                    <li>
+                      <strong>Fechamento (20min):</strong> Cada grupo
+                      demonstra seu programa rodando. Gerar README do robô
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 5: Simulador Integrado -->
+        <div id="conteudoSimulador" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-puzzle-fill"></i> Simulador Integrado - Menu
+                do Robô Fofoqueiro
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="simulador-fala p-4">
+                <div class="text-center mb-4">
+                  <div class="robo-ascii-animado">
+                    🧩🤖 "Menu do Robô Fofoqueiro"
+                  </div>
+                </div>
+
+                <!-- Menu de opções -->
+                <div class="row g-2 mb-4">
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="som">
+                      <i class="bi bi-mic-fill"></i> Sensor de Som
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="fala">
+                      <i class="bi bi-chat-dots-fill"></i> Reconhecimento
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="visao">
+                      <i class="bi bi-eye-fill"></i> Visão
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="ia">
+                      <i class="bi bi-cpu-fill"></i> IA Generativa
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="hardware">
+                      <i class="bi bi-lightbulb-fill"></i> Display/LEDs
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="btn btn-outline-primary w-100 btn-modulo" data-modulo="mapa">
+                      <i class="bi bi-graph-up"></i> Mapa do Inferno
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Botão modo automático -->
+                <div class="text-center mb-4">
+                  <button id="btnModoAutomatico" class="btn btn-success btn-lg px-5">
+                    <i class="bi bi-play-fill"></i> ▶ MODO AUTOMÁTICO
+                  </button>
+                </div>
+
+                <!-- Área de saída -->
+                <div class="mb-3">
+                  <div class="card">
+                    <div class="card-header bg-dark text-white">
+                      <i class="bi bi-terminal-fill"></i> Saída do Robô
+                    </div>
+                    <div class="card-body bg-preto-code" id="saidaRobo">
+                      <span class="text-muted">🤖 Clique em um módulo para testar...</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Input para IA generativa -->
+                <div class="mb-3" id="iaInputContainer" style="display: none">
+                  <label class="form-label fw-bold"><i class="bi bi-chat-dots-fill"></i> Pergunta para o
+                    robô:</label>
+                  <div class="input-group">
+                    <input type="text" id="perguntaIaSimulador" class="form-control"
+                      placeholder="Digite sua pergunta..." />
+                    <button id="btnEnviarPerguntaSimulador" class="btn btn-primary">
+                      <i class="bi bi-send-fill"></i> Enviar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Frases prontas para IA -->
+                <div class="mb-3" id="frasesIaContainer" style="display: none">
+                  <div class="d-flex flex-wrap gap-2">
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia-sim"
+                      data-pergunta="Qual é o seu nome?">
+                      🎭 Qual é o seu nome?
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia-sim"
+                      data-pergunta="O que você sabe sobre acessibilidade digital?">
+                      🎭 O que é acessibilidade?
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia-sim"
+                      data-pergunta="Me conta uma fofoca!">
+                      🎭 Me conta uma fofoca
+                    </button>
+                    <button class="btn btn-sm btn-outline-secondary btn-frase-ia-sim"
+                      data-pergunta="Você gosta de memes?">
+                      🎭 Você gosta de memes?
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Input para fala (modo simulado) -->
+                <div class="mb-3" id="falaInputContainer" style="display: none">
+                  <label class="form-label fw-bold"><i class="bi bi-mic-fill"></i> Digite o que você
+                    disse:</label>
+                  <div class="input-group">
+                    <input type="text" id="fraseFalaSimulador" class="form-control" placeholder="Digite uma frase..." />
+                    <button id="btnEnviarFalaSimulador" class="btn btn-primary">
+                      <i class="bi bi-send-fill"></i> Reconhecer
+                    </button>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning mt-3">
+                  <i class="bi bi-info-circle"></i>
+                  <strong>Nota:</strong> Este é um simulador visual do menu
+                  integrado. O código Python completo deve ser executado no
+                  Google Colab para todas as funcionalidades reais.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação & inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "O trem agora é completo,
+        vixi! Bora fofocar com responsa sobre acessibilidade!"</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>

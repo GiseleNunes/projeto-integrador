@@ -1,0 +1,1464 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Robô Fofoqueiro | Versão Offline Completa</title>
+  <!-- Bootstrap 5 + Icons + Google Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet" />
+  <!-- CSS Custom -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <!-- MENU SUPERIOR (projeto principal) -->
+  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
+        <span class="robo-icon-principal">🤖💬</span>
+        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
+            Acessibilidade</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
+        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
+              Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
+              Setup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
+              Escuta</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
+              Fala</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
+              Visão</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
+              Personalidade</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
+              Display e LEDs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
+              Mapa do Inferno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
+              Protótipo
+              Completo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
+              Aula 9 - Manifesto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active-projeto" data-projeto-aba="aula10" href="aula_10.html"><i
+                class="bi bi-wifi-off"></i> Aula 10 - Offline</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
+                class="bi bi-puzzle-fill"></i> Material Complementar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+  <div class="container-fluid main-layout">
+    <div class="row">
+      <!-- MENU LATERAL (abas internas da aula atual) -->
+      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">
+            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+          </div>
+          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
+                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
+                <i class="bi bi-code-square"></i> Código Python
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
+                <i class="bi bi-clipboard-check"></i> Checklist
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
+                <i class="bi bi-mortarboard"></i> Área do Profe
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
+                <i class="bi bi-wifi-off"></i> Simulador Offline
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-footer">
+            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
+              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+        <!-- Aba 1: Conceitos e Etapas da Aula -->
+        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
+          <!-- Cabeçalho irreverente -->
+          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+            <div class="card-body p-4 p-md-5">
+              <div class="row align-items-center">
+                <div class="col-md-9">
+                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-wifi-off"></i> VIXI, SEM INTERNET? O
+                    ROBÔ
+                    RESOLVE!</span>
+                  <h1 class="display-5 fw-bold">
+                    📦 Robô Fofoqueiro Offline
+                  </h1>
+                  <p class="lead mt-3">
+                    "Levando a inclusão a todas as escolas" — Adapte o projeto
+                    para funcionar totalmente offline (Vosk, Markov,
+                    PyInstaller) e crie um tutorial de instalação completo.
+                  </p>
+                  <div class="mt-3 d-flex flex-wrap gap-3">
+                    <div>
+                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                      aulas)
+                    </div>
+                    <div>
+                      <i class="bi bi-mic"></i> Vosk (STT offline) + Markov +
+                      PyInstaller
+                    </div>
+                    <div>
+                      <i class="bi bi-chat-dots"></i> BNCC: EM13CNT102 |
+                      EM13MAT503
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 text-center">
+                  <div class="robo-ascii-animado">
+                    📦🤖💻<br />"Sem internet?<br />Tô on, vixi!"
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BNCC e Competências -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                  <hr />
+                  <span class="badge-bncc">EM13CNT102</span> - Analisar
+                  impactos da exclusão digital.<br />
+                  <span class="badge-bncc mt-2">EM13MAT503</span> -
+                  Implementar soluções para diferentes contextos.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                  <hr />
+                  <span class="badge-bncc">Competência 5</span> - Compreender
+                  e usar tecnologias digitais.<br />
+                  <span class="badge-bncc mt-2">Competência 8</span> -
+                  Conhecer-se e cuidar de si.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Códigos RCP - Paraná -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body">
+              <h5>
+                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+              </h5>
+              <hr />
+              <span class="badge-bncc">Pensamento Computacional - Otimização</span>
+              - Adaptar soluções para restrições de infraestrutura.<br />
+              <span class="badge-bncc mt-2">Cidadania Digital</span> -
+              Garantir acesso equitativo à tecnologia.
+            </div>
+          </div>
+
+          <!-- ETAPAS DA AULA (tabela) -->
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-calendar-event"></i> Etapas da Aula (100
+                minutos)
+              </h5>
+            </div>
+            <div class="card-body p-0">
+              <table class="tabela-etapas">
+                <thead>
+                  <tr>
+                    <th>Etapa</th>
+                    <th>Tempo</th>
+                    <th>Atividade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Abertura</strong></td>
+                    <td>10 min</td>
+                    <td>
+                      Discussão: "O que fazer quando a escola não tem
+                      internet?" — mapear soluções.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Conceituação</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Explicar Vosk (STT offline), Markov (gerador de texto
+                      sem API), PyInstaller.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Implementação</strong></td>
+                    <td>40 min</td>
+                    <td>
+                      Substituir chamadas online por offline: baixar modelo
+                      Vosk, implementar Markov.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Empacotamento</strong></td>
+                    <td>20 min</td>
+                    <td>
+                      Criar executável com PyInstaller e gerar tutorial PDF de
+                      5 páginas.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fechamento</strong></td>
+                    <td>15 min</td>
+                    <td>
+                      Rodar script testa_tudo.py — verificar se tudo funciona
+                      offline.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Materiais e Adaptações -->
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                  <h5><i class="bi bi-box"></i> Materiais</h5>
+                  <hr />
+                  <ul>
+                    <li>Notebook Colab da aula anterior</li>
+                    <li>Modelo Vosk (baixado ou em pendrive)</li>
+                    <li>PyInstaller instalado</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-universal-access"></i> Adaptações para
+                    inclusão
+                  </h5>
+                  <hr />
+                  <ul>
+                    <li>
+                      Se o download do modelo Vosk for pesado, professor pode
+                      fornecer pendrive com arquivos
+                    </li>
+                    <li>
+                      Modo texto puro (input) disponível para Chromebooks sem
+                      microfone
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 2: Código Python completo da Aula 10 -->
+        <div id="conteudoCodigo" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg">
+            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
+              <span><i class="bi bi-filetype-py"></i> robo_fofoqueiro_offline.py
+                — Código completo da aula 10</span>
+              <span class="badge bg-verde-claro">download disponível</span>
+            </div>
+            <div class="card-body p-0">
+              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+#              Robô Fofoqueiro - Versão Offline Completa
+# ===================================================================
+# Objetivo: Criar uma versão do Robô Fofoqueiro que funciona
+#           completamente sem internet, utilizando:
+#           - Vosk para reconhecimento de fala offline
+#           - Markov para geração de texto sem API
+#           - PyInstaller para gerar executável
+#           - Gerador de tutorial PDF para instalação
+# Alunos: [A SER PREENCHIDO]
+# Orientadora: Gisele Nunes
+# Data  : 2026
+# ===================================================================
+
+# -*- coding: utf-8 -*-
+
+# Importa o módulo sys para acessar funcionalidades do sistema,
+# incluindo a verificação de módulos carregados.
+import sys
+
+# Importa o módulo os para manipular arquivos e pastas.
+import os
+
+# Importa o módulo json para trabalhar com dados estruturados (respostas do Vosk).
+import json
+
+# Importa o módulo random para gerar valores aleatórios e escolher gírias.
+import random
+
+# Importa o módulo time para adicionar pausas e temporizações.
+import time
+
+# Importa o módulo wave para ler e escrever arquivos de áudio no formato WAV.
+import wave
+
+# Importa o módulo struct para empacotar/desempacotar dados binários.
+import struct
+
+# Importa o módulo math para operações matemáticas (cálculos de áudio).
+import math
+
+# Importa datetime para gerar timestamps precisos.
+from datetime import datetime
+
+# ============================================================
+# BLOCO 1: VERIFICAÇÃO DO AMBIENTE
+# ============================================================
+
+def verifica_ambiente():
+    """
+    Verifica se o código está sendo executado no Google Colab ou em ambiente local.
+    
+    Retorna:
+    str: 'colab' se estiver no Google Colab, 'local' caso contrário.
+    """
+    
+    # Verifica se o módulo 'google.colab' está presente nos módulos carregados.
+    if 'google.colab' in sys.modules:
+        print("✅ Tamo no Colab! Vamos instalar as paradas com !pip.")
+        return "colab"
+    else:
+        print("✅ Ambiente local detectado!")
+        return "local"
+
+# Chama a função para detectar o ambiente e armazena o resultado.
+AMBIENTE = verifica_ambiente()
+
+# ============================================================
+# BLOCO 2: INSTALAÇÃO DAS BIBLIOTECAS (SÓ NO COLAB)
+# ============================================================
+
+print("\n📦 Verificando/Instalando as bibliotecas offline...")
+
+# Se o ambiente for o Google Colab, instala as bibliotecas necessárias.
+if AMBIENTE == "colab":
+    # Instala Vosk (STT offline), markovify (gerador de texto), pyinstaller (executável).
+    !pip install vosk pyinstaller markovify pyaudio -q
+    print("✅ Bibliotecas instaladas (Vosk, Markov, PyInstaller).")
+else:
+    # Se for ambiente local, apenas avisa o que precisa ser instalado.
+    print("⚠️ Ambiente local: pip install vosk markovify pyaudio pyinstaller")
+
+# ============================================================
+# BLOCO 3: IMPORTAÇÃO DAS BIBLIOTECAS
+# ============================================================
+
+# Importa a biblioteca Vosk para reconhecimento de fala offline.
+# Vosk é uma biblioteca que funciona sem internet, usando modelos pré-treinados.
+import vosk
+
+# Importa a biblioteca markovify para geração de texto usando Cadeias de Markov.
+# Cadeias de Markov são modelos probabilísticos que geram texto baseado em
+# padrões aprendidos de um corpus (conjunto de textos de exemplo).
+import markovify
+
+# ============================================================
+# BLOCO 4: ARTE ASCII DO ROBÔ (MODO OFFLINE)
+# ============================================================
+
+# String com arte ASCII representando o robô no modo offline.
+# Inclui emojis de pacote (📦), robô (🤖) e computador (💻).
+ascii_robo_offline = r"""
+╔══════════════════════════════════════════════════════════════╗
+║ 📦🤖💻                                                      ║
+║ 🤖 ROBÔ FOFOQUEIRO - MODO OFFLINE 🤖                       ║
+║ "Sem internet? Tô on, vixi!"                                ║
+║ "Vosk, Markov e PyInstaller - o trem ficou completo!"       ║
+╚══════════════════════════════════════════════════════════════╝
+"""
+
+# Exibe a arte ASCII na tela.
+print(ascii_robo_offline)
+
+# ============================================================
+# BLOCO 5: CONFIGURAÇÃO DO VOSK (STT OFFLINE)
+# ============================================================
+
+class ReconhecedorVoskOffline:
+    """
+    Classe para reconhecimento de fala offline usando a biblioteca Vosk.
+    O Vosk é uma alternativa ao Google Speech Recognition que funciona
+    completamente sem internet, ideal para escolas com acesso limitado.
+    
+    Características:
+    - Suporte a múltiplos idiomas (português brasileiro)
+    - Baixa latência
+    - Modelo pequeno (~40MB) ou grande (~1GB)
+    """
+    
+    def __init__(self, model_path="modelo_vosk"):
+        """
+        Inicializa o reconhecedor com o caminho do modelo.
+        
+        Parâmetros:
+        model_path: str - caminho para a pasta do modelo Vosk.
+        """
+        self.model_path = model_path    # Caminho do modelo.
+        self.model = None               # Objeto do modelo Vosk.
+        self.rec = None                 # Objeto reconhecedor.
+        self.inicializado = False       # Flag de inicialização.
+    
+    def inicializar(self):
+        """
+        Inicializa o modelo Vosk.
+        Se o modelo não existir, faz o download automático.
+        
+        Retorna:
+        bool: True se inicializou com sucesso, False caso contrário.
+        """
+        
+        try:
+            # Verifica se o modelo já existe no disco.
+            if not os.path.exists(self.model_path):
+                print(f"⚠️ Modelo Vosk não encontrado em '{self.model_path}'")
+                print("📌 Baixando modelo pequeno (pt-br)...")
+                
+                # Importa módulos para download e extração.
+                import urllib.request
+                import zipfile
+                
+                # URL do modelo pequeno de português brasileiro (cerca de 40MB).
+                url = "https://alphacephei.com/vosk/models/vosk-model-small-pt-0.3.zip"
+                zip_path = "vosk_model.zip"
+                
+                print("   Download do modelo (pode demorar)...")
+                # Faz o download do arquivo zip.
+                urllib.request.urlretrieve(url, zip_path)
+                
+                print("   Extraindo modelo...")
+                # Extrai o arquivo zip.
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(".")
+                
+                # Renomeia a pasta extraída para o nome padrão.
+                os.rename("vosk-model-small-pt-0.3", self.model_path)
+                
+                # Remove o arquivo zip para economizar espaço.
+                os.remove(zip_path)
+                
+                print("   ✅ Modelo baixado e extraído!")
+            
+            # Carrega o modelo Vosk.
+            self.model = vosk.Model(self.model_path)
+            
+            # Cria o reconhecedor com taxa de amostragem de 16000 Hz.
+            self.rec = vosk.KaldiRecognizer(self.model, 16000)
+            
+            self.inicializado = True
+            print("✅ Vosk inicializado com sucesso!")
+            return True
+            
+        except Exception as e:
+            # Se ocorrer qualquer erro, exibe mensagem e retorna False.
+            print(f"❌ Erro ao inicializar Vosk: {e}")
+            print("   Modo texto alternativo será usado.")
+            return False
+    
+    def reconhecer_audio(self, audio_data):
+        """
+        Reconhece fala a partir de dados de áudio em tempo real.
+        
+        Parâmetros:
+        audio_data: bytes - dados de áudio no formato PCM (16 bits, mono).
+        
+        Retorna:
+        str or None: texto reconhecido ou None se não reconheceu.
+        """
+        
+        # Se não foi inicializado, retorna None.
+        if not self.inicializado:
+            return None
+        
+        try:
+            # Envia o áudio para o reconhecedor.
+            # AcceptWaveform retorna True quando uma frase foi completada.
+            if self.rec.AcceptWaveform(audio_data):
+                # Obtém o resultado em formato JSON.
+                resultado = json.loads(self.rec.Result())
+                # Extrai o campo 'text' que contém o texto reconhecido.
+                return resultado.get("text", "")
+            
+            # Se a frase não foi completada ainda, retorna None.
+            return None
+        
+        except Exception as e:
+            print(f"⚠️ Erro no reconhecimento: {e}")
+            return None
+    
+    def reconhecer_arquivo(self, arquivo_wav):
+        """
+        Reconhece fala a partir de um arquivo de áudio WAV.
+        
+        Parâmetros:
+        arquivo_wav: str - caminho para o arquivo WAV.
+        
+        Retorna:
+        str or None: texto reconhecido ou None se não reconheceu.
+        """
+        
+        # Se não foi inicializado, retorna None.
+        if not self.inicializado:
+            return None
+        
+        try:
+            # Abre o arquivo WAV para leitura.
+            wf = wave.open(arquivo_wav, "rb")
+            
+            # Configura para retornar palavras individuais.
+            self.rec.SetWords(True)
+            
+            # Lê o arquivo em blocos de 4000 frames.
+            while True:
+                data = wf.readframes(4000)
+                if len(data) == 0:  # Fim do arquivo.
+                    break
+                
+                # Processa o bloco de áudio.
+                if self.rec.AcceptWaveform(data):
+                    resultado = json.loads(self.rec.Result())
+                    return resultado.get("text", "")
+            
+            # Processa o restante do áudio.
+            resultado = json.loads(self.rec.FinalResult())
+            return resultado.get("text", "")
+        
+        except Exception as e:
+            print(f"⚠️ Erro ao ler arquivo: {e}")
+            return None
+
+# ============================================================
+# BLOCO 6: GERADOR MARKOV (TEXTO SEM API)
+# ============================================================
+
+class GeradorMarkovOffline:
+    """
+    Gerador de texto offline usando Cadeias de Markov.
+    Cadeias de Markov são modelos estatísticos que predizem a próxima
+    palavra com base nas palavras anteriores.
+    
+    Vantagens para o Robô Fofoqueiro:
+    - Funciona 100% offline
+    - Não precisa de API nem internet
+    - Respostas são consistentes com o "estilo" do robô
+    - Pode ser treinado com mais textos facilmente
+    """
+    
+    def __init__(self, corpus_padrao=None):
+        """
+        Inicializa o gerador com um corpus padrão de treinamento.
+        
+        Parâmetros:
+        corpus_padrao: str or None - texto de treinamento (None = usa padrão).
+        """
+        
+        self.modelo = None  # Modelo de Markov (será criado depois).
+        
+        # Corpus padrão com frases típicas do Robô Fofoqueiro.
+        # Este texto é usado para "ensinar" o robô a falar.
+        self.corpus_padrao = corpus_padrao or """
+        O Robô Fofoqueiro é um assistente de acessibilidade muito legal.
+        Ele ajuda pessoas com deficiência auditiva através de alertas visuais.
+        A acessibilidade digital é um direito de todos os cidadãos.
+        Vixi, que bagulho doido esse robô! Ele é muito fofoqueiro.
+        Piá, você viu como ele pisca o LED quando tem barulho?
+        Égua, a escola ficou mais inclusiva com esse projeto.
+        Ó o trem, o robô agora funciona sem internet!
+        Tchê, vamos espalhar acessibilidade por aí.
+        A inteligência artificial pode ser ética e inclusiva.
+        Dados são ferramentas de transformação social.
+        """
+        
+        # Constrói o modelo a partir do corpus padrão.
+        self._construir_modelo()
+    
+    def _construir_modelo(self):
+        """
+        Constrói o modelo de Markov a partir do corpus padrão.
+        state_size=2 significa que o modelo olha para as 2 palavras anteriores
+        para prever a próxima (bigrama).
+        """
+        
+        try:
+            # Cria o modelo de Markov a partir do texto do corpus.
+            # state_size=2: considera pares de palavras (bigrama).
+            self.modelo = markovify.Text(self.corpus_padrao, state_size=2)
+            print("✅ Modelo Markov construído com sucesso!")
+        except Exception as e:
+            print(f"⚠️ Erro ao construir modelo: {e}")
+            self.modelo = None
+    
+    def adicionar_textos(self, textos):
+        """
+        Adiciona mais textos ao corpus para enriquecer o modelo.
+        
+        Parâmetros:
+        textos: str - novos textos para treinamento.
+        """
+        
+        if self.modelo:
+            # Cria um novo modelo com os textos adicionais.
+            novo_modelo = markovify.Text(textos, state_size=2)
+            # Combina o modelo existente com o novo.
+            self.modelo = markovify.combine([self.modelo, novo_modelo])
+    
+    def gerar_resposta(self, pergunta=None):
+        """
+        Gera uma resposta aleatória usando o modelo de Markov.
+        
+        Parâmetros:
+        pergunta: str or None - pergunta do usuário (não usada, mantida para compatibilidade).
+        
+        Retorna:
+        str - uma frase gerada pelo modelo (máximo 140 caracteres).
+        """
+        
+        # Se o modelo não foi construído, retorna mensagem de erro.
+        if not self.modelo:
+            return "Vixi, não consegui gerar resposta agora, piá!"
+        
+        # Tenta gerar uma frase curta (máximo 140 caracteres).
+        frase = self.modelo.make_short_sentence(140)
+        
+        # Se não conseguiu gerar, usa uma mensagem padrão.
+        if not frase:
+            frase = "Bagulho doido! O robô tá pensando ainda..."
+        
+        # Adiciona uma gíria aleatória em 30% das respostas (random > 0.7).
+        girias = ["vixi", "égua", "piá", "guria", "ó o trem", "tchê", "bah"]
+        if random.random() > 0.7:
+            frase = f"{random.choice(girias)}! {frase}"
+        
+        return frase
+
+# ============================================================
+# BLOCO 7: EMPACOTADOR PYINSTALLER
+# ============================================================
+
+def gerar_executavel():
+    """
+    Gera um executável (.exe no Windows, binário no Linux/Mac) usando PyInstaller.
+    Isso permite que o robô seja executado em computadores que não têm Python instalado.
+    
+    Retorna:
+    bool: True se o executável foi gerado com sucesso, False caso contrário.
+    """
+    
+    print("\n" + "="*60)
+    print("📦 GERANDO EXECUTÁVEL COM PYINSTALLER")
+    print("="*60)
+    
+    # Conteúdo do arquivo .spec (especificação do PyInstaller).
+    spec_content = '''
+# -*- mode: python ; coding: utf-8 -*-
+
+a = Analysis(
+    ['robo_fofoqueiro_offline.py'],
+    pathex=[],
+    binaries=[],
+    datas=[('modelo_vosk', 'modelo_vosk')],
+    hiddenimports=['vosk', 'markovify', 'pyaudio'],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[],
+    noarchive=False,
+)
+
+pyz = PYZ(a.pure)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.datas,
+    [],
+    name='RoboFofoqueiro',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=True,
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
+    icon='robo_icon.ico'
+)
+'''
+    
+    print("📄 Criando arquivo .spec...")
+    with open("robo_fofoqueiro.spec", "w", encoding="utf-8") as f:
+        f.write(spec_content)
+    
+    print("🚀 Executando PyInstaller...")
+    # Executa o PyInstaller com as opções:
+    # --onefile: gera um único arquivo executável
+    # --noconfirm: não pergunta antes de sobrescrever
+    os.system("pyinstaller robo_fofoqueiro.spec --onefile --noconfirm")
+    
+    # Verifica se o executável foi criado.
+    executavel_existe = os.path.exists("./dist/RoboFofoqueiro.exe")
+    
+    if executavel_existe:
+        print("✅ Executável gerado em ./dist/RoboFofoqueiro.exe")
+    else:
+        print("⚠️ Não foi possível gerar o executável. Verifique o PyInstaller.")
+    
+    return executavel_existe
+
+# ============================================================
+# BLOCO 8: SCRIPT DE TESTE
+# ============================================================
+
+def testar_tudo():
+    """
+    Script de teste que verifica todas as funcionalidades offline.
+    Testa Vosk, Markov, PyInstaller e dependências.
+    
+    Retorna:
+    bool: True se todos os testes passaram, False caso contrário.
+    """
+    
+    print("\n" + "="*60)
+    print("🧪 SCRIPT TESTA_TUDO.PY - VERIFICANDO FUNCIONALIDADES")
+    print("="*60)
+    
+    # Lista para armazenar os resultados de cada teste.
+    resultados = []
+    
+    # Teste 1: Vosk
+    print("\n📌 Teste 1: Reconhecimento de Fala Offline (Vosk)")
+    vosk_reconhecedor = ReconhecedorVoskOffline()
+    if vosk_reconhecedor.inicializar():
+        print("   ✅ Vosk inicializado corretamente")
+        resultados.append(True)
+    else:
+        print("   ❌ Falha na inicialização do Vosk")
+        resultados.append(False)
+    
+    # Teste 2: Markov
+    print("\n📌 Teste 2: Gerador de Texto (Markov)")
+    markov_gerador = GeradorMarkovOffline()
+    if markov_gerador.modelo:
+        resposta = markov_gerador.gerar_resposta()
+        print(f"   ✅ Markov funcionando! Resposta exemplo: '{resposta}'")
+        resultados.append(True)
+    else:
+        print("   ❌ Falha no gerador Markov")
+        resultados.append(False)
+    
+    # Teste 3: PyInstaller
+    print("\n📌 Teste 3: PyInstaller (verificação de dependências)")
+    try:
+        import PyInstaller
+        print("   ✅ PyInstaller disponível")
+        resultados.append(True)
+    except ImportError:
+        print("   ⚠️ PyInstaller não encontrado (instale com pip install pyinstaller)")
+        resultados.append(False)
+    
+    # Teste 4: Dependências offline
+    print("\n📌 Teste 4: Dependências offline")
+    dependencias = ["vosk", "markovify", "pyaudio", "json", "wave", "math"]
+    for dep in dependencias:
+        try:
+            __import__(dep)  # Tenta importar o módulo.
+            print(f"   ✅ {dep} disponível")
+        except ImportError:
+            print(f"   ⚠️ {dep} não disponível (modo texto alternativo)")
+    
+    # Resumo dos testes
+    print("\n" + "="*60)
+    print("📊 RESUMO DOS TESTES")
+    print("="*60)
+    
+    total = len(resultados)
+    sucessos = sum(resultados)
+    
+    print(f"✅ Testes bem-sucedidos: {sucessos}/{total}")
+    
+    if sucessos == total:
+        print("\n🎉 PARABÉNS! TODOS OS TESTES PASSARAM!")
+        print("   O Robô Fofoqueiro está pronto para rodar OFFLINE!")
+    else:
+        print("\n⚠️ ALGUNS TESTES FALHARAM!")
+        print("   Verifique as dependências e tente novamente.")
+    
+    return sucessos == total
+
+# ============================================================
+# BLOCO 9: GERADOR DE TUTORIAL PDF
+# ============================================================
+
+def gerar_tutorial_pdf():
+    """
+    Gera um tutorial PDF de 5 páginas para instalação offline do robô.
+    Se a biblioteca reportlab não estiver disponível, gera um arquivo TXT alternativo.
+    
+    Retorna:
+    bool: True se gerou com sucesso, False caso contrário.
+    """
+    
+    print("\n" + "="*60)
+    print("📚 GERANDO TUTORIAL PDF (5 PÁGINAS)")
+    print("="*60)
+    
+    # Conteúdo do tutorial (texto em markdown/plain text).
+    tutorial_content = """
+====================================================================
+TUTORIAL DE INSTALAÇÃO - ROBÔ FOFOQUEIRO OFFLINE
+====================================================================
+
+PÁGINA 1: INTRODUÇÃO
+====================================================================
+O Robô Fofoqueiro é um assistente de acessibilidade que funciona
+totalmente OFFLINE! Isso significa que você pode usá-lo em escolas
+sem acesso à internet.
+
+Requisitos:
+- Windows 10/11, Linux ou macOS
+- Python 3.8 ou superior
+- Microfone (opcional, modo texto disponível)
+- 500MB de espaço em disco (para o modelo Vosk)
+
+====================================================================
+PÁGINA 2: INSTALAÇÃO DAS DEPENDÊNCIAS
+====================================================================
+
+Passo 1: Instalar Python
+- Acesse python.org
+- Baixe Python 3.8+
+- Marque "Add Python to PATH" durante a instalação
+
+Passo 2: Instalar bibliotecas
+Abra o terminal (CMD/PowerShell/Terminal) e execute:
+
+pip install vosk markovify pyaudio pyinstaller
+
+Passo 3: Baixar modelo Vosk (português)
+Execute no Python:
+
+import vosk
+import urllib.request
+import zipfile
+
+url = "https://alphacephei.com/vosk/models/vosk-model-small-pt-0.3.zip"
+urllib.request.urlretrieve(url, "vosk_model.zip")
+with zipfile.ZipFile("vosk_model.zip", 'r') as zip_ref:
+    zip_ref.extractall(".")
+os.rename("vosk-model-small-pt-0.3", "modelo_vosk")
+
+====================================================================
+PÁGINA 3: EXECUTANDO O ROBÔ
+====================================================================
+
+Passo 4: Baixar o código
+Salve o arquivo robo_fofoqueiro_offline.py em uma pasta.
+
+Passo 5: Executar
+No terminal, dentro da pasta do código:
+
+python robo_fofoqueiro_offline.py
+
+Passo 6: Testar funcionamento
+- Digite '1' para testar todas as funcionalidades
+- Digite '2' para conversar com o robô (Markov)
+- Digite '3' para testar reconhecimento de voz (Vosk)
+- Digite '4' para gerar executável (PyInstaller)
+- Digite '5' para gerar tutorial PDF
+- Digite '6' para sair
+
+====================================================================
+PÁGINA 4: GERANDO EXECUTÁVEL (OPCIONAL)
+====================================================================
+
+Para gerar um arquivo .exe que roda sem Python instalado:
+
+Passo 7: Criar executável
+No terminal, execute:
+
+pyinstaller --onefile --name RoboFofoqueiro robo_fofoqueiro_offline.py
+
+Passo 8: Localizar executável
+O arquivo será gerado na pasta 'dist/'
+
+Passo 9: Copiar modelo Vosk
+Copie a pasta 'modelo_vosk' para o mesmo local do executável.
+
+====================================================================
+PÁGINA 5: SOLUÇÃO DE PROBLEMAS
+====================================================================
+
+Problema: PyAudio não instala no Windows
+Solução: Baixe o arquivo .whl em:
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio
+
+Problema: Modelo Vosk não baixa
+Solução: Use um pendrive com o modelo já baixado ou
+peça ajuda ao professor.
+
+Problema: Microfone não funciona
+Solução: Use o modo texto (digite manualmente o que quer falar)
+
+Problema: Executável não encontra modelo
+Solução: Copie a pasta 'modelo_vosk' para a mesma pasta do .exe
+
+====================================================================
+SUPORTE
+====================================================================
+Em caso de dúvidas, entre em contato com a tutora Gisele Nunes.
+
+🤖 Robô Fofoqueiro - Acessibilidade com humor, mesmo offline!
+===================================================================="""
+    
+    # Tenta gerar PDF usando a biblioteca reportlab.
+    try:
+        from reportlab.lib.pagesizes import A4
+        from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        from reportlab.lib.enums import TA_CENTER, TA_LEFT
+        from reportlab.pdfbase import pdfmetrics
+        from reportlab.pdfbase.ttfonts import TTFont
+        
+        # Tenta registrar uma fonte TrueType (Arial).
+        try:
+            pdfmetrics.registerFont(TTFont('Arial', 'arial.ttf'))
+            font_name = 'Arial'
+        except:
+            # Fallback para fonte padrão do reportlab.
+            font_name = 'Helvetica'
+        
+        # Cria o documento PDF com tamanho A4.
+        doc = SimpleDocTemplate("tutorial_robo_fofoqueiro.pdf", pagesize=A4)
+        
+        # Obtém os estilos padrão.
+        styles = getSampleStyleSheet()
+        
+        # Define estilo para texto normal.
+        style_normal = ParagraphStyle(
+            'Normal',
+            parent=styles['Normal'],
+            fontName=font_name,
+            fontSize=10,
+            leading=14  # Espaçamento entre linhas.
+        )
+        
+        # Define estilo para título.
+        style_title = ParagraphStyle(
+            'Title',
+            parent=styles['Title'],
+            fontName=font_name,
+            fontSize=16,
+            alignment=TA_CENTER,  # Centralizado.
+            spaceAfter=20         # Espaço após o título.
+        )
+        
+        # Lista para armazenar os elementos do PDF.
+        story = []
+        
+        # Divide o conteúdo em páginas (usando o separador "====").
+        paginas = tutorial_content.split("====================================================================")
+        
+        # Adiciona cada página ao documento.
+        for i, pagina in enumerate(paginas):
+            if pagina.strip():
+                story.append(Paragraph(f"{pagina.strip()}", style_normal))
+                story.append(Spacer(1, 20))  # Espaço entre páginas.
+        
+        # Constrói o PDF.
+        doc.build(story)
+        print("✅ Tutorial PDF gerado: tutorial_robo_fofoqueiro.pdf")
+        return True
+        
+    except ImportError:
+        # Se reportlab não está instalado, gera um arquivo TXT.
+        print("⚠️ ReportLab não instalado. Gerando arquivo TXT alternativo.")
+        with open("tutorial_robo_fofoqueiro.txt", "w", encoding="utf-8") as f:
+            f.write(tutorial_content)
+        print("✅ Tutorial TXT gerado: tutorial_robo_fofoqueiro.txt")
+        return False
+
+# ============================================================
+# BLOCO 10: FUNÇÃO PRINCIPAL
+# ============================================================
+
+def main():
+    """
+    Função principal com menu interativo.
+    Permite ao usuário testar funcionalidades, conversar com o robô,
+    testar Vosk, gerar executável e gerar tutorial.
+    
+    Retorna:
+    bool: True para continuar no menu, False para sair.
+    """
+    
+    print("\n🤖 ROBÔ FOFOQUEIRO - AULA 10: VERSÃO OFFLINE")
+    print("="*50)
+    print("1 - Testar todas as funcionalidades (testa_tudo.py)")
+    print("2 - Conversar com o robô (modo Markov)")
+    print("3 - Testar reconhecimento de voz (Vosk)")
+    print("4 - Gerar executável (PyInstaller)")
+    print("5 - Gerar tutorial PDF")
+    print("6 - Sair")
+    print("="*50)
+    
+    # Solicita a opção do usuário.
+    opcao = input("\n👉 Escolha uma opção (1/2/3/4/5/6): ").strip()
+    
+    # Opção 1: Testar todas as funcionalidades.
+    if opcao == '1':
+        testar_tudo()
+    
+    # Opção 2: Conversar com o robô usando Markov.
+    elif opcao == '2':
+        print("\n🗣️ MODO CONVERSA - Robô Fofoqueiro (Offline)")
+        print("Digite 'sair' para encerrar")
+        print("-"*40)
+        
+        # Cria o gerador Markov.
+        markov = GeradorMarkovOffline()
+        
+        # Loop de conversa.
+        while True:
+            pergunta = input("\n🧑 Você: ").strip()
+            
+            # Verifica comandos de saída.
+            if pergunta.lower() in ['sair', 'quit', 'exit', 'q']:
+                print("\n🤖 Robô: Até a próxima, piá! Não esquece da acessibilidade!")
+                break
+            
+            # Gera e exibe a resposta.
+            resposta = markov.gerar_resposta(pergunta)
+            print(f"🤖 Robô: {resposta}")
+    
+    # Opção 3: Testar reconhecimento de voz com Vosk.
+    elif opcao == '3':
+        print("\n🎤 MODO RECONHECIMENTO DE VOZ - Vosk Offline")
+        print("Certifique-se de ter um microfone conectado!")
+        print("-"*40)
+        
+        # Cria e inicializa o reconhecedor Vosk.
+        vosk_reconhecedor = ReconhecedorVoskOffline()
+        if vosk_reconhecedor.inicializar():
+            try:
+                import pyaudio
+                
+                # Configura o stream de áudio.
+                p = pyaudio.PyAudio()
+                stream = p.open(
+                    format=pyaudio.paInt16,  # 16 bits por sample.
+                    channels=1,              # Mono.
+                    rate=16000,              # 16 kHz (taxa exigida pelo Vosk).
+                    input=True,              # Modo captura.
+                    frames_per_buffer=4000   # Tamanho do buffer.
+                )
+                stream.start_stream()
+                
+                print("🎤 Escutando... Fale algo!")
+                
+                # Captura e processa 50 blocos de áudio (aproximadamente 5 segundos).
+                for _ in range(50):
+                    data = stream.read(4000)
+                    texto = vosk_reconhecedor.reconhecer_audio(data)
+                    if texto:
+                        print(f"📝 Reconhecido: {texto}")
+                
+                # Finaliza o stream.
+                stream.stop_stream()
+                stream.close()
+                p.terminate()
+                
+            except ImportError:
+                print("⚠️ PyAudio não instalado. Use o modo texto (opção 2).")
+            except Exception as e:
+                print(f"⚠️ Erro no áudio: {e}")
+        else:
+            print("⚠️ Vosk não inicializado. Verifique o modelo.")
+    
+    # Opção 4: Gerar executável.
+    elif opcao == '4':
+        gerar_executavel()
+    
+    # Opção 5: Gerar tutorial PDF.
+    elif opcao == '5':
+        gerar_tutorial_pdf()
+    
+    # Opção 6 ou qualquer outra: sair.
+    else:
+        print("\n👋 Até a próxima, piá! Acessibilidade é direito de todos!")
+        return False
+    
+    return True  # Continua no menu.
+
+# ============================================================
+# PONTO DE ENTRADA
+# ============================================================
+
+# Verifica se o script está sendo executado diretamente (não importado como módulo).
+if __name__ == "__main__":
+    # Loop do menu principal.
+    continuar = True
+    while continuar:
+        continuar = main()
+        # Se não saiu, aguarda ENTER antes de mostrar o menu novamente.
+        if continuar:
+            input("\n👉 Pressione ENTER para voltar ao menu...")
+    
+    # Mensagem final de encerramento.
+    print("\n🎉 Fim da Aula 10 - Robô Fofoqueiro OFFLINE COMPLETO!")
+    print(" (Agora ele funciona até no meio do mato, vixi!)")</code></pre>
+            </div>
+            <div class="card-footer bg-light">
+              <small><i class="bi bi-info-circle"></i> Código completo da versão
+                offline para rodar em qualquer computador.</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 3: Checklist / Avaliação -->
+        <div id="conteudoChecklist" class="lateral-aba-conteudo">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="card shadow border-0 mb-4">
+                <div class="card-header bg-degrade-verde text-white">
+                  <h4 class="mb-0">
+                    <i class="bi bi-check2-square"></i> Checklist de avaliação
+                    - Aluno
+                  </h4>
+                </div>
+                <div class="card-body">
+                  <ul class="checklist-personalizado list-unstyled">
+                    <li>
+                      <i class="bi bi-square"></i> Código roda sem nenhuma
+                      requisição externa (sem internet)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Executável gerado (ou
+                      instruções claras)?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Tutorial PDF entregue?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Script de teste
+                      (testa_tudo.py) passando em todas as verificações?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Vosk reconhecendo fala
+                      offline?
+                    </li>
+                    <li>
+                      <i class="bi bi-square"></i> Markov gerando respostas
+                      coerentes?
+                    </li>
+                  </ul>
+                  <div class="progress mt-3 progress-checklist">
+                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+                  </div>
+                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
+                    <i class="bi bi-arrow-repeat"></i> Simular progresso
+                    (marca todos ✅)
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                <div class="card-body">
+                  <h5>
+                    <i class="bi bi-exclamation-triangle-fill"></i> Critérios
+                    de Avaliação
+                  </h5>
+                  <hr class="hr-alerta" />
+                  <ul>
+                    <li>Código roda sem requisições externas</li>
+                    <li>Executável gerado (ou instruções)</li>
+                    <li>Tutorial PDF entregue</li>
+                    <li>Script de teste passando</li>
+                  </ul>
+                  <hr class="hr-alerta" />
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-robot fs-1"></i>
+                    <span>Dica: "Se o download do modelo Vosk for pesado, peça
+                      para o professor fornecer um pendrive!"</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 4: Área do Professor -->
+        <div id="conteudoProfessor" class="lateral-aba-conteudo">
+          <div class="card shadow border-0 mb-4 overflow-hidden">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <div class="d-flex gap-2 align-items-center mb-2">
+                    <i class="bi bi-chalkboard fs-1"></i>
+                    <h2 class="card-title">Plano de Aula - Docente</h2>
+                  </div>
+                  <p>
+                    <strong>Título:</strong> "Robô Fofoqueiro sem internet:
+                    levando a inclusão a todas as escolas"
+                  </p>
+                  <p>
+                    <strong>Códigos BNCC:</strong> EM13CNT102, EM13MAT503 |
+                    <strong>RCP - Paraná:</strong> Pensamento Computacional -
+                    Otimização, Cidadania Digital
+                  </p>
+                  <p><strong>Duração:</strong> 2 aulas (100 minutos)</p>
+                  <p>
+                    <strong>Materiais:</strong> Notebook Colab, modelo Vosk
+                    (pendrive), PyInstaller
+                  </p>
+                  <hr class="hr-professor" />
+                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                  <ul>
+                    <li>
+                      <strong>Abertura (10min):</strong> Discussão: "O que
+                      fazer quando a escola não tem internet?" — mapear
+                      soluções
+                    </li>
+                    <li>
+                      <strong>Conceituação (15min):</strong> Explicar Vosk
+                      (STT offline), Markov (gerador de texto sem API),
+                      PyInstaller
+                    </li>
+                    <li>
+                      <strong>Implementação (40min):</strong> Substituir
+                      chamadas online por offline: baixar modelo Vosk,
+                      implementar Markov
+                    </li>
+                    <li>
+                      <strong>Empacotamento (20min):</strong> Criar executável
+                      com PyInstaller e gerar tutorial PDF de 5 páginas
+                    </li>
+                    <li>
+                      <strong>Fechamento (15min):</strong> Rodar script
+                      testa_tudo.py — verificar se tudo funciona offline
+                    </li>
+                  </ul>
+                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
+                    <i class="bi bi-download"></i> Exportar dicas
+                  </button>
+                </div>
+              </div>
+              <div
+                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
+                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                <p class="mt-2 fw-bold">Kit do Professor</p>
+                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
+                  <i class="bi bi-mic"></i> Chamada interativa
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba 5: Simulador Offline -->
+        <div id="conteudoSimulador" class="lateral-aba-conteudo">
+          <div class="card border-0 shadow-lg mb-4">
+            <div class="card-header bg-grafite text-white">
+              <h4 class="mb-0">
+                <i class="bi bi-wifi-off"></i> Simulador de Modo Offline
+              </h4>
+            </div>
+            <div class="card-body">
+              <div class="simulador-fala p-4">
+                <div class="text-center mb-4">
+                  <div class="robo-ascii-animado">
+                    📦🤖 "Sem internet? Tô on, vixi!"
+                  </div>
+                </div>
+
+                <!-- Status da conexão -->
+                <div class="mb-4">
+                  <div id="statusOffline" class="alert alert-success text-center">
+                    <i class="bi bi-wifi-off"></i>
+                    <strong>Modo OFFLINE ativo!</strong> Nenhuma requisição
+                    externa será feita.
+                  </div>
+                </div>
+
+                <!-- Simulador de Markov -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-chat-dots-fill"></i> Simulador Markov
+                    (Texto Offline):</label>
+                  <div class="input-group mb-2">
+                    <input type="text" id="perguntaMarkov" class="form-control"
+                      placeholder="Digite algo para o robô responder..." />
+                    <button id="btnGerarMarkov" class="btn btn-primary">
+                      <i class="bi bi-send-fill"></i> Gerar Resposta
+                    </button>
+                  </div>
+                  <div id="respostaMarkov" class="alert alert-info mt-2">
+                    <i class="bi bi-robot"></i> Robô Fofoqueiro: "Vixi, ainda
+                    não falou nada, piá! Digita alguma coisa aí!"
+                  </div>
+                </div>
+
+                <!-- Simulador de Vosk -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-mic-fill"></i> Simulador Vosk (Voz
+                    Offline):</label>
+                  <div class="text-center mb-2">
+                    <button id="btnSimularVoz" class="btn btn-warning">
+                      <i class="bi bi-mic"></i> Simular Reconhecimento de Voz
+                    </button>
+                  </div>
+                  <div id="resultadoVosk" class="alert alert-secondary mt-2">
+                    <i class="bi bi-info-circle"></i> Clique no botão para
+                    simular o reconhecimento de fala offline.
+                  </div>
+                </div>
+
+                <!-- Simulador de PyInstaller -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-box-seam-fill"></i> Simulador PyInstaller
+                    (Empacotamento):</label>
+                  <div class="text-center mb-2">
+                    <button id="btnSimularPyInstaller" class="btn btn-success">
+                      <i class="bi bi-file-earmark-zip-fill"></i> Simular
+                      Geração de Executável
+                    </button>
+                  </div>
+                  <div id="resultadoPyInstaller" class="alert alert-secondary mt-2">
+                    <i class="bi bi-info-circle"></i> Clique no botão para
+                    simular a criação do executável.
+                  </div>
+                </div>
+
+                <!-- Script de teste -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-check-circle-fill"></i> Script de
+                    Teste:</label>
+                  <div class="text-center mb-2">
+                    <button id="btnTestarTudo" class="btn btn-danger">
+                      <i class="bi bi-play-fill"></i> Executar testa_tudo.py
+                      (Simulado)
+                    </button>
+                  </div>
+                  <div id="resultadoTeste" class="alert alert-secondary mt-2">
+                    <i class="bi bi-info-circle"></i> Clique no botão para
+                    simular a verificação completa.
+                  </div>
+                </div>
+
+                <!-- Tutorial PDF -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold"><i class="bi bi-file-pdf-fill"></i> Tutorial PDF:</label>
+                  <div class="text-center">
+                    <button id="btnGerarTutorialSim" class="btn btn-info">
+                      <i class="bi bi-download"></i> Baixar Tutorial (TXT)
+                    </button>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning mt-3">
+                  <i class="bi bi-info-circle"></i>
+                  <strong>Nota:</strong> Este é um simulador visual do modo
+                  offline. O código Python completo deve ser executado no
+                  Google Colab ou localmente para todas as funcionalidades
+                  reais.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <div class="container-fluid">
+      <p class="mb-0">
+        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+        programação & inclusão
+      </p>
+      <small><i class="bi bi-chat-right-quote"></i> "Sem internet? Tô on, vixi!
+        Levando inclusão a todas as escolas!"</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Script custom -->
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
