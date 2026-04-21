@@ -1,178 +1,224 @@
-Com certeza! Analisei todo o projeto "Robô Fofoqueiro" – os arquivos HTML, CSS, JavaScript, os planos de aula, os códigos Python e o escopo completo. É um trabalho incrível, cheio de personalidade e com um propósito social muito importante.
+# 🤖 Robô Fofoqueiro da Acessibilidade
 
-Preparei um README.md que captura a essência irreverente do projeto, explica sua estrutura complexa de forma didática e serve como um guia completo para qualquer pessoa que queira entender, usar ou contribuir com ele.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://python.org)
+[![Colab](https://img.shields.io/badge/Google-Colab-orange.svg)](https://colab.research.google.com/)
+[![BNCC](https://img.shields.io/badge/BNCC-Ensino%20M%C3%A9dio-purple.svg)](https://basenacionalcomum.mec.gov.br/)
 
-```markdown
-# 🤖 Robô Fofoqueiro da Acessibilidade: I.A. QUE FALA
+> _"Vixi, o trem agora é completo! Bora fofocar com responsa sobre acessibilidade!"_
 
-[![Status do Projeto](https://img.shields.io/badge/status-vers%C3%A3o%20completa-brightgreen)](.)
-[![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-blue)](LICENSE)
-[![Feito com Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
+## 🎭 Sobre o Projeto
 
-**"Como ensinar um computador a ser intérprete de surdos, mas com meme, sensor de barulho e personalidade explosiva"**
+**Robô Fofoqueiro** é um assistente robótico educativo com **personalidade paranaense** que ensina programação, inteligência artificial e acessibilidade de um jeito divertido — com memes, gírias e muito "bagulho doido"!
 
-Bem-vindo, piá, guria, meu consagrado! Esse é o **Robô Fofoqueiro**, um projeto que nasceu pra provar que **acessibilidade digital não precisa ser um bagulho chato e engessado**. Ele é um assistente robótico excêntrico que traduz sons ambientes em **alertas visuais, textuais e emocionais**, tudo com muito sotaque paranaense, memes e, claro, **fofoca** (mas com responsa, vixi).
+O projeto foi desenvolvido para **escolas públicas**, rodando em **Chromebooks** via **Google Colab**, e aborda desde conceitos básicos de Python até IA generativa, visão computacional e prototipagem com Arduino.
 
-Este repositório contém o site completo do projeto, com **11 aulas** (e mais um material complementar) que guiam estudantes e professores na jornada de construir um sistema de acessibilidade usando Python, IA, visão computacional e até hardware.
+```python
+# O robô fala assim:
+print("Égua, piá! Bora medir o barulho da sala?")
+# 🎤 Nível: 78 dB - TÁ MUITO ALTO, VIXI!
+```
 
-## 🎯 Sumário Didático (Pra você não se perder nesse trem todo)
+## 🎯 Objetivo Central
 
-- [📖 O que é o Robô Fofoqueiro?](#-o-que-é-o-robô-fofoqueiro)
-- [🚀 Demonstração e Estrutura do Projeto](#-demonstração-e-estrutura-do-projeto)
-- [🗺️ A Jornada de Aprendizagem (As 11 Aulas)](#️-a-jornada-de-aprendizagem-as-11-aulas)
-- [🔧 Tecnologias e Ferramentas (Os "Bagulhos" que usamos)](#-tecnologias-e-ferramentas-os-bagulhos-que-usamos)
-- [⚙️ Como Usar Este Projeto](#️-como-usar-este-projeto)
-  - [Opção 1: Explorar o Site Online (Modo Leitura)](#opção-1-explorar-o-site-online-modo-leitura)
-  - [Opção 2: Rodar os Códigos no Google Colab (Mão na Massa)](#opção-2-rodar-os-códigos-no-google-colab-mão-na-massa)
-  - [Opção 3: Rodar a Versão Offline Completa (Sem Internet)](#opção-3-rodar-a-versão-offline-completa-sem-internet)
-- [🧠 BNCC e RCP (Os Trens da Escola)](#-bncc-e-rcp-os-trens-da-escola)
-- [🤝 Como Contribuir (Bora ajudar, tchê!)](#-como-contribuir-bora-ajudar-tchê)
-- [👥 Créditos e Equipe](#-créditos-e-equipe)
+Utilizar **IA generativa + visão computacional + sensores de áudio** para criar um assistente robótico excêntrico que:
 
-## 📖 O que é o Robô Fofoqueiro?
+- 🔊 **Traduz sons ambientes** em alertas visuais, textuais e emocionais
+- ♿ **Promove acessibilidade** para pessoas com deficiência auditiva
+- 😂 **Ensina tecnologia com humor** (porque aprender não precisa ser chato!)
 
-É um projeto **interdisciplinar e integrador** que une programação, física, robótica e ética para criar um protótipo de assistente de acessibilidade. O grande barato é que ele faz isso com uma **personalidade única**, cheia de gírias do Paraná (`vixi`, `piá`, `égua`, `ó o trem`) e um visual bem humorado, mas sem nunca perder de vista o objetivo principal: **promover a inclusão de pessoas com deficiência auditiva e mobilidade reduzida**.
+## 🛠️ Tecnologias Utilizadas
 
-**O que o robô faz, de forma resumida:**
+| Categoria         | Tecnologias                                            |
+| ----------------- | ------------------------------------------------------ |
+| **Linguagem**     | Python 3.8+                                            |
+| **Ambiente**      | Google Colab, Chromebooks da rede pública              |
+| **IA e Visão**    | Google Gemini API, MediaPipe, OpenCV                   |
+| **Áudio**         | SpeechRecognition, gTTS, PyAudio, Vosk (offline)       |
+| **Dados**         | Pandas, NumPy, Matplotlib, Seaborn                     |
+| **Hardware**      | Arduino Uno, sensor KY-038, LEDs RGB, display LCD 16x2 |
+| **Empacotamento** | PyInstaller, PySerial                                  |
 
-- 🎤 **Escuta a sala:** Se o barulho passar de 75 dB (decibéis), ele acende um LED vermelho e escreve no display: *"TÁ ALTO, HEIN? QUER SILÊNCIO OU VOU CHAMAR A DIRETORA ROBÔ"*.
-- 🗣️ **Reconhece Fala:** Você fala uma frase, e ele a reescreve com memes e gírias. Ex: "estou com fome" → *"ó o trem, o bagulho é que tô com fome, vixi"*.
-- ✋ **Tem Visão Computacional:** Detecta sua mão e conta os dedos levantados. Também lê QR codes que podem conter links para um mapa de acessibilidade da escola.
-- 🧠 **Usa I.A. com Personalidade:** Ele não é só um robô de regras. Ele usa um modelo de IA (Gemini) ou um gerador de texto offline (Markov) para criar respostas novas e criativas.
-- 💡 **Pisca e Mostra Mensagens:** Simula (ou controla de verdade) um display LCD e LEDs RGB para dar feedback visual.
-- 📊 **Cria o "Mapa do Inferno Acústico":** Gera gráficos e mapas de calor para visualizar os níveis de barulho na escola ao longo do dia.
+## 📚 O que o Robô Fofoqueiro faz?
 
-**O projeto não zomba da acessibilidade – zomba do formato chato e engessado de ensinar tecnologia.**
+| Funcionalidade              | O que acontece?                                                         |
+| --------------------------- | ----------------------------------------------------------------------- |
+| 🎤 **Escuta a sala**        | Se o barulho > 75 dB → LED vermelho piscando + display "TÁ ALTO, HEIN?" |
+| 🗣️ **Reconhece fala**       | Converte voz em texto, reescreve com meme e gírias paranaenses          |
+| ✋ **Visão computacional**  | Detecta mãos e lê QR codes com instruções acessíveis                    |
+| 🧠 **IA com personalidade** | Responde com gírias: "vixi", "ó o trem", "piá", "guria", "bah"          |
+| 💡 **Display e LEDs**       | Alertas visuais simulados (ou com hardware real)                        |
+| 📊 **Mapa do Inferno**      | Visualização de dados com gráficos e heatmap do barulho                 |
 
-## 🚀 Demonstração e Estrutura do Projeto
+## 🗺️ Jornada de Aprendizagem (10 aulas + material complementar)
 
-O projeto é um **site completo** (HTML/CSS/JS) que funciona como um portal de aprendizado. Ele está dividido em **11 aulas**, cada uma com:
+| #   | Aula                          | Foco                                     | Tempo   |
+| --- | ----------------------------- | ---------------------------------------- | ------- |
+| 1   | **Setup do ambiente**         | Criar ambiente no Google Colab           | 1 aula  |
+| 2   | **Sensor de som irreverente** | Medir dB e tomar decisões com memes      | 2 aulas |
+| 3   | **Reconhecimento de fala**    | Converter voz em texto com personalidade | 2 aulas |
+| 4   | **Visão computacional**       | Detectar mão e QR code com câmera        | 2 aulas |
+| 5   | **IA com personalidade**      | Integrar IA generativa com regionalismo  | 2 aulas |
+| 6   | **Display e LEDs**            | Simular hardware ou usar física          | 2 aulas |
+| 7   | **Mapa do Inferno Acústico**  | Visualização de dados com emojis         | 1 aula  |
+| 8   | **Protótipo completo**        | Integrar tudo em um sistema único        | 3 aulas |
+| 9   | **Manifesto e vídeo**         | Roteiro para produto final               | 2 aulas |
+| 10  | **Versão offline**            | Adaptar para escolas sem internet        | 2 aulas |
+| 📚  | **Material Complementar**     | BNCC, RCP e Avaliação Final              | -       |
 
-- **Conceitos e Etapas:** O plano de aula detalhado para o professor.
-- **Código Python Completo:** O código que os alunos vão executar no Google Colab, com comentários em bom humor e gírias.
-- **Checklist Interativo:** Para os alunos marcarem seu progresso.
-- **Simuladores Visuais:** Para testar os conceitos (ex: o medidor de decibéis, o gerador de QR code, o chat com IA) **diretamente no navegador**, sem precisar rodar o código ainda.
+## 🚀 Como Começar
 
-Você pode navegar por todo o conteúdo localmente ou, se preferir, pode simplesmente ler este README para entender a estrutura.
+### Pré-requisitos
+
+- Conta Google (para acessar o Colab)
+- Chromebook ou computador com acesso à internet
+- Microfone (para reconhecimento de fala)
+- Webcam (para visão computacional)
+
+### Passo a passo
+
+1. **Acesse o Google Colab**
+
+   ```bash
+   # Vá para: https://colab.research.google.com/
+   # Crie um novo notebook
+   ```
+
+2. **Copie o código da Aula 1**
+   - Abra o arquivo `aula_01.html` neste repositório
+   - Copie o código Python da aba "Código Python"
+   - Cole no Colab e execute!
+
+3. **Instale as dependências**
+
+   ```python
+   !pip install SpeechRecognition gtts opencv-python-headless pandas numpy
+   ```
+
+4. **Rode o robô e se divirta!**
+   ```python
+   # O robô vai falar com você!
+   print("Vixi, bem-vindo, piá!")
+   ```
+
+## 📁 Estrutura do Projeto
 
 ```
 Robo-Fofoqueiro/
-├── index.html               # Página inicial do projeto
-├── pages/                   # Páginas de cada aula (aula_01.html a aula_10.html + material_complementar.html)
-├── assets/                  # Recursos do site
-│   ├── css/                 # Arquivos de estilo (base, componentes, simuladores, etc.)
-│   ├── js/                  # JavaScript principal (com os simuladores e navegação)
-│   └── images/              # Imagens e logos
-└── arquivos/                # Materiais de apoio (planos de aula .docx, escopo do projeto .txt)
+├── index.html                 # Página inicial do projeto
+├── aula_01.html a aula_10.html  # Cada aula completa
+├── material_complementar.html   # BNCC, RCP e avaliação
+├── assets/
+│   ├── css/
+│   │   ├── style.css          # Arquivo principal (importa todos)
+│   │   ├── base.css           # Variáveis, reset, tipografia
+│   │   ├── animations.css     # Todas as animações
+│   │   ├── components.css     # Menus, cards, botões, sidebar
+│   │   ├── pages.css          # Estilos específicos por página
+│   │   └── simulators.css     # Simuladores interativos
+│   └── js/
+│       ├── script.js          # JS principal
+│       ├── logger.js          # Sistema de logging
+│       ├── eventBus.js        # Comunicação entre componentes
+│       ├── utils.js           # Funções utilitárias
+│       ├── constants.js       # Constantes globais
+│       ├── ChecklistInterativo.js
+│       └── simuladores/       # Todos os simuladores (10+ arquivos)
 ```
 
-## 🗺️ A Jornada de Aprendizagem (As 11 Aulas)
+## 🎯 BNCC e RCP - Paraná
 
-A sequência didática foi pensada para construir o conhecimento passo a passo.
+### Códigos BNCC trabalhados
 
-| # | Título da Aula | Foco Principal | Tempo Estimado | Link |
-|---|---|---|---|---|
-| 1 | Setup do Ambiente | Criar o ambiente de desenvolvimento no Google Colab. | 1 aula | [Aula 1](pages/aula_01.html) |
-| 2 | Sensor de Som Irreverente | Medir decibéis com o microfone e tomar decisões com memes. | 2 aulas | [Aula 2](pages/aula_02.html) |
-| 3 | Reconhecimento de Fala | Converter voz em texto e dar personalidade às respostas. | 2 aulas | [Aula 3](pages/aula_03.html) |
-| 4 | Visão Computacional Simples | Detectar mãos e ler QR codes com a câmera. | 2 aulas | [Aula 4](pages/aula_04.html) |
-| 5 | Robô com Personalidade | Integrar I.A. generativa (Gemini ou Markov) com sotaque regional. | 2 aulas | [Aula 5](pages/aula_05.html) |
-| 6 | Display e LEDs | Simular (ou usar hardware real) para criar alertas visuais. | 2 aulas | [Aula 6](pages/aula_06.html) |
-| 7 | Mapa do Inferno Acústico | Visualizar dados sonoros com gráficos de linha e mapas de calor. | 1 aula | [Aula 7](pages/aula_07.html) |
-| 8 | Protótipo Completo | Integrar todos os módulos em um sistema único com menu. | 3 aulas | [Aula 8](pages/aula_08.html) |
-| 9 | Manifesto e Vídeo | Produzir roteiro e gravar um vídeo de divulgação científica. | 2 aulas | [Aula 9](pages/aula_09.html) |
-| 10 | Versão Offline | Adaptar o robô para funcionar sem internet (Vosk, Markov, PyInstaller). | 2 aulas | [Aula 10](pages/aula_10.html) |
-| 11 | Material Complementar | Tabela BNCC x RCP e sugestão de avaliação final para o professor. | - | [Material](pages/material_complementar.html) |
+| Componente               | Códigos                                      |
+| ------------------------ | -------------------------------------------- |
+| **Linguagens**           | EM13LGG101, LGG104, LGG301, LGG701-704, LP16 |
+| **Matemática**           | EM13MAT405, MAT503                           |
+| **Ciências da Natureza** | EM13CNT101, CNT102, CNT104, CNT206, CNT303   |
+| **Competências Gerais**  | CG1, CG2, CG4, CG5, CG6, CG7, CG8, CG10      |
 
-## 🔧 Tecnologias e Ferramentas (Os "Bagulhos" que usamos)
+### RCP - Paraná
 
-| Categoria | Tecnologias | Pra que serve? |
-| :--- | :--- | :--- |
-| **Linguagem** | Python 3.8+ | A alma do robô. |
-| **Ambiente** | Google Colab | Pra rodar o código direto no navegador, sem instalar nada. Perfeito para Chromebooks da escola. |
-| **Front-end do Site** | HTML5, CSS3, Bootstrap 5, JavaScript | Criar a interface do projeto, os simuladores e a navegação entre as aulas. |
-| **Áudio (Online)** | `speech_recognition`, `gTTS`, `pydub` | Reconhecimento de fala e conversão de texto em voz. |
-| **Áudio (Offline)** | `Vosk`, `pyaudio` | Reconhecimento de fala SEM precisar de internet. |
-| **Visão Computacional** | `OpenCV`, `MediaPipe` | Detectar mãos, ler QR codes e processar imagens. |
-| **I.A. Generativa** | `google-generativeai` (Gemini), `markovify` | Dar personalidade ao robô (online e offline). |
-| **Dados e Gráficos** | `pandas`, `matplotlib`, `seaborn`, `numpy` | Analisar os dados de som e criar os mapas de calor. |
-| **Simulação de Hardware** | `qrcode`, `PIL` | Gerar QR codes para testar na aula de visão computacional. |
-| **Empacotamento** | `PyInstaller` | Transformar o código Python em um executável (.exe) para rodar em qualquer PC com Windows. |
+- Língua Portuguesa - Oralidade, Produção de texto
+- Pensamento Computacional, Estatística
+- Física (Ondulatória, Eletricidade)
+- Tecnologia e Sociedade
+- Cidadania Digital, Trabalho Colaborativo
 
-## ⚙️ Como Usar Este Projeto
+## 👥 Equipe
 
-Existem três formas principais de usar o Robô Fofoqueiro, dependendo do seu objetivo.
+| Papel                  | Nome                                |
+| ---------------------- | ----------------------------------- |
+| **Tutora/Orientadora** | Gisele Nunes                        |
+| **Estudantes**         | Turma de Programação - Ensino Médio |
+| **Parceiros**          | SEED-PR, Programa Inovação Educação |
 
-### Opção 1: Explorar o Site Online (Modo Leitura)
+## 🎭 Produto Final
 
-Esta é a forma mais simples para entender a estrutura do projeto e ver os conceitos.
+Cada grupo apresenta no **"Show de Talentos Robóticos"**:
 
-1.  **Clone o repositório ou baixe os arquivos**:
-    ```bash
-    git clone https://github.com/seu-usuario/robo-fofoqueiro.git
-    ```
-2.  Navegue até a pasta do projeto e abra o arquivo `index.html` em qualquer navegador web.
-3.  Pronto! Você pode clicar nas abas, explorar as aulas, ler os planos de aula e testar os **simuladores interativos** (como o medidor de decibéis ou o chat de IA).
+1. 🤖 **Protótipo funcional do robô** (simulado no Tinkercad ou real com Arduino)
+2. 🎬 **Vídeo de 2 minutos** (estilo TikTok explicativo)
+3. 📜 **Manifesto técnico-meme** ("A acessibilidade não precisa ser sem graça")
+4. 💻 **Código comentado com gírias paranaenses**
+   ```python
+   # esse elif é pra quando o bagulho fica louco
+   if barulho > 75:
+       print("🚨 INFERNO ACÚSTICO!")
+   ```
 
-### Opção 2: Rodar os Códigos no Google Colab (Mão na Massa)
+## 📦 Versão Offline
 
-Esta é a forma **principal** para alunos e professores que querem executar o código Python real.
+Para escolas **sem internet**, o robô funciona com:
 
-1.  Acesse o arquivo da aula desejada (ex: `pages/aula_01.html`).
-2.  Vá até a aba **"Código Python"** dentro da página da aula.
-3.  Copie o código completo daquela aula (ele está dentro de um bloco `<pre>`).
-4.  Acesse o [Google Colab](https://colab.research.google.com/) e crie um novo notebook.
-5.  Cole o código em uma célula e execute-o.
-6.  Siga as instruções que aparecerão no próprio Colab. A maioria das aulas já tem um menu interativo.
+- **Vosk** → reconhecimento de fala offline
+- **Markov** → geração de texto sem API
+- **PyInstaller** → executável que roda em qualquer PC
 
-> **Dica de ouro do professor:** A Aula 1 (`aula_01.html`) é o setup inicial. Rode ela primeiro para instalar todas as bibliotecas e criar as pastas necessárias.
-
-### Opção 3: Rodar a Versão Offline Completa (Sem Internet)
-
-Esta opção é para ambientes **sem acesso à internet**, usando o código da **Aula 10**.
-
-1.  Certifique-se de ter o Python 3.8+ instalado no computador.
-2.  Baixe o código da Aula 10 (na aba "Código Python") e salve como `robo_fofoqueiro_offline.py`.
-3.  Abra o terminal (ou prompt de comando) na pasta onde salvou o arquivo e instale as dependências:
-    ```bash
-    pip install vosk markovify pyaudio pyinstaller
-    ```
-4.  **Baixe o modelo de língua portuguesa do Vosk**. O próprio código da Aula 10 tentará fazer o download automaticamente, mas ele é pesado (~40MB). Você pode baixá-lo manualmente [aqui](https://alphacephei.com/vosk/models) (procure por `vosk-model-small-pt-0.3`).
-5.  Execute o script:
-    ```bash
-    python robo_fofoqueiro_offline.py
-    ```
-
-## 🧠 BNCC e RCP (Os Trens da Escola)
-
-Este projeto foi desenvolvido para estar alinhado com a Base Nacional Comum Curricular (BNCC) e o Referencial Curricular do Paraná (RCP), tornando-o uma ferramenta pedagógica completa.
-
-| Componente | Códigos BNCC (Ensino Médio) | Correspondência RCP - Paraná |
-| :--- | :--- | :--- |
-| **Linguagens** | `EM13LGG101`, `EM13LGG304`, `EM13LGG701`, `EM13LGG704`, `EM13LP16` | Língua Portuguesa - Oralidade, Produção de texto |
-| **Matemática** | `EM13MAT405`, `EM13MAT503` | Pensamento Computacional, Estatística |
-| **Ciências da Natureza** | `EM13CNT101`, `EM13CNT102`, `EM13CNT104`, `EM13CNT206`, `EM13CNT303` | Física (Ondulatória, Eletricidade), Tecnologia e Sociedade |
-| **Competências Gerais** | `CG1`, `CG2`, `CG4`, `CG5`, `CG6`, `CG7`, `CG8`, `CG10` | Cidadania Digital, Trabalho Colaborativo |
-
-## 🤝 Como Contribuir (Bora ajudar, tchê!)
-
-Toda ajuda é bem-vinda para fazer o Robô Fofoqueiro ficar cada vez mais fofoqueiro e acessível!
-
-- **🐛 Reportar Bugs:** Encontrou algum erro nos códigos, simuladores ou textos? Abra uma **Issue** descrevendo o problema. Não esquece de falar qual aula e qual parte.
-- **💡 Sugerir Melhorias:** Tem ideia de uma nova gíria paranaense, um meme melhor, um código mais eficiente ou uma nova funcionalidade? Abra uma **Issue** com a tag `enhancement` ou `feature request`.
-- **📝 Melhorar a Documentação:** Achou algum erro de digitação ou uma explicação confusa? Pode corrigir diretamente via **Pull Request**.
-- **🚀 Adicionar Novos Simuladores:** Quer criar um novo simulador para alguma aula? Manda bala! A estrutura do JS está em `assets/js/script.js`. Use as classes existentes como exemplo.
-
-## 👥 Créditos e Equipe
-
-Este projeto é fruto de um trabalho colaborativo e interdisciplinar.
-
-- **🤖 Concepção, Orientação e Supervisão Geral:** Tutora **Gisele Nunes**
-- **👩‍🎓👨‍🎓 Desenvolvimento e Implementação:** Estudantes de Programação do Ensino Médio das Escolas Públicas do Paraná.
-- **🤝 Apoio e Parceria:** SEED-PR, Programa Inovação Educação.
-
-**Desenvolvido com 💙 para a acessibilidade, o humor e o aprendizado.**
-
-"O trem agora é completo, vixi! Bora fofocar com responsa sobre acessibilidade!" - Robô Fofoqueiro 🤖
+```bash
+# Gerar executável
+pyinstaller --onefile robo_fofoqueiro_offline.py
 ```
+
+## 🤝 Contribuições
+
+Contribuições são super bem-vindas! Sinta-se à vontade para:
+
+- 🐛 Reportar bugs
+- 💡 Sugerir novas funcionalidades (mais gírias paranaenses, sempre!)
+- 📝 Melhorar a documentação
+- 🧪 Testar em diferentes ambientes
+
+```bash
+# Como contribuir
+1. Fork o projeto
+2. Crie sua branch: git checkout -b feature/minha-ideia
+3. Commit: git commit -m 'feat: add nova gíria paranaense'
+4. Push: git push origin feature/minha-ideia
+5. Abra um Pull Request
+```
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Sinta-se livre para usar, adaptar e espalhar a acessibilidade com humor!
+
+## 🙏 Agradecimentos
+
+- À **SEED-PR** pelo apoio ao programa Inovação Educação
+- A todos os **estudantes** que testaram, reclamaram, sugeriram e se divertiram com o robô
+- Ao **Robô Fofoqueiro** que nunca reclama (só fofoca)
+
+## 📞 Contato
+
+Dúvidas, sugestões ou quer contar uma fofoca?
+
+- 🌐 [github.com/robofofoqueiro](https://github.com/robofofoqueiro)
+- 🌐 www.projetosgn.com.br
+
+<div align="center">
+
+**🤖 "Acessibilidade não é favor, é direito. Tecnologia inclusiva pode ser divertida!"** 🤖
+
+_Desenvolvido com 💙 e muito café para a acessibilidade digital_
+
+</div>
