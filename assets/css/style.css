@@ -25,7 +25,7 @@
 */
 
 /* ===================================================================
-   MENU SUPERIOR - EXIBIÇÃO EM TRÊS LINHAS HARMONIOSA
+   MENU SUPERIOR - RESPONSIVO E ORGANIZADO
    ===================================================================
 */
 
@@ -34,6 +34,9 @@
   box-shadow: var(--shadow-lg);
   padding: var(--spacing-sm) 0;
   border-bottom: 3px solid #f39c12;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
 }
 
 .menu-projeto-principal .container-fluid {
@@ -41,20 +44,41 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
+/* Logo / Brand */
 .menu-projeto-principal .navbar-brand {
   color: var(--branco) !important;
   font-weight: 800;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   letter-spacing: -0.3px;
   margin-bottom: 0.25rem;
+  text-align: center;
+  width: auto;
 }
 
+/* Botão Toggler - Mobile */
+.menu-projeto-principal .navbar-toggler {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.5rem;
+  transition: all var(--transition-base);
+}
+
+.menu-projeto-principal .navbar-toggler:hover {
+  background-color: rgba(243, 156, 18, 0.3);
+  border-color: #f39c12;
+}
+
+.menu-projeto-principal .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.85%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Navegação colapsável */
 .menu-projeto-principal .navbar-collapse {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  transition: all var(--transition-slow);
 }
 
 .menu-projeto-principal .navbar-nav {
@@ -65,22 +89,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.menu-projeto-principal .menu-linha-superior {
-  margin-bottom: 0.3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 0.3rem;
-}
-
-.menu-projeto-principal .menu-linha-inferior {
-  margin-bottom: 0.3rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 0.3rem;
-}
-
-.menu-projeto-principal .menu-linha-sobre {
-  padding-top: 0.2rem;
+  width: 100%;
 }
 
 .menu-projeto-principal .nav-item {
@@ -109,21 +118,29 @@
   transform: translateY(-2px);
 }
 
-/* Responsividade para o menu em três linhas */
-@media (max-width: 1200px) {
+/* ====== RESPONSIVIDADE DO MENU ====== */
+
+/* Desktop Grande (até 1400px) - mantém em linha com scroll suave */
+@media (max-width: 1400px) {
+  .menu-projeto-principal .navbar-nav {
+    gap: 0.2rem;
+  }
+
   .menu-projeto-principal .nav-link {
-    padding: 0.4rem 0.7rem;
+    padding: 0.45rem 0.7rem;
     font-size: 0.8rem;
   }
 
   .menu-projeto-principal .nav-link i {
     font-size: 0.85rem;
+    margin-right: 4px;
   }
 }
 
-@media (max-width: 992px) {
+/* Desktop Médio (até 1200px) - compacta ainda mais */
+@media (max-width: 1200px) {
   .menu-projeto-principal .navbar-nav {
-    gap: 0.2rem;
+    gap: 0.15rem;
   }
 
   .menu-projeto-principal .nav-link {
@@ -148,18 +165,23 @@
   }
 }
 
-@media (max-width: 768px) {
-  .menu-projeto-principal .navbar-brand {
-    margin-bottom: 0.5rem;
+/* Tablet (até 992px) - começa a embrulhar itens em múltiplas linhas */
+@media (max-width: 992px) {
+  .menu-projeto-principal .container-fluid {
+    padding: 0.5rem 0.75rem;
   }
 
   .menu-projeto-principal .navbar-nav {
-    gap: 0.15rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    max-width: 100%;
   }
 
   .menu-projeto-principal .nav-link {
-    padding: 0.3rem 0.5rem;
+    padding: 0.35rem 0.55rem;
     font-size: 0.7rem;
+    white-space: nowrap;
   }
 
   .menu-projeto-principal .nav-link i {
@@ -168,22 +190,144 @@
   }
 }
 
-@media (max-width: 576px) {
+/* Mobile Grande (até 768px) - menu colapsável ativado */
+@media (max-width: 768px) {
+  .menu-projeto-principal .container-fluid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-projeto-principal .navbar-brand {
+    margin-bottom: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .menu-projeto-principal .navbar-toggler {
+    display: block;
+  }
+
+  .menu-projeto-principal .navbar-collapse {
+    display: none;
+    width: 100%;
+    order: 3;
+    margin-top: 0.75rem;
+  }
+
+  .menu-projeto-principal .navbar-collapse.show {
+    display: block;
+  }
+
+  .menu-projeto-principal .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
+  }
+
+  .menu-projeto-principal .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
   .menu-projeto-principal .nav-link {
-    padding: 0.25rem 0.4rem;
-    font-size: 0.65rem;
+    display: inline-block;
+    width: auto;
+    min-width: 180px;
+    text-align: center;
+    white-space: normal;
+    word-break: keep-all;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   .menu-projeto-principal .nav-link i {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+    margin-right: 8px;
   }
 
   .brand-text-principal {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .sub-brand-principal {
+    font-size: 0.65rem;
+  }
+
+  .robo-icon-principal {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobile Pequeno (até 576px) - ajustes finos */
+@media (max-width: 576px) {
+  .menu-projeto-principal .container-fluid {
+    padding: 0.5rem;
+  }
+
+  .menu-projeto-principal .navbar-brand {
+    gap: 0.35rem;
+  }
+
+  .brand-text-principal {
+    font-size: 0.85rem;
+  }
+
+  .sub-brand-principal {
+    font-size: 0.55rem;
   }
 
   .robo-icon-principal {
     font-size: 1.4rem;
+  }
+
+  .menu-projeto-principal .nav-link {
+    min-width: 150px;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Extra Pequeno (até 400px) */
+@media (max-width: 400px) {
+  .menu-projeto-principal .navbar-brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand-text-principal {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .sub-brand-principal {
+    font-size: 0.5rem;
+  }
+
+  .menu-projeto-principal .nav-link {
+    min-width: 130px;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.6rem;
+  }
+
+  .menu-projeto-principal .nav-link i {
+    font-size: 0.75rem;
+  }
+}
+
+/* Suporte para telas muito pequenas (320px) */
+@media (max-width: 320px) {
+  .menu-projeto-principal .nav-link {
+    min-width: 110px;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
   }
 }
 
