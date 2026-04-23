@@ -1,0 +1,642 @@
+<!-- NOVA ABA: pages/laboratorio.html -->
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Robô Fofoqueiro | Laboratório do Robô</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- MENU SUPERIOR -->
+    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="../index.html"
+        >
+          <span class="robo-icon-principal">🤖💬</span>
+          <span class="brand-text-principal"
+            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
+              >Projeto de Acessibilidade</small
+            ></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuProjetoPrincipal"
+          aria-controls="menuProjetoPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
+                ><i class="bi bi-house-door-fill"></i> Início</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"
+                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"
+                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"
+                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"
+                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"
+                ><i class="bi bi-cpu"></i> Aula 5 - IA</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"
+                ><i class="bi bi-lightbulb"></i> Aula 6 - LEDs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"
+                ><i class="bi bi-graph-up"></i> Aula 7 - Mapa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"
+                ><i class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"
+                ><i class="bi bi-camera-reels-fill"></i> Aula 9 - Vídeo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"
+                ><i class="bi bi-wifi-off"></i> Aula 10 - Offline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="aula11"
+                href="material_complementar.html"
+                ><i class="bi bi-puzzle-fill"></i> Material Complementar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active-projeto"
+                data-projeto-aba="laboratorio"
+                href="laboratorio.html"
+                ><i class="bi bi-robot"></i> Laboratório</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="sobre" href="#"
+                ><i class="bi bi-info-circle"></i> Sobre</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid main-layout">
+      <div class="row">
+        <!-- MENU LATERAL -->
+        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+          <div class="sidebar-sticky">
+            <div class="sidebar-header">
+              <i class="bi bi-robot"></i> Laboratório
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link active-lateral"
+                  data-lateral-aba="simulador"
+                >
+                  <i class="bi bi-robot"></i> Robô Interativo
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="sons"
+                >
+                  <i class="bi bi-mic-fill"></i> Sensor de Som
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="visao"
+                >
+                  <i class="bi bi-eye-fill"></i> Visão Computacional
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link lateral-link" data-lateral-aba="ia">
+                  <i class="bi bi-cpu-fill"></i> IA com Personalidade
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="dados"
+                >
+                  <i class="bi bi-graph-up"></i> Mapa do Inferno
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-footer">
+              <button id="btnResetRobo" class="btn btn-download-lateral w-100">
+                <i class="bi bi-arrow-repeat"></i> Resetar Robô
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ÁREA PRINCIPAL -->
+        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+          <!-- ABA: ROBÔ INTERATIVO -->
+          <div
+            id="conteudoSimulador"
+            class="lateral-aba-conteudo active-lateral-aba"
+          >
+            <div class="row g-4">
+              <!-- Coluna do Robô -->
+              <div class="col-lg-7">
+                <div
+                  class="card border-0 shadow-lg bg-degrade-header overflow-hidden"
+                >
+                  <div class="card-body p-4 text-center">
+                    <!-- Cabeça do Robô com Olhos LED -->
+                    <div class="robo-head mb-3">
+                      <div
+                        class="robo-eyes d-flex justify-content-center gap-4 mb-2"
+                      >
+                        <div
+                          id="olhoEsquerdo"
+                          class="robo-eye robo-eye-left"
+                        ></div>
+                        <div
+                          id="olhoDireito"
+                          class="robo-eye robo-eye-right"
+                        ></div>
+                      </div>
+                      <div class="robo-mouth">
+                        <div id="bocaLed" class="robo-led-mouth"></div>
+                      </div>
+                    </div>
+
+                    <!-- Tórax com Display LCD -->
+                    <div class="robo-chest">
+                      <div id="displayLcd" class="robo-display mb-3">
+                        <div class="display-line" id="displayLinha1">
+                          🤖 ROBÔ FOFOQUEIRO
+                        </div>
+                        <div class="display-line" id="displayLinha2">
+                          Aguardando...
+                        </div>
+                      </div>
+
+                      <!-- LEDs indicadores -->
+                      <div
+                        class="robo-leds d-flex justify-content-center gap-3 mb-3"
+                      >
+                        <div
+                          id="ledVermelho"
+                          class="led led-vermelho led-off"
+                        ></div>
+                        <div id="ledVerde" class="led led-verde led-off"></div>
+                        <div id="ledAzul" class="led led-azul led-off"></div>
+                        <div
+                          id="ledAmarelo"
+                          class="led led-amarelo led-off"
+                        ></div>
+                      </div>
+                    </div>
+
+                    <!-- Área de interação -->
+                    <div class="robo-interacao mt-3">
+                      <div class="row g-2">
+                        <div class="col-4">
+                          <button
+                            id="btnSilencio"
+                            class="btn btn-outline-light w-100 btn-sm"
+                            data-db="20"
+                          >
+                            🔇 Sussurro (20dB)
+                          </button>
+                        </div>
+                        <div class="col-4">
+                          <button
+                            id="btnConversa"
+                            class="btn btn-outline-light w-100 btn-sm"
+                            data-db="55"
+                          >
+                            🗣️ Conversa (55dB)
+                          </button>
+                        </div>
+                        <div class="col-4">
+                          <button
+                            id="btnGrito"
+                            class="btn btn-outline-light w-100 btn-sm"
+                            data-db="95"
+                          >
+                            📢 Grito (95dB)
+                          </button>
+                        </div>
+                      </div>
+                      <div class="mt-2">
+                        <button
+                          id="btnTesteAleatorio"
+                          class="btn btn-warning w-100 btn-sm"
+                        >
+                          <i class="bi bi-shuffle"></i> Barulho Aleatório
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coluna do Chat / Respostas -->
+              <div class="col-lg-5">
+                <div class="card border-0 shadow-lg h-100">
+                  <div class="card-header bg-grafite text-white">
+                    <i class="bi bi-chat-dots-fill"></i> Conversa com o Robô
+                  </div>
+                  <div class="card-body d-flex flex-column">
+                    <div
+                      id="chatContainer"
+                      class="chat-messages flex-grow-1 mb-3 p-2 bg-dark rounded-3"
+                      style="height: 250px; overflow-y: auto"
+                    >
+                      <div class="chat-message robot">
+                        <small
+                          ><i class="bi bi-robot"></i> Robô Fofoqueiro:</small
+                        >
+                        <div class="message-bubble">
+                          Ó o trem, piá! Sou o Robô Fofoqueiro da
+                          Acessibilidade. Pode falar comigo ou testar os
+                          sensores! 🧠🤖
+                        </div>
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="chatInput"
+                        class="form-control"
+                        placeholder="Digite sua pergunta..."
+                        aria-label="Pergunta"
+                      />
+                      <button id="btnEnviarChat" class="btn btn-primary">
+                        <i class="bi bi-send-fill"></i> Enviar
+                      </button>
+                    </div>
+                    <div class="mt-2 d-flex flex-wrap gap-1">
+                      <button
+                        class="btn btn-sm btn-outline-secondary chat-pronto"
+                        data-frase="Qual é o seu nome?"
+                      >
+                        🎭 Nome
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary chat-pronto"
+                        data-frase="O que é acessibilidade digital?"
+                      >
+                        🎭 Acessibilidade
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary chat-pronto"
+                        data-frase="Me conta uma fofoca!"
+                      >
+                        🎭 Fofoca
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary chat-pronto"
+                        data-frase="Como posso ajudar com inclusão?"
+                      >
+                        🎭 Inclusão
+                      </button>
+                    </div>
+                    <div class="mt-3">
+                      <div
+                        class="alert alert-info small mb-0"
+                        id="librasDisplay"
+                      >
+                        <i class="bi bi-hand-index-thumb"></i>
+                        <strong>Libras Textual:</strong>
+                        <span id="librasTexto">Aguardando interação...</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABA: SENSOR DE SOM -->
+          <div id="conteudoSons" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-mic-fill"></i> Sensor de Som - Medindo o
+                  Barulho
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <div class="simulador-db p-4">
+                      <h3 class="text-center">🎤 Nível de Som</h3>
+                      <div class="db-medidor">
+                        <div
+                          id="barraDbSim"
+                          class="db-bar"
+                          style="width: 0%"
+                        ></div>
+                      </div>
+                      <h2 class="text-center mt-3">
+                        <span id="dbValorSim">0.0</span> dB
+                      </h2>
+                      <div
+                        id="alertaSomSim"
+                        class="alert alert-danger mt-3 d-none"
+                      >
+                        <i class="bi bi-exclamation-triangle-fill"></i> 🚨
+                        ALERTA! TÁ MUITO ALTO!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="ps-3">
+                      <p><strong>📢 Teste os níveis de som:</strong></p>
+                      <div class="d-flex flex-wrap gap-2">
+                        <button
+                          class="btn btn-outline-primary som-teste"
+                          data-db="25"
+                        >
+                          🤫 Sussurro
+                        </button>
+                        <button
+                          class="btn btn-outline-primary som-teste"
+                          data-db="55"
+                        >
+                          🗣️ Conversa
+                        </button>
+                        <button
+                          class="btn btn-outline-primary som-teste"
+                          data-db="85"
+                        >
+                          👏 Palmas
+                        </button>
+                        <button
+                          class="btn btn-outline-primary som-teste"
+                          data-db="95"
+                        >
+                          📢 Grito
+                        </button>
+                      </div>
+                      <div class="mt-4">
+                        <div class="alert alert-secondary">
+                          <strong
+                            ><i class="bi bi-robot"></i> Mensagem do
+                            Robô:</strong
+                          >
+                          <div id="mensagemSomSim">
+                            🤫 Clique nos botões para testar...
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABA: VISÃO COMPUTACIONAL -->
+          <div id="conteudoVisao" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-eye-fill"></i> Visão Computacional - Mãos e QR
+                  Code
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 text-center">
+                    <div class="simulador-visao p-4">
+                      <div class="display-1 mb-2" id="maoAnimacao">🖐️</div>
+                      <h3 id="contagemDedos">0 dedos levantados</h3>
+                      <button id="btnDetectarMao" class="btn btn-danger mt-3">
+                        <i class="bi bi-hand-index-thumb"></i> Simular Detecção
+                        de Mão
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-6 text-center">
+                    <div class="simulador-qr p-4 border rounded-3">
+                      <h5><i class="bi bi-qr-code"></i> Gerador de QR Code</h5>
+                      <div class="input-group mb-3">
+                        <input
+                          type="text"
+                          id="textoQRSim"
+                          class="form-control"
+                          placeholder="Texto ou URL para o QR Code"
+                        />
+                        <button id="btnGerarQRSim" class="btn btn-success">
+                          Gerar QR
+                        </button>
+                      </div>
+                      <div id="qrDisplaySim" class="mt-3">
+                        <img
+                          id="qrImagemSim"
+                          src=""
+                          alt="QR Code"
+                          style="max-width: 150px; display: none"
+                        />
+                        <p class="text-muted" id="qrTextoSem">
+                          Clique em "Gerar QR"
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABA: IA COM PERSONALIDADE -->
+          <div id="conteudoIa" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-cpu-fill"></i> IA com Personalidade Paranaense
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div
+                      class="chat-container-ia border rounded-3 p-3 bg-light"
+                      style="height: 300px; overflow-y: auto"
+                      id="chatIaContainer"
+                    >
+                      <div class="text-center text-muted">
+                        <i class="bi bi-robot"></i> Robô Fofoqueiro:<br />
+                        "Vixi, piá! Pode fazer sua pergunta aí embaixo! Uso IA
+                        generativa com sotaque paranaense!"
+                      </div>
+                    </div>
+                    <div class="input-group mt-3">
+                      <input
+                        type="text"
+                        id="perguntaIaSim"
+                        class="form-control"
+                        placeholder="Digite sua pergunta para o robô..."
+                      />
+                      <button id="btnEnviarIaSim" class="btn btn-primary">
+                        Enviar
+                      </button>
+                    </div>
+                    <div class="mt-2 d-flex flex-wrap gap-1">
+                      <button
+                        class="btn btn-sm btn-outline-secondary ia-pronta"
+                        data-pergunta="Qual é o seu nome?"
+                      >
+                        🎭 Nome
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary ia-pronta"
+                        data-pergunta="O que é acessibilidade digital?"
+                      >
+                        🎭 Acessibilidade
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary ia-pronta"
+                        data-pergunta="Me conta uma fofoca da escola"
+                      >
+                        🎭 Fofoca
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary ia-pronta"
+                        data-pergunta="Você gosta de memes?"
+                      >
+                        🎭 Memes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABA: MAPA DO INFERNO -->
+          <div id="conteudoDados" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-graph-up"></i> Mapa do Inferno Acústico
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-8">
+                    <canvas
+                      id="graficoInferno"
+                      width="500"
+                      height="250"
+                      style="
+                        width: 100%;
+                        height: auto;
+                        background: #1a1a2e;
+                        border-radius: 12px;
+                      "
+                    ></canvas>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="alert alert-info">
+                      <strong>📊 Estatísticas:</strong>
+                      <div id="statsInferno">Média: -- dB | Alertas: --%</div>
+                    </div>
+                    <button id="btnGerarMapa" class="btn btn-warning w-100">
+                      <i class="bi bi-graph-up"></i> Gerar Novo Mapa
+                    </button>
+                    <div class="mt-3 text-center">
+                      <span class="badge bg-success">🟢 0-40dB</span>
+                      <span class="badge bg-warning text-dark">🟡 40-75dB</span>
+                      <span class="badge bg-danger">🔴 >75dB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer class="footer-custom">
+      <div class="container-fluid">
+        <p class="mb-0">
+          🤖 Robô Fofoqueiro da Acessibilidade — Laboratório Interativo
+        </p>
+        <small
+          ><i class="bi bi-chat-right-quote"></i> "Teste todos os sensores em um
+          só lugar, vixi!"</small
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script>
+      // Inicialização adicional específica para o laboratório
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof window.inicializarLaboratorio === "function") {
+          window.inicializarLaboratorio();
+        }
+      });
+    </script>
+  </body>
+</html>

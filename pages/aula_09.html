@@ -1,1119 +1,1321 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Robô Fofoqueiro | Roteiro para Manifesto e Vídeo</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Robô Fofoqueiro | Roteiro para Manifesto e Vídeo</title>
-  <!-- Bootstrap 5 + Icons + Google Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet" />
-  <!-- CSS Custom -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
-
-<body>
-  <!-- MENU SUPERIOR (projeto principal) -->
-  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-        <span class="robo-icon-principal">🤖💬</span>
-        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
-            Acessibilidade</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
-        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
-              Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
-              Setup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
-              Escuta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
-              Fala</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
-              Visão</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
-              Personalidade</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
-              Display e LEDs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
-              Mapa do Inferno</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
-              Protótipo
-              Completo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active-projeto" data-projeto-aba="aula9" href="aula_09.html"><i
-                class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto e
-              Vídeo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
-              Offline</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
-                class="bi bi-puzzle-fill"></i> Material Complementar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
-  <div class="container-fluid main-layout">
-    <div class="row">
-      <!-- MENU LATERAL (abas internas da aula atual) -->
-      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
-        <div class="sidebar-sticky">
-          <div class="sidebar-header">
-            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
-          </div>
-          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+  <body>
+    <!-- MENU SUPERIOR (projeto principal) -->
+    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="../index.html"
+        >
+          <span class="robo-icon-principal">🤖💬</span>
+          <span class="brand-text-principal"
+            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
+              >Projeto de Acessibilidade</small
+            ></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuProjetoPrincipal"
+          aria-controls="menuProjetoPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
-                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
-              </a>
+              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
+                ><i class="bi bi-house-door-fill"></i> Início</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="roteiro">
-                <i class="bi bi-file-text-fill"></i> Roteiro para Vídeo
-              </a>
+              <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"
+                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="manifesto">
-                <i class="bi bi-megaphone-fill"></i> Manifesto
-              </a>
+              <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"
+                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
-                <i class="bi bi-clipboard-check"></i> Checklist
-              </a>
+              <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"
+                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
-                <i class="bi bi-mortarboard"></i> Área do Profe
-              </a>
+              <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"
+                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
-                <i class="bi bi-camera-reels-fill"></i> Gerador de Roteiro
-              </a>
+              <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"
+                ><i class="bi bi-cpu"></i> Aula 5 - IA com Personalidade</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"
+                ><i class="bi bi-lightbulb"></i> Aula 6 - Display e LEDs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"
+                ><i class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"
+                ><i class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo
+                Completo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active-projeto"
+                data-projeto-aba="aula9"
+                href="aula_09.html"
+                ><i class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto e
+                Vídeo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"
+                ><i class="bi bi-wifi-off"></i> Aula 10 - Offline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="aula11"
+                href="material_complementar.html"
+                ><i class="bi bi-puzzle-fill"></i> Material Complementar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="laboratorio"
+                href="laboratorio.html"
+                ><i class="bi bi-robot"></i> Laboratório</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="sobre" href="#"
+                ><i class="bi bi-info-circle"></i> Sobre</a
+              >
             </li>
           </ul>
-          <div class="sidebar-footer">
-            <button id="btnDownloadRoteiro" class="btn btn-download-lateral w-100">
-              <i class="bi bi-file-earmark-text-fill"></i> Baixar Roteiro
-            </button>
-            <button id="btnDownloadManifesto" class="btn btn-download-lateral w-100 mt-2">
-              <i class="bi bi-megaphone-fill"></i> Baixar Manifesto
-            </button>
-          </div>
         </div>
-      </aside>
+      </div>
+    </nav>
 
-      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
-        <!-- Aba 1: Conceitos e Etapas da Aula -->
-        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
-          <!-- Cabeçalho irreverente -->
-          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
-            <div class="card-body p-4 p-md-5">
-              <div class="row align-items-center">
-                <div class="col-md-9">
-                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-camera-reels-fill"></i> VIXI, HORA DO
-                    SHOW, PIÁ!</span>
-                  <h1 class="display-5 fw-bold">
-                    🎬 Divulgando o Robô Fofoqueiro: ciência, humor e inclusão
-                  </h1>
-                  <p class="lead mt-3">
-                    "Chegou a hora de mostrar pro mundo o bagulho doido que a
-                    gente fez!" — Produza roteiro e grave vídeo de divulgação
-                    científica de 2-3 minutos sobre o projeto, incluindo
-                    manifesto sobre acessibilidade e uso ético da IA.
-                  </p>
-                  <div class="mt-3 d-flex flex-wrap gap-3">
-                    <div>
-                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
-                      aulas)
+    <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+    <div class="container-fluid main-layout">
+      <div class="row">
+        <!-- MENU LATERAL (abas internas da aula atual) -->
+        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+          <div class="sidebar-sticky">
+            <div class="sidebar-header">
+              <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link active-lateral"
+                  data-lateral-aba="conceitos"
+                >
+                  <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="roteiro"
+                >
+                  <i class="bi bi-file-text-fill"></i> Roteiro para Vídeo
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="manifesto"
+                >
+                  <i class="bi bi-megaphone-fill"></i> Manifesto
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="checklist"
+                >
+                  <i class="bi bi-clipboard-check"></i> Checklist
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="professor"
+                >
+                  <i class="bi bi-mortarboard"></i> Área do Profe
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="simulador"
+                >
+                  <i class="bi bi-camera-reels-fill"></i> Gerador de Roteiro
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-footer">
+              <button
+                id="btnDownloadRoteiro"
+                class="btn btn-download-lateral w-100"
+              >
+                <i class="bi bi-file-earmark-text-fill"></i> Baixar Roteiro
+              </button>
+              <button
+                id="btnDownloadManifesto"
+                class="btn btn-download-lateral w-100 mt-2"
+              >
+                <i class="bi bi-megaphone-fill"></i> Baixar Manifesto
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+          <!-- Aba 1: Conceitos e Etapas da Aula -->
+          <div
+            id="conteudoConceitos"
+            class="lateral-aba-conteudo active-lateral-aba"
+          >
+            <!-- Cabeçalho irreverente -->
+            <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+              <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center">
+                  <div class="col-md-9">
+                    <span class="badge bg-warning text-dark mb-2"
+                      ><i class="bi bi-camera-reels-fill"></i> VIXI, HORA DO
+                      SHOW, PIÁ!</span
+                    >
+                    <h1 class="display-5 fw-bold">
+                      🎬 Divulgando o Robô Fofoqueiro: ciência, humor e inclusão
+                    </h1>
+                    <p class="lead mt-3">
+                      "Chegou a hora de mostrar pro mundo o bagulho doido que a
+                      gente fez!" — Produza roteiro e grave vídeo de divulgação
+                      científica de 2-3 minutos sobre o projeto, incluindo
+                      manifesto sobre acessibilidade e uso ético da IA.
+                    </p>
+                    <div class="mt-3 d-flex flex-wrap gap-3">
+                      <div>
+                        <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                        aulas)
+                      </div>
+                      <div>
+                        <i class="bi bi-camera-reels-fill"></i> Vídeo + Roteiro
+                        + Manifesto
+                      </div>
+                      <div>
+                        <i class="bi bi-chat-dots"></i> BNCC: EM13LGG101 |
+                        EM13LGG701 | EM13LP16
+                      </div>
                     </div>
-                    <div>
-                      <i class="bi bi-camera-reels-fill"></i> Vídeo + Roteiro
-                      + Manifesto
-                    </div>
-                    <div>
-                      <i class="bi bi-chat-dots"></i> BNCC: EM13LGG101 |
-                      EM13LGG701 | EM13LP16
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="robo-ascii-animado">
+                      🎬📹🎥<br />"AÇÃO!<br />VAI COMEÇAR!"
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="robo-ascii-animado">
-                    🎬📹🎥<br />"AÇÃO!<br />VAI COMEÇAR!"
+              </div>
+            </div>
+
+            <!-- BNCC e Competências -->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                    <hr />
+                    <span class="badge-bncc">EM13LGG101</span> - Analisar e
+                    produzir textos multimodais.<br />
+                    <span class="badge-bncc mt-2">EM13LGG701</span> - Utilizar
+                    diferentes mídias para divulgação científica.<br />
+                    <span class="badge-bncc mt-2">EM13LP16</span> - Produzir
+                    vídeos considerando público e contexto.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                    <hr />
+                    <span class="badge-bncc">Competência 4</span> - Utilizar
+                    diferentes linguagens.<br />
+                    <span class="badge-bncc mt-2">Competência 10</span> - Agir
+                    pessoal e coletivamente com autonomia.
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- BNCC e Competências -->
-          <div class="row g-4 mb-4">
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
-                  <hr />
-                  <span class="badge-bncc">EM13LGG101</span> - Analisar e
-                  produzir textos multimodais.<br />
-                  <span class="badge-bncc mt-2">EM13LGG701</span> - Utilizar
-                  diferentes mídias para divulgação científica.<br />
-                  <span class="badge-bncc mt-2">EM13LP16</span> - Produzir
-                  vídeos considerando público e contexto.
-                </div>
+            <!-- ETAPAS DA AULA (tabela) -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h5 class="mb-0">
+                  <i class="bi bi-calendar-event"></i> Etapas da Aula (100
+                  minutos)
+                </h5>
+              </div>
+              <div class="card-body p-0">
+                <table class="tabela-etapas">
+                  <thead>
+                    <tr>
+                      <th>Etapa</th>
+                      <th>Tempo</th>
+                      <th>Atividade</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Abertura</strong></td>
+                      <td>10 min</td>
+                      <td>
+                        Assistir a exemplos de divulgação científica
+                        (Nerdologia, Manual do Mundo).
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Roteirização</strong></td>
+                      <td>30 min</td>
+                      <td>
+                        Cada grupo escreve roteiro seguindo template (abertura,
+                        problema, demo, manifesto, créditos).
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Gravação</strong></td>
+                      <td>40 min</td>
+                      <td>
+                        Gravar com celular — cenas do robô funcionando,
+                        entrevista fictícia, manifesto.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Edição</strong></td>
+                      <td>30 min (aula extra)</td>
+                      <td>
+                        Editar no CapCut ou Kinemaster, adicionar legendas
+                        acessíveis.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Fechamento</strong></td>
+                      <td>10 min</td>
+                      <td>
+                        Compartilhar links dos vídeos. Debate: "Qual vídeo
+                        convence mais sobre acessibilidade?"
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
-                  <hr />
-                  <span class="badge-bncc">Competência 4</span> - Utilizar
-                  diferentes linguagens.<br />
-                  <span class="badge-bncc mt-2">Competência 10</span> - Agir
-                  pessoal e coletivamente com autonomia.
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- ETAPAS DA AULA (tabela) -->
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h5 class="mb-0">
-                <i class="bi bi-calendar-event"></i> Etapas da Aula (100
-                minutos)
-              </h5>
-            </div>
-            <div class="card-body p-0">
-              <table class="tabela-etapas">
-                <thead>
-                  <tr>
-                    <th>Etapa</th>
-                    <th>Tempo</th>
-                    <th>Atividade</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Abertura</strong></td>
-                    <td>10 min</td>
-                    <td>
-                      Assistir a exemplos de divulgação científica
-                      (Nerdologia, Manual do Mundo).
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Roteirização</strong></td>
-                    <td>30 min</td>
-                    <td>
-                      Cada grupo escreve roteiro seguindo template (abertura,
-                      problema, demo, manifesto, créditos).
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Gravação</strong></td>
-                    <td>40 min</td>
-                    <td>
-                      Gravar com celular — cenas do robô funcionando,
-                      entrevista fictícia, manifesto.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Edição</strong></td>
-                    <td>30 min (aula extra)</td>
-                    <td>
-                      Editar no CapCut ou Kinemaster, adicionar legendas
-                      acessíveis.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Fechamento</strong></td>
-                    <td>10 min</td>
-                    <td>
-                      Compartilhar links dos vídeos. Debate: "Qual vídeo
-                      convence mais sobre acessibilidade?"
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Códigos RCP -->
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
-              <h5>
-                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
-              </h5>
-              <hr />
-              <span class="badge-bncc">Língua Portuguesa - Produção de Texto</span>
-              - Elaborar roteiros para vídeo.<br />
-              <span class="badge-bncc mt-2">Arte - Mídias Digitais</span> -
-              Editar vídeos com recursos acessíveis.
-            </div>
-          </div>
-
-          <!-- Materiais e Adaptações -->
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-box"></i> Materiais</h5>
-                  <hr />
-                  <ul>
-                    <li>Celular para gravação (modo paisagem 16:9)</li>
-                    <li>
-                      Computador com o programa do Robô Fofoqueiro (Aula 8)
-                    </li>
-                    <li>CapCut / KineMaster / DaVinci Resolve para edição</li>
-                    <li>Template de roteiro fornecido</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100 bg-inclusao">
-                <div class="card-body">
-                  <h5>
-                    <i class="bi bi-universal-access"></i> Adaptações para
-                    inclusão
-                  </h5>
-                  <hr />
-                  <ul>
-                    <li>
-                      Alunos sem celular podem gravar áudio e usar imagens de
-                      arquivo
-                    </li>
-                    <li>
-                      Para alunos com dificuldade de fala: usar texto narrado
-                      por TTS
-                    </li>
-                    <li>Legendas acessíveis obrigatórias no vídeo final</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 2: Roteiro para Vídeo -->
-        <div id="conteudoRoteiro" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h4 class="mb-0">
-                <i class="bi bi-file-text-fill"></i> Roteiro Base - Robô
-                Fofoqueiro
-              </h4>
-            </div>
-            <div class="card-body">
-              <div class="alert alert-info">
-                <i class="bi bi-info-circle-fill"></i>
-                <strong>Duração alvo:</strong> 2 minutos e 30 segundos (até 3
-                min) | <strong>Formato:</strong> Paisagem (16:9) |
-                <strong>Tom:</strong> Divertido, irreverente, mas com conteúdo
-                sério no final
-              </div>
-
-              <!-- Cena 1 -->
-              <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h5 class="mb-0">🎬 CENA 1: ABERTURA (0:00 - 0:20)</h5>
-                </div>
-                <div class="card-body p-0">
-                  <table class="tabela-etapas mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tempo</th>
-                        <th>Vídeo</th>
-                        <th>Áudio</th>
-                        <th>Legenda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>0:00-0:05</td>
-                        <td>Animação ou arte ASCII do robô aparecendo</td>
-                        <td>Som de startup (bipe engraçado)</td>
-                        <td>"Robô Fofoqueiro - Inicializando..."</td>
-                      </tr>
-                      <tr>
-                        <td>0:05-0:15</td>
-                        <td>
-                          Aluno(a) falando para a câmera (ou narração sobre
-                          tela do Colab)
-                        </td>
-                        <td>
-                          "Égua, piá! Cês tão vendo esse trem aqui? É o Robô
-                          Fofoqueiro da Acessibilidade!"
-                        </td>
-                        <td>
-                          "Conheça o Robô Fofoqueiro! Um assistente divertido
-                          que fala sobre inclusão."
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>0:15-0:20</td>
-                        <td>Rápido corte mostrando o menu do programa</td>
-                        <td>
-                          "Ele ouve, fala, enxerga, pisca e ainda faz mapa do
-                          barulho. Bagulho doido, vixi!"
-                        </td>
-                        <td>"Sensores, IA e muito humor paranaense!"</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Cena 2 -->
-              <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h5 class="mb-0">🎬 CENA 2: O PROBLEMA (0:20 - 0:50)</h5>
-                </div>
-                <div class="card-body p-0">
-                  <table class="tabela-etapas mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tempo</th>
-                        <th>Vídeo</th>
-                        <th>Áudio</th>
-                        <th>Legenda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>0:20-0:30</td>
-                        <td>
-                          Aluno(a) sério(a) olhando para a câmera. Montagem
-                          com gráfico de barulho alto.
-                        </td>
-                        <td>
-                          "Mas ó o trem... a gente pensou: como a tecnologia
-                          pode ajudar quem tem dificuldade de ouvir?"
-                        </td>
-                        <td>
-                          "Como a tecnologia pode ajudar na acessibilidade?"
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>0:30-0:40</td>
-                        <td>Mostrar exemplo de barulho alto na escola</td>
-                        <td>
-                          "A escola é um inferno acústico, piá! Gritaria no
-                          intervalo, corredor barulhento..."
-                        </td>
-                        <td>
-                          "Barulho excessivo atrapalha alunos com deficiência
-                          auditiva e outros."
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>0:40-0:50</td>
-                        <td>
-                          Transição para o robô (imagem do display com LED
-                          vermelho piscando)
-                        </td>
-                        <td>
-                          "E se a gente criasse um robô que transforma barulho
-                          em alerta visual?"
-                        </td>
-                        <td>"Foi assim que nasceu o Robô Fofoqueiro!"</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Cena 3 -->
-              <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h5 class="mb-0">
-                    🎬 CENA 3: DEMONSTRAÇÃO DO ROBÔ (0:50 - 1:30)
-                  </h5>
-                </div>
-                <div class="card-body p-0">
-                  <table class="tabela-etapas mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tempo</th>
-                        <th>Vídeo</th>
-                        <th>Áudio</th>
-                        <th>Legenda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>0:50-1:00</td>
-                        <td>Tela do Colab rodando o sensor de som</td>
-                        <td>
-                          Aluno(a) bate palma perto do microfone. Robô reage:
-                          "🚨 PASSOU DOS 75 dB!"
-                        </td>
-                        <td>
-                          "Sensor de som: mede o barulho e dispara alerta!"
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1:00-1:10</td>
-                        <td>Mostrar display simulado e LED piscando</td>
-                        <td>
-                          "Olha só! O display acende e o LED fica vermelho.
-                          Pra quem não ouve, isso é essencial."
-                        </td>
-                        <td>
-                          "Alertas visuais para inclusão de pessoas surdas."
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1:10-1:20</td>
-                        <td>Mostrar reconhecimento de fala</td>
-                        <td>
-                          Robô responde: "Ah pronto, agora tão falando 'Robô,
-                          me conta uma fofoca'... vou contar pra todo mundo!"
-                        </td>
-                        <td>
-                          "Reconhecimento de fala com respostas
-                          bem-humoradas!"
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>1:20-1:30</td>
-                        <td>Rápida passagem pela visão computacional</td>
-                        <td>
-                          "E ainda tem visão computacional! O robô conta
-                          quantos dedos você levantou e lê QR code."
-                        </td>
-                        <td>"Visão computacional: mãos e QR codes!"</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Cena 4 -->
-              <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h5 class="mb-0">
-                    🎬 CENA 4: MANIFESTO DO ROBÔ (1:30 - 2:10)
-                  </h5>
-                </div>
-                <div class="card-body p-0">
-                  <table class="tabela-etapas mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tempo</th>
-                        <th>Vídeo</th>
-                        <th>Áudio</th>
-                        <th>Legenda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1:30-1:45</td>
-                        <td>
-                          Arte do robô com texto do manifesto aparecendo na
-                          tela
-                        </td>
-                        <td>"O Robô Fofoqueiro tem um manifesto, vixi!"</td>
-                        <td>"📜 MANIFESTO DO ROBÔ FOFOQUEIRO"</td>
-                      </tr>
-                      <tr>
-                        <td>1:45-2:10</td>
-                        <td>Mostrar cada frase do manifesto, uma por vez</td>
-                        <td>Aluno(a) lê as 6 frases em sequência</td>
-                        <td>
-                          1️⃣ "Acessibilidade não é favor, é direito." 2️⃣
-                          "Tecnologia inclusiva pode ser divertida." 3️⃣ "Dados
-                          não são fofoca — são ferramentas." 4️⃣ "IA deve
-                          servir a todos, não só a alguns." 5️⃣ "Escola
-                          inclusiva se faz com criatividade." 6️⃣ "Robô
-                          Fofoqueiro: informação com responsa!"
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Cena 5 -->
-              <div class="card mb-3 border-0 shadow-sm">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h5 class="mb-0">
-                    🎬 CENA 5: ENCERRAMENTO E CRÉDITOS (2:10 - 2:30)
-                  </h5>
-                </div>
-                <div class="card-body p-0">
-                  <table class="tabela-etapas mb-0">
-                    <thead>
-                      <tr>
-                        <th>Tempo</th>
-                        <th>Vídeo</th>
-                        <th>Áudio</th>
-                        <th>Legenda</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>2:10-2:20</td>
-                        <td>Aluno(a) sorrindo para a câmera</td>
-                        <td>
-                          "Quer ver o robô funcionando? O código tá no Colab,
-                          é aberto pra todo mundo!"
-                        </td>
-                        <td>
-                          "Código aberto no Google Colab. Acesse e teste você
-                          também!"
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2:20-2:30</td>
-                        <td>
-                          Créditos: nomes dos alunos, tutora, escola, ano
-                        </td>
-                        <td>
-                          "Até a próxima, piá! Não esquece: acessibilidade é
-                          coisa séria... mas a gente pode resolver com um
-                          sorriso no rosto!"
-                        </td>
-                        <td>
-                          "📧 contato@escola.pr.gov.br | 🌐
-                          github.com/robofofoqueiro"
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-
-              <!-- Sugestões de falas -->
-              <div class="alert alert-secondary mt-3">
+            <!-- Códigos RCP -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
                 <h5>
-                  <i class="bi bi-mic-fill"></i> 🎤 Sugestões de falas para
-                  cada aluno
+                  <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
                 </h5>
                 <hr />
-                <div class="row">
-                  <div class="col-md-6">
-                    <p>
-                      <strong>Aluno 1 (Apresentador):</strong><br />"Égua,
-                      piá! Esse é o Robô Fofoqueiro da Acessibilidade. Ele
-                      mede barulho, reconhece fala, tem visão computacional e
-                      ainda usa IA!"
-                    </p>
-                    <p>
-                      <strong>Aluno 2 (Sensor de som):</strong><br />"Olha só:
-                      quando o barulho passa de 75 decibéis, o robô acende um
-                      LED vermelho e mostra mensagem no display. Pra quem não
-                      ouve, isso ajuda muito!"
-                    </p>
-                    <p>
-                      <strong>Aluno 3 (Reconhecimento de fala):</strong><br />"Posso falar com ele também. Olha: 'Robô,
-                      me
-                      conta uma fofoca'... Ele responde com gírias
-                      paranaenses. É engraçado, mas guarda tudo num arquivo.
-                      Aí a gente debate ética!"
-                    </p>
+                <span class="badge-bncc"
+                  >Língua Portuguesa - Produção de Texto</span
+                >
+                - Elaborar roteiros para vídeo.<br />
+                <span class="badge-bncc mt-2">Arte - Mídias Digitais</span> -
+                Editar vídeos com recursos acessíveis.
+              </div>
+            </div>
+
+            <!-- Materiais e Adaptações -->
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-box"></i> Materiais</h5>
+                    <hr />
+                    <ul>
+                      <li>Celular para gravação (modo paisagem 16:9)</li>
+                      <li>
+                        Computador com o programa do Robô Fofoqueiro (Aula 8)
+                      </li>
+                      <li>CapCut / KineMaster / DaVinci Resolve para edição</li>
+                      <li>Template de roteiro fornecido</li>
+                    </ul>
                   </div>
-                  <div class="col-md-6">
-                    <p>
-                      <strong>Aluno 4 (IA e manifesto):</strong><br />"A gente
-                      também usou IA pra dar personalidade pra ele. Mas com
-                      responsa: o manifesto do robô diz que tecnologia
-                      inclusiva pode ser divertida, mas nunca pode excluir
-                      ninguém."
-                    </p>
-                    <p>
-                      <strong>Aluno 5 (Encerramento):</strong><br />"O código
-                      tá aberto no Colab. Qualquer pessoa pode testar,
-                      melhorar e adaptar. Bora fazer escola mais acessível,
-                      vixi!"
-                    </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-universal-access"></i> Adaptações para
+                      inclusão
+                    </h5>
+                    <hr />
+                    <ul>
+                      <li>
+                        Alunos sem celular podem gravar áudio e usar imagens de
+                        arquivo
+                      </li>
+                      <li>
+                        Para alunos com dificuldade de fala: usar texto narrado
+                        por TTS
+                      </li>
+                      <li>Legendas acessíveis obrigatórias no vídeo final</li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 3: Manifesto -->
-        <div id="conteudoManifesto" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h4 class="mb-0">
-                <i class="bi bi-megaphone-fill"></i> Manifesto do Robô
-                Fofoqueiro
-              </h4>
-            </div>
-            <div class="card-body">
-              <div class="manifesto-container p-4 text-center">
-                <div class="display-4 mb-3">📜🤖</div>
-                <h2 class="mb-4">MANIFESTO DO ROBÔ FOFOQUEIRO</h2>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm">
-                      <span class="display-1 text-warning">1️⃣</span>
-                      <p class="lead mt-2">
-                        Acessibilidade não é favor, é direito.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm">
-                      <span class="display-1 text-warning">2️⃣</span>
-                      <p class="lead mt-2">
-                        Tecnologia inclusiva pode ser divertida.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm">
-                      <span class="display-1 text-warning">3️⃣</span>
-                      <p class="lead mt-2">
-                        Dados não são fofoca — são ferramentas de
-                        transformação.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm">
-                      <span class="display-1 text-warning">4️⃣</span>
-                      <p class="lead mt-2">
-                        Inteligência Artificial deve servir a todos, não só a
-                        alguns.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm">
-                      <span class="display-1 text-warning">5️⃣</span>
-                      <p class="lead mt-2">
-                        Escola inclusiva se faz com criatividade e
-                        protagonismo.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="manifesto-card p-3 border rounded-3 shadow-sm bg-warning bg-opacity-10">
-                      <span class="display-1 text-warning">6️⃣</span>
-                      <p class="lead mt-2">
-                        Robô Fofoqueiro: informação com responsa e coração!
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          <!-- Aba 2: Roteiro para Vídeo -->
+          <div id="conteudoRoteiro" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-file-text-fill"></i> Roteiro Base - Robô
+                  Fofoqueiro
+                </h4>
               </div>
-
-              <!-- Sugestão de legendas para redes sociais -->
-              <div class="alert alert-info mt-4">
-                <h5>
-                  <i class="bi bi-instagram"></i> 📱 Sugestão de legenda para
-                  redes sociais
-                </h5>
-                <hr />
-                <p class="mb-0">
-                  🤖 Robô Fofoqueiro da Acessibilidade: tecnologia, humor e
-                  inclusão!<br />
-                  Neste projeto da disciplina de Pensamento Computacional, a
-                  turma desenvolveu um assistente virtual que:<br />
-                  🔊 Mede barulho e gera alertas visuais<br />
-                  🗣️ Reconhece fala com gírias paranaenses<br />
-                  👁️ Detecta mãos e lê QR codes<br />
-                  🧠 Usa IA generativa com personalidade<br />
-                  📊 Cria mapas do "inferno acústico"<br />
-                  📜 Nosso manifesto: acessibilidade não é favor, é
-                  direito!<br />
-                  🔗 Código aberto no Google Colab<br />
-                  #RobôFofoqueiro #Acessibilidade #Inclusão
-                  #PensamentoComputacional #IAética #Paraná
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 4: Checklist / Avaliação -->
-        <div id="conteudoChecklist" class="lateral-aba-conteudo">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="card shadow border-0 mb-4">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h4 class="mb-0">
-                    <i class="bi bi-check2-square"></i> Checklist de avaliação
-                    - Aluno
-                  </h4>
+              <div class="card-body">
+                <div class="alert alert-info">
+                  <i class="bi bi-info-circle-fill"></i>
+                  <strong>Duração alvo:</strong> 2 minutos e 30 segundos (até 3
+                  min) | <strong>Formato:</strong> Paisagem (16:9) |
+                  <strong>Tom:</strong> Divertido, irreverente, mas com conteúdo
+                  sério no final
                 </div>
-                <div class="card-body">
-                  <ul class="checklist-personalizado list-unstyled">
-                    <li>
-                      <i class="bi bi-square"></i> Roteiro entregue antes da
-                      gravação?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Vídeo de 2-3 minutos
-                      produzido?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Manifesto incluído (6
-                      frases)?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Legendas acessíveis para
-                      surdos adicionadas?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Demonstração do robô
-                      funcionando aparece no vídeo?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Participação no debate
-                      sobre acessibilidade?
-                    </li>
-                  </ul>
-                  <div class="progress mt-3 progress-checklist">
-                    <div id="progressChecklist" class="progress-bar bg-success" style="width: 0%"></div>
+
+                <!-- Cena 1 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h5 class="mb-0">🎬 CENA 1: ABERTURA (0:00 - 0:20)</h5>
                   </div>
-                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
-                    <i class="bi bi-arrow-repeat"></i> Simular progresso
-                    (marca todos ✅)
-                  </button>
-                </div>
-              </div>
-
-              <!-- Autoavaliação do Grupo -->
-              <div class="card shadow border-0 mb-4">
-                <div class="card-header bg-grafite text-white">
-                  <h5 class="mb-0">
-                    <i class="bi bi-pencil-square"></i> Autoavaliação do Grupo
-                  </h5>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="tabela-etapas">
+                  <div class="card-body p-0">
+                    <table class="tabela-etapas mb-0">
                       <thead>
                         <tr>
-                          <th>Critério</th>
-                          <th>Nota (0-10)</th>
+                          <th>Tempo</th>
+                          <th>Vídeo</th>
+                          <th>Áudio</th>
+                          <th>Legenda</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>Roteiro (seguimos o template? Ficou claro?)</td>
+                          <td>0:00-0:05</td>
+                          <td>Animação ou arte ASCII do robô aparecendo</td>
+                          <td>Som de startup (bipe engraçado)</td>
+                          <td>"Robô Fofoqueiro - Inicializando..."</td>
+                        </tr>
+                        <tr>
+                          <td>0:05-0:15</td>
                           <td>
-                            <input type="number" class="form-control form-control-sm autoavalia-nota" min="0" max="10"
-                              step="1" />
+                            Aluno(a) falando para a câmera (ou narração sobre
+                            tela do Colab)
+                          </td>
+                          <td>
+                            "Égua, piá! Cês tão vendo esse trem aqui? É o Robô
+                            Fofoqueiro da Acessibilidade!"
+                          </td>
+                          <td>
+                            "Conheça o Robô Fofoqueiro! Um assistente divertido
+                            que fala sobre inclusão."
                           </td>
                         </tr>
                         <tr>
+                          <td>0:15-0:20</td>
+                          <td>Rápido corte mostrando o menu do programa</td>
                           <td>
-                            Gravação (áudio e imagem bons? Cenas do Colab
-                            aparecem?)
+                            "Ele ouve, fala, enxerga, pisca e ainda faz mapa do
+                            barulho. Bagulho doido, vixi!"
                           </td>
-                          <td>
-                            <input type="number" class="form-control form-control-sm autoavalia-nota" min="0" max="10"
-                              step="1" />
-                          </td>
+                          <td>"Sensores, IA e muito humor paranaense!"</td>
                         </tr>
-                        <tr>
-                          <td>Edição (cortes suaves? Legendas corretas?)</td>
-                          <td>
-                            <input type="number" class="form-control form-control-sm autoavalia-nota" min="0" max="10"
-                              step="1" />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Manifesto (as 6 frases aparecem? Ficaram
-                            legíveis?)
-                          </td>
-                          <td>
-                            <input type="number" class="form-control form-control-sm autoavalia-nota" min="0" max="10"
-                              step="1" />
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Trabalho em equipe (todos participaram? Divisão
-                            justa?)
-                          </td>
-                          <td>
-                            <input type="number" class="form-control form-control-sm autoavalia-nota" min="0" max="10"
-                              step="1" />
-                          </td>
-                        </tr>
-                        <tr>
                       </tbody>
                     </table>
                   </div>
-                  <button id="salvarAutoavaliacao" class="btn btn-primary mt-3">
-                    <i class="bi bi-save"></i> Salvar autoavaliação
-                  </button>
-                  <div id="resultadoAutoavaliacao" class="mt-3"></div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="card border-0 shadow bg-laranja-alerta text-dark">
-                <div class="card-body">
+
+                <!-- Cena 2 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h5 class="mb-0">🎬 CENA 2: O PROBLEMA (0:20 - 0:50)</h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <table class="tabela-etapas mb-0">
+                      <thead>
+                        <tr>
+                          <th>Tempo</th>
+                          <th>Vídeo</th>
+                          <th>Áudio</th>
+                          <th>Legenda</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0:20-0:30</td>
+                          <td>
+                            Aluno(a) sério(a) olhando para a câmera. Montagem
+                            com gráfico de barulho alto.
+                          </td>
+                          <td>
+                            "Mas ó o trem... a gente pensou: como a tecnologia
+                            pode ajudar quem tem dificuldade de ouvir?"
+                          </td>
+                          <td>
+                            "Como a tecnologia pode ajudar na acessibilidade?"
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>0:30-0:40</td>
+                          <td>Mostrar exemplo de barulho alto na escola</td>
+                          <td>
+                            "A escola é um inferno acústico, piá! Gritaria no
+                            intervalo, corredor barulhento..."
+                          </td>
+                          <td>
+                            "Barulho excessivo atrapalha alunos com deficiência
+                            auditiva e outros."
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>0:40-0:50</td>
+                          <td>
+                            Transição para o robô (imagem do display com LED
+                            vermelho piscando)
+                          </td>
+                          <td>
+                            "E se a gente criasse um robô que transforma barulho
+                            em alerta visual?"
+                          </td>
+                          <td>"Foi assim que nasceu o Robô Fofoqueiro!"</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Cena 3 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h5 class="mb-0">
+                      🎬 CENA 3: DEMONSTRAÇÃO DO ROBÔ (0:50 - 1:30)
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <table class="tabela-etapas mb-0">
+                      <thead>
+                        <tr>
+                          <th>Tempo</th>
+                          <th>Vídeo</th>
+                          <th>Áudio</th>
+                          <th>Legenda</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>0:50-1:00</td>
+                          <td>Tela do Colab rodando o sensor de som</td>
+                          <td>
+                            Aluno(a) bate palma perto do microfone. Robô reage:
+                            "🚨 PASSOU DOS 75 dB!"
+                          </td>
+                          <td>
+                            "Sensor de som: mede o barulho e dispara alerta!"
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1:00-1:10</td>
+                          <td>Mostrar display simulado e LED piscando</td>
+                          <td>
+                            "Olha só! O display acende e o LED fica vermelho.
+                            Pra quem não ouve, isso é essencial."
+                          </td>
+                          <td>
+                            "Alertas visuais para inclusão de pessoas surdas."
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1:10-1:20</td>
+                          <td>Mostrar reconhecimento de fala</td>
+                          <td>
+                            Robô responde: "Ah pronto, agora tão falando 'Robô,
+                            me conta uma fofoca'... vou contar pra todo mundo!"
+                          </td>
+                          <td>
+                            "Reconhecimento de fala com respostas
+                            bem-humoradas!"
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>1:20-1:30</td>
+                          <td>Rápida passagem pela visão computacional</td>
+                          <td>
+                            "E ainda tem visão computacional! O robô conta
+                            quantos dedos você levantou e lê QR code."
+                          </td>
+                          <td>"Visão computacional: mãos e QR codes!"</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Cena 4 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h5 class="mb-0">
+                      🎬 CENA 4: MANIFESTO DO ROBÔ (1:30 - 2:10)
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <table class="tabela-etapas mb-0">
+                      <thead>
+                        <tr>
+                          <th>Tempo</th>
+                          <th>Vídeo</th>
+                          <th>Áudio</th>
+                          <th>Legenda</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1:30-1:45</td>
+                          <td>
+                            Arte do robô com texto do manifesto aparecendo na
+                            tela
+                          </td>
+                          <td>"O Robô Fofoqueiro tem um manifesto, vixi!"</td>
+                          <td>"📜 MANIFESTO DO ROBÔ FOFOQUEIRO"</td>
+                        </tr>
+                        <tr>
+                          <td>1:45-2:10</td>
+                          <td>Mostrar cada frase do manifesto, uma por vez</td>
+                          <td>Aluno(a) lê as 6 frases em sequência</td>
+                          <td>
+                            1️⃣ "Acessibilidade não é favor, é direito." 2️⃣
+                            "Tecnologia inclusiva pode ser divertida." 3️⃣ "Dados
+                            não são fofoca — são ferramentas." 4️⃣ "IA deve
+                            servir a todos, não só a alguns." 5️⃣ "Escola
+                            inclusiva se faz com criatividade." 6️⃣ "Robô
+                            Fofoqueiro: informação com responsa!"
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Cena 5 -->
+                <div class="card mb-3 border-0 shadow-sm">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h5 class="mb-0">
+                      🎬 CENA 5: ENCERRAMENTO E CRÉDITOS (2:10 - 2:30)
+                    </h5>
+                  </div>
+                  <div class="card-body p-0">
+                    <table class="tabela-etapas mb-0">
+                      <thead>
+                        <tr>
+                          <th>Tempo</th>
+                          <th>Vídeo</th>
+                          <th>Áudio</th>
+                          <th>Legenda</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2:10-2:20</td>
+                          <td>Aluno(a) sorrindo para a câmera</td>
+                          <td>
+                            "Quer ver o robô funcionando? O código tá no Colab,
+                            é aberto pra todo mundo!"
+                          </td>
+                          <td>
+                            "Código aberto no Google Colab. Acesse e teste você
+                            também!"
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>2:20-2:30</td>
+                          <td>
+                            Créditos: nomes dos alunos, tutora, escola, ano
+                          </td>
+                          <td>
+                            "Até a próxima, piá! Não esquece: acessibilidade é
+                            coisa séria... mas a gente pode resolver com um
+                            sorriso no rosto!"
+                          </td>
+                          <td>
+                            "📧 contato@escola.pr.gov.br | 🌐
+                            github.com/robofofoqueiro"
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Sugestões de falas -->
+                <div class="alert alert-secondary mt-3">
                   <h5>
-                    <i class="bi bi-exclamation-triangle-fill"></i> Critérios
-                    de Avaliação
+                    <i class="bi bi-mic-fill"></i> 🎤 Sugestões de falas para
+                    cada aluno
                   </h5>
-                  <hr class="hr-alerta" />
-                  <ul>
-                    <li>Roteiro entregue antes da gravação</li>
-                    <li>Vídeo de 2-3 minutos produzido</li>
-                    <li>Manifesto incluído (6 frases)</li>
-                    <li>Legendas acessíveis para surdos</li>
-                  </ul>
-                  <hr class="hr-alerta" />
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-robot fs-1"></i>
-                    <span>Dica: "Se não tiver celular, grave áudio e use imagens
-                      de arquivo!"</span>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p>
+                        <strong>Aluno 1 (Apresentador):</strong><br />"Égua,
+                        piá! Esse é o Robô Fofoqueiro da Acessibilidade. Ele
+                        mede barulho, reconhece fala, tem visão computacional e
+                        ainda usa IA!"
+                      </p>
+                      <p>
+                        <strong>Aluno 2 (Sensor de som):</strong><br />"Olha só:
+                        quando o barulho passa de 75 decibéis, o robô acende um
+                        LED vermelho e mostra mensagem no display. Pra quem não
+                        ouve, isso ajuda muito!"
+                      </p>
+                      <p>
+                        <strong>Aluno 3 (Reconhecimento de fala):</strong
+                        ><br />"Posso falar com ele também. Olha: 'Robô, me
+                        conta uma fofoca'... Ele responde com gírias
+                        paranaenses. É engraçado, mas guarda tudo num arquivo.
+                        Aí a gente debate ética!"
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p>
+                        <strong>Aluno 4 (IA e manifesto):</strong><br />"A gente
+                        também usou IA pra dar personalidade pra ele. Mas com
+                        responsa: o manifesto do robô diz que tecnologia
+                        inclusiva pode ser divertida, mas nunca pode excluir
+                        ninguém."
+                      </p>
+                      <p>
+                        <strong>Aluno 5 (Encerramento):</strong><br />"O código
+                        tá aberto no Colab. Qualquer pessoa pode testar,
+                        melhorar e adaptar. Bora fazer escola mais acessível,
+                        vixi!"
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 5: Área do Professor -->
-        <div id="conteudoProfessor" class="lateral-aba-conteudo">
-          <div class="card shadow border-0 mb-4 overflow-hidden">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="d-flex gap-2 align-items-center mb-2">
-                    <i class="bi bi-chalkboard fs-1"></i>
-                    <h2 class="card-title">Plano de Aula - Docente</h2>
-                  </div>
-                  <p>
-                    <strong>Título:</strong> "Divulgando o Robô Fofoqueiro:
-                    ciência, humor e inclusão"
-                  </p>
-                  <p>
-                    <strong>Códigos BNCC:</strong> EM13LGG101, EM13LGG701,
-                    EM13LP16 | <strong>RCP - Paraná:</strong> Língua
-                    Portuguesa - Produção de Texto, Arte - Mídias Digitais
-                  </p>
-                  <p>
-                    <strong>Duração:</strong> 2 aulas (100 minutos) + aula
-                    extra opcional para edição
-                  </p>
-                  <p>
-                    <strong>Materiais:</strong> Celulares, computador com o
-                    programa do Robô Fofoqueiro, CapCut/KineMaster
-                  </p>
-                  <hr class="hr-professor" />
-                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
-                  <ul>
-                    <li>
-                      <strong>Abertura (10min):</strong> Assistir a exemplos
-                      de divulgação científica (Nerdologia, Manual do Mundo)
-                    </li>
-                    <li>
-                      <strong>Roteirização (30min):</strong> Cada grupo
-                      escreve roteiro seguindo template (abertura, problema,
-                      demo, manifesto, créditos)
-                    </li>
-                    <li>
-                      <strong>Gravação (40min):</strong> Gravar com celular —
-                      cenas do robô funcionando, entrevista fictícia,
-                      manifesto
-                    </li>
-                    <li>
-                      <strong>Edição (30min aula extra):</strong> Editar no
-                      CapCut ou Kinemaster, adicionar legendas acessíveis
-                    </li>
-                    <li>
-                      <strong>Fechamento (10min):</strong> Compartilhar links
-                      dos vídeos. Debate: "Qual vídeo convence mais sobre
-                      acessibilidade?"
-                    </li>
-                  </ul>
-                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
-                    <i class="bi bi-download"></i> Exportar dicas
-                  </button>
-                </div>
+          <!-- Aba 3: Manifesto -->
+          <div id="conteudoManifesto" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-megaphone-fill"></i> Manifesto do Robô
+                  Fofoqueiro
+                </h4>
               </div>
-              <div
-                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
-                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
-                <p class="mt-2 fw-bold">Kit do Professor</p>
-                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
-                  <i class="bi bi-mic"></i> Chamada interativa
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 6: Gerador de Roteiro (Simulador) -->
-        <div id="conteudoSimulador" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h4 class="mb-0">
-                <i class="bi bi-camera-reels-fill"></i> Gerador de Roteiro
-                Personalizado
-              </h4>
-            </div>
-            <div class="card-body">
-              <div class="simulador-fala p-4">
-                <div class="text-center mb-4">
-                  <div class="robo-ascii-animado">
-                    🎬📝 "Bora criar o roteiro, piá!"
-                  </div>
-                </div>
-
-                <!-- Dados do grupo -->
-                <div class="mb-4">
-                  <h5>
-                    <i class="bi bi-people-fill"></i> Dados do seu grupo:
-                  </h5>
+              <div class="card-body">
+                <div class="manifesto-container p-4 text-center">
+                  <div class="display-4 mb-3">📜🤖</div>
+                  <h2 class="mb-4">MANIFESTO DO ROBÔ FOFOQUEIRO</h2>
                   <div class="row g-3">
                     <div class="col-md-6">
-                      <label class="form-label">Nome da escola:</label>
-                      <input type="text" id="escolaNome" class="form-control"
-                        placeholder="Ex: Colégio Estadual do Paraná" />
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm"
+                      >
+                        <span class="display-1 text-warning">1️⃣</span>
+                        <p class="lead mt-2">
+                          Acessibilidade não é favor, é direito.
+                        </p>
+                      </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label">Nomes dos integrantes:</label>
-                      <input type="text" id="integrantesNomes" class="form-control"
-                        placeholder="Ana, Lucas, Mariana, Carlos" />
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm"
+                      >
+                        <span class="display-1 text-warning">2️⃣</span>
+                        <p class="lead mt-2">
+                          Tecnologia inclusiva pode ser divertida.
+                        </p>
+                      </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label">Título do vídeo:</label>
-                      <input type="text" id="tituloVideo" class="form-control"
-                        value="Robô Fofoqueiro da Acessibilidade: Tecnologia, Humor e Inclusão" />
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm"
+                      >
+                        <span class="display-1 text-warning">3️⃣</span>
+                        <p class="lead mt-2">
+                          Dados não são fofoca — são ferramentas de
+                          transformação.
+                        </p>
+                      </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label">Link do Colab (opcional):</label>
-                      <input type="text" id="linkColab" class="form-control"
-                        placeholder="https://colab.research.google.com/..." />
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm"
+                      >
+                        <span class="display-1 text-warning">4️⃣</span>
+                        <p class="lead mt-2">
+                          Inteligência Artificial deve servir a todos, não só a
+                          alguns.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm"
+                      >
+                        <span class="display-1 text-warning">5️⃣</span>
+                        <p class="lead mt-2">
+                          Escola inclusiva se faz com criatividade e
+                          protagonismo.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div
+                        class="manifesto-card p-3 border rounded-3 shadow-sm bg-warning bg-opacity-10"
+                      >
+                        <span class="display-1 text-warning">6️⃣</span>
+                        <p class="lead mt-2">
+                          Robô Fofoqueiro: informação com responsa e coração!
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                <!-- Escolha de falas -->
-                <div class="mb-4">
+                <!-- Sugestão de legendas para redes sociais -->
+                <div class="alert alert-info mt-4">
                   <h5>
-                    <i class="bi bi-mic-fill"></i> Escolha quem vai falar cada
-                    parte:
+                    <i class="bi bi-instagram"></i> 📱 Sugestão de legenda para
+                    redes sociais
                   </h5>
-                  <div class="row g-2">
-                    <div class="col-md-6">
-                      <label class="form-label">🎬 Abertura:</label>
-                      <input type="text" id="falaAbertura" class="form-control" placeholder="Nome do aluno" />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">🔊 Sensor de som:</label>
-                      <input type="text" id="falaSensor" class="form-control" placeholder="Nome do aluno" />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">🗣️ Reconhecimento de fala:</label>
-                      <input type="text" id="falaFala" class="form-control" placeholder="Nome do aluno" />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">🧠 IA e manifesto:</label>
-                      <input type="text" id="falaIA" class="form-control" placeholder="Nome do aluno" />
-                    </div>
-                    <div class="col-md-6">
-                      <label class="form-label">🎬 Encerramento:</label>
-                      <input type="text" id="falaEncerramento" class="form-control" placeholder="Nome do aluno" />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Botão gerar roteiro -->
-                <div class="text-center mb-4">
-                  <button id="btnGerarRoteiroPersonalizado" class="btn btn-primary btn-lg">
-                    <i class="bi bi-file-text-fill"></i> Gerar Roteiro
-                    Personalizado
-                  </button>
-                </div>
-
-                <!-- Roteiro gerado -->
-                <div class="mb-3" id="roteiroGeradoContainer" style="display: none">
-                  <div class="card">
-                    <div class="card-header bg-success text-white">
-                      <i class="bi bi-check-circle-fill"></i> Seu Roteiro
-                      Personalizado
-                      <button id="btnCopiarRoteiro" class="btn btn-sm btn-light float-end">
-                        <i class="bi bi-copy"></i> Copiar
-                      </button>
-                    </div>
-                    <div class="card-body bg-preto-code" id="roteiroGerado"></div>
-                  </div>
-                </div>
-
-                <div class="alert alert-warning mt-3">
-                  <i class="bi bi-info-circle"></i>
-                  <strong>Nota:</strong> Este gerador cria um roteiro
-                  personalizado baseado nos dados do seu grupo. Depois de
-                  gerar, copie e cole no seu editor de texto preferido para
-                  imprimir ou editar.
+                  <hr />
+                  <p class="mb-0">
+                    🤖 Robô Fofoqueiro da Acessibilidade: tecnologia, humor e
+                    inclusão!<br />
+                    Neste projeto da disciplina de Pensamento Computacional, a
+                    turma desenvolveu um assistente virtual que:<br />
+                    🔊 Mede barulho e gera alertas visuais<br />
+                    🗣️ Reconhece fala com gírias paranaenses<br />
+                    👁️ Detecta mãos e lê QR codes<br />
+                    🧠 Usa IA generativa com personalidade<br />
+                    📊 Cria mapas do "inferno acústico"<br />
+                    📜 Nosso manifesto: acessibilidade não é favor, é
+                    direito!<br />
+                    🔗 Código aberto no Google Colab<br />
+                    #RobôFofoqueiro #Acessibilidade #Inclusão
+                    #PensamentoComputacional #IAética #Paraná
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+
+          <!-- Aba 4: Checklist / Avaliação -->
+          <div id="conteudoChecklist" class="lateral-aba-conteudo">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="card shadow border-0 mb-4">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h4 class="mb-0">
+                      <i class="bi bi-check2-square"></i> Checklist de avaliação
+                      - Aluno
+                    </h4>
+                  </div>
+                  <div class="card-body">
+                    <ul class="checklist-personalizado list-unstyled">
+                      <li>
+                        <i class="bi bi-square"></i> Roteiro entregue antes da
+                        gravação?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Vídeo de 2-3 minutos
+                        produzido?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Manifesto incluído (6
+                        frases)?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Legendas acessíveis para
+                        surdos adicionadas?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Demonstração do robô
+                        funcionando aparece no vídeo?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Participação no debate
+                        sobre acessibilidade?
+                      </li>
+                    </ul>
+                    <div class="progress mt-3 progress-checklist">
+                      <div
+                        id="progressChecklist"
+                        class="progress-bar bg-success"
+                        style="width: 0%"
+                      ></div>
+                    </div>
+                    <button
+                      id="simularProgresso"
+                      class="btn btn-outline-success btn-sm mt-3"
+                    >
+                      <i class="bi bi-arrow-repeat"></i> Simular progresso
+                      (marca todos ✅)
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Autoavaliação do Grupo -->
+                <div class="card shadow border-0 mb-4">
+                  <div class="card-header bg-grafite text-white">
+                    <h5 class="mb-0">
+                      <i class="bi bi-pencil-square"></i> Autoavaliação do Grupo
+                    </h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="tabela-etapas">
+                        <thead>
+                          <tr>
+                            <th>Critério</th>
+                            <th>Nota (0-10)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Roteiro (seguimos o template? Ficou claro?)</td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control form-control-sm autoavalia-nota"
+                                min="0"
+                                max="10"
+                                step="1"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Gravação (áudio e imagem bons? Cenas do Colab
+                              aparecem?)
+                            </td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control form-control-sm autoavalia-nota"
+                                min="0"
+                                max="10"
+                                step="1"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Edição (cortes suaves? Legendas corretas?)</td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control form-control-sm autoavalia-nota"
+                                min="0"
+                                max="10"
+                                step="1"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Manifesto (as 6 frases aparecem? Ficaram
+                              legíveis?)
+                            </td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control form-control-sm autoavalia-nota"
+                                min="0"
+                                max="10"
+                                step="1"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Trabalho em equipe (todos participaram? Divisão
+                              justa?)
+                            </td>
+                            <td>
+                              <input
+                                type="number"
+                                class="form-control form-control-sm autoavalia-nota"
+                                min="0"
+                                max="10"
+                                step="1"
+                              />
+                            </td>
+                          </tr>
+                          <tr></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <button
+                      id="salvarAutoavaliacao"
+                      class="btn btn-primary mt-3"
+                    >
+                      <i class="bi bi-save"></i> Salvar autoavaliação
+                    </button>
+                    <div id="resultadoAutoavaliacao" class="mt-3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-exclamation-triangle-fill"></i> Critérios
+                      de Avaliação
+                    </h5>
+                    <hr class="hr-alerta" />
+                    <ul>
+                      <li>Roteiro entregue antes da gravação</li>
+                      <li>Vídeo de 2-3 minutos produzido</li>
+                      <li>Manifesto incluído (6 frases)</li>
+                      <li>Legendas acessíveis para surdos</li>
+                    </ul>
+                    <hr class="hr-alerta" />
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-robot fs-1"></i>
+                      <span
+                        >Dica: "Se não tiver celular, grave áudio e use imagens
+                        de arquivo!"</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 5: Área do Professor -->
+          <div id="conteudoProfessor" class="lateral-aba-conteudo">
+            <div class="card shadow border-0 mb-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="d-flex gap-2 align-items-center mb-2">
+                      <i class="bi bi-chalkboard fs-1"></i>
+                      <h2 class="card-title">Plano de Aula - Docente</h2>
+                    </div>
+                    <p>
+                      <strong>Título:</strong> "Divulgando o Robô Fofoqueiro:
+                      ciência, humor e inclusão"
+                    </p>
+                    <p>
+                      <strong>Códigos BNCC:</strong> EM13LGG101, EM13LGG701,
+                      EM13LP16 | <strong>RCP - Paraná:</strong> Língua
+                      Portuguesa - Produção de Texto, Arte - Mídias Digitais
+                    </p>
+                    <p>
+                      <strong>Duração:</strong> 2 aulas (100 minutos) + aula
+                      extra opcional para edição
+                    </p>
+                    <p>
+                      <strong>Materiais:</strong> Celulares, computador com o
+                      programa do Robô Fofoqueiro, CapCut/KineMaster
+                    </p>
+                    <hr class="hr-professor" />
+                    <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                    <ul>
+                      <li>
+                        <strong>Abertura (10min):</strong> Assistir a exemplos
+                        de divulgação científica (Nerdologia, Manual do Mundo)
+                      </li>
+                      <li>
+                        <strong>Roteirização (30min):</strong> Cada grupo
+                        escreve roteiro seguindo template (abertura, problema,
+                        demo, manifesto, créditos)
+                      </li>
+                      <li>
+                        <strong>Gravação (40min):</strong> Gravar com celular —
+                        cenas do robô funcionando, entrevista fictícia,
+                        manifesto
+                      </li>
+                      <li>
+                        <strong>Edição (30min aula extra):</strong> Editar no
+                        CapCut ou Kinemaster, adicionar legendas acessíveis
+                      </li>
+                      <li>
+                        <strong>Fechamento (10min):</strong> Compartilhar links
+                        dos vídeos. Debate: "Qual vídeo convence mais sobre
+                        acessibilidade?"
+                      </li>
+                    </ul>
+                    <button
+                      id="btnExportarDicas"
+                      class="btn btn-outline-primary mt-2"
+                    >
+                      <i class="bi bi-download"></i> Exportar dicas
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center"
+                >
+                  <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                  <p class="mt-2 fw-bold">Kit do Professor</p>
+                  <button
+                    id="simularChamada"
+                    class="btn btn-warning w-100 mt-2"
+                  >
+                    <i class="bi bi-mic"></i> Chamada interativa
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 6: Gerador de Roteiro (Simulador) -->
+          <div id="conteudoSimulador" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-camera-reels-fill"></i> Gerador de Roteiro
+                  Personalizado
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="simulador-fala p-4">
+                  <div class="text-center mb-4">
+                    <div class="robo-ascii-animado">
+                      🎬📝 "Bora criar o roteiro, piá!"
+                    </div>
+                  </div>
+
+                  <!-- Dados do grupo -->
+                  <div class="mb-4">
+                    <h5>
+                      <i class="bi bi-people-fill"></i> Dados do seu grupo:
+                    </h5>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label">Nome da escola:</label>
+                        <input
+                          type="text"
+                          id="escolaNome"
+                          class="form-control"
+                          placeholder="Ex: Colégio Estadual do Paraná"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Nomes dos integrantes:</label>
+                        <input
+                          type="text"
+                          id="integrantesNomes"
+                          class="form-control"
+                          placeholder="Ana, Lucas, Mariana, Carlos"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">Título do vídeo:</label>
+                        <input
+                          type="text"
+                          id="tituloVideo"
+                          class="form-control"
+                          value="Robô Fofoqueiro da Acessibilidade: Tecnologia, Humor e Inclusão"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          >Link do Colab (opcional):</label
+                        >
+                        <input
+                          type="text"
+                          id="linkColab"
+                          class="form-control"
+                          placeholder="https://colab.research.google.com/..."
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Escolha de falas -->
+                  <div class="mb-4">
+                    <h5>
+                      <i class="bi bi-mic-fill"></i> Escolha quem vai falar cada
+                      parte:
+                    </h5>
+                    <div class="row g-2">
+                      <div class="col-md-6">
+                        <label class="form-label">🎬 Abertura:</label>
+                        <input
+                          type="text"
+                          id="falaAbertura"
+                          class="form-control"
+                          placeholder="Nome do aluno"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">🔊 Sensor de som:</label>
+                        <input
+                          type="text"
+                          id="falaSensor"
+                          class="form-control"
+                          placeholder="Nome do aluno"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label"
+                          >🗣️ Reconhecimento de fala:</label
+                        >
+                        <input
+                          type="text"
+                          id="falaFala"
+                          class="form-control"
+                          placeholder="Nome do aluno"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">🧠 IA e manifesto:</label>
+                        <input
+                          type="text"
+                          id="falaIA"
+                          class="form-control"
+                          placeholder="Nome do aluno"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">🎬 Encerramento:</label>
+                        <input
+                          type="text"
+                          id="falaEncerramento"
+                          class="form-control"
+                          placeholder="Nome do aluno"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Botão gerar roteiro -->
+                  <div class="text-center mb-4">
+                    <button
+                      id="btnGerarRoteiroPersonalizado"
+                      class="btn btn-primary btn-lg"
+                    >
+                      <i class="bi bi-file-text-fill"></i> Gerar Roteiro
+                      Personalizado
+                    </button>
+                  </div>
+
+                  <!-- Roteiro gerado -->
+                  <div
+                    class="mb-3"
+                    id="roteiroGeradoContainer"
+                    style="display: none"
+                  >
+                    <div class="card">
+                      <div class="card-header bg-success text-white">
+                        <i class="bi bi-check-circle-fill"></i> Seu Roteiro
+                        Personalizado
+                        <button
+                          id="btnCopiarRoteiro"
+                          class="btn btn-sm btn-light float-end"
+                        >
+                          <i class="bi bi-copy"></i> Copiar
+                        </button>
+                      </div>
+                      <div
+                        class="card-body bg-preto-code"
+                        id="roteiroGerado"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <div class="alert alert-warning mt-3">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Nota:</strong> Este gerador cria um roteiro
+                    personalizado baseado nos dados do seu grupo. Depois de
+                    gerar, copie e cole no seu editor de texto preferido para
+                    imprimir ou editar.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <footer class="footer-custom">
-    <div class="container-fluid">
-      <p class="mb-0">
-        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
-        programação & inclusão
-      </p>
-      <small><i class="bi bi-chat-right-quote"></i> "Chegou a hora de mostrar pro
-        mundo o bagulho doido que a gente fez!"</small>
-    </div>
-  </footer>
+    <footer class="footer-custom">
+      <div class="container-fluid">
+        <p class="mb-0">
+          🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+          programação & inclusão
+        </p>
+        <small
+          ><i class="bi bi-chat-right-quote"></i> "Chegou a hora de mostrar pro
+          mundo o bagulho doido que a gente fez!"</small
+        >
+      </div>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script custom -->
-  <script src="../assets/js/script.js"></script>
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script custom -->
+    <script src="../assets/js/script.js"></script>
+  </body>
 </html>

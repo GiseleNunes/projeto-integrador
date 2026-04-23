@@ -1,256 +1,341 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Robô Fofoqueiro | Setup no Google Colab</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Robô Fofoqueiro | Setup no Google Colab</title>
-  <!-- Bootstrap 5 + Icons + Google Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet" />
-  <!-- CSS Custom -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
-
-<body>
-  <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
-  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-        <span class="robo-icon-principal">🤖💬</span>
-        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
-            Acessibilidade</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
-        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
-              Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active-projeto" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i>
-              Aula 1 - Setup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
-              Escuta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
-              Fala</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula4" href="#"><i class="bi bi-eye"></i> Aula 4 - Visão</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
-              Personalidade</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
-              Display e LEDs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
-              Mapa do Inferno</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
-              Protótipo
-              Completo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
-              Aula 9 - Manifesto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
-              Offline</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
-                class="bi bi-puzzle-fill"></i> Material Complementar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
-  <div class="container-fluid main-layout">
-    <div class="row">
-      <!-- MENU LATERAL (abas internas da aula atual) -->
-      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
-        <div class="sidebar-sticky">
-          <div class="sidebar-header">
-            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
-          </div>
-          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+  <body>
+    <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
+    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="../index.html"
+        >
+          <span class="robo-icon-principal">🤖💬</span>
+          <span class="brand-text-principal"
+            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
+              >Projeto de Acessibilidade</small
+            ></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuProjetoPrincipal"
+          aria-controls="menuProjetoPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="setup">
-                <i class="bi bi-pc-display"></i> Setup Colab
-              </a>
+              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
+                ><i class="bi bi-house-door-fill"></i> Início</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
-                <i class="bi bi-code-square"></i> Código Py
-              </a>
+              <a
+                class="nav-link active-projeto"
+                data-projeto-aba="aula1"
+                href="aula_01.html"
+                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
-                <i class="bi bi-clipboard-check"></i> Checklist
-              </a>
+              <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"
+                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
-                <i class="bi bi-mortarboard"></i> Área do Profe
-              </a>
+              <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"
+                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula4" href="#"
+                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"
+                ><i class="bi bi-cpu"></i> Aula 5 - IA com Personalidade</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"
+                ><i class="bi bi-lightbulb"></i> Aula 6 - Display e LEDs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"
+                ><i class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"
+                ><i class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo
+                Completo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"
+                ><i class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"
+                ><i class="bi bi-wifi-off"></i> Aula 10 - Offline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="aula11"
+                href="material_complementar.html"
+                ><i class="bi bi-puzzle-fill"></i> Material Complementar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="laboratorio"
+                href="laboratorio.html"
+                ><i class="bi bi-robot"></i> Laboratório</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="sobre" href="#"
+                ><i class="bi bi-info-circle"></i> Sobre</a
+              >
             </li>
           </ul>
-          <div class="sidebar-footer">
-            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
-              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
-            </button>
-          </div>
         </div>
-      </aside>
+      </div>
+    </nav>
 
-      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
-        <!-- Aba 1: Setup do ambiente -->
-        <div id="conteudoSetup" class="lateral-aba-conteudo active-lateral-aba">
-          <!-- Cabeçalho irreverente -->
-          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
-            <div class="card-body p-4 p-md-5">
-              <div class="row align-items-center">
-                <div class="col-md-9">
-                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-lightbulb"></i> VIXI, PREPARA O
-                    TERRENO!</span>
-                  <h1 class="display-5 fw-bold">
-                    🤖 Ambientando o Robô Fofoqueiro
-                  </h1>
-                  <p class="lead mt-3">
-                    Primeiros passos no Google Colab — instalação de
-                    bibliotecas, pastas virtuais e aquele setup cheio de
-                    bagulho doido pra roda lisinho.
-                  </p>
-                  <div class="mt-3 d-flex flex-wrap gap-3">
-                    <div>
-                      <i class="bi bi-clock-history"></i> Duração: 50 min
+    <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+    <div class="container-fluid main-layout">
+      <div class="row">
+        <!-- MENU LATERAL (abas internas da aula atual) -->
+        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+          <div class="sidebar-sticky">
+            <div class="sidebar-header">
+              <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link active-lateral"
+                  data-lateral-aba="setup"
+                >
+                  <i class="bi bi-pc-display"></i> Setup Colab
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="codigo"
+                >
+                  <i class="bi bi-code-square"></i> Código Py
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="checklist"
+                >
+                  <i class="bi bi-clipboard-check"></i> Checklist
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="professor"
+                >
+                  <i class="bi bi-mortarboard"></i> Área do Profe
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-footer">
+              <button
+                id="btnDownloadPyLateral"
+                class="btn btn-download-lateral w-100"
+              >
+                <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+          <!-- Aba 1: Setup do ambiente -->
+          <div
+            id="conteudoSetup"
+            class="lateral-aba-conteudo active-lateral-aba"
+          >
+            <!-- Cabeçalho irreverente -->
+            <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+              <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center">
+                  <div class="col-md-9">
+                    <span class="badge bg-warning text-dark mb-2"
+                      ><i class="bi bi-lightbulb"></i> VIXI, PREPARA O
+                      TERRENO!</span
+                    >
+                    <h1 class="display-5 fw-bold">
+                      🤖 Ambientando o Robô Fofoqueiro
+                    </h1>
+                    <p class="lead mt-3">
+                      Primeiros passos no Google Colab — instalação de
+                      bibliotecas, pastas virtuais e aquele setup cheio de
+                      bagulho doido pra roda lisinho.
+                    </p>
+                    <div class="mt-3 d-flex flex-wrap gap-3">
+                      <div>
+                        <i class="bi bi-clock-history"></i> Duração: 50 min
+                      </div>
+                      <div>
+                        <i class="bi bi-google"></i> Google Colab + Chromebook
+                      </div>
+                      <div>
+                        <i class="bi bi-chat-dots"></i> BNCC: EM13MAT405 |
+                        EM13CNT101
+                      </div>
                     </div>
-                    <div>
-                      <i class="bi bi-google"></i> Google Colab + Chromebook
-                    </div>
-                    <div>
-                      <i class="bi bi-chat-dots"></i> BNCC: EM13MAT405 |
-                      EM13CNT101
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="robo-ascii-animado">
+                      ╭( ･ㅂ･)و ̑̑ ～♫<br />📦📁🎤
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="robo-ascii-animado">
-                    ╭( ･ㅂ･)و ̑̑ ～♫<br />📦📁🎤
+              </div>
+            </div>
+
+            <!-- ETAPAS DA AULA -->
+            <div class="row g-4 mb-5">
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">🔊</div>
+                    <h3>Abertura · 10min</h3>
+                    <p>
+                      Apresentação do projeto "Robô Fofoqueiro", vídeo curto e
+                      missão: preparar o terreno.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">👨‍🏫</div>
+                    <h3>Demonstração · 10min</h3>
+                    <p>
+                      Professor mostra Google Colab, células, instalação e
+                      pastas virtuais.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">✋</div>
+                    <h3>Mão na massa · 20min</h3>
+                    <p>
+                      Alunos replicam código de setup, instalam bibliotecas e
+                      criam pastas com ajuda entre pares.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">✅</div>
+                    <h3>Verificação · 5min</h3>
+                    <p>
+                      Checklist de instalação: cada aluno valida se tudo ficou
+                      ✅ ou ❌.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">📓</div>
+                    <h3>Fechamento · 5min</h3>
+                    <p>
+                      Discussão coletiva: "O que foi fácil/difícil?" e registro
+                      no diário de bordo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="card h-100 border-0 shadow-sm etapa-card bg-inclusao"
+                >
+                  <div class="card-body">
+                    <div class="etapa-icon">♿</div>
+                    <h3>Adaptações inclusivas</h3>
+                    <p>
+                      Teclado virtual, extensão Colab Voice, código pré-escrito
+                      e duplas de apoio.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- ETAPAS DA AULA -->
-          <div class="row g-4 mb-5">
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">🔊</div>
-                  <h3>Abertura · 10min</h3>
-                  <p>
-                    Apresentação do projeto "Robô Fofoqueiro", vídeo curto e
-                    missão: preparar o terreno.
-                  </p>
-                </div>
+            <!-- Bloco de código exemplo -->
+            <div class="card border-0 mb-4 overflow-hidden">
+              <div
+                class="card-header bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span
+                  ><i class="bi bi-terminal-fill"></i> Código de setup — "o
+                  bagulho vai ficar doido mas organizado"</span
+                >
+                <span class="badge bg-warning text-dark"
+                  >🤖 Colab notebook</span
+                >
               </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">👨‍🏫</div>
-                  <h3>Demonstração · 10min</h3>
-                  <p>
-                    Professor mostra Google Colab, células, instalação e
-                    pastas virtuais.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">✋</div>
-                  <h3>Mão na massa · 20min</h3>
-                  <p>
-                    Alunos replicam código de setup, instalam bibliotecas e
-                    criam pastas com ajuda entre pares.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">✅</div>
-                  <h3>Verificação · 5min</h3>
-                  <p>
-                    Checklist de instalação: cada aluno valida se tudo ficou
-                    ✅ ou ❌.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">📓</div>
-                  <h3>Fechamento · 5min</h3>
-                  <p>
-                    Discussão coletiva: "O que foi fácil/difícil?" e registro
-                    no diário de bordo.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card bg-inclusao">
-                <div class="card-body">
-                  <div class="etapa-icon">♿</div>
-                  <h3>Adaptações inclusivas</h3>
-                  <p>
-                    Teclado virtual, extensão Colab Voice, código pré-escrito
-                    e duplas de apoio.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bloco de código exemplo -->
-          <div class="card border-0 mb-4 overflow-hidden">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-              <span><i class="bi bi-terminal-fill"></i> Código de setup — "o
-                bagulho vai ficar doido mas organizado"</span>
-              <span class="badge bg-warning text-dark">🤖 Colab notebook</span>
-            </div>
-            <div class="card-body bg-preto-code p-0">
-              <pre class="code-block m-0"><code class="language-python"># =-=-=-= BLOCO 1: VERIFICAÇÃO DO AMBIENTE =-=-=-=
+              <div class="card-body bg-preto-code p-0">
+                <pre
+                  class="code-block m-0"
+                ><code class="language-python"># =-=-=-= BLOCO 1: VERIFICAÇÃO DO AMBIENTE =-=-=-=
 import sys, os
 if 'google.colab' in sys.modules:
     print("✅ Tamo no Colab! Bagulho doido vai rodar lisinho.")
@@ -276,29 +361,38 @@ print(r"""
  |   no último Natal..."     |
   \_________________________/
 """)</code></pre>
+              </div>
+            </div>
+            <div
+              class="alert alert-success d-flex align-items-center"
+              role="alert"
+            >
+              <i class="bi bi-check-circle-fill fs-3 me-3"></i>
+              <div>
+                <strong>Checklist final garantido ✅</strong> — Após rodar o
+                setup, cada biblioteca será testada com microfone, voz, visão e
+                pandas. Tudo verde? Bora fofocar sobre acessibilidade com
+                responsa!
+              </div>
             </div>
           </div>
-          <div class="alert alert-success d-flex align-items-center" role="alert">
-            <i class="bi bi-check-circle-fill fs-3 me-3"></i>
-            <div>
-              <strong>Checklist final garantido ✅</strong> — Após rodar o
-              setup, cada biblioteca será testada com microfone, voz, visão e
-              pandas. Tudo verde? Bora fofocar sobre acessibilidade com
-              responsa!
-            </div>
-          </div>
-        </div>
 
-        <!-- Aba 2: Código Python completo -->
-        <div id="conteudoCodigo" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg">
-            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
-              <span><i class="bi bi-filetype-py"></i> robo_fofoqueiro_setup.py —
-                Código completo da aula</span>
-              <span class="badge bg-verde-claro">download disponível</span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+          <!-- Aba 2: Código Python completo -->
+          <div id="conteudoCodigo" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg">
+              <div
+                class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap"
+              >
+                <span
+                  ><i class="bi bi-filetype-py"></i> robo_fofoqueiro_setup.py —
+                  Código completo da aula</span
+                >
+                <span class="badge bg-verde-claro">download disponível</span>
+              </div>
+              <div class="card-body p-0">
+                <pre
+                  class="code-block-full m-0"
+                ><code id="codigoPythonCompleto"># ===================================================================
 #              Setup do Robô Fofoqueiro da Acessibilidade
 # ===================================================================
 # Objetivo: Configurar o ambiente no Google Colab instalando bibliotecas,
@@ -432,155 +526,173 @@ print("="*50)
 # Mensagem de despedida/humor do robô.
 print("\n🤖 'Ó o trem agora é oficial: Robô Fofoqueiro na área!'")
 # FIM DO SETUP</code></pre>
-            </div>
-            <div class="card-footer bg-light">
-              <small><i class="bi bi-info-circle"></i> Código completo do setup
-                para rodar no Google Colab.</small>
+              </div>
+              <div class="card-footer bg-light">
+                <small
+                  ><i class="bi bi-info-circle"></i> Código completo do setup
+                  para rodar no Google Colab.</small
+                >
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 3: Checklist / Avaliação -->
-        <div id="conteudoChecklist" class="lateral-aba-conteudo">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="card shadow border-0 mb-4">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h4 class="mb-0">
-                    <i class="bi bi-check2-square"></i> Checklist de avaliação
-                    - Aluno
-                  </h4>
-                </div>
-                <div class="card-body">
-                  <ul class="checklist-personalizado list-unstyled">
-                    <li>
-                      <i class="bi bi-square"></i> Conseguiu criar o notebook
-                      no Google Colab?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Todas as bibliotecas
-                      instaladas sem erro?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Pastas virtuais "sons",
-                      "imagens", "logs", "codigos" criadas?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> O checklist final do código
-                      apareceu todo verde ✅ ?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Salvou configuração
-                      config.json dentro da pasta codigos?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Escreveu comentários com
-                      linguagem coloquial?
-                    </li>
-                  </ul>
-                  <div class="progress mt-3 progress-checklist">
-                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+          <!-- Aba 3: Checklist / Avaliação -->
+          <div id="conteudoChecklist" class="lateral-aba-conteudo">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="card shadow border-0 mb-4">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h4 class="mb-0">
+                      <i class="bi bi-check2-square"></i> Checklist de avaliação
+                      - Aluno
+                    </h4>
                   </div>
-                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
-                    <i class="bi bi-arrow-repeat"></i> Simular progresso
-                    (marca todos ✅)
+                  <div class="card-body">
+                    <ul class="checklist-personalizado list-unstyled">
+                      <li>
+                        <i class="bi bi-square"></i> Conseguiu criar o notebook
+                        no Google Colab?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Todas as bibliotecas
+                        instaladas sem erro?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Pastas virtuais "sons",
+                        "imagens", "logs", "codigos" criadas?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> O checklist final do código
+                        apareceu todo verde ✅ ?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Salvou configuração
+                        config.json dentro da pasta codigos?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Escreveu comentários com
+                        linguagem coloquial?
+                      </li>
+                    </ul>
+                    <div class="progress mt-3 progress-checklist">
+                      <div
+                        id="progressChecklist"
+                        class="progress-bar bg-success"
+                      ></div>
+                    </div>
+                    <button
+                      id="simularProgresso"
+                      class="btn btn-outline-success btn-sm mt-3"
+                    >
+                      <i class="bi bi-arrow-repeat"></i> Simular progresso
+                      (marca todos ✅)
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-exclamation-triangle-fill"></i> Prazos &
+                      alertas
+                    </h5>
+                    <p><strong>Entrega do projeto:</strong> 30/04/2026</p>
+                    <p>
+                      <strong>Validar setup completo</strong> antes do próximo
+                      encontro.
+                    </p>
+                    <hr class="hr-alerta" />
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-robot fs-1"></i>
+                      <span
+                        >Dica: "Se o checklist ficar vermelho, chama o parça e
+                        reinicia o runtime!"</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 4: Área do Professor -->
+          <div id="conteudoProfessor" class="lateral-aba-conteudo">
+            <div class="card shadow border-0 mb-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="d-flex gap-2 align-items-center mb-2">
+                      <i class="bi bi-chalkboard fs-1"></i>
+                      <h2 class="card-title">Plano de Aula - Docente</h2>
+                    </div>
+                    <p>
+                      <strong>Códigos BNCC:</strong> EM13MAT405, EM13CNT101 |
+                      <strong>RCP - Paraná:</strong> Pensamento Computacional
+                    </p>
+                    <p>
+                      <strong>Materiais:</strong> Chromebooks, contas Google,
+                      projetor.
+                    </p>
+                    <hr class="hr-professor" />
+                    <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                    <ul>
+                      <li>
+                        Use a analogia "Robô fofoqueiro precisa de maleta
+                        (pastas) e ferramentas".
+                      </li>
+                      <li>
+                        Peça que os alunos criem uma fofoca fictícia sobre
+                        acessibilidade digital.
+                      </li>
+                      <li>
+                        Rodar o checklist final e comemorar com um "🎉 VIXI, DEU
+                        CERTO".
+                      </li>
+                    </ul>
+                    <button
+                      id="btnExportarDicas"
+                      class="btn btn-outline-primary mt-2"
+                    >
+                      <i class="bi bi-download"></i> Exportar dicas
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center"
+                >
+                  <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                  <p class="mt-2 fw-bold">Kit do Professor</p>
+                  <button
+                    id="simularChamada"
+                    class="btn btn-warning w-100 mt-2"
+                  >
+                    <i class="bi bi-mic"></i> Chamada interativa
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="card border-0 shadow bg-laranja-alerta text-dark">
-                <div class="card-body">
-                  <h5>
-                    <i class="bi bi-exclamation-triangle-fill"></i> Prazos &
-                    alertas
-                  </h5>
-                  <p><strong>Entrega do projeto:</strong> 30/04/2026</p>
-                  <p>
-                    <strong>Validar setup completo</strong> antes do próximo
-                    encontro.
-                  </p>
-                  <hr class="hr-alerta" />
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-robot fs-1"></i>
-                    <span>Dica: "Se o checklist ficar vermelho, chama o parça e
-                      reinicia o runtime!"</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-
-        <!-- Aba 4: Área do Professor -->
-        <div id="conteudoProfessor" class="lateral-aba-conteudo">
-          <div class="card shadow border-0 mb-4 overflow-hidden">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="d-flex gap-2 align-items-center mb-2">
-                    <i class="bi bi-chalkboard fs-1"></i>
-                    <h2 class="card-title">Plano de Aula - Docente</h2>
-                  </div>
-                  <p>
-                    <strong>Códigos BNCC:</strong> EM13MAT405, EM13CNT101 |
-                    <strong>RCP - Paraná:</strong> Pensamento Computacional
-                  </p>
-                  <p>
-                    <strong>Materiais:</strong> Chromebooks, contas Google,
-                    projetor.
-                  </p>
-                  <hr class="hr-professor" />
-                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
-                  <ul>
-                    <li>
-                      Use a analogia "Robô fofoqueiro precisa de maleta
-                      (pastas) e ferramentas".
-                    </li>
-                    <li>
-                      Peça que os alunos criem uma fofoca fictícia sobre
-                      acessibilidade digital.
-                    </li>
-                    <li>
-                      Rodar o checklist final e comemorar com um "🎉 VIXI, DEU
-                      CERTO".
-                    </li>
-                  </ul>
-                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
-                    <i class="bi bi-download"></i> Exportar dicas
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
-                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
-                <p class="mt-2 fw-bold">Kit do Professor</p>
-                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
-                  <i class="bi bi-mic"></i> Chamada interativa
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <footer class="footer-custom">
-    <div class="container-fluid">
-      <p class="mb-0">
-        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
-        programação & inclusão
-      </p>
-      <small><i class="bi bi-chat-right-quote"></i> "Vixi, o trem agora é oficial:
-        código responsivo e com estilo!"</small>
-    </div>
-  </footer>
+    <footer class="footer-custom">
+      <div class="container-fluid">
+        <p class="mb-0">
+          🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+          programação & inclusão
+        </p>
+        <small
+          ><i class="bi bi-chat-right-quote"></i> "Vixi, o trem agora é oficial:
+          código responsivo e com estilo!"</small
+        >
+      </div>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script custom -->
-  <script src="../assets/js/script.js"></script>
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script custom -->
+    <script src="../assets/js/script.js"></script>
+  </body>
 </html>

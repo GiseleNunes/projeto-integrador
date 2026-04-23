@@ -1782,3 +1782,394 @@
     padding: 6px 12px;
   }
 }
+
+/* ===================================================================
+   LABORATÓRIO DO ROBÔ - Estilos Específicos
+   ===================================================================
+*/
+
+/* Robô 3D / Visual */
+.robo-head {
+  position: relative;
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
+  border-radius: 60px 60px 40px 40px;
+  padding: 20px 30px 15px 30px;
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.robo-eyes {
+  margin-bottom: 15px;
+}
+
+.robo-eye {
+  width: 55px;
+  height: 55px;
+  background: #0a0a0a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 5px rgba(255,255,255,0.2), 0 0 10px rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+}
+
+.robo-eye::before {
+  content: "●";
+  font-size: 28px;
+  color: #2ecc71;
+  text-shadow: 0 0 8px #2ecc71;
+  transition: all 0.2s ease;
+}
+
+.robo-eye-left.led-vermelho::before,
+.robo-eye-right.led-vermelho::before {
+  color: #e74c3c;
+  text-shadow: 0 0 12px #e74c3c;
+}
+
+.robo-eye-left.led-amarelo::before,
+.robo-eye-right.led-amarelo::before {
+  color: #f39c12;
+  text-shadow: 0 0 12px #f39c12;
+}
+
+.robo-eye-left.led-verde::before,
+.robo-eye-right.led-verde::before {
+  color: #2ecc71;
+  text-shadow: 0 0 12px #2ecc71;
+}
+
+.robo-eye-left.led-azul::before,
+.robo-eye-right.led-azul::before {
+  color: #3498db;
+  text-shadow: 0 0 12px #3498db;
+}
+
+.robo-led-mouth {
+  width: 80px;
+  height: 12px;
+  background: #2c3e50;
+  border-radius: 20px;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.robo-led-mouth.led-vermelho {
+  background: #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+.robo-led-mouth.led-amarelo {
+  background: #f39c12;
+  box-shadow: 0 0 10px #f39c12;
+}
+
+.robo-chest {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  border-radius: 20px;
+  padding: 15px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.1), 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.robo-display {
+  background: #0a0a0a;
+  border-radius: 12px;
+  padding: 12px;
+  font-family: 'Courier New', monospace;
+  box-shadow: inset 0 0 10px rgba(0,255,100,0.2), 0 0 5px rgba(0,255,100,0.3);
+}
+
+.display-line {
+  color: #00ff9d;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #00ff9d;
+  padding: 2px 0;
+}
+
+.led {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.led-off {
+  background: #2c3e50;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.led-vermelho {
+  background: #e74c3c;
+  box-shadow: 0 0 12px #e74c3c;
+}
+
+.led-verde {
+  background: #2ecc71;
+  box-shadow: 0 0 12px #2ecc71;
+}
+
+.led-azul {
+  background: #3498db;
+  box-shadow: 0 0 12px #3498db;
+}
+
+.led-amarelo {
+  background: #f39c12;
+  box-shadow: 0 0 12px #f39c12;
+}
+
+/* Pisca-pisca do LED */
+@keyframes ledBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.led-piscando {
+  animation: ledBlink 0.3s ease-in-out infinite;
+}
+
+/* Área de chat */
+.chat-messages {
+  background: #1a1a2e;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  animation: fadeInUp 0.3s ease;
+}
+
+.chat-message.user {
+  text-align: right;
+}
+
+.chat-message.user .message-bubble {
+  background: #3498db;
+  color: white;
+  display: inline-block;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.chat-message.robot .message-bubble {
+  background: #2c3e50;
+  color: #ecf0f1;
+  display: inline-block;
+  border-radius: 18px 18px 18px 4px;
+}
+
+.message-bubble {
+  padding: 8px 14px;
+  max-width: 85%;
+  word-wrap: break-word;
+  font-size: 0.85rem;
+}
+
+/* Simulador dB */
+#barraDbSim {
+  transition: width 0.3s ease;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade Laboratório */
+@media (max-width: 768px) {
+  .robo-head, .robo-chest {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .robo-eye {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .robo-eye::before {
+    font-size: 20px;
+  }
+  
+  .led {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .robo-head, .robo-chest {
+    max-width: 240px;
+  }
+  
+  .display-line {
+    font-size: 9px;
+  }
+  
+  .btn-outline-light {
+    font-size: 0.7rem;
+  }
+}
+
+/* Estilos para QR Code */
+#qrDisplaySim img {
+  max-width: 150px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Simulador Visão */
+.simulador-visao {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 20px;
+  color: white;
+}
+
+.simulador-qr {
+  background: #f8f9fa;
+  border-radius: 20px;
+}
+
+/* Gráfico canvas */
+#graficoInferno {
+  width: 100%;
+  height: auto;
+  background: #1a1a2e;
+  border-radius: 12px;
+}
+
+/* Chat IA Container */
+#chatIaContainer {
+  max-height: 300px;
+  overflow-y: auto;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+/* Badges e indicadores */
+.badge-sucesso {
+  background: linear-gradient(135deg, #27ae60, #1e8449);
+}
+
+.badge-atencao {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.badge-perigo {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* ===================================================================
+   AJUSTES PARA GARANTIR FUNCIONAMENTO DAS ABAS
+   ===================================================================
+*/
+
+/* Garantir que as abas de conteúdo alternem corretamente */
+.lateral-aba-conteudo {
+  display: none;
+}
+
+.lateral-aba-conteudo.active-lateral-aba {
+  display: block;
+}
+
+/* Forçar reflow para transições suaves */
+.lateral-aba-conteudo {
+  transition: display 0.2s ease;
+}
+
+/* Ajuste para o container do chat não quebrar o layout */
+#chatContainer {
+  max-height: 250px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Garantir que os LEDs mantenham as cores corretas */
+.led-off {
+  background: #2c3e50;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+  opacity: 0.5;
+}
+
+.led-vermelho {
+  background: #e74c3c;
+  box-shadow: 0 0 12px #e74c3c;
+  opacity: 1;
+}
+
+.led-verde {
+  background: #2ecc71;
+  box-shadow: 0 0 12px #2ecc71;
+  opacity: 1;
+}
+
+.led-azul {
+  background: #3498db;
+  box-shadow: 0 0 12px #3498db;
+  opacity: 1;
+}
+
+.led-amarelo {
+  background: #f39c12;
+  box-shadow: 0 0 12px #f39c12;
+  opacity: 1;
+}
+
+/* Animação de pisca-pisca */
+@keyframes ledPiscaLab {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.led-piscando {
+  animation: ledPiscaLab 0.3s ease-in-out infinite;
+}
+
+/* Estilos para as abas laterais no laboratório */
+.sidebar-lateral .nav-link {
+  cursor: pointer;
+}
+
+.sidebar-lateral .nav-link.active-lateral {
+  background: rgba(243, 156, 18, 0.25);
+  border-left: 3px solid #f39c12;
+  color: #f39c12;
+}
+
+/* Garantir que o conteúdo das abas tenha espaçamento adequado */
+#conteudoSons,
+#conteudoVisao,
+#conteudoIa,
+#conteudoDados {
+  animation: fadeInLab 0.3s ease;
+}
+
+@keyframes fadeInLab {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

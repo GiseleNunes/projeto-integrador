@@ -1,334 +1,421 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Robô Fofoqueiro | Mapa do Inferno Acústico</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Robô Fofoqueiro | Mapa do Inferno Acústico</title>
-  <!-- Bootstrap 5 + Icons + Google Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet" />
-  <!-- CSS Custom -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
-
-<body>
-  <!-- MENU SUPERIOR (projeto principal) -->
-  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-        <span class="robo-icon-principal">🤖💬</span>
-        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
-            Acessibilidade</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
-        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
-              Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
-              Setup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
-              Escuta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"><i class="bi bi-chat-dots"></i> Aula 3 -
-              Fala</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
-              Visão</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
-              Personalidade</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
-              Display e LEDs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active-projeto" data-projeto-aba="aula7" href="aula_07.html"><i
-                class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
-              Protótipo Completo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
-              Aula 9 - Manifesto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
-              Offline</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
-                class="bi bi-puzzle-fill"></i> Material Complementar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
-  <div class="container-fluid main-layout">
-    <div class="row">
-      <!-- MENU LATERAL (abas internas da aula atual) -->
-      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
-        <div class="sidebar-sticky">
-          <div class="sidebar-header">
-            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
-          </div>
-          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+  <body>
+    <!-- MENU SUPERIOR (projeto principal) -->
+    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="../index.html"
+        >
+          <span class="robo-icon-principal">🤖💬</span>
+          <span class="brand-text-principal"
+            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
+              >Projeto de Acessibilidade</small
+            ></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuProjetoPrincipal"
+          aria-controls="menuProjetoPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
-                <i class="bi bi-lightbulb"></i> Conceitos & Etapas
-              </a>
+              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
+                ><i class="bi bi-house-door-fill"></i> Início</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
-                <i class="bi bi-code-square"></i> Código Python
-              </a>
+              <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"
+                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
-                <i class="bi bi-clipboard-check"></i> Checklist
-              </a>
+              <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"
+                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
-                <i class="bi bi-mortarboard"></i> Área do Profe
-              </a>
+              <a class="nav-link" data-projeto-aba="aula3" href="aula_03.html"
+                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="simulador">
-                <i class="bi bi-graph-up"></i> Simulador de Gráficos
-              </a>
+              <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"
+                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"
+                ><i class="bi bi-cpu"></i> Aula 5 - IA com Personalidade</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"
+                ><i class="bi bi-lightbulb"></i> Aula 6 - Display e LEDs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active-projeto"
+                data-projeto-aba="aula7"
+                href="aula_07.html"
+                ><i class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"
+                ><i class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo
+                Completo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"
+                ><i class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"
+                ><i class="bi bi-wifi-off"></i> Aula 10 - Offline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="aula11"
+                href="material_complementar.html"
+                ><i class="bi bi-puzzle-fill"></i> Material Complementar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="laboratorio"
+                href="laboratorio.html"
+                ><i class="bi bi-robot"></i> Laboratório</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="sobre" href="#"
+                ><i class="bi bi-info-circle"></i> Sobre</a
+              >
             </li>
           </ul>
-          <div class="sidebar-footer">
-            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
-              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
-            </button>
-          </div>
         </div>
-      </aside>
+      </div>
+    </nav>
 
-      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
-        <!-- Aba 1: Conceitos e Etapas da Aula -->
-        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
-          <!-- Cabeçalho irreverente -->
-          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
-            <div class="card-body p-4 p-md-5">
-              <div class="row align-items-center">
-                <div class="col-md-9">
-                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-graph-up"></i> VIXI, O ROBÔ VAI VIRAR
-                    CIENTISTA DE DADOS!</span>
-                  <h1 class="display-5 fw-bold">
-                    📊 Mapa do Inferno Acústico
-                  </h1>
-                  <p class="lead mt-3">
-                    "Visualizando o caos: o mapa do barulho da escola" — Crie
-                    visualizações de dados com gráficos de linha e heatmap,
-                    transformando medições sonoras em um "mapa do inferno
-                    acústico".
-                  </p>
-                  <div class="mt-3 d-flex flex-wrap gap-3">
-                    <div>
-                      <i class="bi bi-clock-history"></i> Duração: 50 min (1
-                      aula)
+    <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+    <div class="container-fluid main-layout">
+      <div class="row">
+        <!-- MENU LATERAL (abas internas da aula atual) -->
+        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+          <div class="sidebar-sticky">
+            <div class="sidebar-header">
+              <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link active-lateral"
+                  data-lateral-aba="conceitos"
+                >
+                  <i class="bi bi-lightbulb"></i> Conceitos & Etapas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="codigo"
+                >
+                  <i class="bi bi-code-square"></i> Código Python
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="checklist"
+                >
+                  <i class="bi bi-clipboard-check"></i> Checklist
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="professor"
+                >
+                  <i class="bi bi-mortarboard"></i> Área do Profe
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="simulador"
+                >
+                  <i class="bi bi-graph-up"></i> Simulador de Gráficos
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-footer">
+              <button
+                id="btnDownloadPyLateral"
+                class="btn btn-download-lateral w-100"
+              >
+                <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+          <!-- Aba 1: Conceitos e Etapas da Aula -->
+          <div
+            id="conteudoConceitos"
+            class="lateral-aba-conteudo active-lateral-aba"
+          >
+            <!-- Cabeçalho irreverente -->
+            <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+              <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center">
+                  <div class="col-md-9">
+                    <span class="badge bg-warning text-dark mb-2"
+                      ><i class="bi bi-graph-up"></i> VIXI, O ROBÔ VAI VIRAR
+                      CIENTISTA DE DADOS!</span
+                    >
+                    <h1 class="display-5 fw-bold">
+                      📊 Mapa do Inferno Acústico
+                    </h1>
+                    <p class="lead mt-3">
+                      "Visualizando o caos: o mapa do barulho da escola" — Crie
+                      visualizações de dados com gráficos de linha e heatmap,
+                      transformando medições sonoras em um "mapa do inferno
+                      acústico".
+                    </p>
+                    <div class="mt-3 d-flex flex-wrap gap-3">
+                      <div>
+                        <i class="bi bi-clock-history"></i> Duração: 50 min (1
+                        aula)
+                      </div>
+                      <div>
+                        <i class="bi bi-table"></i> Pandas + Matplotlib +
+                        Seaborn
+                      </div>
+                      <div>
+                        <i class="bi bi-chat-dots"></i> BNCC: EM13MAT405 |
+                        EM13CNT303
+                      </div>
                     </div>
-                    <div>
-                      <i class="bi bi-table"></i> Pandas + Matplotlib +
-                      Seaborn
-                    </div>
-                    <div>
-                      <i class="bi bi-chat-dots"></i> BNCC: EM13MAT405 |
-                      EM13CNT303
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="robo-ascii-animado">
+                      📊📈📉<br />"Dado não é fofoca,<br />é evidência, piá!"
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="robo-ascii-animado">
-                    📊📈📉<br />"Dado não é fofoca,<br />é evidência, piá!"
+              </div>
+            </div>
+
+            <!-- BNCC e Competências -->
+            <div class="row g-4 mb-4">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
+                    <hr />
+                    <span class="badge-bncc">EM13MAT405</span> - Utilizar
+                    conceitos de programação para análise de dados.<br />
+                    <span class="badge-bncc mt-2">EM13CNT303</span> -
+                    Interpretar e representar dados científicos.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-star"></i> Competências Gerais</h5>
+                    <hr />
+                    <span class="badge-bncc">Competência 5</span> - Compreender
+                    e usar tecnologias digitais.<br />
+                    <span class="badge-bncc mt-2">Competência 7</span> -
+                    Argumentar com base em dados.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ETAPAS DA AULA (tabela) -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h5 class="mb-0">
+                  <i class="bi bi-calendar-event"></i> Etapas da Aula (50
+                  minutos)
+                </h5>
+              </div>
+              <div class="card-body p-0">
+                <table class="tabela-etapas">
+                  <thead>
+                    <tr>
+                      <th>Etapa</th>
+                      <th>Tempo</th>
+                      <th>Atividade</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Abertura</strong></td>
+                      <td>5 min</td>
+                      <td>
+                        Mostrar exemplo de heatmap (mapa de calor) — "como a
+                        ciência enxerga o barulho".
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Conceituação</strong></td>
+                      <td>10 min</td>
+                      <td>
+                        Explicar pandas (DataFrame), matplotlib (gráficos),
+                        heatmaps.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Codificação</strong></td>
+                      <td>20 min</td>
+                      <td>
+                        Carregar CSV do sensor de som, gerar gráfico de linha
+                        com zonas coloridas.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Criação do mapa</strong></td>
+                      <td>10 min</td>
+                      <td>
+                        Simular mapa da escola (grade 3x3) e atribuir níveis de
+                        barulho por "sala".
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Fechamento</strong></td>
+                      <td>5 min</td>
+                      <td>
+                        Exportar mapa como PNG — discutir: "Qual horário é mais
+                        barulhento? Por quê?"
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Códigos RCP -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <h5>
+                  <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
+                </h5>
+                <hr />
+                <span class="badge-bncc">Matemática - Estatística</span> -
+                Construir e interpretar gráficos.<br />
+                <span class="badge-bncc mt-2"
+                  >Geografia - Representação do Espaço</span
+                >
+                - Criar mapas temáticos (interdisciplinar).
+              </div>
+            </div>
+
+            <!-- Materiais e Adaptações -->
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100">
+                  <div class="card-body">
+                    <h5><i class="bi bi-box"></i> Materiais</h5>
+                    <hr />
+                    <ul>
+                      <li>Notebook Colab da aula anterior</li>
+                      <li>Arquivo CSV com medições (log_fofoqueiro.csv)</li>
+                      <li>Bibliotecas: pandas, matplotlib, seaborn, numpy</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-0 shadow-sm h-100 bg-inclusao">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-universal-access"></i> Adaptações para
+                      inclusão
+                    </h5>
+                    <hr />
+                    <ul>
+                      <li>
+                        Alunos com daltonismo: usar padrões de hachura além de
+                        cores
+                      </li>
+                      <li>
+                        Para alunos com dificuldade em pandas, fornecer template
+                        pronto
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- BNCC e Competências -->
-          <div class="row g-4 mb-4">
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-book"></i> Códigos BNCC</h5>
-                  <hr />
-                  <span class="badge-bncc">EM13MAT405</span> - Utilizar
-                  conceitos de programação para análise de dados.<br />
-                  <span class="badge-bncc mt-2">EM13CNT303</span> -
-                  Interpretar e representar dados científicos.
-                </div>
+          <!-- Aba 2: Código Python completo da Aula 7 -->
+          <div id="conteudoCodigo" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg">
+              <div
+                class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap"
+              >
+                <span
+                  ><i class="bi bi-filetype-py"></i>
+                  robo_fofoqueiro_mapa_inferno.py — Código completo da aula
+                  7</span
+                >
+                <span class="badge bg-verde-claro">download disponível</span>
               </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-star"></i> Competências Gerais</h5>
-                  <hr />
-                  <span class="badge-bncc">Competência 5</span> - Compreender
-                  e usar tecnologias digitais.<br />
-                  <span class="badge-bncc mt-2">Competência 7</span> -
-                  Argumentar com base em dados.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ETAPAS DA AULA (tabela) -->
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h5 class="mb-0">
-                <i class="bi bi-calendar-event"></i> Etapas da Aula (50
-                minutos)
-              </h5>
-            </div>
-            <div class="card-body p-0">
-              <table class="tabela-etapas">
-                <thead>
-                  <tr>
-                    <th>Etapa</th>
-                    <th>Tempo</th>
-                    <th>Atividade</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Abertura</strong></td>
-                    <td>5 min</td>
-                    <td>
-                      Mostrar exemplo de heatmap (mapa de calor) — "como a
-                      ciência enxerga o barulho".
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Conceituação</strong></td>
-                    <td>10 min</td>
-                    <td>
-                      Explicar pandas (DataFrame), matplotlib (gráficos),
-                      heatmaps.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Codificação</strong></td>
-                    <td>20 min</td>
-                    <td>
-                      Carregar CSV do sensor de som, gerar gráfico de linha
-                      com zonas coloridas.
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Criação do mapa</strong></td>
-                    <td>10 min</td>
-                    <td>
-                      Simular mapa da escola (grade 3x3) e atribuir níveis de
-                      barulho por "sala".
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Fechamento</strong></td>
-                    <td>5 min</td>
-                    <td>
-                      Exportar mapa como PNG — discutir: "Qual horário é mais
-                      barulhento? Por quê?"
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Códigos RCP -->
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body">
-              <h5>
-                <i class="bi bi-bookmark-star"></i> Códigos RCP - Paraná
-              </h5>
-              <hr />
-              <span class="badge-bncc">Matemática - Estatística</span> -
-              Construir e interpretar gráficos.<br />
-              <span class="badge-bncc mt-2">Geografia - Representação do Espaço</span>
-              - Criar mapas temáticos (interdisciplinar).
-            </div>
-          </div>
-
-          <!-- Materiais e Adaptações -->
-          <div class="row g-4">
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100">
-                <div class="card-body">
-                  <h5><i class="bi bi-box"></i> Materiais</h5>
-                  <hr />
-                  <ul>
-                    <li>Notebook Colab da aula anterior</li>
-                    <li>Arquivo CSV com medições (log_fofoqueiro.csv)</li>
-                    <li>Bibliotecas: pandas, matplotlib, seaborn, numpy</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card border-0 shadow-sm h-100 bg-inclusao">
-                <div class="card-body">
-                  <h5>
-                    <i class="bi bi-universal-access"></i> Adaptações para
-                    inclusão
-                  </h5>
-                  <hr />
-                  <ul>
-                    <li>
-                      Alunos com daltonismo: usar padrões de hachura além de
-                      cores
-                    </li>
-                    <li>
-                      Para alunos com dificuldade em pandas, fornecer template
-                      pronto
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 2: Código Python completo da Aula 7 -->
-        <div id="conteudoCodigo" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg">
-            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
-              <span><i class="bi bi-filetype-py"></i>
-                robo_fofoqueiro_mapa_inferno.py — Código completo da aula
-                7</span>
-              <span class="badge bg-verde-claro">download disponível</span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+              <div class="card-body p-0">
+                <pre
+                  class="code-block-full m-0"
+                ><code id="codigoPythonCompleto"># ===================================================================
 #              Robô Fofoqueiro - Mapa do Inferno Acústico
 # ===================================================================
 # Objetivo: Visualizar dados de medição sonora da escola,
@@ -995,257 +1082,303 @@ if __name__ == "__main__":
 # Mensagem final de encerramento da aula.
 print("\n🎉 Fim da Aula 7 - Robô Fofoqueiro agora é cientista de dados!")
 print(" (Ele descobriu que o intervalo é o horário mais barulhento... surpresa, né?)")</code></pre>
-            </div>
-            <div class="card-footer bg-light">
-              <small><i class="bi bi-info-circle"></i> Código completo do mapa do
-                inferno acústico para rodar no Google Colab.</small>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 3: Checklist / Avaliação -->
-        <div id="conteudoChecklist" class="lateral-aba-conteudo">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="card shadow border-0 mb-4">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h4 class="mb-0">
-                    <i class="bi bi-check2-square"></i> Checklist de avaliação
-                    - Aluno
-                  </h4>
-                </div>
-                <div class="card-body">
-                  <ul class="checklist-personalizado list-unstyled">
-                    <li>
-                      <i class="bi bi-square"></i> Gráfico de linha gerado com
-                      sucesso?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Heatmap do mapa escolar
-                      criado?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Arquivo PNG exportado
-                      corretamente?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Análise dos padrões
-                      identificados na discussão?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Conseguiu interpretar os
-                      dados e tirar conclusões?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Participou do debate sobre
-                      poluição sonora na escola?
-                    </li>
-                  </ul>
-                  <div class="progress mt-3 progress-checklist">
-                    <div id="progressChecklist" class="progress-bar bg-success"></div>
-                  </div>
-                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
-                    <i class="bi bi-arrow-repeat"></i> Simular progresso
-                    (marca todos ✅)
-                  </button>
-                </div>
               </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="card border-0 shadow bg-laranja-alerta text-dark">
-                <div class="card-body">
-                  <h5>
-                    <i class="bi bi-exclamation-triangle-fill"></i> Avaliação
-                  </h5>
-                  <hr class="hr-alerta" />
-                  <ul>
-                    <li>Gráfico de linha gerado</li>
-                    <li>Heatmap do mapa escolar criado</li>
-                    <li>Arquivo PNG exportado</li>
-                    <li>Análise dos padrões identificados</li>
-                  </ul>
-                  <hr class="hr-alerta" />
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-robot fs-1"></i>
-                    <span>Dica: "Dado não é fofoca, é evidência, piá! Use os
-                      gráficos para argumentar!"</span>
-                  </div>
-                </div>
+              <div class="card-footer bg-light">
+                <small
+                  ><i class="bi bi-info-circle"></i> Código completo do mapa do
+                  inferno acústico para rodar no Google Colab.</small
+                >
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 4: Área do Professor -->
-        <div id="conteudoProfessor" class="lateral-aba-conteudo">
-          <div class="card shadow border-0 mb-4 overflow-hidden">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="d-flex gap-2 align-items-center mb-2">
-                    <i class="bi bi-chalkboard fs-1"></i>
-                    <h2 class="card-title">Plano de Aula - Docente</h2>
+          <!-- Aba 3: Checklist / Avaliação -->
+          <div id="conteudoChecklist" class="lateral-aba-conteudo">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="card shadow border-0 mb-4">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h4 class="mb-0">
+                      <i class="bi bi-check2-square"></i> Checklist de avaliação
+                      - Aluno
+                    </h4>
                   </div>
-                  <p>
-                    <strong>Título:</strong> "Visualizando o caos: o mapa do
-                    barulho da escola"
-                  </p>
-                  <p>
-                    <strong>Códigos BNCC:</strong> EM13MAT405, EM13CNT303 |
-                    <strong>RCP - Paraná:</strong> Matemática - Estatística,
-                    Geografia - Representação do Espaço
-                  </p>
-                  <p><strong>Duração:</strong> 1 aula (50 minutos)</p>
-                  <p>
-                    <strong>Materiais:</strong> Notebook Colab, arquivo CSV
-                    com medições, bibliotecas pandas/matplotlib/seaborn
-                  </p>
-                  <hr class="hr-professor" />
-                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
-                  <ul>
-                    <li>
-                      <strong>Abertura (5min):</strong> Mostrar exemplo de
-                      heatmap (mapa de calor) — "como a ciência enxerga o
-                      barulho"
-                    </li>
-                    <li>
-                      <strong>Conceituação (10min):</strong> Explicar pandas
-                      (DataFrame), matplotlib (gráficos), heatmaps
-                    </li>
-                    <li>
-                      <strong>Codificação (20min):</strong> Carregar CSV do
-                      sensor de som, gerar gráfico de linha com zonas
-                      coloridas
-                    </li>
-                    <li>
-                      <strong>Criação do mapa (10min):</strong> Simular mapa
-                      da escola (grade 3x3) e atribuir níveis de barulho por
-                      "sala"
-                    </li>
-                    <li>
-                      <strong>Fechamento (5min):</strong> Exportar mapa como
-                      PNG — discutir: "Qual horário é mais barulhento? Por
-                      quê?"
-                    </li>
-                  </ul>
-                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
-                    <i class="bi bi-download"></i> Exportar dicas
-                  </button>
+                  <div class="card-body">
+                    <ul class="checklist-personalizado list-unstyled">
+                      <li>
+                        <i class="bi bi-square"></i> Gráfico de linha gerado com
+                        sucesso?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Heatmap do mapa escolar
+                        criado?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Arquivo PNG exportado
+                        corretamente?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Análise dos padrões
+                        identificados na discussão?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Conseguiu interpretar os
+                        dados e tirar conclusões?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Participou do debate sobre
+                        poluição sonora na escola?
+                      </li>
+                    </ul>
+                    <div class="progress mt-3 progress-checklist">
+                      <div
+                        id="progressChecklist"
+                        class="progress-bar bg-success"
+                      ></div>
+                    </div>
+                    <button
+                      id="simularProgresso"
+                      class="btn btn-outline-success btn-sm mt-3"
+                    >
+                      <i class="bi bi-arrow-repeat"></i> Simular progresso
+                      (marca todos ✅)
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div
-                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
-                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
-                <p class="mt-2 fw-bold">Kit do Professor</p>
-                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
-                  <i class="bi bi-mic"></i> Chamada interativa
-                </button>
+              <div class="col-lg-5">
+                <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-exclamation-triangle-fill"></i> Avaliação
+                    </h5>
+                    <hr class="hr-alerta" />
+                    <ul>
+                      <li>Gráfico de linha gerado</li>
+                      <li>Heatmap do mapa escolar criado</li>
+                      <li>Arquivo PNG exportado</li>
+                      <li>Análise dos padrões identificados</li>
+                    </ul>
+                    <hr class="hr-alerta" />
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-robot fs-1"></i>
+                      <span
+                        >Dica: "Dado não é fofoca, é evidência, piá! Use os
+                        gráficos para argumentar!"</span
+                      >
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 5: Simulador de Gráficos (visualização interativa) -->
-        <div id="conteudoSimulador" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h4 class="mb-0">
-                <i class="bi bi-graph-up"></i> Simulador de Gráficos - Mapa do
-                Inferno Acústico
-              </h4>
-            </div>
-            <div class="card-body">
-              <div class="simulador-fala p-4">
-                <div class="text-center mb-4">
-                  <div class="robo-ascii-animado">
-                    📊📈 "Bora visualizar o caos, piá!"
-                  </div>
-                </div>
-
-                <!-- Dados simulados para visualização -->
-                <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="bi bi-database"></i> Dados simulados (últimas
-                    12 medições):</label>
-                  <div class="table-responsive">
-                    <table class="table table-sm table-bordered" id="tabelaDadosSimulados">
-                      <thead class="table-dark">
-                        <tr>
-                          <th>Horário</th>
-                          <th>Local</th>
-                          <th>dB</th>
-                        </tr>
-                      </thead>
-                      <tbody id="corpoTabelaDados"></tbody>
-                    </table>
-                  </div>
-                  <button id="atualizarDados" class="btn btn-sm btn-outline-primary mt-2">
-                    <i class="bi bi-arrow-repeat"></i> Gerar novos dados
-                  </button>
-                </div>
-
-                <!-- Gráfico de linha simulado -->
-                <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="bi bi-graph-up"></i> Gráfico de linha (evolução
-                    do barulho):</label>
-                  <div id="graficoLinhaSimulado" class="p-3 bg-dark text-white rounded-3 text-center">
-                    <canvas id="canvasLinha" width="600" height="250"></canvas>
-                    <p class="mt-2 text-muted small">
-                      📈 Evolução do barulho ao longo do dia
+          <!-- Aba 4: Área do Professor -->
+          <div id="conteudoProfessor" class="lateral-aba-conteudo">
+            <div class="card shadow border-0 mb-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="d-flex gap-2 align-items-center mb-2">
+                      <i class="bi bi-chalkboard fs-1"></i>
+                      <h2 class="card-title">Plano de Aula - Docente</h2>
+                    </div>
+                    <p>
+                      <strong>Título:</strong> "Visualizando o caos: o mapa do
+                      barulho da escola"
                     </p>
-                  </div>
-                </div>
-
-                <!-- Heatmap simulado -->
-                <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="bi bi-grid-3x3-gap-fill"></i> Mapa de calor
-                    (salas da escola):</label>
-                  <div id="heatmapSimulado" class="p-3 bg-dark text-white rounded-3 text-center">
-                    <canvas id="canvasHeatmap" width="400" height="400"></canvas>
-                    <p class="mt-2 text-muted small">
-                      🗺️ Quanto mais vermelho, mais barulhento!
+                    <p>
+                      <strong>Códigos BNCC:</strong> EM13MAT405, EM13CNT303 |
+                      <strong>RCP - Paraná:</strong> Matemática - Estatística,
+                      Geografia - Representação do Espaço
                     </p>
+                    <p><strong>Duração:</strong> 1 aula (50 minutos)</p>
+                    <p>
+                      <strong>Materiais:</strong> Notebook Colab, arquivo CSV
+                      com medições, bibliotecas pandas/matplotlib/seaborn
+                    </p>
+                    <hr class="hr-professor" />
+                    <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                    <ul>
+                      <li>
+                        <strong>Abertura (5min):</strong> Mostrar exemplo de
+                        heatmap (mapa de calor) — "como a ciência enxerga o
+                        barulho"
+                      </li>
+                      <li>
+                        <strong>Conceituação (10min):</strong> Explicar pandas
+                        (DataFrame), matplotlib (gráficos), heatmaps
+                      </li>
+                      <li>
+                        <strong>Codificação (20min):</strong> Carregar CSV do
+                        sensor de som, gerar gráfico de linha com zonas
+                        coloridas
+                      </li>
+                      <li>
+                        <strong>Criação do mapa (10min):</strong> Simular mapa
+                        da escola (grade 3x3) e atribuir níveis de barulho por
+                        "sala"
+                      </li>
+                      <li>
+                        <strong>Fechamento (5min):</strong> Exportar mapa como
+                        PNG — discutir: "Qual horário é mais barulhento? Por
+                        quê?"
+                      </li>
+                    </ul>
+                    <button
+                      id="btnExportarDicas"
+                      class="btn btn-outline-primary mt-2"
+                    >
+                      <i class="bi bi-download"></i> Exportar dicas
+                    </button>
                   </div>
                 </div>
-
-                <!-- Estatísticas resumidas -->
-                <div class="mb-4">
-                  <div class="alert alert-info">
-                    <i class="bi bi-calculator-fill"></i>
-                    <strong>📊 Estatísticas da simulação:</strong><br />
-                    <span id="estatisticasSimulacao">Média: -- dB | Máx: -- dB | Alertas: --%</span>
-                  </div>
-                </div>
-
-                <div class="alert alert-warning mt-3">
-                  <i class="bi bi-info-circle"></i>
-                  <strong>Nota:</strong> Este é um simulador visual. O código
-                  Python completo (com pandas, matplotlib e seaborn) deve ser
-                  executado no Google Colab para gerar os gráficos reais.
-                  Clique na aba "Código Python" para ver o código completo.
+                <div
+                  class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center"
+                >
+                  <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                  <p class="mt-2 fw-bold">Kit do Professor</p>
+                  <button
+                    id="simularChamada"
+                    class="btn btn-warning w-100 mt-2"
+                  >
+                    <i class="bi bi-mic"></i> Chamada interativa
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+
+          <!-- Aba 5: Simulador de Gráficos (visualização interativa) -->
+          <div id="conteudoSimulador" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-graph-up"></i> Simulador de Gráficos - Mapa do
+                  Inferno Acústico
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="simulador-fala p-4">
+                  <div class="text-center mb-4">
+                    <div class="robo-ascii-animado">
+                      📊📈 "Bora visualizar o caos, piá!"
+                    </div>
+                  </div>
+
+                  <!-- Dados simulados para visualização -->
+                  <div class="mb-4">
+                    <label class="form-label fw-bold"
+                      ><i class="bi bi-database"></i> Dados simulados (últimas
+                      12 medições):</label
+                    >
+                    <div class="table-responsive">
+                      <table
+                        class="table table-sm table-bordered"
+                        id="tabelaDadosSimulados"
+                      >
+                        <thead class="table-dark">
+                          <tr>
+                            <th>Horário</th>
+                            <th>Local</th>
+                            <th>dB</th>
+                          </tr>
+                        </thead>
+                        <tbody id="corpoTabelaDados"></tbody>
+                      </table>
+                    </div>
+                    <button
+                      id="atualizarDados"
+                      class="btn btn-sm btn-outline-primary mt-2"
+                    >
+                      <i class="bi bi-arrow-repeat"></i> Gerar novos dados
+                    </button>
+                  </div>
+
+                  <!-- Gráfico de linha simulado -->
+                  <div class="mb-4">
+                    <label class="form-label fw-bold"
+                      ><i class="bi bi-graph-up"></i> Gráfico de linha (evolução
+                      do barulho):</label
+                    >
+                    <div
+                      id="graficoLinhaSimulado"
+                      class="p-3 bg-dark text-white rounded-3 text-center"
+                    >
+                      <canvas
+                        id="canvasLinha"
+                        width="600"
+                        height="250"
+                      ></canvas>
+                      <p class="mt-2 text-muted small">
+                        📈 Evolução do barulho ao longo do dia
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Heatmap simulado -->
+                  <div class="mb-4">
+                    <label class="form-label fw-bold"
+                      ><i class="bi bi-grid-3x3-gap-fill"></i> Mapa de calor
+                      (salas da escola):</label
+                    >
+                    <div
+                      id="heatmapSimulado"
+                      class="p-3 bg-dark text-white rounded-3 text-center"
+                    >
+                      <canvas
+                        id="canvasHeatmap"
+                        width="400"
+                        height="400"
+                      ></canvas>
+                      <p class="mt-2 text-muted small">
+                        🗺️ Quanto mais vermelho, mais barulhento!
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Estatísticas resumidas -->
+                  <div class="mb-4">
+                    <div class="alert alert-info">
+                      <i class="bi bi-calculator-fill"></i>
+                      <strong>📊 Estatísticas da simulação:</strong><br />
+                      <span id="estatisticasSimulacao"
+                        >Média: -- dB | Máx: -- dB | Alertas: --%</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="alert alert-warning mt-3">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Nota:</strong> Este é um simulador visual. O código
+                    Python completo (com pandas, matplotlib e seaborn) deve ser
+                    executado no Google Colab para gerar os gráficos reais.
+                    Clique na aba "Código Python" para ver o código completo.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <footer class="footer-custom">
-    <div class="container-fluid">
-      <p class="mb-0">
-        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
-        programação & inclusão
-      </p>
-      <small><i class="bi bi-chat-right-quote"></i> "Dado não é fofoca, é
-        evidência, piá! Vamos mapear o inferno acústico!"</small>
-    </div>
-  </footer>
+    <footer class="footer-custom">
+      <div class="container-fluid">
+        <p class="mb-0">
+          🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+          programação & inclusão
+        </p>
+        <small
+          ><i class="bi bi-chat-right-quote"></i> "Dado não é fofoca, é
+          evidência, piá! Vamos mapear o inferno acústico!"</small
+        >
+      </div>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script custom -->
-  <script src="../assets/js/script.js"></script>
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script custom -->
+    <script src="../assets/js/script.js"></script>
+  </body>
 </html>

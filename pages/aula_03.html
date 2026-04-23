@@ -1,326 +1,419 @@
 <!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>Robô Fofoqueiro | Reconhecimento de Fala</title>
+    <!-- Bootstrap 5 + Icons + Google Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS Custom -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Robô Fofoqueiro | Reconhecimento de Fala</title>
-  <!-- Bootstrap 5 + Icons + Google Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
-    rel="stylesheet" />
-  <!-- CSS Custom -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
-</head>
-
-<body>
-  <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
-  <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="../index.html">
-        <span class="robo-icon-principal">🤖💬</span>
-        <span class="brand-text-principal">Robô Fofoqueiro<br /><small class="sub-brand-principal">Projeto de
-            Acessibilidade</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuProjetoPrincipal"
-        aria-controls="menuProjetoPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="inicio" href="../index.html"><i class="bi bi-house-door-fill"></i>
-              Início</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"><i class="bi bi-robot"></i> Aula 1 -
-              Setup</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"><i class="bi bi-mic"></i> Aula 2 -
-              Escuta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active-projeto" data-projeto-aba="aula3" href="aula_03.html"><i
-                class="bi bi-chat-dots"></i> Aula 3 - Fala</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"><i class="bi bi-eye"></i> Aula 4 -
-              Visão</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"><i class="bi bi-cpu"></i> Aula 5 - IA com
-              Personalidade</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"><i class="bi bi-lightbulb"></i> Aula 6 -
-              Display e LEDs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"><i class="bi bi-graph-up"></i> Aula 7 -
-              Mapa do Inferno</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"><i class="bi bi-puzzle-fill"></i> Aula 8 -
-              Protótipo Completo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"><i class="bi bi-camera-reels-fill"></i>
-              Aula 9 - Manifesto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"><i class="bi bi-wifi-off"></i> Aula 10 -
-              Offline</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="aula11" href="material_complementar.html"><i
-                class="bi bi-puzzle-fill"></i> Material Complementar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-projeto-aba="sobre" href="#"><i class="bi bi-info-circle"></i> Sobre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
-  <div class="container-fluid main-layout">
-    <div class="row">
-      <!-- MENU LATERAL (abas internas da aula atual) -->
-      <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
-        <div class="sidebar-sticky">
-          <div class="sidebar-header">
-            <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
-          </div>
-          <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+  <body>
+    <!-- MENU SUPERIOR (para futuras abas do projeto maior) -->
+    <nav class="navbar navbar-expand-lg menu-projeto-principal sticky-top">
+      <div class="container-fluid px-4">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="../index.html"
+        >
+          <span class="robo-icon-principal">🤖💬</span>
+          <span class="brand-text-principal"
+            >Robô Fofoqueiro<br /><small class="sub-brand-principal"
+              >Projeto de Acessibilidade</small
+            ></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menuProjetoPrincipal"
+          aria-controls="menuProjetoPrincipal"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuProjetoPrincipal">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-2">
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link active-lateral" data-lateral-aba="conceitos">
-                <i class="bi bi-lightbulb"></i> Conceitos
-              </a>
+              <a class="nav-link" data-projeto-aba="inicio" href="../index.html"
+                ><i class="bi bi-house-door-fill"></i> Início</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="codigo">
-                <i class="bi bi-code-square"></i> Código Python
-              </a>
+              <a class="nav-link" data-projeto-aba="aula1" href="aula_01.html"
+                ><i class="bi bi-robot"></i> Aula 1 - Setup</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="checklist">
-                <i class="bi bi-clipboard-check"></i> Checklist
-              </a>
+              <a class="nav-link" data-projeto-aba="aula2" href="aula_02.html"
+                ><i class="bi bi-mic"></i> Aula 2 - Escuta</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="professor">
-                <i class="bi bi-mortarboard"></i> Área do Profe
-              </a>
+              <a
+                class="nav-link active-projeto"
+                data-projeto-aba="aula3"
+                href="aula_03.html"
+                ><i class="bi bi-chat-dots"></i> Aula 3 - Fala</a
+              >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link lateral-link" data-lateral-aba="setup">
-                <i class="bi bi-mic"></i> Simulador de Fala
-              </a>
+              <a class="nav-link" data-projeto-aba="aula4" href="aula_04.html"
+                ><i class="bi bi-eye"></i> Aula 4 - Visão</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula5" href="aula_05.html"
+                ><i class="bi bi-cpu"></i> Aula 5 - IA com Personalidade</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula6" href="aula_06.html"
+                ><i class="bi bi-lightbulb"></i> Aula 6 - Display e LEDs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula7" href="aula_07.html"
+                ><i class="bi bi-graph-up"></i> Aula 7 - Mapa do Inferno</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula8" href="aula_08.html"
+                ><i class="bi bi-puzzle-fill"></i> Aula 8 - Protótipo
+                Completo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula9" href="aula_09.html"
+                ><i class="bi bi-camera-reels-fill"></i> Aula 9 - Manifesto</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="aula10" href="aula_10.html"
+                ><i class="bi bi-wifi-off"></i> Aula 10 - Offline</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="aula11"
+                href="material_complementar.html"
+                ><i class="bi bi-puzzle-fill"></i> Material Complementar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-projeto-aba="laboratorio"
+                href="laboratorio.html"
+                ><i class="bi bi-robot"></i> Laboratório</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-projeto-aba="sobre" href="#"
+                ><i class="bi bi-info-circle"></i> Sobre</a
+              >
             </li>
           </ul>
-          <div class="sidebar-footer">
-            <button id="btnDownloadPyLateral" class="btn btn-download-lateral w-100">
-              <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
-            </button>
-          </div>
         </div>
-      </aside>
+      </div>
+    </nav>
 
-      <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-      <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
-        <!-- Aba 1: Conceitos -->
-        <div id="conteudoConceitos" class="lateral-aba-conteudo active-lateral-aba">
-          <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
-            <div class="card-body p-4 p-md-5">
-              <div class="row align-items-center">
-                <div class="col-md-9">
-                  <span class="badge bg-warning text-dark mb-2"><i class="bi bi-mic"></i> VIXI, O ROBÔ OUVIU
-                    TUDO!</span>
-                  <h1 class="display-5 fw-bold">🎤 Reconhecimento de Fala</h1>
-                  <p class="lead mt-3">
-                    "O robô ouviu tudo! Agora ele responde" — implementando
-                    Speech-to-Text com gírias paranaenses e modo Libras
-                    textual.
-                  </p>
-                  <div class="mt-3 d-flex flex-wrap gap-3">
-                    <div>
-                      <i class="bi bi-clock-history"></i> Duração: 100 min (2
-                      aulas)
+    <!-- CONTEÚDO PRINCIPAL COM LAYOUT: MENU LATERAL + ÁREA DE CONTEÚDO -->
+    <div class="container-fluid main-layout">
+      <div class="row">
+        <!-- MENU LATERAL (abas internas da aula atual) -->
+        <aside class="col-lg-2 col-md-3 col-sm-4 sidebar-lateral px-0">
+          <div class="sidebar-sticky">
+            <div class="sidebar-header">
+              <i class="bi bi-grid-3x3-gap-fill"></i> Nesta aula
+            </div>
+            <ul class="nav nav-pills flex-column mb-auto" id="sidebarMenu">
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link active-lateral"
+                  data-lateral-aba="conceitos"
+                >
+                  <i class="bi bi-lightbulb"></i> Conceitos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="codigo"
+                >
+                  <i class="bi bi-code-square"></i> Código Python
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="checklist"
+                >
+                  <i class="bi bi-clipboard-check"></i> Checklist
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="professor"
+                >
+                  <i class="bi bi-mortarboard"></i> Área do Profe
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  href="#"
+                  class="nav-link lateral-link"
+                  data-lateral-aba="setup"
+                >
+                  <i class="bi bi-mic"></i> Simulador de Fala
+                </a>
+              </li>
+            </ul>
+            <div class="sidebar-footer">
+              <button
+                id="btnDownloadPyLateral"
+                class="btn btn-download-lateral w-100"
+              >
+                <i class="bi bi-file-earmark-code-fill"></i> Baixar .py
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ÁREA DE CONTEÚDO DINÂMICO -->
+        <main class="col-lg-10 col-md-9 col-sm-8 conteudo-principal py-4">
+          <!-- Aba 1: Conceitos -->
+          <div
+            id="conteudoConceitos"
+            class="lateral-aba-conteudo active-lateral-aba"
+          >
+            <div class="card border-0 shadow-lg mb-5 bg-degrade-header">
+              <div class="card-body p-4 p-md-5">
+                <div class="row align-items-center">
+                  <div class="col-md-9">
+                    <span class="badge bg-warning text-dark mb-2"
+                      ><i class="bi bi-mic"></i> VIXI, O ROBÔ OUVIU TUDO!</span
+                    >
+                    <h1 class="display-5 fw-bold">🎤 Reconhecimento de Fala</h1>
+                    <p class="lead mt-3">
+                      "O robô ouviu tudo! Agora ele responde" — implementando
+                      Speech-to-Text com gírias paranaenses e modo Libras
+                      textual.
+                    </p>
+                    <div class="mt-3 d-flex flex-wrap gap-3">
+                      <div>
+                        <i class="bi bi-clock-history"></i> Duração: 100 min (2
+                        aulas)
+                      </div>
+                      <div>
+                        <i class="bi bi-mic-fill"></i> Google Speech Recognition
+                        + Vosk
+                      </div>
+                      <div>
+                        <i class="bi bi-chat-dots"></i> BNCC: EM13LGG101 |
+                        EM13LGG304 | EM13LP16
+                      </div>
                     </div>
-                    <div>
-                      <i class="bi bi-mic-fill"></i> Google Speech Recognition
-                      + Vosk
-                    </div>
-                    <div>
-                      <i class="bi bi-chat-dots"></i> BNCC: EM13LGG101 |
-                      EM13LGG304 | EM13LP16
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="robo-ascii-animado">
+                      🎤👂🤖<br />⬇️⬇️⬇️<br />"FALA AÍ!"
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3 text-center">
-                  <div class="robo-ascii-animado">
-                    🎤👂🤖<br />⬇️⬇️⬇️<br />"FALA AÍ!"
+              </div>
+            </div>
+
+            <!-- ETAPAS DA AULA -->
+            <div class="row g-4 mb-5">
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">🎬</div>
+                    <h3>Abertura · 10min</h3>
+                    <p>
+                      Vídeo: como funciona reconhecimento de voz (explicação
+                      simples do Speech-to-Text).
+                    </p>
                   </div>
                 </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">🗣️</div>
+                    <h3>Conceituação · 15min</h3>
+                    <p>
+                      Dicionário de gírias paranaenses — turma contribui (vixi,
+                      piá, guria, ó o trem, etc.).
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">💻</div>
+                    <h3>Codificação · 40min</h3>
+                    <p>
+                      Implementar speech_recognition + dicionário de respostas +
+                      modo Libras textual.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">🧪</div>
+                    <h3>Teste · 20min</h3>
+                    <p>
+                      Alunos falam frases no microfone; robô responde com meme e
+                      traduz para Libras textual.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 shadow-sm etapa-card">
+                  <div class="card-body">
+                    <div class="etapa-icon">⚖️</div>
+                    <h3>Fechamento · 15min</h3>
+                    <p>
+                      Debate ético: "O robô pode guardar o que ouviu? Isso é
+                      fofoca ou dado?"
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div
+                  class="card h-100 border-0 shadow-sm etapa-card bg-inclusao"
+                >
+                  <div class="card-body">
+                    <div class="etapa-icon">♿</div>
+                    <h3>Adaptações inclusivas</h3>
+                    <p>
+                      Alunos com fala reduzida podem usar input de texto manual.
+                      Lista de frases prontas disponível.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dicionário de gírias paranaenses -->
+            <div class="card border-0 mb-4 overflow-hidden">
+              <div
+                class="card-header bg-dark text-white d-flex justify-content-between align-items-center"
+              >
+                <span
+                  ><i class="bi bi-translate"></i> Dicionário de Gírias
+                  Paranaenses — "O trem vai ficar doido"</span
+                >
+                <span class="badge bg-warning text-dark">🤣 Bagulho doido</span>
+              </div>
+              <div class="card-body">
+                <div class="row g-3">
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>vixi</strong><br />😲 expressão de surpresa
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>piá</strong><br />🧒 garoto, rapaz
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>guria</strong><br />👧 garota, moça
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>ó o trem</strong><br />👀 olha a coisa, presta
+                      atenção
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>tchê</strong><br />🤝 companheiro, amigo
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>bagulho doido</strong><br />🤪 coisa louca
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>égua</strong><br />🐴 expressão de espanto
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <div class="alert alert-secondary mb-0">
+                      <strong>bah</strong><br />😮 expressão de surpresa
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Códigos BNCC -->
+            <div
+              class="alert alert-success d-flex align-items-center"
+              role="alert"
+            >
+              <i class="bi bi-check-circle-fill fs-3 me-3"></i>
+              <div>
+                <strong>Códigos BNCC trabalhados:</strong> EM13LGG101,
+                EM13LGG304, EM13LP16 | <strong>RCP - Paraná:</strong> Língua
+                Portuguesa - Oralidade, Pensamento Computacional - Algoritmos
               </div>
             </div>
           </div>
 
-          <!-- ETAPAS DA AULA -->
-          <div class="row g-4 mb-5">
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">🎬</div>
-                  <h3>Abertura · 10min</h3>
-                  <p>
-                    Vídeo: como funciona reconhecimento de voz (explicação
-                    simples do Speech-to-Text).
-                  </p>
-                </div>
+          <!-- Aba 2: Código Python completo -->
+          <div id="conteudoCodigo" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg">
+              <div
+                class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap"
+              >
+                <span
+                  ><i class="bi bi-filetype-py"></i> robo_fofoqueiro_fala.py —
+                  Código completo da aula</span
+                >
+                <span class="badge bg-verde-claro">download disponível</span>
               </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">🗣️</div>
-                  <h3>Conceituação · 15min</h3>
-                  <p>
-                    Dicionário de gírias paranaenses — turma contribui (vixi,
-                    piá, guria, ó o trem, etc.).
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">💻</div>
-                  <h3>Codificação · 40min</h3>
-                  <p>
-                    Implementar speech_recognition + dicionário de respostas +
-                    modo Libras textual.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">🧪</div>
-                  <h3>Teste · 20min</h3>
-                  <p>
-                    Alunos falam frases no microfone; robô responde com meme e
-                    traduz para Libras textual.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card">
-                <div class="card-body">
-                  <div class="etapa-icon">⚖️</div>
-                  <h3>Fechamento · 15min</h3>
-                  <p>
-                    Debate ético: "O robô pode guardar o que ouviu? Isso é
-                    fofoca ou dado?"
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <div class="card h-100 border-0 shadow-sm etapa-card bg-inclusao">
-                <div class="card-body">
-                  <div class="etapa-icon">♿</div>
-                  <h3>Adaptações inclusivas</h3>
-                  <p>
-                    Alunos com fala reduzida podem usar input de texto manual.
-                    Lista de frases prontas disponível.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dicionário de gírias paranaenses -->
-          <div class="card border-0 mb-4 overflow-hidden">
-            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-              <span><i class="bi bi-translate"></i> Dicionário de Gírias
-                Paranaenses — "O trem vai ficar doido"</span>
-              <span class="badge bg-warning text-dark">🤣 Bagulho doido</span>
-            </div>
-            <div class="card-body">
-              <div class="row g-3">
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>vixi</strong><br />😲 expressão de surpresa
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>piá</strong><br />🧒 garoto, rapaz
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>guria</strong><br />👧 garota, moça
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>ó o trem</strong><br />👀 olha a coisa, presta
-                    atenção
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>tchê</strong><br />🤝 companheiro, amigo
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>bagulho doido</strong><br />🤪 coisa louca
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>égua</strong><br />🐴 expressão de espanto
-                  </div>
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="alert alert-secondary mb-0">
-                    <strong>bah</strong><br />😮 expressão de surpresa
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Códigos BNCC -->
-          <div class="alert alert-success d-flex align-items-center" role="alert">
-            <i class="bi bi-check-circle-fill fs-3 me-3"></i>
-            <div>
-              <strong>Códigos BNCC trabalhados:</strong> EM13LGG101,
-              EM13LGG304, EM13LP16 | <strong>RCP - Paraná:</strong> Língua
-              Portuguesa - Oralidade, Pensamento Computacional - Algoritmos
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 2: Código Python completo -->
-        <div id="conteudoCodigo" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg">
-            <div class="card-header bg-grafite text-white d-flex justify-content-between flex-wrap">
-              <span><i class="bi bi-filetype-py"></i> robo_fofoqueiro_fala.py —
-                Código completo da aula</span>
-              <span class="badge bg-verde-claro">download disponível</span>
-            </div>
-            <div class="card-body p-0">
-              <pre class="code-block-full m-0"><code id="codigoPythonCompleto"># ===================================================================
+              <div class="card-body p-0">
+                <pre
+                  class="code-block-full m-0"
+                ><code id="codigoPythonCompleto"># ===================================================================
 #              Robô Fofoqueiro - Reconhecimento de Fala
 # ===================================================================
 # Objetivo: Capturar áudio do microfone, converter fala em texto usando
@@ -744,272 +837,317 @@ print("\n" + "="*60)
 print("👋 Robô Fofoqueiro encerrado!")
 print("😈 Lembre-se: tudo que você falou está salvo em 'fofocas.txt'")
 print("="*60)</code></pre>
-            </div>
-            <div class="card-footer bg-light">
-              <small><i class="bi bi-info-circle"></i> Código completo do
-                reconhecimento de fala para rodar no Google Colab.</small>
+              </div>
+              <div class="card-footer bg-light">
+                <small
+                  ><i class="bi bi-info-circle"></i> Código completo do
+                  reconhecimento de fala para rodar no Google Colab.</small
+                >
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Aba 3: Checklist / Avaliação -->
-        <div id="conteudoChecklist" class="lateral-aba-conteudo">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="card shadow border-0 mb-4">
-                <div class="card-header bg-degrade-verde text-white">
-                  <h4 class="mb-0">
-                    <i class="bi bi-check2-square"></i> Checklist de avaliação
-                    - Aluno
-                  </h4>
-                </div>
-                <div class="card-body">
-                  <ul class="checklist-personalizado list-unstyled">
-                    <li>
-                      <i class="bi bi-square"></i> Conseguiu implementar o
-                      reconhecimento de fala funcional?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> O robô responde com gírias
-                      paranaenses corretamente?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Modo Libras textual está
-                      traduzindo palavras-chave?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> As falas são salvas no
-                      arquivo 'fofocas.txt'?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Participou do debate ético
-                      sobre privacidade?
-                    </li>
-                    <li>
-                      <i class="bi bi-square"></i> Testou com microfone real
-                      ou modo simulado?
-                    </li>
-                  </ul>
-                  <div class="progress mt-3 progress-checklist">
-                    <div id="progressChecklist" class="progress-bar bg-success"></div>
+          <!-- Aba 3: Checklist / Avaliação -->
+          <div id="conteudoChecklist" class="lateral-aba-conteudo">
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="card shadow border-0 mb-4">
+                  <div class="card-header bg-degrade-verde text-white">
+                    <h4 class="mb-0">
+                      <i class="bi bi-check2-square"></i> Checklist de avaliação
+                      - Aluno
+                    </h4>
                   </div>
-                  <button id="simularProgresso" class="btn btn-outline-success btn-sm mt-3">
-                    <i class="bi bi-arrow-repeat"></i> Simular progresso
-                    (marca todos ✅)
+                  <div class="card-body">
+                    <ul class="checklist-personalizado list-unstyled">
+                      <li>
+                        <i class="bi bi-square"></i> Conseguiu implementar o
+                        reconhecimento de fala funcional?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> O robô responde com gírias
+                        paranaenses corretamente?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Modo Libras textual está
+                        traduzindo palavras-chave?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> As falas são salvas no
+                        arquivo 'fofocas.txt'?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Participou do debate ético
+                        sobre privacidade?
+                      </li>
+                      <li>
+                        <i class="bi bi-square"></i> Testou com microfone real
+                        ou modo simulado?
+                      </li>
+                    </ul>
+                    <div class="progress mt-3 progress-checklist">
+                      <div
+                        id="progressChecklist"
+                        class="progress-bar bg-success"
+                      ></div>
+                    </div>
+                    <button
+                      id="simularProgresso"
+                      class="btn btn-outline-success btn-sm mt-3"
+                    >
+                      <i class="bi bi-arrow-repeat"></i> Simular progresso
+                      (marca todos ✅)
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="card border-0 shadow bg-laranja-alerta text-dark">
+                  <div class="card-body">
+                    <h5>
+                      <i class="bi bi-exclamation-triangle-fill"></i> Prazos &
+                      alertas
+                    </h5>
+                    <p><strong>Entrega do projeto:</strong> 30/04/2026</p>
+                    <p>
+                      <strong>Validar reconhecimento de fala</strong> antes do
+                      próximo encontro.
+                    </p>
+                    <hr class="hr-alerta" />
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-robot fs-1"></i>
+                      <span
+                        >Dica: "Se o microfone não funcionar no Colab, use o
+                        modo simulado!"</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 4: Área do Professor -->
+          <div id="conteudoProfessor" class="lateral-aba-conteudo">
+            <div class="card shadow border-0 mb-4 overflow-hidden">
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <div class="d-flex gap-2 align-items-center mb-2">
+                      <i class="bi bi-chalkboard fs-1"></i>
+                      <h2 class="card-title">Plano de Aula - Docente</h2>
+                    </div>
+                    <p>
+                      <strong>Códigos BNCC:</strong> EM13LGG101, EM13LGG304,
+                      EM13LP16 | <strong>RCP - Paraná:</strong> Língua
+                      Portuguesa - Oralidade, Pensamento Computacional -
+                      Algoritmos
+                    </p>
+                    <p>
+                      <strong>Materiais:</strong> Chromebooks, contas Google,
+                      projetor, microfones.
+                    </p>
+                    <hr class="hr-professor" />
+                    <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
+                    <ul>
+                      <li>
+                        Use a analogia "Robô fofoqueiro precisa de ouvidos
+                        (microfone) e cérebro (algoritmo)".
+                      </li>
+                      <li>
+                        Peça que os alunos criem novas gírias para adicionar ao
+                        dicionário.
+                      </li>
+                      <li>
+                        Promova um "Torneio de fofoca controlada" para testar o
+                        robô.
+                      </li>
+                      <li>
+                        Debate ético: "O robô pode guardar o que ouviu? Isso é
+                        fofoca ou dado?"
+                      </li>
+                      <li>
+                        Para alunos com fala reduzida, use input de texto manual
+                        (modo alternativo).
+                      </li>
+                    </ul>
+                    <button
+                      id="btnExportarDicas"
+                      class="btn btn-outline-primary mt-2"
+                    >
+                      <i class="bi bi-download"></i> Exportar dicas
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center"
+                >
+                  <div class="icone-prof">👩‍🏫🧑‍🏫</div>
+                  <p class="mt-2 fw-bold">Kit do Professor</p>
+                  <button
+                    id="simularChamada"
+                    class="btn btn-warning w-100 mt-2"
+                  >
+                    <i class="bi bi-mic"></i> Chamada interativa
                   </button>
                 </div>
               </div>
             </div>
-            <div class="col-lg-5">
-              <div class="card border-0 shadow bg-laranja-alerta text-dark">
-                <div class="card-body">
-                  <h5>
-                    <i class="bi bi-exclamation-triangle-fill"></i> Prazos &
-                    alertas
-                  </h5>
-                  <p><strong>Entrega do projeto:</strong> 30/04/2026</p>
-                  <p>
-                    <strong>Validar reconhecimento de fala</strong> antes do
-                    próximo encontro.
-                  </p>
-                  <hr class="hr-alerta" />
-                  <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-robot fs-1"></i>
-                    <span>Dica: "Se o microfone não funcionar no Colab, use o
-                      modo simulado!"</span>
+          </div>
+
+          <!-- Aba 5: Simulador de Fala (interativo com microfone real) -->
+          <div id="conteudoSetup" class="lateral-aba-conteudo">
+            <div class="card border-0 shadow-lg mb-4">
+              <div class="card-header bg-grafite text-white">
+                <h4 class="mb-0">
+                  <i class="bi bi-mic-fill"></i> Simulador de Reconhecimento de
+                  Fala
+                </h4>
+              </div>
+              <div class="card-body">
+                <div class="simulador-fala p-4">
+                  <div class="text-center mb-4">
+                    <div class="robo-ascii-animado">🎤🤖 "FALA AÍ, PIÁ!"</div>
+                  </div>
+
+                  <!-- Status da gravação -->
+                  <div id="statusGravacao" class="alert alert-secondary mb-3">
+                    <i class="bi bi-info-circle"></i> Clique no botão abaixo e
+                    permita o acesso ao microfone.
+                  </div>
+
+                  <!-- Botão de microfone -->
+                  <div class="text-center mb-4">
+                    <button
+                      id="btnIniciarGravacao"
+                      class="btn btn-primary btn-lg px-5 py-3"
+                    >
+                      <i class="bi bi-mic-fill"></i> 🎤 Clique e Fale com o Robô
+                    </button>
+                  </div>
+
+                  <!-- Input manual alternativo -->
+                  <div class="mb-4">
+                    <label class="form-label fw-bold"
+                      ><i class="bi bi-keyboard"></i> Ou digite
+                      manualmente:</label
+                    >
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="fraseUsuario"
+                        class="form-control"
+                        placeholder="Digite algo para o robô..."
+                        aria-label="Frase do usuário"
+                      />
+                      <button
+                        id="btnSimularFala"
+                        class="btn btn-outline-primary"
+                        type="button"
+                      >
+                        <i class="bi bi-send-fill"></i> Enviar
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Frases prontas -->
+                  <div class="mb-4">
+                    <label class="form-label fw-bold"
+                      ><i class="bi bi-chat-dots"></i> Frases prontas para
+                      testar:</label
+                    >
+                    <div class="d-flex flex-wrap gap-2">
+                      <button
+                        class="btn btn-sm btn-outline-secondary btn-frase-pronta"
+                        data-frase="Vixi, que bagulho doido!"
+                      >
+                        🎭 Vixi, que bagulho doido!
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary btn-frase-pronta"
+                        data-frase="Ó o trem, piá!"
+                      >
+                        🎭 Ó o trem, piá!
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary btn-frase-pronta"
+                        data-frase="Guria, me ajuda com Python"
+                      >
+                        🎭 Guria, me ajuda com Python
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary btn-frase-pronta"
+                        data-frase="Tchê, conta uma fofoca!"
+                      >
+                        🎭 Tchê, conta uma fofoca!
+                      </button>
+                      <button
+                        class="btn btn-sm btn-outline-secondary btn-frase-pronta"
+                        data-frase="Égua, não acredito nisso!"
+                      >
+                        🎭 Égua, não acredito nisso!
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Resposta do robô -->
+                  <div class="mb-3">
+                    <div class="card">
+                      <div class="card-header bg-success text-white">
+                        <i class="bi bi-robot"></i> Resposta do Robô Fofoqueiro
+                      </div>
+                      <div class="card-body" id="respostaRobo">
+                        <strong
+                          ><i class="bi bi-robot"></i> Robô Fofoqueiro:</strong
+                        ><br />
+                        "Vixi, ainda não falou nada, piá! Fala alguma coisa aí!"
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Libras textual -->
+                  <div class="mb-3">
+                    <div class="card">
+                      <div class="card-header bg-info text-white">
+                        <i class="bi bi-hand-index-thumb"></i> Tradução para
+                        Libras Textual
+                      </div>
+                      <div class="card-body" id="librasTexto">
+                        😶 Nada para traduzir...
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="alert alert-warning mt-3">
+                    <i class="bi bi-shield-lock"></i>
+                    <strong>Privacidade:</strong> As falas são processadas
+                    localmente pelo navegador. Nada é enviado para servidores
+                    externos (além da API de reconhecimento do Google).
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Aba 4: Área do Professor -->
-        <div id="conteudoProfessor" class="lateral-aba-conteudo">
-          <div class="card shadow border-0 mb-4 overflow-hidden">
-            <div class="row g-0">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div class="d-flex gap-2 align-items-center mb-2">
-                    <i class="bi bi-chalkboard fs-1"></i>
-                    <h2 class="card-title">Plano de Aula - Docente</h2>
-                  </div>
-                  <p>
-                    <strong>Códigos BNCC:</strong> EM13LGG101, EM13LGG304,
-                    EM13LP16 | <strong>RCP - Paraná:</strong> Língua
-                    Portuguesa - Oralidade, Pensamento Computacional -
-                    Algoritmos
-                  </p>
-                  <p>
-                    <strong>Materiais:</strong> Chromebooks, contas Google,
-                    projetor, microfones.
-                  </p>
-                  <hr class="hr-professor" />
-                  <h5><i class="bi bi-stars"></i> Dicas de mediação</h5>
-                  <ul>
-                    <li>
-                      Use a analogia "Robô fofoqueiro precisa de ouvidos
-                      (microfone) e cérebro (algoritmo)".
-                    </li>
-                    <li>
-                      Peça que os alunos criem novas gírias para adicionar ao
-                      dicionário.
-                    </li>
-                    <li>
-                      Promova um "Torneio de fofoca controlada" para testar o
-                      robô.
-                    </li>
-                    <li>
-                      Debate ético: "O robô pode guardar o que ouviu? Isso é
-                      fofoca ou dado?"
-                    </li>
-                    <li>
-                      Para alunos com fala reduzida, use input de texto manual
-                      (modo alternativo).
-                    </li>
-                  </ul>
-                  <button id="btnExportarDicas" class="btn btn-outline-primary mt-2">
-                    <i class="bi bi-download"></i> Exportar dicas
-                  </button>
-                </div>
-              </div>
-              <div
-                class="col-md-4 bg-grafite-claro d-flex flex-column align-items-center justify-content-center p-4 text-center">
-                <div class="icone-prof">👩‍🏫🧑‍🏫</div>
-                <p class="mt-2 fw-bold">Kit do Professor</p>
-                <button id="simularChamada" class="btn btn-warning w-100 mt-2">
-                  <i class="bi bi-mic"></i> Chamada interativa
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aba 5: Simulador de Fala (interativo com microfone real) -->
-        <div id="conteudoSetup" class="lateral-aba-conteudo">
-          <div class="card border-0 shadow-lg mb-4">
-            <div class="card-header bg-grafite text-white">
-              <h4 class="mb-0">
-                <i class="bi bi-mic-fill"></i> Simulador de Reconhecimento de
-                Fala
-              </h4>
-            </div>
-            <div class="card-body">
-              <div class="simulador-fala p-4">
-                <div class="text-center mb-4">
-                  <div class="robo-ascii-animado">
-                    🎤🤖 "FALA AÍ, PIÁ!"
-                  </div>
-                </div>
-
-                <!-- Status da gravação -->
-                <div id="statusGravacao" class="alert alert-secondary mb-3">
-                  <i class="bi bi-info-circle"></i> Clique no botão abaixo e
-                  permita o acesso ao microfone.
-                </div>
-
-                <!-- Botão de microfone -->
-                <div class="text-center mb-4">
-                  <button id="btnIniciarGravacao" class="btn btn-primary btn-lg px-5 py-3">
-                    <i class="bi bi-mic-fill"></i> 🎤 Clique e Fale com o Robô
-                  </button>
-                </div>
-
-                <!-- Input manual alternativo -->
-                <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="bi bi-keyboard"></i> Ou digite
-                    manualmente:</label>
-                  <div class="input-group">
-                    <input type="text" id="fraseUsuario" class="form-control" placeholder="Digite algo para o robô..."
-                      aria-label="Frase do usuário" />
-                    <button id="btnSimularFala" class="btn btn-outline-primary" type="button">
-                      <i class="bi bi-send-fill"></i> Enviar
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Frases prontas -->
-                <div class="mb-4">
-                  <label class="form-label fw-bold"><i class="bi bi-chat-dots"></i> Frases prontas para
-                    testar:</label>
-                  <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-sm btn-outline-secondary btn-frase-pronta"
-                      data-frase="Vixi, que bagulho doido!">
-                      🎭 Vixi, que bagulho doido!
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary btn-frase-pronta" data-frase="Ó o trem, piá!">
-                      🎭 Ó o trem, piá!
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary btn-frase-pronta"
-                      data-frase="Guria, me ajuda com Python">
-                      🎭 Guria, me ajuda com Python
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary btn-frase-pronta"
-                      data-frase="Tchê, conta uma fofoca!">
-                      🎭 Tchê, conta uma fofoca!
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary btn-frase-pronta"
-                      data-frase="Égua, não acredito nisso!">
-                      🎭 Égua, não acredito nisso!
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Resposta do robô -->
-                <div class="mb-3">
-                  <div class="card">
-                    <div class="card-header bg-success text-white">
-                      <i class="bi bi-robot"></i> Resposta do Robô Fofoqueiro
-                    </div>
-                    <div class="card-body" id="respostaRobo">
-                      <strong><i class="bi bi-robot"></i> Robô Fofoqueiro:</strong><br />
-                      "Vixi, ainda não falou nada, piá! Fala alguma coisa aí!"
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Libras textual -->
-                <div class="mb-3">
-                  <div class="card">
-                    <div class="card-header bg-info text-white">
-                      <i class="bi bi-hand-index-thumb"></i> Tradução para
-                      Libras Textual
-                    </div>
-                    <div class="card-body" id="librasTexto">
-                      😶 Nada para traduzir...
-                    </div>
-                  </div>
-                </div>
-
-                <div class="alert alert-warning mt-3">
-                  <i class="bi bi-shield-lock"></i>
-                  <strong>Privacidade:</strong> As falas são processadas
-                  localmente pelo navegador. Nada é enviado para servidores
-                  externos (além da API de reconhecimento do Google).
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <footer class="footer-custom">
-    <div class="container-fluid">
-      <p class="mb-0">
-        🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
-        programação & inclusão
-      </p>
-      <small><i class="bi bi-chat-right-quote"></i> "Vixi, o trem agora é oficial:
-        código responsivo e com estilo!"</small>
-    </div>
-  </footer>
+    <footer class="footer-custom">
+      <div class="container-fluid">
+        <p class="mb-0">
+          🤖 Robô Fofoqueiro da Acessibilidade — Projeto integrado de
+          programação & inclusão
+        </p>
+        <small
+          ><i class="bi bi-chat-right-quote"></i> "Vixi, o trem agora é oficial:
+          código responsivo e com estilo!"</small
+        >
+      </div>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Script custom -->
-  <script src="../assets/js/script.js"></script>
-</body>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script custom -->
+    <script src="../assets/js/script.js"></script>
+  </body>
 </html>
